@@ -1,4 +1,4 @@
-
+package com.croeder.uima_sample.web_service;
 
 import java.io.IOException;
 import java.io.FileNotFoundException;
@@ -34,11 +34,12 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 
 // pretty much a copy of : http://www.mkyong.com/webservices/jax-rs/file-upload-example-in-jersey/
 
-@Path("file")
+@Path("/file")
 public class UploadFileResource {
 
 	private final File baseDir = new File("/Users/croeder/storage"); // TODO property
-	@GET @Path("/get/{fileid}")
+
+	@GET @Path("{fileid:.*}")
     @Produces(MediaType.TEXT_PLAIN)
 	public String getFile(@PathParam("fileid") String fileid) {
 System.out.println("GET " + fileid);
@@ -50,15 +51,18 @@ System.out.println("GET " + fileid);
 			while (reader.ready()) {
 				builder.append(reader.readLine());
 			}
-		} catch(Exception e) {}
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println(e);
+		}
 System.out.println("GET" + builder.toString());
 		return builder.toString();
 	}
-
-	@GET @Path("/get")
+/***8
+	@GET 
     @Produces(MediaType.TEXT_PLAIN)
 	public String getFile() {
-		String fileid = "data.txt";
+		String fileid = "data";
 		StringBuilder builder = new StringBuilder();
 		
 		java.nio.file.Path filePath = Paths.get(new File(baseDir, fileid).getAbsolutePath());
@@ -67,10 +71,11 @@ System.out.println("GET" + builder.toString());
 			while (reader.ready()) {
 				builder.append(reader.readLine());
 			}
-		} catch(Exception e) {}
+		} catch(Exception e) { e.printStackTrace(); System.out.println("" + e );}
 System.out.println("GET" + builder.toString());
 		return builder.toString();
 	}
+***/
 
     @POST @Path("/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
