@@ -39,7 +39,7 @@ public class UploadFileResource {
 
 	private final File baseDir = new File("/Users/croeder/storage"); // TODO property
 
-	@GET @Path("{fileid:.*}")
+	@GET @Path("/get/{fileid}")
     @Produces(MediaType.TEXT_PLAIN)
 	public String getFile(@PathParam("fileid") String fileid) {
 System.out.println("GET " + fileid);
@@ -58,11 +58,13 @@ System.out.println("GET " + fileid);
 System.out.println("GET" + builder.toString());
 		return builder.toString();
 	}
-/***8
+
+// No path on a get?
 	@GET 
     @Produces(MediaType.TEXT_PLAIN)
 	public String getFile() {
-		String fileid = "data";
+System.out.println("GET " );
+		String fileid = "data.txt";
 		StringBuilder builder = new StringBuilder();
 		
 		java.nio.file.Path filePath = Paths.get(new File(baseDir, fileid).getAbsolutePath());
@@ -73,10 +75,12 @@ System.out.println("GET" + builder.toString());
 			}
 		} catch(Exception e) { e.printStackTrace(); System.out.println("" + e );}
 System.out.println("GET" + builder.toString());
+
 		return builder.toString();
 	}
 ***/
 
+/*
     @POST @Path("/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response uploadFile(
@@ -101,7 +105,7 @@ System.out.println("GET" + builder.toString());
 
 		return Response.status(returnCode).entity(statusPair.getRight()).build();
     }
-
+*/
     @PUT 
 	@Path("/put/{fileid}")
 	@Consumes("application/octet-stream")
