@@ -35,7 +35,7 @@ public class AGConnectionInstance implements ConnectionInstance {
 
 	public AGConnectionInstance(SpacedProperties properties) {
 		readProperties(properties);
-		properties.dumpProperties();
+		//properties.dumpProperties();
 		try {
 			server = new AGServer(serverURI, username, password);
 			AGCatalog catalog = server.getRootCatalog();

@@ -35,17 +35,16 @@ import org.openrdf.repository.RepositoryException;
 
 
 
-public class SAILConnectionInstance_Test extends ConnectionInstanceTest_Base {
+public class AGConnectionInstance_Test extends ConnectionInstanceTest_Base {
 
 	private final int num_batches=5;
 	private final int num_docs_per_batch=3;
-	private static Logger logger = Logger.getLogger(SAILConnectionInstance_Test.class);
-	ConnectionInstance ci;
+	private static Logger logger = Logger.getLogger(AGConnectionInstance_Test.class);
 
 	@Before
 	public void setup() throws Exception {
-		ConnectionFactory factory = new ConnectionFactory("conn.sail");
-		ci = factory.getConnection();
+		ConnectionFactory factory = new ConnectionFactory("conn.ag");
+		ConnectionInstance ci = factory.getConnection();
 		con = ci.getConnection();
 		valueFactory = ci.getValueFactory();
 
@@ -55,7 +54,7 @@ public class SAILConnectionInstance_Test extends ConnectionInstanceTest_Base {
 	@After
 	public void teardown() throws Exception {
 		deleteData();
-		ci.close();
+		con.close();
 	}
 
 }

@@ -45,5 +45,23 @@ public class SAILConnectionInstance implements ConnectionInstance {
 		return repo.getValueFactory();
 	}
 
+	public void close() {
+		try {
+			conn.close();
+		}
+		catch (RepositoryException e) {
+			logger.warn("error closing connection: " + e);
+			throw new RuntimeException(e);
+		}
+
+		try {
+			repo.shutDown();
+		}
+		catch (RepositoryException e) {
+			logger.warn("error closing connection: " + e);
+			throw new RuntimeException(e);
+		}
+	}	
+
 }
 

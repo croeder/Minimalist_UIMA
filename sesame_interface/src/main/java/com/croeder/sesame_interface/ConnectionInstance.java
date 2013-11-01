@@ -7,5 +7,6 @@ import org.openrdf.model.ValueFactory;
 public interface ConnectionInstance {
 	public RepositoryConnection getConnection() throws RepositoryException;
 	public ValueFactory getValueFactory();
+	public void close();
 }
 
