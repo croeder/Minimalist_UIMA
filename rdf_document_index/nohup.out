@@ -1,0 +1,532 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enk
+com.croeder.sesame_interface.ConnectionFactory  - No value: null, in properties file for vendor property: null under key: vendor.Check  your properties file and properties prefix value.
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: No value: null, in properties file for vendor property: null under key: vendor.Check  your properties file and properties prefix value.
+java.lang.RuntimeException: No value: null, in properties file for vendor property: null under key: vendor.Check  your properties file and properties prefix value.
+	at com.croeder.sesame_interface.ConnectionFactory.getConnection(ConnectionFactory.java:65)
+	at com.croeder.sesame_interface.ServiceBase.<init>(ServiceBase.java:56)
+	at com.croeder.document_index.GetAbstracts.<init>(GetAbstracts.java:43)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:217)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.176s
+[INFO] Finished at: Mon Oct 28 15:48:54 MDT 2013
+[INFO] Final Memory: 16M/981M
+[INFO] ------------------------------------------------------------------------
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enki
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.croeder.document_index.GetAbstracts  - prefix bibo: <http://purl.org/ontology/bibo/>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix iao: <http://purl.obolibrary.org/obo/>
+prefix ccp: <http://compbio.ucdenver.edu/ccp/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+SELECT DISTINCT  ?batch  WHERE { ccp:pmid_batch_set 	ro:has_part ?batch .}
+com.croeder.document_index.GetAbstracts  - org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:122)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:95)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:135)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:95)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:122)
+	... 8 more
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 2576496272 bytes
+                            caused a need for 11159207936 more bytes of
+                            heap.  The operating system will not make
+                            the space available because of a lack of
+                            swap space or some other operating system
+                            imposed limit or memory mapping collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1:01:37.379s
+[INFO] Finished at: Mon Oct 28 16:51:14 MDT 2013
+[INFO] Final Memory: 17M/981M
+[INFO] ------------------------------------------------------------------------
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enki
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.croeder.document_index.GetAbstracts  - prefix bibo: <http://purl.org/ontology/bibo/>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix iao: <http://purl.obolibrary.org/obo/>
+prefix ccp: <http://compbio.ucdenver.edu/ccp/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+SELECT DISTINCT  ?batch  WHERE { ccp:pmid_batch_set 	ro:has_part ?batch .}
+com.croeder.document_index.GetAbstracts  - org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:122)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:95)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:135)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:95)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:122)
+	... 8 more
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 58:45.861s
+[INFO] Finished at: Mon Oct 28 19:15:54 MDT 2013
+[INFO] Final Memory: 8M/116M
+[INFO] ------------------------------------------------------------------------
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enki
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.croeder.document_index.GetAbstracts  - prefix bibo: <http://purl.org/ontology/bibo/>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix iao: <http://purl.obolibrary.org/obo/>
+prefix ccp: <http://compbio.ucdenver.edu/ccp/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+SELECT DISTINCT  ?batch  WHERE { ccp:pmid_batch_set 	ro:has_part ?batch .}
+com.croeder.document_index.GetAbstracts  - org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:144)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	... 8 more
+Caused by: com.franz.agraph.http.exception.AGHttpException: Caught unhandled condition "An allocation request for 48 bytes caused
+                            tenuring and a need for 986710016 more
+                            bytes of heap.  The operating system will
+                            not make the space available because of a
+                            lack of swap space or some other operating
+                            system imposed limit or memory mapping
+                            collision."
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9:05.264s
+[INFO] Finished at: Tue Oct 29 14:23:44 MDT 2013
+[INFO] Final Memory: 8M/112M
+[INFO] ------------------------------------------------------------------------
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enki
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.croeder.document_index.GetAbstracts  - prefix bibo: <http://purl.org/ontology/bibo/>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix iao: <http://purl.obolibrary.org/obo/>
+prefix ccp: <http://compbio.ucdenver.edu/ccp/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+SELECT DISTINCT  ?batch  WHERE { ccp:pmid_batch_set 	ro:has_part ?batch .}
+com.croeder.document_index.GetAbstracts  - org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:144)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	... 8 more
+Caused by: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.887s
+[INFO] Finished at: Tue Oct 29 14:25:31 MDT 2013
+[INFO] Final Memory: 11M/114M
+[INFO] ------------------------------------------------------------------------
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building document_index 0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) @ document_index >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) @ document_index <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ document_index ---
+com.croeder.util.SpacedProperties  - read properties file: target/classes/connection.properties with namespace: conn.enki
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.croeder.document_index.GetAbstracts  - prefix bibo: <http://purl.org/ontology/bibo/>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix iao: <http://purl.obolibrary.org/obo/>
+prefix ccp: <http://compbio.ucdenver.edu/ccp/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+SELECT DISTINCT  ?batch  WHERE { ccp:pmid_batch_set 	ro:has_part ?batch .}
+com.croeder.document_index.GetAbstracts  - org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+com.croeder.document_index.GetAbstracts  - java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+java.lang.RuntimeException: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:144)
+	at com.croeder.document_index.GetAbstracts.deleteBatches(GetAbstracts.java:104)
+	at com.croeder.document_index.GetAbstracts.main(GetAbstracts.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:290)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.openrdf.query.QueryEvaluationException: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:287)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:267)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:47)
+	at com.franz.agraph.repository.AGTupleQuery.evaluate(AGTupleQuery.java:37)
+	at com.croeder.document_index.GetAbstracts.getBatches(GetAbstracts.java:131)
+	... 8 more
+Caused by: com.franz.agraph.http.exception.AGHttpException: `nil' is not of the expected type `hash-table'
+	at com.franz.agraph.http.handler.AGErrorHandler.newException(AGErrorHandler.java:70)
+	at com.franz.agraph.http.handler.AGErrorHandler.handleResponse(AGErrorHandler.java:47)
+	at com.franz.agraph.http.AGHTTPClient.post(AGHTTPClient.java:135)
+	at com.franz.agraph.http.AGHttpRepoClient.query(AGHttpRepoClient.java:808)
+	at com.franz.agraph.repository.AGQuery.evaluate(AGQuery.java:283)
+	... 12 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.253s
+[INFO] Finished at: Tue Oct 29 14:26:53 MDT 2013
+[INFO] Final Memory: 8M/115M
+[INFO] ------------------------------------------------------------------------

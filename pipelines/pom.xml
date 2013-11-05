@@ -108,17 +108,25 @@
 	                </execution>
 	            </executions>
 	            <configuration>
-	                <!--<mainClass>com.croeder.uima_sample.GetStartedQuickAE</mainClass> -->
+	                <!--
+					<mainClass>com.croeder.uima_sample.GetStartedQuickAE</mainClass> 
+					-->
 					<!-- mvn compile exec:java  -->
 
-	                <!-- <mainClass>com.croeder.uima_sample.BaseUimaFitPipeline</mainClass> -->
+	                <!-- 
+					<mainClass>com.croeder.uima_sample.BaseUimaFitPipeline</mainClass> 
+					-->
 					<!-- mvn compile exec:java -Dinput=/Users/roederc/work/data/?????? -->
 
-					<!--<mainClass>com.croeder.uima_sample.ProteinPipeline</mainClass>-->
+					<mainClass>com.croeder.uima_sample.ProteinPipeline</mainClass>
+					<!--
+					-->
 					<!-- mvn compile exec:java -Dinput=/Users/roederc/work/data/medline/pubmed_batches/batch_pubmed_005533/ -->
 
 
+					<!--
 					<mainClass>com.croeder.uima_sample.ConceptMapperPipeline</mainClass> 
+					-->
 					<!-- mvn compile exec:java -Dinput=/Users/roederc/work/data/medline/pubmed_batches/batch_pubmed_005533/  -Ddictionary=cmDict-GO.xml-->
 
 	                <arguments>

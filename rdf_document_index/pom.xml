@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.croeder</groupId>
-	<artifactId>sesame_interface</artifactId>
+	<artifactId>document_index</artifactId>
 	<version>0.1-SNAPSHOT</version>
 
 	<properties>
@@ -11,6 +11,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.croeder</groupId>
+			<artifactId>sesame_interface</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.croeder</groupId>
 			<artifactId>util</artifactId>
@@ -127,6 +132,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+			<!-- mvn exec:java -Dexec.args="arg1 arg2 arg3" -->
 			<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -139,7 +145,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.croeder.sesame_interface.GetAbstracts</mainClass>
+                    <mainClass>com.croeder.document_index.GetAbstracts</mainClass>
                 </configuration>
             </plugin>
       		<plugin>

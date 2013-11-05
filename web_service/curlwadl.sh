@@ -1,3 +1,3 @@
 #!/bin/bash
-curl http://localhost:8080/myapp/application.wadl
+curl -i -v http://localhost:8080/myapp/application.wadl
 
