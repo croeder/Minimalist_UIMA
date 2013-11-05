@@ -27,32 +27,29 @@ import org.openrdf.repository.RepositoryException;
 
 
 
-// http://www.franz.com/agraph/support/documentation/v4/sparql-tutorial.html
-
-
 public abstract class ServiceBase {
 
 	public final static String bibo  = "http://purl.org/ontology/bibo/";
 	public final static String ro    = "http://www.obofoundry.org/ro/ro.owl#";
 	public final static String iao   = "http://purl.obolibrary.org/obo/";
-	public final static String chris = "http://com.croeder/chris/";
 	public final static String rdf   = "http://www.w3.org/1999/02/22-rdf-syntax-ns/";
 	public final static String medline = "http://www.nlm.nih.gov/bsd/medline/";
 	public final static String pubmed = "http://www.ncbi.nlm.nih.gov/pubmed/";
+	public final static String ccp    = "http://compbio.ucdenver.edu/ccp/";
 
-	static final String prefixes  = 
+	public static final String prefixes  = 
 		  "prefix bibo: <" + bibo  + ">\n"
 		+ "prefix ro: <" + ro    + ">\n"
 		+ "prefix iao: <" + iao   + ">\n"
-		+ "prefix chris: <" + chris + ">\n"
+		+ "prefix ccp: <" + ccp + ">\n"
 		+ "prefix rdf: <" + rdf   + ">\n";
 
 
 	public QueryLanguage sparql = QueryLanguage.SPARQL;
 	public final URI denotesUri;
 
-	RepositoryConnection con;
-	ValueFactory valueFactory;
+	protected RepositoryConnection con;
+	protected ValueFactory valueFactory;
 
 	public ServiceBase(String propertiesPrefix) throws Exception {
 		ConnectionFactory factory = new ConnectionFactory(propertiesPrefix);

@@ -41,7 +41,7 @@ public class ConnectionInstanceTest_Base {
  	public final static String bibo  = "http://purl.org/ontology/bibo/";
     public final static String ro    = "http://www.obofoundry.org/ro/ro.owl#";
     public final static String iao   = "http://purl.obolibrary.org/obo/";
-    public final static String chris = "http://com.croeder/chris/";
+    public final static String ccp   = "http://compbio.ucdenver.edu/ccp/";
     public final static String rdf   = "http://www.w3.org/1999/02/22-rdf-syntax-ns/";
     public final static String medline = "http://www.nlm.nih.gov/bsd/medline/";
     public final static String pubmed = "http://www.ncbi.nlm.nih.gov/pubmed/";
@@ -50,7 +50,7 @@ public class ConnectionInstanceTest_Base {
           "prefix bibo: <" + bibo  + ">\n"
         + "prefix ro: <" + ro    + ">\n"
         + "prefix iao: <" + iao   + ">\n"
-        + "prefix chris: <" + chris + ">\n"
+        + "prefix ccp: <" + ccp + ">\n"
         + "prefix rdf: <" + rdf   + ">\n";
 
 	QueryLanguage ql = QueryLanguage.SPARQL;
@@ -64,10 +64,10 @@ public class ConnectionInstanceTest_Base {
 	Logger logger = Logger.getLogger(ConnectionInstanceTest_Base.class);
 
 	public void insertData() throws Exception  {
-		URI uberBatchUri = valueFactory.createURI(chris, "pmid_batch_set");
+		URI uberBatchUri = valueFactory.createURI(ccp, "pmid_batch_set");
 		URI hasPartUri = valueFactory.createURI(ro, "has_part");
 		for (int i=0; i<num_batches; i++) {
-			URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + i);
+			URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + i);
 			Statement uberContainsStmt = new StatementImpl(uberBatchUri, hasPartUri, batchUri);
 			con.add(uberContainsStmt);
 
@@ -80,17 +80,17 @@ public class ConnectionInstanceTest_Base {
 	}
 
 	public void deleteData() throws Exception {
-        URI topUri = valueFactory.createURI(chris, "pmid_batch_set");
+        URI topUri = valueFactory.createURI(ccp, "pmid_batch_set");
         URI hasPartUri = valueFactory.createURI(ro, "has_part");
 		for (int i=0 ; i<num_batches; i++) {
-			URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + i);
+			URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + i);
         	Statement  topStmt = new StatementImpl(topUri, hasPartUri, batchUri);
         	//logger.info("TOP DELETE: " + topStmt.toString());
         	con.remove(topStmt);
 		}
 
         for (int i=0; i<num_batches; i++) {
-            URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + i);
+            URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + i);
 			for (int j=0; j<num_docs_per_batch; j++) {
 				URI medlineUri = valueFactory.createURI(medline, "TESTDOC_" + i + "_"  + j);
 				Statement containsStmt = new StatementImpl(batchUri, hasPartUri, medlineUri);
@@ -102,7 +102,7 @@ public class ConnectionInstanceTest_Base {
 	@Test
 	public void checkTop() throws Exception {
 		String queryTop = prefixes 	+ "select  ?pmid WHERE "
-									+ "{ chris:pmid_batch_set ?p ?batch .}";
+									+ "{ ccp:pmid_batch_set ?p ?batch .}";
 		//logger.info(queryTop);
 		TupleQuery tq = null;
 		TupleQueryResult result = null;
@@ -110,7 +110,7 @@ public class ConnectionInstanceTest_Base {
 			tq = con.prepareTupleQuery(ql, queryTop);
 			tq.setIncludeInferred(true);
 			for (int batch_number=0; batch_number < num_batches; batch_number++) {
-				URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + batch_number);
+				URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + batch_number);
 				URI hasPartUri = valueFactory.createURI(ro, "has_part");
 				//logger.info("querying... " + batch_number);
 				tq.setBinding("batch", batchUri);
@@ -127,7 +127,7 @@ public class ConnectionInstanceTest_Base {
 	@Test
 	public void query() throws Exception {
 		String queryTop = prefixes 	+ "select  ?batch ?pmid WHERE "
-									+ "{ chris:pmid_batch_set ?p ?batch .\n"
+									+ "{ ccp:pmid_batch_set ?p ?batch .\n"
 								   	+ "  ?batch ?p2 ?pmid}";
 		//logger.info(queryTop);
 		TupleQuery tq = null;
@@ -136,7 +136,7 @@ public class ConnectionInstanceTest_Base {
 			tq = con.prepareTupleQuery(ql, queryTop);
 			tq.setIncludeInferred(true);
 			for (int batch_number=0; batch_number < num_batches; batch_number++) {
-				URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + batch_number);
+				URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + batch_number);
 				URI hasPartUri = valueFactory.createURI(ro, "has_part");
 				//logger.info("querying... " + batch_number);
 				tq.setBinding("batch", batchUri);
