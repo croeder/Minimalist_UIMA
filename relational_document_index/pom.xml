@@ -37,29 +37,13 @@
 			<version>4.8.2</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.persistence</groupId>
-			<artifactId>persistence-api</artifactId>
-			<version>1.0.2</version>
-			<!--<scope>provided</scope> -->
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.7.Final</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>javax-persistence</artifactId>
-			<version>2.0.3</version>
-		</dependency>
-		-->
 	</dependencies>
 
-	<repositories>
-		<!-- this is where javax-persistence lives -->
-		<repository>
-			<url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
-			<id>eclipselink</id>
-			<name>Repository for library EclipseLink</name>
-			<layout>default</layout>
-		</repository>
-	</repositories>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -84,7 +68,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.croeder.relational_document_index.DbConnect</mainClass>
+                    <!--<mainClass>com.croeder.relational_document_index.DbConnect</mainClass> -->
+                    <mainClass>com.croeder.relational_document_index.DocumentAccess</mainClass>
                 </configuration>
             </plugin>
       		<plugin>
