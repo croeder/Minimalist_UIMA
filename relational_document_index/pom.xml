@@ -37,6 +37,11 @@
 			<version>4.8.2</version>
 		</dependency>
 		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.2.7.Final</version>
@@ -69,7 +74,7 @@
                 </executions>
                 <configuration>
                     <!--<mainClass>com.croeder.relational_document_index.DbConnect</mainClass> -->
-                    <mainClass>com.croeder.relational_document_index.DocumentAccess</mainClass>
+                    <mainClass>com.croeder.uima_sample.relational_document_index.PmcDocumentProvider</mainClass>
                 </configuration>
             </plugin>
       		<plugin>
