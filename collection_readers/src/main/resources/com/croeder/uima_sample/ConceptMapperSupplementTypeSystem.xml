@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>com.croeder.uima_sample.ConceptMapperSupplementTypeSystem</name>
+  <description>An additional type for use with ConceptMapper</description>
+  <version>3.0</version>
+  <vendor>XXX</vendor>
+  <imports>
+	<import name="analysis_engine.primitive.DictTerm"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.IdDictTerm</name>
+      <description>An extension of the ConceptMapper class to additionally hold the ID value.  </description>
+      <supertypeName>org.apache.uima.conceptMapper.DictTerm</supertypeName>
+      <features>
+        <featureDescription>
+          <name>id</name>
+          <description>holds the ontology ID of the term </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

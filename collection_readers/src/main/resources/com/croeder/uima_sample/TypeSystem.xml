@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>com.croeder.uima_sample.TypeSystem</name>
+  <description>A proto-type of a simplification of the CCP UIMA type sytem</description>
+  <version>3.0</version>
+  <vendor>XXX</vendor>
+  <types>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.Annotation</name>
+      <description>Annotations are relavant to the document.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>annotationID</name>
+          <description>(optional) The annotation ID provides a means for identifying a particular annotation.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>annotator</name>
+          <description>The annotator was responsible for generating this annotation.</description>
+          <rangeTypeName>com.croeder.uima_sample.annotation.Annotator</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.TextAnnotation</name>
+      <description>TextAnnotations annotate a specific span of the text.  </description>
+      <supertypeName>com.croeder.uima_sample.annotation.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>documentSectionID</name>
+          <description>(optional) The document section ID identifies the source document section.
+			See edu.uchsc.ccp.util.nlp.document.DocumentSectionTypes</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>annotationSets</name>
+          <description>(optional) Annotation Sets provide an arbitrary means of categorizing and clustering annotations into groups.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>com.croeder.uima_sample.annotation.AnnotationSet</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>spans</name>
+          <description>The Spans which comprise this annotation.
+				with multiple spans, the Annotation  begin and end fields are set to the beginning of the first span and the end of the final span, respectively.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>com.croeder.uima_sample.annotation.Span</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>classMention</name>
+          <description>The ClassMention indicates the type (or class) for this annotation.</description>
+          <rangeTypeName>com.croeder.uima_sample.mention.ClassMention</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.SentenceAnnotation</name>
+      <description>An annotation representing sentences in the CAS.
+      </description>
+      <supertypeName>com.croeder.uima_sample.annotation.TextAnnotation</supertypeName>
+      <features/>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.TokenAnnotation</name>
+      <description>An annotation representing tokens in the CAS.
+      </description>
+      <supertypeName>com.croeder.uima_sample.annotation.TextAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>tag</name>
+          <description>(optional) many systems, such as Part Of Speach (POS) taggers or 
+			Named Entity Recognizers (NER)  simply tag tokens instead of using a
+			Frame-based system such as our Class/Slot for more simple situations such
+			as those mentioned..
+          </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.Mention</name>
+      <description>The superclass for all  Mentions (class mention, complex slot mention, and non-complex slot mention)</description>
+      <supertypeName>uima.cas.TOP</supertypeName>
+      <features>
+        <featureDescription>
+          <name>mentionName</name>
+          <description>The name of this mention.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>mentionID</name>
+          <description>Q: What is a slot ID for ? </description>
+          <rangeTypeName>uima.cas.Long</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.SlotMention</name>
+      <description></description>
+      <supertypeName>com.croeder.uima_sample.mention.Mention</supertypeName>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.ClassMention</name>
+      <description>Q; Reconcile frame-based with simple attirbute name/value pairs.
+			The ClassMention is the root of a flexible class structure that can be used to store virtually any frame-based representation of a particular class. Common class mention types include, but are not limited to, such things as entities (protein, cell type, cell line, disease, tissue, etc.) and frames (interaction, transport, regulation, etc.).</description>
+      <supertypeName>com.croeder.uima_sample.mention.Mention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotMentions</name>
+          <description>A class mention optionally has slot mentions which represent attributes. 
+			Since they are not statically defined here, rather dynamically defined,
+			they might have been implemented as a hash table on ClassMention. Such a structure
+			is not avaiable here, so we go with a list of named attribute items and suffer
+			the cost at look-up time.
+XXX
+			These slot mentions are stored in the slotMentions FSArray. There are two types 
+			of slot mentions, complex and non-complex.  The difference between complex and non-complex slot mentions is simply the type of filler (or slot value) for each. Complex slot mentions are filled with a class mention, whereas non-complex slot mentions are filled by simple Strings.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>com.croeder.uima_sample.mention.SlotMention</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>ccpTextAnnotation</name>
+          <description>Just as TextAnnotations are linked to a ClassMention, it is sometimes useful to be able to follow a ClassMention back to its corresponding TextAnnotation.</description>
+          <rangeTypeName>com.croeder.uima_sample.annotation.TextAnnotation</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.ComplexSlotMention</name>
+      <description>A SlotMention whose value is a reference to another slot.
+		The name comes from the Frame knowledge representation world in Artificial Intelligence.
+	  	A slot mention is deemed "complex" when its slot filler is a class mention as 
+		opposed to a String. See non-complex slot mention for String fillers. 
+		An example of a complex slot mention is the "transported entity" slot for the protein-transport class 
+		which would be filled with a protein class mention.</description>
+      <supertypeName>com.croeder.uima_sample.mention.SlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>classMentions</name>
+          <description>The class mentions which are the slot fillers for this complex slot.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>com.croeder.uima_sample.mention.ClassMention</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.Span</name>
+      <description>Q: address the secondary nature of this class and how the span
+		values in the default UIMA annotation relate. Are they always populated? 
+		With what?
+		The span object holds span information. This is a supplement to the default 
+		UIMA annotation which cannot handle multi-span annotations.</description>
+      <supertypeName>uima.cas.TOP</supertypeName>
+      <features>
+        <featureDescription>
+          <name>spanStart</name>
+          <description>The character offset for the start of the span.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>spanEnd</name>
+          <description>The character offset for the end of the span.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.Annotator</name>
+      <description>The annotator object contains information which is used to determine who/what generated an annotation.</description>
+      <supertypeName>uima.cas.TOP</supertypeName>
+      <features>
+        <featureDescription>
+          <name>annotatorID</name>
+          <description>Q: address where/how the IDs are managed. What ensures their uniqueness? 
+			What defines the mapping? This Integer should be a unique ID for a particular annotator.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>firstName</name>
+          <description>(optional) The first name of the annotator. </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>lastName</name>
+          <description>(optional) The last name of the annotator. </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>affiliation</name>
+          <description>(optional) The affiliation of the annotator. </description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.annotation.AnnotationSet</name>
+      <description>The annotation set provides a means for arbitrarily categorizing or 
+		clustering groups of annotations. Annotations can be associated with multiple 
+		annotation groups. Examples of use include, defining Gold Standard annotation sets, 
+		and delineating between the use of different parameters during annotation, among 
+		others. Each annotation set is associated with a unique ID, a name and a description.
+		</description>
+      <supertypeName>uima.cas.TOP</supertypeName>
+      <features>
+        <featureDescription>
+          <name>annotationSetID</name>
+          <description>An integer uniquely identifying a particular annotation set.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>annotationSetName</name>
+          <description>The name of the annotation set.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>annotationSetDescription</name>
+          <description>A textual description of an annotation set.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.PrimitiveSlotMention</name>
+      <description>Q: why an array of values? 
+		Also called SimpleSlotMention. Subclasses hold arrays values, not
+		references. This is An abstract class for grouping all primitive-related (string,
+		float, boolean, integer) slot mentions.
+	  </description>
+      <supertypeName>com.croeder.uima_sample.mention.SlotMention</supertypeName>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.StringSlotMention</name>
+      <description/>
+      <supertypeName>com.croeder.uima_sample.mention.PrimitiveSlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotValues</name>
+          <description/>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.FloatSlotMention</name>
+      <description/>
+      <supertypeName>com.croeder.uima_sample.mention.PrimitiveSlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotValues</name>
+          <description/>
+          <rangeTypeName>uima.cas.FloatArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.DoubleSlotMention</name>
+      <description/>
+      <supertypeName>com.croeder.uima_sample.mention.PrimitiveSlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotValues</name>
+          <description/>
+          <rangeTypeName>uima.cas.DoubleArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.BooleanSlotMention</name>
+      <description/>
+      <supertypeName>com.croeder.uima_sample.mention.PrimitiveSlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotValue</name>
+          <description/>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+
+    <typeDescription>
+      <name>com.croeder.uima_sample.mention.IntegerSlotMention</name>
+      <description/>
+      <supertypeName>com.croeder.uima_sample.mention.PrimitiveSlotMention</supertypeName>
+      <features>
+        <featureDescription>
+          <name>slotValues</name>
+          <description/>
+          <rangeTypeName>uima.cas.IntegerArray</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
