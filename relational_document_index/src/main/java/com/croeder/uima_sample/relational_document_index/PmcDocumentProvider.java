@@ -22,16 +22,25 @@ public class PmcDocumentProvider implements DocumentProvider {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(
 			"com.croeder.relational_document_index");
 		em = emf.createEntityManager();
-	}	
-
-	public List<String> getIdRange(int batchStart, int batchEnd) {
-		em.getTransaction().begin(); // needed for query?
-		Query q = em.createQuery("SELECT pmid FROM Pmc x  WHERE seq >= :start AND seq < :end");
-		q.setParameter("start", batchStart).setParameter("end", batchEnd);
-		List<Integer> docIds =  (List<Integer>) q.getResultList();
-		List<String> strings = Lists.transform(docIds, Functions.toStringFunction());
-		return strings;	
 	}
+
+    public int getMaxBatchIndex() {
+        Query q = em.createQuery("SELECT max(id) FROM  PmcBatch ");
+        List<Integer> docIds =  (List<Integer>) q.getResultList();
+
+        return docIds.get(0);
+    }
+
+    public List<String> getIdRange(int batchNumber) {
+        //em.getTransaction().begin(); // needed for query?
+        Query q = em.createQuery("SELECT pmid FROM PmcBatch WHERE id = :id ");
+        q.setParameter("id", batchNumber);
+        List<Integer> docIds =  (List<Integer>) q.getResultList();
+        List<String> strings = Lists.transform(docIds, Functions.toStringFunction());
+        return strings;
+    }
+
+
 
 	public String getDocumentPath(String pmid) {
 		Query q = em.createQuery("SELECT x from Pmc x  WHERE :pmid = pmid");
@@ -50,7 +59,11 @@ public class PmcDocumentProvider implements DocumentProvider {
 
 	public static void main(String args[]) {
 		DocumentProvider da = new PmcDocumentProvider();
-		List<String> list = da.getIdRange(0,10);
+
+		int maxIndex = da.getMaxBatchIndex();
+		out.println("Max batch index is: " + maxIndex);
+
+		List<String> list = da.getIdRange(100);
 		for (String i : list) {
 			out.println("" + i);
 		}
@@ -58,5 +71,7 @@ public class PmcDocumentProvider implements DocumentProvider {
 		String path = da.getDocumentPath(list.get(0));
 		out.println(path);
 	}
+
+
 
 }

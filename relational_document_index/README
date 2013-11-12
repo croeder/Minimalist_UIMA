@@ -1,3 +1,7 @@
 http://www.mastertheboss.com/maven-hibernate-jpa/maven-and-hibernate-4-tutorial
 http://stackoverflow.com/questions/8162054/hibernate-overriding-hibernate-default-schema-property-in-persistence-xml
 
+This project implements the data requirements for a collection reader on the large document collections. The medline data comes from NIH and is loaded by a project called medic:https://github.com/fnl/medic
+
+
+tables describing batches on each collection are created by scripts in src/main/sql and used with Hibernate

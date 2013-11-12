@@ -10,9 +10,13 @@ public class StubDocumentProvider implements DocumentProvider {
 
 	public StubDocumentProvider() { }	
 
-	public List<String> getIdRange(int batchStart, int batchEnd) {
+	public int getMaxBatchIndex() {
+		return 1000;
+	}
+
+	public List<String> getIdRange(int batchNumber) {
 		List<String> strings =  new ArrayList<>();
-		for (int i=batchStart; i<batchEnd; i++) {
+		for (int i=batchNumber * 1000; i<batchNumber * 1000 + 1000; i++) {
 			strings.add("" + i);
 		}
 		return strings;	
@@ -22,10 +26,14 @@ public class StubDocumentProvider implements DocumentProvider {
 		return pmid;
 	}
 
+	public String getDocumentText(String pmid) {
+		return "" + pmid;
+	}
+
 
 	public static void main(String args[]) {
         DocumentProvider da = new StubDocumentProvider();
-        List<String> list = da.getIdRange(0,10);
+        List<String> list = da.getIdRange(100);
         for (String i : list) {
             out.println("" + i);
         }

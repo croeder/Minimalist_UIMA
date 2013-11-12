@@ -7,6 +7,9 @@
 	
 	<persistence-unit name="com.croeder.relational_document_index">
 		<class>com.croeder.relational_document_index.orm.Pmc</class>
+		<class>com.croeder.relational_document_index.orm.PmcBatch</class>
+		<class>com.croeder.relational_document_index.orm.Medline</class>
+		<class>com.croeder.relational_document_index.orm.MedlineBatch</class>
 		<!--<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
 		<!--<provider>"http://java.sun.com/xml/ns/persistence":class</provider>-->
 		<!--<provider>http://java.sun.com/xml/ns/persistence</provider>-->

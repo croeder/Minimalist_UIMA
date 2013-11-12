@@ -2,7 +2,7 @@ package com.croeder.uima_sample.relational_document_index;
 
 import static java.lang.System.out;
 
-import com.croeder.relational_document_index.orm.Section;
+import com.croeder.relational_document_index.orm.Medline;
 
 import javax.persistence.Persistence;
 import javax.persistence.EntityManagerFactory;
@@ -24,37 +24,53 @@ public class MedlineDocumentProvider implements DocumentProvider {
 		em = emf.createEntityManager();
 	}	
 
-	public List<String> getIdRange(int batchStart, int batchEnd) {
-		em.getTransaction().begin(); // needed for query?
-		Query q = em.createQuery("SELECT content FROM Section x  WHERE name = 'Abstract' ");
-		q.setParameter("start", batchStart).setParameter("end", batchEnd);
+	public int getMaxBatchIndex() {	
+		Query q = em.createQuery("SELECT max(id) FROM  MedlineBatch ");
+		List<Integer> docIds =  (List<Integer>) q.getResultList();
+
+		return docIds.get(0);
+	}
+
+	public List<String> getIdRange(int batchNumber) {
+		Query q = em.createQuery("SELECT pmid FROM MedlineBatch WHERE id = :id ");
+		q.setParameter("id", batchNumber);
 		List<Integer> docIds =  (List<Integer>) q.getResultList();
 		List<String> strings = Lists.transform(docIds, Functions.toStringFunction());
 		return strings;	
 	}
 
-	// returns a string to be fed to getDocumentText, the id in this case
 	public String getDocumentPath(String pmid) {
 		return pmid;
 	}
 
 	public String getDocumentText(String pmid) {
-		em.getTransaction().begin(); // needed for query?
-		Query q = em.createQuery("SELECT content FROM Section x  WHERE pmid = :pmid and name = 'Abstract'");
-		q.setParameter("pmid", pmid);
-		List<String> textList = (List<String>) q.getResultList();
-		return textList.get(0);
+		String text=null;
+		try {
+			Integer pmidInt = Integer.parseInt(pmid);
+			Query q = em.createQuery("SELECT content FROM Medline x  WHERE pmid = :pmid and name = 'Abstract'");
+			q.setParameter("pmid", pmidInt);
+			List<String> textList = (List<String>) q.getResultList();
+			text = textList.get(0);
+		}
+		catch (Exception e) {
+			System.out.println("error getting text for pmid=" + pmid);
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		return text;
 	}
 
 	public static void main(String args[]) {
 		DocumentProvider da = new MedlineDocumentProvider();
-		List<String> list = da.getIdRange(0,10);
-		for (String i : list) {
-			out.println("" + i);
-		}
 
-		String path = da.getDocumentPath(list.get(0));
-		out.println(path);
+		int maxIndex = da.getMaxBatchIndex();
+		out.println("Max batch index is: " + maxIndex);
+
+		List<String> list = da.getIdRange(100);
+		for (String i : list) {
+			out.println("pmid:" + i);
+			out.println(da.getDocumentText(i));
+		}
 	}
 
 }

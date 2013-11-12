@@ -21,8 +21,8 @@ Indexes:
 ***/
 
 @Entity
-@Table(name="content")
-public class Content {
+@Table(name="sections")
+public class Medline {
 
 	@Basic
 	int pmid;
@@ -46,11 +46,11 @@ public class Content {
 
 	@Basic
 	String content;	
-	public String getContent() { return content; }
+	public String getContentt() { return content; }
 	public void setContent(String content) { this.content = content; }
 	
 
-	public Content() {
+	public Medline() {
 		super();
 		this.pmid=0;
 		this.seq=0;
@@ -59,7 +59,7 @@ public class Content {
 		this.content="";
 	}
 
-	public Content(int pmid, int seq, String name, String label, String content) {
+	public Medline(int pmid, int seq, String name, String label, String content) {
 		super();
 		this.pmid=pmid;
 		this.seq=seq;

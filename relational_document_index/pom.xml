@@ -74,7 +74,8 @@
                 </executions>
                 <configuration>
                     <!--<mainClass>com.croeder.relational_document_index.DbConnect</mainClass> -->
-                    <mainClass>com.croeder.uima_sample.relational_document_index.PmcDocumentProvider</mainClass>
+                    <!--<mainClass>com.croeder.uima_sample.relational_document_index.PmcDocumentProvider</mainClass>-->
+                    <mainClass>com.croeder.uima_sample.relational_document_index.MedlineDocumentProvider</mainClass>
                 </configuration>
             </plugin>
       		<plugin>

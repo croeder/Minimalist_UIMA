@@ -1,8 +1,10 @@
 package com.croeder.uima_sample.relational_document_index;
 
+
 import static java.lang.System.out;
 
 import java.sql.*;
+
 
 public class DbConnect {
 
