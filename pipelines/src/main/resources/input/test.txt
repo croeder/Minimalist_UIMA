@@ -1,0 +1,6 @@
+This is a simple file with sample protein mentions in it:
+XYZ-23, Y-1, P-53.
+The idea of a protein mention is over-simplified for the
+sake of an example. They are simply some number of upper
+case characters followed by a dash and some number of
+digits: ABC-123. 
