@@ -55,7 +55,7 @@ import org.uimafit.component.xwriter.XWriter;
 
 import uima.tt.TokenAnnotation;
 
-import com.croeder.uima_sample.analysis_engines.LingPipeSentenceDetector_AE;
+//import com.croeder.uima_sample.analysis_engines.LingPipeSentenceDetector_AE;
 import com.croeder.uima_sample.analysis_engines.Debug_AE;
 
 import org.xml.sax.SAXException;

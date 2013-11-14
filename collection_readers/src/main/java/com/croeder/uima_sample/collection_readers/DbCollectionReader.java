@@ -61,10 +61,10 @@ public class DbCollectionReader extends JCasCollectionReader_ImplBase {
 
 	@Override
 	public void getNext(JCas jcas) {
-		current++;
 		String path = dp.getDocumentPath(idList.get(current));
 		String text = dp.getDocumentText(path);
 		jcas.setDocumentText(text);	
+		current++;
 
 		/*
 		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);

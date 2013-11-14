@@ -70,9 +70,6 @@ public class BaseUimaFitPipeline  {
         );
 
 		aeDescList = new ArrayList<AnalysisEngineDescription>();
-
-		aeDescList.add( AnalysisEngineFactory.createPrimitiveDescription(
-			RoomNumberAnnotator.class));
     }
 
 

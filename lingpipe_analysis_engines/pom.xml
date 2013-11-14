@@ -8,6 +8,12 @@
 	<artifactId>uima_sample_analysis_engines</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>com.croeder</groupId>
+        <artifactId>uima_nlp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jcasgen.typesystem>com/croeder/uima_sample/TypeSystem.xml</jcasgen.typesystem>
@@ -62,44 +68,6 @@
             <groupId>com.aliasi</groupId>
             <artifactId>lingpipe</artifactId>
             <version>3.9.3</version>
-        </dependency>
-<!-- ====================      
-
-		<dependency>
-            <groupId>edu.ucdenver.ccp</groupId>
-            <artifactId>common</artifactId>
-            <version>1.4-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-            <groupId>edu.ucdenver.ccp</groupId>
-            <artifactId>ccp-nlp-ext-uima-annotators-sentencedetectors</artifactId>
-            <version>3.3-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-            <groupId>edu.ucdenver.ccp</groupId>
-            <artifactId>ccp-nlp-uima</artifactId>
-            <version>3.3-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-            <groupId>edu.ucdenver.ccp</groupId>
-            <artifactId>ccp-nlp-ext-uima-syntax</artifactId>
-            <version>3.0-SNAPSHOT</version>
-        </dependency>
-      -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.2</version>
-        </dependency>
- 		<dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.uima</groupId>
-            <artifactId>ConceptMapper</artifactId>
-            <version>2.3.1</version>
         </dependency>
 	</dependencies>
 

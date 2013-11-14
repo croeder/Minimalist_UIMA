@@ -95,10 +95,15 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 	
 				if (textAnnot instanceof TextAnnotation) {
 					Annotator annotator = textAnnot.getAnnotator();
-					System.out.println("Annotator:"
+					if (annotator != null) {
+						System.out.println("Annotator:"
 						+ " First Name: " + annotator.getFirstName()
 						+ " Last Name: " + annotator.getLastName()
 						+ " Affiliation: " + annotator.getAffiliation());
+					}
+					else {
+						System.out.println(" NO ANNOTATOR " ); // TODO logger
+					}
 				}
 	
 				// SENTENCE

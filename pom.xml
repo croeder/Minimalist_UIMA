@@ -8,12 +8,30 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>collection_readers</module>
+		<module>type_system</module>
+		<module>util</module>
 		<module>analysis_engines</module>
+		<module>collection_readers</module>
 		<module>pipelines</module>
 		<module>relational_document_index</module>
-		<module>util</module>
-		<!--<module>type_systems</module>-->
 	</modules>
-</project>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<ver.sesame>2.6.8</ver.sesame> <!-- AG is using 2.6.8 -->
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+	</dependencies>
+
+</project>

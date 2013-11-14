@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.croeder</groupId>
-	<artifactId>uima_sample_pipelines</artifactId>
+	<artifactId>uima_nlp_type_system</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -14,6 +14,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jcasgen.typesystem>com/croeder/uima_sample/TypeSystem.xml</jcasgen.typesystem>
     </properties>
 
 	<developers>
@@ -24,8 +25,12 @@
 		</developer>
 	</developers>
 
-
 	<dependencies>
+		<dependency>
+            <groupId>com.croeder</groupId>
+            <artifactId>relational_document_index</artifactId>
+            <version>0.1-SNAPSHOT</version>
+		</dependency>
   		<dependency>
             <groupId>org.apache.uima</groupId>
             <artifactId>uimaj-core</artifactId>
@@ -35,48 +40,6 @@
             <groupId>org.uimafit</groupId>
             <artifactId>uimafit</artifactId>
             <version>1.4.0</version>
-        </dependency>
-		<dependency>
-            <groupId>org.cleartk</groupId>
-            <artifactId>cleartk-release</artifactId>
-            <version>1.3.0</version>
-			<type>pom</type>
-			<scope>import</scope>
-        </dependency>
-		<dependency>
-            <groupId>org.cleartk</groupId>
-            <artifactId>cleartk-type-system</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-		<dependency>
-            <groupId>org.cleartk</groupId>
-            <artifactId>cleartk-opennlp-tools</artifactId>
-            <version>0.10.2</version>
-        </dependency>
-		<dependency>
-    		<groupId>com.croeder</groupId>
-    		<artifactId>uima_sample_analysis_engines</artifactId>
-    		<version>1.0-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-    		<groupId>com.croeder</groupId>
-    		<artifactId>uima_sample_collection_readers</artifactId>
-    		<version>1.0-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-    		<groupId>com.croeder</groupId>
-    		<artifactId>util</artifactId>
-    		<version>0.1-SNAPSHOT</version>
-        </dependency>
-		<dependency>
-    		<groupId>com.croeder</groupId>
-    		<artifactId>relational_document_index</artifactId>
-    		<version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.uima</groupId>
-            <artifactId>ConceptMapper</artifactId>
-            <version>2.3.1</version>
         </dependency>
 	</dependencies>
 
@@ -102,7 +65,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-	<!--
+
 			<plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
@@ -118,8 +81,7 @@
                             <configuration>
                                 <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
                                 <arguments>
-                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.typesystem}
-                                    </argument>
+                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.typesystem} </argument>
                                     <argument>${project.build.directory}/generated-sources/jcasgen</argument>
                                 </arguments>
                             </configuration>
@@ -127,9 +89,8 @@
 
                     </executions>
             </plugin>
-	-->
-  			<plugin><!-- This plugin adds the jcasgen generated source code folder
-                        as a project source folder -->
+
+  			<plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>1.5</version>

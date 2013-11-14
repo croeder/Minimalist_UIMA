@@ -8,9 +8,14 @@
 	<artifactId>uima_sample_analysis_engines</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>com.croeder</groupId>
+        <artifactId>uima_nlp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jcasgen.typesystem>com/croeder/uima_sample/TypeSystem.xml</jcasgen.typesystem>
         <jcasgen.conceptmapper.typesystem>com/croeder/uima_sample/ConceptMapperSupplementTypeSystem.xml</jcasgen.conceptmapper.typesystem>
     </properties>
 
@@ -31,6 +36,11 @@
     </distributionManagement>
 
 	<dependencies>
+  		<dependency>
+            <groupId>com.croeder</groupId>
+            <artifactId>uima_nlp_type_system</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
   		<dependency>
             <groupId>org.apache.uima</groupId>
             <artifactId>uimaj-core</artifactId>
@@ -57,16 +67,6 @@
             <groupId>org.cleartk</groupId>
             <artifactId>cleartk-opennlp-tools</artifactId>
             <version>0.10.2</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.2</version>
-        </dependency>
- 		<dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.12</version>
         </dependency>
         <dependency>
             <groupId>org.apache.uima</groupId>
@@ -152,30 +152,11 @@
                             <configuration>
                                 <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
                                 <arguments>
-                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.typesystem} </argument>
-                                    <argument>${project.build.directory}/generated-sources/jcasgen</argument>
+                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.conceptmapper.typesystem}</argument>
+									<argument>${project.build.directory}/generated-sources/jcasgen</argument>
                                 </arguments>
                             </configuration>
                         </execution>
-                        <execution>
-                            <id>run-jcasgen-2</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>java</goal>
-                            </goals>
-                            <configuration>
-                                <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
-                                <arguments>
-                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.conceptmapper.typesystem} </argument>
-                                    <argument>${project.build.directory}/generated-sources/jcasgen</argument>
-                                </arguments>
-                            </configuration>
-                        </execution>
-
-                        <!-- <execution> <id>export-descriptor-xml</id> <phase>prepare-package</phase>
-                            <goals> <goal>java</goal> </goals> <configuration> <mainClass>edu.ucdenver.ccp.nlp.core.uima.build.XmlDescriptorWriter</mainClass>
-                            <arguments> <argument>${project.basedir}/src/main/java</argument> <argument>${project.build.directory}/uima-descriptors</argument>
-                            <argument>${project.version}</argument> </arguments> </configuration> </execution> -->
 
                     </executions>
             </plugin>

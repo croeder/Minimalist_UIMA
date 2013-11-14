@@ -32,7 +32,6 @@ public class PmcDocumentProvider implements DocumentProvider {
     }
 
     public List<String> getIdRange(int batchNumber) {
-        //em.getTransaction().begin(); // needed for query?
         Query q = em.createQuery("SELECT pmid FROM PmcBatch WHERE id = :id ");
         q.setParameter("id", batchNumber);
         List<Integer> docIds =  (List<Integer>) q.getResultList();
@@ -41,12 +40,10 @@ public class PmcDocumentProvider implements DocumentProvider {
     }
 
 
-
 	public String getDocumentPath(String pmid) {
 		Query q = em.createQuery("SELECT x from Pmc x  WHERE :pmid = pmid");
 		int pmidInt = Integer.valueOf(pmid);
 		q.setParameter("pmid", pmidInt);
-		///q.setParameter("pmid", pmid);
 		Pmc doc =  (Pmc) q.getSingleResult();
 		return doc.getPath();
 	}

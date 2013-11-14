@@ -50,7 +50,7 @@ import org.uimafit.component.xwriter.XWriter;
 
 import uima.tt.TokenAnnotation;
 
-import com.croeder.uima_sample.analysis_engines.LingPipeSentenceDetector_AE;
+//import com.croeder.uima_sample.lingpipe_analysis_engines.LingPipeSentenceDetector_AE;
 import com.croeder.uima_sample.analysis_engines.Debug_AE;
 
 import org.xml.sax.SAXException;
@@ -63,13 +63,13 @@ public class ConceptMapperPipeline extends Pipeline  {
 
 	ConceptMapperPipeline(File dir) throws UIMAException, IOException {
 		super(dir, new JCasExtractor());
-
+/***
         // SENTENCE DETECTOR 
         AnalysisEngineDescription sentenceDetectorDesc
            = LingPipeSentenceDetector_AE.createAnalysisEngineDescription(tsd);
 		//engines.add(UIMAFramework.produceAnalysisEngine(sentenceDetectorDesc));
 		engineDescs.add(sentenceDetectorDesc);
-
+***/
 
 		// TOKENIZER from xml files ** THE PATH MUST BE A FILE SYSTEM PATH **
 		Object[] config = new Object[0];
