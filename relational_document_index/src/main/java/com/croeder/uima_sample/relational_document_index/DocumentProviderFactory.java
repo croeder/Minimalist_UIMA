@@ -1,9 +1,10 @@
 package com.croeder.uima_sample.relational_document_index;
 
-
+import org.apache.log4j.Logger;
 
 
 public class DocumentProviderFactory {
+	static Logger logger = Logger.getLogger(DocumentProviderFactory.class);
 
 	public static DocumentProvider getDocumentProvider(DocumentProviderType dpt) {
 		DocumentProvider provider=null;
@@ -17,6 +18,10 @@ public class DocumentProviderFactory {
 			case Elsevier:
 				break;
 			case Medline:
+				provider = new MedlineDocumentProvider();
+				break;
+			default:
+				logger.error("unrecognized provider type:" + dpt + " returning null");
 				break;
 		}
 		return provider;
