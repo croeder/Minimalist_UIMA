@@ -1,4 +1,4 @@
-package com.croeder.uima_sample;
+package edu.ucdenver.ccp.nlp.pipelines;
 
 
 import java.util.Arrays;

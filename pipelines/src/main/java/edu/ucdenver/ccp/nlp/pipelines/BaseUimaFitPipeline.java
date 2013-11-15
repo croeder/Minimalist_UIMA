@@ -1,6 +1,6 @@
 
+package edu.ucdenver.ccp.nlp.pipelines;
 
-package com.croeder.uima_sample;;
 
 
 

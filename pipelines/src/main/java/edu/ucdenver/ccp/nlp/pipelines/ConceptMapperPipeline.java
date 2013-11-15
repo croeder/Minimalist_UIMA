@@ -1,5 +1,4 @@
-// Copyright 2012, Chris Roeder 
-package com.croeder.uima_sample;
+package edu.ucdenver.ccp.nlp.pipelines;
 
 
 import java.io.IOException;
@@ -50,8 +49,7 @@ import org.uimafit.component.xwriter.XWriter;
 
 import uima.tt.TokenAnnotation;
 
-//import com.croeder.uima_sample.lingpipe_analysis_engines.LingPipeSentenceDetector_AE;
-import com.croeder.uima_sample.analysis_engines.Debug_AE;
+import edu.ucdenver.ccp.nlp.ae.Debug_AE;
 
 import org.xml.sax.SAXException;
 

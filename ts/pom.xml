@@ -22,17 +22,12 @@
 	<developers>
 		<developer>
 			<id>chris.roeder</id>
-			<email>croeder@croeder.com</email>
+			<email>Chris.Roeder@UCDenver.edu</email>
 			<name>Chris Roeder</name>
 		</developer>
 	</developers>
 
 	<dependencies>
-		<dependency>
-            <groupId>com.croeder</groupId>
-            <artifactId>relational_document_index</artifactId>
-            <version>0.1-SNAPSHOT</version>
-		</dependency>
   		<dependency>
             <groupId>org.apache.uima</groupId>
             <artifactId>uimaj-core</artifactId>

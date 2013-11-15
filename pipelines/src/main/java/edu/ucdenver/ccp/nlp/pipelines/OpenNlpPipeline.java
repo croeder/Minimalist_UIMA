@@ -1,4 +1,4 @@
-package com.croeder.uima_sample;
+package edu.ucdenver.ccp.nlp.pipelines;
 
 
 import java.io.IOException;
@@ -34,11 +34,11 @@ import opennlp.uima.sentdetect.SentenceModelResourceImpl;
 import opennlp.uima.tokenize.Tokenizer;
 import opennlp.uima.tokenize.TokenizerModelResourceImpl;
 
-import com.croeder.uima_sample.annotation.SentenceAnnotation;
-import com.croeder.uima_sample.annotation.TokenAnnotation;
-import com.croeder.uima_sample.analysis_engines.Debug_AE;
-import com.croeder.uima_sample.collection_readers.DbCollectionReader;
-import com.croeder.uima_sample.relational_document_index.DocumentProviderType;
+import edu.ucdenver.ccp.nlp.ts.SentenceAnnotation;
+import edu.ucdenver.ccp.nlp.ts.TokenAnnotation;
+import edu.ucdenver.ccp.nlp.ae.Debug_AE;
+import edu.ucdenver.ccp.nlp.cr.DbCollectionReader;
+import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 
 /**
  * a third pipeline interation. This one uses OpenNLP for a sentence detector
@@ -51,7 +51,7 @@ public class OpenNlpPipeline  {
 	protected static final String[] typeSystemStrs = {
 		"org.apache.uima.examples.SourceDocumentInformation",
 		"descriptors.TutorialTypeSystem",
-		"com.croeder.uima_sample.TypeSystem"
+		"edu.ucdenver.edu.nlp.ts.TypeSystem"
 	};
 
 

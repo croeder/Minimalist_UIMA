@@ -1,4 +1,4 @@
-package com.croeder.uima_sample;
+package edu.ucdenver.ccp.nlp.pipelines;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,22 +31,23 @@ import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.cas.text.AnnotationIndex;
 
-import com.croeder.uima_sample.annotation.IdDictTerm;
 
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.descriptor.SofaCapability;
 
 
-import com.croeder.uima_sample.annotation.SentenceAnnotation;
-import com.croeder.uima_sample.annotation.TextAnnotation;
+import edu.ucdenver.ccp.nlp.ts.IdDictTerm;
 import org.apache.uima.conceptMapper.support.tokenizer.TokenAnnotation;
-import com.croeder.uima_sample.annotation.Annotator;
-import com.croeder.uima_sample.mention.ClassMention;
-import com.croeder.uima_sample.mention_extensions.ClassMentionX;
-import com.croeder.uima_sample.mention.IntegerSlotMention;
-import com.croeder.uima_sample.mention.StringSlotMention;
-import com.croeder.uima_sample.mention.PrimitiveSlotMention;
-import com.croeder.uima_sample.mention.ComplexSlotMention;
+
+import edu.ucdenver.ccp.nlp.ts.SentenceAnnotation;
+import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
+import edu.ucdenver.ccp.nlp.ts.Annotator;
+import edu.ucdenver.ccp.nlp.ts.ClassMention;
+import edu.ucdenver.ccp.nlp.tsx.ClassMentionX;
+import edu.ucdenver.ccp.nlp.ts.IntegerSlotMention;
+import edu.ucdenver.ccp.nlp.ts.StringSlotMention;
+import edu.ucdenver.ccp.nlp.ts.PrimitiveSlotMention;
+import edu.ucdenver.ccp.nlp.ts.ComplexSlotMention;
 
 
 /**
