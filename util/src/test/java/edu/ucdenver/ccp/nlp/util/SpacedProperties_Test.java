@@ -27,7 +27,7 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.croeder.util;
+package edu.ucdenver.ccp.nlp.util;
 
 import static org.junit.Assert.assertEquals;
 
@@ -47,7 +47,7 @@ public class SpacedProperties_Test {
 	@Before
 	public void setup() { 
 		BasicConfigurator.configure();
-		sProps = new SpacedProperties(new File("target/classes/connection.properties"), "conn.ag");
+		sProps = new SpacedProperties("/connection.properties", "conn.ag");
 	}
 
 	@Test

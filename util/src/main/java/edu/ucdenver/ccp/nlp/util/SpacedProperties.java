@@ -27,7 +27,7 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.croeder.util;
+package edu.ucdenver.ccp.nlp.util;
 
 import java.util.Properties;
 
@@ -49,7 +49,7 @@ public class SpacedProperties {
 	private Properties props;
 	String namespace;	
 
-	public SpacedProperties(File propertiesFile, String namespace) {
+	public SpacedProperties(String propertiesFile, String namespace) {
 		props = new Properties();
 		this.namespace = namespace;
 		readProperties(propertiesFile);
@@ -62,10 +62,11 @@ public class SpacedProperties {
 		return (String)  props.get(x);
 	}
 	
-	private void readProperties(File propertiesFile) {
+	private void readProperties(String propertiesFile) {
         try {
             // TODO: do stream from classpath
-            InputStream propsStream = new FileInputStream(propertiesFile);
+            //InputStream propsStream = new FileInputStream(propertiesFile);
+            InputStream propsStream = this.getClass().getResourceAsStream(propertiesFile);
             props = new Properties();
             props.load(propsStream);
 			//dumpProperties();
