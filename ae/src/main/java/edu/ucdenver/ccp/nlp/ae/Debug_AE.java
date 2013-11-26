@@ -56,8 +56,10 @@ import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.cas.text.AnnotationIndex;
+import org.apache.uima.examples.SourceDocumentInformation;
 
 import edu.ucdenver.ccp.nlp.ts.IdDictTerm;
+import edu.ucdenver.ccp.nlp.ts.Protein;
 
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.descriptor.SofaCapability;
@@ -97,14 +99,16 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
     @Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 
-        //AnnotationIndex index = jcas.getAnnotationIndex(TextAnnotation.type);
-        //FSIterator<Annotation> annotIter = index.iterator();
         FSIterator<Annotation> annotIter = jcas.getJFSIndexRepository().getAnnotationIndex().iterator();
         while (annotIter.hasNext()) {
 
 	        Annotation annot = (Annotation) annotIter.next();
 			if (annot instanceof TokenAnnotation) {
 				System.out.println("SEMANTIC token: " + annot.getBegin() + ", " + annot.getEnd() + " \"" + annot.getCoveredText() + "\"");
+			}
+			if (annot instanceof SourceDocumentInformation) {
+				SourceDocumentInformation sdi = (SourceDocumentInformation) annot;
+				System.out.println("Source doc. \"" + sdi.getUri() + "\"");
 			}
 			if (annot instanceof IdDictTerm) {
 				IdDictTerm dt = (IdDictTerm) annot;
@@ -114,6 +118,10 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 					+ " covered:  \"" + annot.getCoveredText() + "\""
 					+ " matched: \"" + dt.getMatchedText() + "\"" 
 					+ " id: \"" + dt.getId() + "\"");
+			}
+			else if (annot instanceof Protein) {
+				Protein proteinAnnot = (Protein) annot;
+				System.out.println("PROTEIN annotation:" + proteinAnnot.getPrefix() + ", " + proteinAnnot.getSuffix());
 			}
 			else if (annot instanceof TextAnnotation) {
 	

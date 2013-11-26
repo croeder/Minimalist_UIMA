@@ -79,8 +79,8 @@ public class KnowtatorPipeline extends BaseUimaFitPipeline  {
 
 		aeDescList.add(
  			AnalysisEngineFactory.createPrimitiveDescription(Protein_AE.class));
-		aeDescList.add(
- 			AnalysisEngineFactory.createPrimitiveDescription(Knowtator_AE.class));
+		//aeDescList.add(
+ 			//AnalysisEngineFactory.createPrimitiveDescription(Knowtator_AE.class));
 		aeDescList.add(
  			AnalysisEngineFactory.createPrimitiveDescription(Debug_AE.class));
     }
