@@ -70,14 +70,16 @@
 			<artifactId>dtd</artifactId>
 			<version>3.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/target/classes/pmc-dtd-3.0.jar</systemPath>
+			<!--<systemPath>${basedir}/target/classes/pmc-dtd-3.0.jar</systemPath>-->
+			<systemPath>${basedir}/src/main/resources/pmc-dtd-3.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>pmc</groupId>
 			<artifactId>dtd</artifactId>
 			<version>2.3</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/target/classes/pmc-dtd-2.3.jar</systemPath>
+			<!--<systemPath>${basedir}/target/classes/pmc-dtd-2.3.jar</systemPath>-->
+			<systemPath>${basedir}/src/main/resources/pmc-dtd-2.3.jar</systemPath>
 		</dependency>
 	</dependencies>
 
