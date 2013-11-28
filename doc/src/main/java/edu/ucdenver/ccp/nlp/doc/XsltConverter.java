@@ -166,7 +166,13 @@ public class XsltConverter {
 					Result result = new StreamResult(sw);
 
 					// transform
-					trans.transform(xmlSaxSource, result);
+					try {
+						trans.transform(xmlSaxSource, result);
+					}
+					catch (Exception e) {
+						logger.error("error transforming " + xmlSaxSource);
+						throw new RuntimeException(e);
+					}
 					retval = sw.toString();
 					sw.close();
 				

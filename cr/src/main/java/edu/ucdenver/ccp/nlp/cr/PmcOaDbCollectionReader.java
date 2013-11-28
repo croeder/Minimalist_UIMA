@@ -78,7 +78,7 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 		String xmlText2 = xslt.convert(xmlText, xsltFilename);
 
 		// convert CCP XML to plain text
-		String docId = "XXXXXX fis this !!";
+		String docId = "TODO XXXXXX fix this !!";
 		List<CcpXmlParser.Annotation> annotations = null;
 		String plainText = null;
 		try {
@@ -92,7 +92,7 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 		// convert annotations
 
 
-		// set
+		// set text
 		jcas.setDocumentText(plainText);	
 		current++;
 
