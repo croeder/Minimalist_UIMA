@@ -48,76 +48,61 @@ import org.uimafit.factory.ConfigurationParameterFactory;
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderFactory;
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
+import edu.ucdenver.ccp.nlp.doc.XsltConverter;
+import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
 
 import org.apache.log4j.Logger;
 
-public class DbCollectionReader extends JCasCollectionReader_ImplBase {
-
-	static Logger logger = Logger.getLogger(DbCollectionReader.class);
-
-	public static final String PARAM_BATCH_NUMBER 
-		= ConfigurationParameterFactory.createConfigurationParameterName(
-			DbCollectionReader.class, "batchNumber");
-	@ConfigurationParameter(mandatory=true, description="number of batch of 1000 articles out of those available.")
-	int batchNumber;
-
-	public static final String PARAM_COLLECTION_TYPE
-		= ConfigurationParameterFactory.createConfigurationParameterName(
-			DbCollectionReader.class, "collectionTypeString");
-	@ConfigurationParameter(mandatory=true, description="name of the collection to use. see DocumentProviderType.")
-	String collectionTypeString;
-
-	int end=1000; // TODO, this constant is EVEYRWHERE
-	int current=0;
-	List<String> idList;
-	DocumentProvider dp ;
+import org.xml.sax.SAXException;
 
 
-	@Override
-	public void initialize(UimaContext context) 
-	throws ResourceInitializationException {
-		try {
-			DocumentProviderType collectionType = DocumentProviderType.valueOf(collectionTypeString);
-			dp = DocumentProviderFactory.getDocumentProvider(collectionType);
-			if (dp == null) {
-				logger.error("WTFW????????????????" + collectionType);
-			}
-			idList = dp.getIdRange(batchNumber);
-		}
-		catch (Exception e ) {
-			logger.error(e);
-			e.printStackTrace();
-			throw new ResourceInitializationException(e);
-		}
-	}
+/**
+ * Pubmed Central Open Access Db Collection Reader
+ **/
+public class PmcOaDbCollectionReader extends DbCollectionReader {
+
+	static Logger logger = Logger.getLogger(PmcOaDbCollectionReader.class);
+
+	static final String xsltFilename = "/PmcOpenAccess.xsl";
+	
 
 	@Override
 	public void getNext(JCas jcas) 
 	throws IOException, CollectionException {
+		// get text
 		String path = dp.getDocumentPath(idList.get(current));
-		String text = dp.getDocumentText(path);
-		jcas.setDocumentText(text);	
+		String xmlText = dp.getDocumentText(path);
+
+		// convert PMC XML to simple CCP XML
+		XsltConverter xslt = new XsltConverter();
+		String xmlText2 = xslt.convert(xmlText, xsltFilename);
+
+		// convert CCP XML to plain text
+		String docId = "XXXXXX fis this !!";
+		List<CcpXmlParser.Annotation> annotations = null;
+		String plainText = null;
+		try {
+			CcpXmlParser parser = new CcpXmlParser();
+			plainText = parser.parse(xmlText2, docId);
+			annotations = parser.getAnnotations();
+		} catch (SAXException e) {
+			throw new CollectionException(e);
+		}
+
+		// convert annotations
+
+
+		// set
+		jcas.setDocumentText(plainText);	
 		current++;
 
-		/*
+		// set SDI
+		/**
 		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
 		srcDocInfo.setUri(path);
 		srcDocInfo.setDocumentSize(text.length);
 		srcDocInfo.addToIndexes();
-		*/
+		**/
 	}
 
-	@Override
-	public boolean hasNext() {
-		return current < end;
-	}	
-
-	@Override
-	public Progress[] getProgress() {
-		int completed=0;
-		int total=0;
-		Progress[] progArray = new Progress[1];
-		progArray[0] = new ProgressImpl(completed, total, "article");
-		return progArray;
-	}
 }

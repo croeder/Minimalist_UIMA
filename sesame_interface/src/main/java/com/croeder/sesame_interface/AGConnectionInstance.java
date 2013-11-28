@@ -40,7 +40,7 @@ import java.io.FileInputStream;
 import java.io.File;
 import java.io.IOException;
 
-import com.croeder.util.SpacedProperties;
+import edu.ucdenver.ccp.nlp.util.SpacedProperties;
 
 import org.apache.log4j.Logger;
 

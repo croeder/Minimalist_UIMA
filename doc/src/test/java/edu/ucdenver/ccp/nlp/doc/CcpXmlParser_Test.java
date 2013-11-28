@@ -28,41 +28,60 @@ public class CcpXmlParser_Test {
 	
 	public static final String t1 =
 		 "<doc>"
-		+"<title name=\"optionalTitleName\">title text</title>"
-		+"<abstract name=\"AbstractName\">abstract text</abstract>"
-		+"<section name=\"FirstSectionName\">Section Text"
+		+"<title name=\"optionalTitleName\">title-text</title>"
+		+"<abstract name=\"AbstractName\">abstract-text</abstract>"
+		+"<section name=\"FirstSectionName\">Section-Text"
 		+"<subsection name=\"FirstSubsectionName\">"
-		+"<paragraph>subsection paragraph text "
-		+"<italics>italics text</italics>"
+		+"<paragraph>subsection-paragraph-text "
+		+"<italics>italics-text</italics>"
 		+"</paragraph>"
 		+"</subsection>"
-		+"<paragraph>section paragraph"
+		+"<paragraph>section-paragraph"
 		+"</paragraph>"
 		+"</section>"
 		+"<keyword>keyword</keyword>"
-		+"<definition name=\"wordName\">definition text</definition>"
-		+"<figure name=\"figure_1\">figure text</figure>"
+		+"<definition name=\"wordName\">definition-text</definition>"
+		+"<figure name=\"figure_1\">figure-text</figure>"
 		+"</doc>";
 	
 	public static final String[] stringSpans = {
-		" optionalTitleName title text ",
-		"AbstractName abstract text ",
-		"FirstSectionName Section Text ",
+		" optionalTitleName title-text ",
+		"AbstractName abstract-text ",
+		"FirstSectionName Section-Text ",
 		"FirstSubsectionName ",
-		"subsection paragraph text ",
-		"italics text",
-		"section paragraph",
+		"subsection-paragraph-text ",
+		"italics-text",
+		"section-paragraph",
 		"keyword ",
-		"wordName definition text ",
-		"figure_1 figure text"
+		"wordName definition-text ",
+		"figure_1 figure-text"
 	};
-	
+
+	public static final int[][] spans =	 {
+		{0,29},
+		{29,56},
+		{133,145},
+		{145,162},
+		{162,169},
+		{169,194},
+		{194,215}
+	};
 	
 	@Test
 	public void test() throws Exception {
 		int i=0;
 		CcpXmlParser parser = new CcpXmlParser();
 		String text = parser.parse(t1, "fictiousDocID");
+		List<CcpXmlParser.Annotation> list = parser.getAnnotations();
+		System.out.println("---\\/-------------");
+		for (CcpXmlParser.Annotation a : list) { 
+			//System.out.println(a); 
+			//System.out.println("\"" + text.substring(a.start, a.end) + "\""); 
+			assertEquals(spans[i][0], a.start);
+			assertEquals(spans[i][1], a.end);
+			i++;
+		}
+		System.out.println("--^^---------------");
 		StringBuffer expected = new StringBuffer();
 		for (String s : stringSpans) {
 			expected.append(s);

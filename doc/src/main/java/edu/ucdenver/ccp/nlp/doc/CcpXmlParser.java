@@ -15,6 +15,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+
 package edu.ucdenver.ccp.nlp.doc;
 
 import java.io.File;
@@ -38,10 +39,18 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 
-/**
- * converts Ccp style xml to plain text.
+/*
  * See the Test class for an example of what an input doc. looks like.
+ * 
+ * Basic Strategy is to create a ClassMention named "Section", 
+ * with a SlotMention named "Type" whose value is the the tag name.
+ * An optional SlotMention named "Name" has a value for any names or titles.
+ * The associated TextAnnotation has the span.
+
+  New strategy is  to use a local class to hold these attributes.
  */
+
+
 public class CcpXmlParser {
 	
 	private static final String[] tags = {
@@ -59,11 +68,13 @@ public class CcpXmlParser {
 	
 	private XMLReader parser;
 	private HashSet<String> tagSet;
+	private Stack<Annotation> stack = new Stack<Annotation>();
+	private List<Annotation> annotations = new ArrayList<Annotation>();
 	private StringBuffer documentText = new StringBuffer();
 	private String docID;
 	
 	public CcpXmlParser() 
-	throws IOException, SAXException {
+		throws IOException, SAXException {
 		parser = XMLReaderFactory.createXMLReader(
 				"org.apache.xerces.parsers.SAXParser");
 		tagSet = new HashSet<String>();
@@ -81,11 +92,12 @@ public class CcpXmlParser {
 	 * @throws IOException
 	 * @throws SAXException
 	 */
-	public String parse(String xml, String docID) 
-	throws IOException, SAXException {
+	public String parse(String xml, String docID) throws IOException, SAXException {
 		return parse(new InputSource(new StringReader(xml)), docID);
 	}
 	
+	public List<Annotation> getAnnotations() { return annotations; }
+
 	/**
 	 * Returns the parsed version of the input PMC NXML File
 	 * 
@@ -94,8 +106,7 @@ public class CcpXmlParser {
 	 * @throws IOException
 	 * @throws SAXException
 	 */
-	public String parsePmcNxml(File nxmlFile, String docID) 
-	throws IOException, SAXException {
+	public String parsePmcNxml(File nxmlFile, String docID) throws IOException, SAXException {
 		return parse(new InputSource(new FileReader(nxmlFile)), docID);
 	}
 
@@ -115,7 +126,7 @@ public class CcpXmlParser {
 			= new PubMedCentralXMLContentHandler();
 
 		parser.setContentHandler(contentHandler);
-        parser.setEntityResolver(new PmcDtdClasspathResolver());
+		//parser.setEntityResolver(new PMCDTDClasspathResolver());
 		parser.parse(inputSource);
 
 		return documentText.toString();
@@ -136,39 +147,94 @@ public class CcpXmlParser {
 		public void ignorableWhitespace(char[] ch, int start, int length) 
 			throws SAXException {}
 		
-		public void startElement(String uri, String localName, String qName, 
-				Attributes atts) 
+		public void startElement(String uri, String localName, String qName, Attributes atts) 
 		throws SAXException {
 			if (tagSet.contains(localName.toLowerCase())) {
 				
+				Annotation ta = new Annotation();
+				ta.start=documentText.length();
+				ta.end=1000000;
+				
+
+				ta.type=localName;
 				if (atts.getLength() > 0) {
 					if (atts.getValue(NAME_ATTRIBUTE_NAME) != null) {
+						ta.name=atts.getValue(0);
 						if (atts.getValue(0).trim().length() > 0) {
 							documentText.append(" " + atts.getValue(0) + " ");
+							//System.out.println("Adding: \" " + atts.getValue(0) + " \"");
 						}
 					}
 					if (atts.getValue(TITLE_ATTRIBUTE_NAME) != null) {
+						ta.name=atts.getValue(0);
 						if (atts.getValue(0).trim().length() > 0) {
 							documentText.append(" " + atts.getValue(0) + " ");
+							//System.out.println("Adding: \" " + atts.getValue(0) + " \"");
 						}
 					}
 				}
+				//System.out.println("/attributes?");
+				//System.out.print("pushing: " +ta.getClassMention().getMentionName() + " ");
+				//ta.printAnnotationOnOneLine(System.out);
+				stack.push(ta);
 			}
 		}
 
 		public void endElement(String uri, String localName, String qName) 
-		throws SAXException { } 
+		throws SAXException {
+			if (!stack.isEmpty()) {
+				Annotation ta = stack.peek();
+				if (ta != null) {
+					//String taType = (String) ta.getClassMention().getSlotMentionsByName(TYPE_SLOT_NAME).get(0).getSlotValues().get(0);
+					String taType = ta.type;
+					if (taType.toLowerCase().equals(localName.toLowerCase())) {
+						ta.end=documentText.length();
+						annotations.add(ta);
+						//Annotation wtf = stack.pop();
+						//System.out.print("popping");
+						//wtf.printAnnotationOnOneLine(System.out);
+					}
+					else {
+						//System.out.println("unstacked tag:" + localName);
+						//System.out.println("found " + taType + " instead");
+					}
+				}
+				else {
+					//System.out.println("unknown or null tag: " + localName);
+				}
+			}
+			else {
+				//System.out.println("empty stack: " + localName);
+			}
+		}
+
 
 		public void characters(char[] ch, int start, int length) 
 		throws SAXException {
 			String s = new String(ch, start, length);	
 			if (s.trim().length() > 0) {
+				//documentText.append(s.trim() + " ");
+				//System.out.println("ADDING: \"" + s.trim() + " \"");
 				documentText.append(s);
+				//System.out.println("ADDING: \"" + s + "\"");
 			}
 			if (documentText.toString().lastIndexOf("\n") > 60) {
 				documentText.append("\n");
 			}
+
 		}
+
 	}
 
+	public class Annotation {
+		String type;
+		String name;
+		int start;
+		int end;
+		public String toString() {
+			return name + ":" + type + ", " + start + ":" + end;
+		}
+	}
 }
+
+

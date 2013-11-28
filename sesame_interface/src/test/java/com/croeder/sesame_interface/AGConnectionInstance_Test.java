@@ -70,6 +70,8 @@ public class AGConnectionInstance_Test extends ConnectionInstanceTest_Base {
 	private final int num_docs_per_batch=3;
 	private static Logger logger = Logger.getLogger(AGConnectionInstance_Test.class);
 
+/***
+requires locally running allegrograph
 	@Before
 	public void setup() throws Exception {
 		ConnectionFactory factory = new ConnectionFactory("conn.ag");
@@ -85,5 +87,5 @@ public class AGConnectionInstance_Test extends ConnectionInstanceTest_Base {
 		deleteData();
 		con.close();
 	}
-
+***/
 }

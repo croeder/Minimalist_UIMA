@@ -47,6 +47,13 @@
 			<artifactId>xercesImpl</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp_ts</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>
@@ -67,14 +74,14 @@
 		</dependency>
 		<dependency>
 			<groupId>pmc</groupId>
-			<artifactId>dtd</artifactId>
+			<artifactId>dtd3</artifactId>
 			<version>3.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/target/classes/pmc-dtd-3.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>pmc</groupId>
-			<artifactId>dtd</artifactId>
+			<artifactId>dtd2</artifactId>
 			<version>2.3</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/target/classes/pmc-dtd-2.3.jar</systemPath>

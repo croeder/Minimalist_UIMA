@@ -120,7 +120,7 @@ public class XsltConverter {
 		return "";
 	}
 
-	protected String convert(String input, String xsltFileName)  {
+	public String convert(String input, String xsltFileName)  {
 		InputStream xslStream =null;
 		String retval="";
 		try {

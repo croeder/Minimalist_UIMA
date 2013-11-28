@@ -45,7 +45,7 @@ import org.openrdf.repository.RepositoryException;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.sail.memory.MemoryStore;
 
-import com.croeder.util.SpacedProperties;
+import edu.ucdenver.ccp.nlp.util.SpacedProperties;
 
 public class SAILConnectionInstance implements ConnectionInstance {
 

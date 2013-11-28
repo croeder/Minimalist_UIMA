@@ -70,7 +70,7 @@ public class GetAbstracts extends ServiceBase {
 
 	public GetAbstracts(String prefix) throws Exception {
 		super(prefix);
-		uberBatchUri = valueFactory.createURI(chris, "pmid_batch_set");
+		uberBatchUri = valueFactory.createURI(ccp, "pmid_batch_set");
 	 	hasPartUri = valueFactory.createURI(ro, "has_part");
 	}
 
@@ -101,7 +101,7 @@ public class GetAbstracts extends ServiceBase {
 				batch_count++;
 				if (i % batch_size == 0) {
 					batch_number = i / batch_size;
-					batchUri = valueFactory.createURI(chris, "pmid_batch_" + batch_number);
+					batchUri = valueFactory.createURI(ccp, "pmid_batch_" + batch_number);
 					Statement uberContainsStmt = new StatementImpl(uberBatchUri, hasPartUri, batchUri);
 					con.add(uberContainsStmt);
 				}
@@ -138,7 +138,7 @@ public class GetAbstracts extends ServiceBase {
 	
 	public List<URI> getBatches() {
 		String queryString = prefixes + "SELECT DISTINCT  ?batch  WHERE "
-							    + "{ chris:pmid_batch_set 	ro:has_part ?batch .}";
+							    + "{ ccp:pmid_batch_set 	ro:has_part ?batch .}";
 		List<URI> returnValues = new ArrayList<>();
 
 		TupleQuery tq = null;
@@ -146,7 +146,7 @@ public class GetAbstracts extends ServiceBase {
 		try {
 			tq = con.prepareTupleQuery(sparql, queryString);
 			tq.setIncludeInferred(true);
-			URI batchUri = valueFactory.createURI(chris, "pmid_batch_set");
+			URI batchUri = valueFactory.createURI(ccp, "pmid_batch_set");
 			result = tq.evaluate();
 			while (result.hasNext()) {
 				BindingSet bs = (BindingSet) result.next();
@@ -167,13 +167,13 @@ public class GetAbstracts extends ServiceBase {
 	}
 
 	public List<URI> getPmidsBatch(int batchNumber)  {
-		URI batchUri = valueFactory.createURI(chris, "pmid_batch_" + batchNumber);
+		URI batchUri = valueFactory.createURI(ccp, "pmid_batch_" + batchNumber);
 		return getPmidsBatch(batchUri);
 	}
 
 	public List<URI> getPmidsBatch(URI batchUri) {
 		String queryString = prefixes + "SELECT  ?pmid  WHERE "
-							    + "{ chris:pmid_batch_set 	ro:has_part ?batch ."
+							    + "{ ccp:pmid_batch_set 	ro:has_part ?batch ."
 								+ " ?batch 					ro:has_part ?pmid .}";
 
 		List<URI> returnValues = new ArrayList<>();

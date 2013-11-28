@@ -2,6 +2,5 @@
 target
 output
 # Package Files #
-*.jar
 *.war
 *.ear

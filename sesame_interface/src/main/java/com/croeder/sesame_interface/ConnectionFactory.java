@@ -45,11 +45,11 @@ import org.apache.log4j.Logger;
 import org.openrdf.repository.base.RepositoryConnectionBase;
 import org.openrdf.repository.RepositoryException;
 
-import com.croeder.util.SpacedProperties;
+import edu.ucdenver.ccp.nlp.util.SpacedProperties;
 
 public class ConnectionFactory {
 
-	public final static String  defaultPropertiesFilename = "target/classes/connection.properties";
+	public final static String  defaultPropertiesFilename = "/connection.properties";
 	public final static String VENDOR_PROPERTY = "vendor";
 
 	private SpacedProperties props = null;
@@ -71,7 +71,7 @@ public class ConnectionFactory {
 
 	public ConnectionFactory(String propertiesFilename, String propertiesPrefix) {
 
-		props = new SpacedProperties(new File(propertiesFilename), propertiesPrefix);
+		props = new SpacedProperties(propertiesFilename, propertiesPrefix);
 		//props.dumpProperties();
 
 		// build vendor name-->class map
