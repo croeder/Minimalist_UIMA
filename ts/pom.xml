@@ -14,6 +14,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jcasgen.typesystem.opennlp>edu/ucdenver/ccp/nlp/ts/OpenNlpTypeSystem.xml</jcasgen.typesystem.opennlp>
+        <jcasgen.typesystem.protein>edu/ucdenver/ccp/nlp/ts/ProteinTypeSystem.xml</jcasgen.typesystem.protein>
         <jcasgen.typesystem>edu/ucdenver/ccp/nlp/ts/TypeSystem.xml</jcasgen.typesystem>
 		<jcasgen.conceptmapper.typesystem>org/apache/uima/conceptMapper/DictTerm.xml</jcasgen.conceptmapper.typesystem>
         <jcasgen.conceptmapper.supplement.typesystem>edu/ucdenver/ccp/nlp/ts/ConceptMapperSupplementTypeSystem.xml</jcasgen.conceptmapper.supplement.typesystem>
@@ -97,6 +99,7 @@
                                 </arguments>
                             </configuration>
                         </execution>
+
                         <execution>
                             <id>run-jcasgen-3</id>
                             <phase>process-resources</phase>
@@ -107,6 +110,34 @@
                                 <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
                                 <arguments>
                                     <argument>file:${project.basedir}/src/main/resources/${jcasgen.conceptmapper.supplement.typesystem} </argument>
+                                    <argument>${project.build.directory}/generated-sources/jcasgen</argument>
+                                </arguments>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>run-jcasgen-4</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                            <configuration>
+                                <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
+                                <arguments>
+                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.typesystem.opennlp} </argument>
+                                    <argument>${project.build.directory}/generated-sources/jcasgen</argument>
+                                </arguments>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>run-jcasgen-5</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                            <configuration>
+                                <mainClass>org.uimafit.util.JCasGenPomFriendly</mainClass>
+                                <arguments>
+                                    <argument>file:${project.basedir}/src/main/resources/${jcasgen.typesystem.protein} </argument>
                                     <argument>${project.build.directory}/generated-sources/jcasgen</argument>
                                 </arguments>
                             </configuration>

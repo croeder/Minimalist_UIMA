@@ -84,12 +84,13 @@ import org.xml.sax.SAXException;
 
 
 
-public class ConceptMapperPipeline extends Pipeline  {
-
+public class ConceptMapperPipeline { //extends Pipeline  {
+/**
 	private static Logger logger = Logger.getLogger(ConceptMapperPipeline.class);
 
 	ConceptMapperPipeline(File dir) throws UIMAException, IOException {
-		super(dir, new JCasExtractor());
+		//super(dir, new JCasExtractor());
+**/
 /***
         // SENTENCE DETECTOR 
         AnalysisEngineDescription sentenceDetectorDesc
@@ -97,6 +98,7 @@ public class ConceptMapperPipeline extends Pipeline  {
 		//engines.add(UIMAFramework.produceAnalysisEngine(sentenceDetectorDesc));
 		engineDescs.add(sentenceDetectorDesc);
 ***/
+/**
 
 		// TOKENIZER from xml files ** THE PATH MUST BE A FILE SYSTEM PATH **
 		Object[] config = new Object[0];
@@ -145,7 +147,8 @@ public class ConceptMapperPipeline extends Pipeline  {
 			ConceptMapperPipeline pipeline = new ConceptMapperPipeline(inputDir);
 	
 			BasicConfigurator.configure();
-	
+**/
+/**	
 			System.out.println("going with "
 				+ " inputDir:" + inputDir);	
 			Collection<JCasExtractor.Result> results = pipeline.runPipeline();
@@ -156,6 +159,8 @@ public class ConceptMapperPipeline extends Pipeline  {
 					System.out.println("    " + key + ", " + result.get(key));
 				}
 			}
+**/
+/*
 		}
 		catch(Exception x) {
 			System.err.println(x);
@@ -163,4 +168,5 @@ public class ConceptMapperPipeline extends Pipeline  {
 			System.exit(3);
 		}
 	}
+*/
 }

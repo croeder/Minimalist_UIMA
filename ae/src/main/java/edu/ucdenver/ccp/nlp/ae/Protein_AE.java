@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2013, Regents of the University of Colorado
+ Copyright (c) 2012, Regents of the University of Colorado
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without modification,
@@ -27,7 +27,7 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package edu.ucdenver.ccp.nlp.pipelines;
+package edu.ucdenver.ccp.nlp.ae;
 
 
 import java.util.regex.Matcher;
@@ -37,39 +37,45 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 
-import org.apache.uima.UIMAException;
-import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.analysis_engine.AnalysisEngine;
-
-//import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.factory.JCasFactory;
-import org.uimafit.util.JCasUtil;
 
-import org.apache.uima.conceptMapper.DictTerm;
-import org.apache.uima.examples.SourceDocumentInformation;
+import edu.ucdenver.ccp.nlp.ts.Protein;
 
-/**
- * Example annotator  just reports what Proteins it finds in the CAS.
- */
-public class DictTermReporter extends JCasAnnotator_ImplBase {
+public class Protein_AE extends JCasAnnotator_ImplBase {
 
-	Logger logger = Logger.getLogger(GetStartedQuickAE.class);
+	Logger logger = Logger.getLogger(Protein_AE.class);
 
-	public void process(JCas jCas) {
+	// ABC-nnn
+	private Pattern proteinPattern = Pattern.compile("\\b([A-Z]+)-(\\d+)");
 
-		for (SourceDocumentInformation doc : JCasUtil.select(jCas, SourceDocumentInformation.class)) {
-			System.out.println("" + doc.getDocumentSize() + doc.getUri());
-        }
 
-		for (DictTerm term : JCasUtil.select(jCas, DictTerm.class)) {
-			System.out.println(term.getMatchedText() + ", " + term.getDictCanon());
-        }
-	
-	}
+  /**
+   * @see JCasAnnotator_ImplBase#process(JCas)
+   */
+  public void process(JCas aJCas) {
+    String docText = aJCas.getDocumentText();
+    Matcher matcher = proteinPattern.matcher(docText);
+	logger.info("running protein annotator");
+
+    while (matcher.find()) {
+      // create annotation
+      Protein annotation = new Protein(aJCas);
+      annotation.setBegin(matcher.start());
+      annotation.setEnd(matcher.end());
+
+      String prefix=matcher.group(1);
+      annotation.setPrefix(prefix);
+
+      String suffix=matcher.group(2);
+      annotation.setSuffix(suffix);
+	  logger.info("found: " + prefix + " - " + suffix);
+
+	  // add annotation to indexes
+      annotation.addToIndexes();
+    }
+  }
 
 }

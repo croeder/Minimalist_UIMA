@@ -59,60 +59,31 @@ import org.apache.uima.tools.components.FileSystemCollectionReader;
 import org.apache.uima.examples.SourceDocumentInformation;
 
 import org.apache.uima.conceptMapper.DictTerm;
-import org.apache.uima.conceptMapper.ConceptMapper;
-
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.factory.CollectionReaderFactory;
 import org.uimafit.factory.TypeSystemDescriptionFactory;
 import org.uimafit.pipeline.SimplePipeline;
 import org.uimafit.pipeline.JCasIterable;
 
+import edu.ucdenver.ccp.nlp.ae.Knowtator_AE;
+import edu.ucdenver.ccp.nlp.ae.Protein_AE;
+import edu.ucdenver.ccp.nlp.ae.Debug_AE;
+
+public class KnowtatorPipeline extends BaseUimaFitPipeline  {
+
+	private static Logger logger = Logger.getLogger(KnowtatorPipeline.class);
 
 
-public class BaseUimaFitPipeline  {
+	KnowtatorPipeline(File inputDir) throws ResourceInitializationException {
+		super(inputDir);
 
-	private static Logger logger = Logger.getLogger(BaseUimaFitPipeline.class);
-
-	protected static final String[] typeSystemStrs = {
-		"org.apache.uima.examples.SourceDocumentInformation",	
-		"edu.ucdenver.ccp.nlp.ts.TypeSystem",
-		"edu.ucdenver.ccp.nlp.ts.ProteinTypeSystem"
-	};
-
-
-	protected TypeSystemDescription tsd;
-    CollectionReader cr;
-	List<AnalysisEngineDescription> aeDescList;
-
-
-	BaseUimaFitPipeline(File inputDir) throws ResourceInitializationException {
-        tsd = TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemStrs);
-
-        cr = CollectionReaderFactory.createCollectionReader(
-			FileSystemCollectionReader.class,
-			tsd,
-			FileSystemCollectionReader.PARAM_INPUTDIR,	inputDir,
-			FileSystemCollectionReader.PARAM_ENCODING,	"UTF-8",
-			FileSystemCollectionReader.PARAM_LANGUAGE, 	"English",
-			FileSystemCollectionReader.PARAM_XCAS, 		"false",
-			FileSystemCollectionReader.PARAM_LENIENT,	"true"
-        );
-
-		aeDescList = new ArrayList<AnalysisEngineDescription>();
+		aeDescList.add(
+ 			AnalysisEngineFactory.createPrimitiveDescription(Protein_AE.class));
+		//aeDescList.add(
+ 			//AnalysisEngineFactory.createPrimitiveDescription(Knowtator_AE.class));
+		aeDescList.add(
+ 			AnalysisEngineFactory.createPrimitiveDescription(Debug_AE.class));
     }
-
-
-	public void go(File inputDir)
-	throws UIMAException, ResourceInitializationException, FileNotFoundException, IOException {
-		SimplePipeline.runPipeline(cr, aeDescList.toArray(new AnalysisEngineDescription[0]));
-    }
-
-	
-	protected static void usage() {
-		System.out.println("mvn exec:java -Dinput=<input tree> ");
-		System.out.println("  Set numToProcess to -1 to process all files under input tree.");
-	}
-
 
 	public static void main(String[] args) {
 
@@ -137,7 +108,7 @@ public class BaseUimaFitPipeline  {
 
 		// main part
 		try {
-			BaseUimaFitPipeline pipeline = new BaseUimaFitPipeline (inputDir);
+			KnowtatorPipeline pipeline = new KnowtatorPipeline (inputDir);
 			pipeline.go(inputDir);
 		}
 		catch(Exception x) {
