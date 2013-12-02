@@ -30,11 +30,12 @@
 package edu.ucdenver.ccp.nlp.doc;
 
 import java.util.List;
+import java.io.IOException;
 
 public interface DocumentProvider {	
 	int getMaxBatchIndex();
 	List<String> getIdRange(int batchNumber);
 	String getDocumentPath(String id);
-	String getDocumentText(String path);
+	String getDocumentText(String path) throws IOException;
 }
 

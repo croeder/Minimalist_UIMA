@@ -30,6 +30,8 @@
 package edu.ucdenver.ccp.nlp.cr;
 
 
+import static java.lang.System.out;
+
 import java.io.IOException;
 
 import java.util.List;
@@ -71,10 +73,15 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 	throws IOException, CollectionException {
 		// get text
 		String path = dp.getDocumentPath(idList.get(current));
+
 		String xmlText = dp.getDocumentText(path);
 
 		// convert PMC XML to simple CCP XML
 		XsltConverter xslt = new XsltConverter();
+	out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" 
+						+ "path:\"" + path + "\"\n" 
+						+ "xmlText:\"" + xmlText + "\"\n" 
+						+ "xsltFilename:\"" + xsltFilename + "\"");
 		String xmlText2 = xslt.convert(xmlText, xsltFilename);
 
 		// convert CCP XML to plain text

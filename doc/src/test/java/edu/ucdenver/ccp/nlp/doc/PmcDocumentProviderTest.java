@@ -37,6 +37,8 @@ import org.junit.Test;
 
 import java.util.List;
 
+import java.io.IOException;
+
 public class PmcDocumentProviderTest {
 	
 	DocumentProvider da;
@@ -60,8 +62,10 @@ public class PmcDocumentProviderTest {
 	}
 
 	@Test 
-	public void getDocumentText() {
-		assertEquals("", da.getDocumentText("210152"));
+	public void getDocumentText() throws IOException {
+		assertEquals(
+		"<!DOCTYPE article PUBLIC \"-//NLM//DTD Journal Archiving and Interchange DTD v2.3 20070202//EN\" \"archivearticle.dtd\">\n<article xmlns:xlink=\"http://www.w3.org/1999/xlink\" article-type=\"research-article\"><?properties open_access?><front><journal-meta><journal-id journal-id-type=\"nlm-ta\">J Cell Biol</journal-id><journal-title>The Journal of Cell Biology</journal-title><issn pub-type=\"ppub\">0021-9525</issn><issn pub-type=\"epub\">1540-8140</issn><publisher><publisher-name>The Rockefeller University Press</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type=\"pmid\">182701</article-id><article-id pub-id-type=\"pmc\">2109846</article-id><article-id pub-id-type=\"publisher-id\">76260394</article-id><article-categories><subj-group subj-group-type=\"heading\"><subject>Articles</subject></subj-group></article-categories><title-group><article-title>Fibrils attached to the nuclear pore prevent egress of SV40 particles from the infected nucleus</article-title></title-group><pub-date pub-type=\"ppub\"><day>1</day><month>9</month><year>1976</year></pub-date><volume>70</volume><issue>3</issue><fpage>714</fpage><lpage>719</lpage><permissions></permissions><abstract><p>SV40 particles can apparently enter the nucleus intact. However, they do not leave the nucleus despite the high concentration present during the productive phase. We found structural evidence that SV40 virus is prevented from approaching the most likely site of exit, the nuclear pore complex. From these images, it is concluded that the fibrils attached to the nuclear pore complex prevent egress of SV40 particles from the infected nucleus.</p></abstract></article-meta></front></article>\n\n\n", 
+		da.getDocumentText("/RAID1/data/fulltext/pmc/files/J_Cell_Biol/J_Cell_Biol_1976_Sep_1_70(3)_714-719.nxml"));
 	}
 
 }

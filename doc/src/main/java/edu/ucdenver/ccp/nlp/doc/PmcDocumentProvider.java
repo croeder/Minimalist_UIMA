@@ -29,6 +29,7 @@
  */
 package edu.ucdenver.ccp.nlp.doc;
 
+
 import static java.lang.System.out;
 
 import edu.ucdenver.ccp.nlp.doc.orm.Pmc;
@@ -39,10 +40,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import java.util.List;
+import java.io.File;
+import java.io.IOException;
 
 import com.google.common.collect.Lists;
 import com.google.common.base.Functions;
-
+import org.apache.commons.io.FileUtils;
 
 public class PmcDocumentProvider implements DocumentProvider {
 	EntityManager em;
@@ -77,10 +80,16 @@ public class PmcDocumentProvider implements DocumentProvider {
 		return doc.getPath();
 	}
 
-	public String getDocumentText(String path) {
+	public String getDocumentText(String path) 
+	throws IOException {
+
+		// TODO: make a property for this, deal with the possibility of different paths needing different prefixes
+		path = "/net/amc-colfax/" + path;
+
+		
 		// wget the path and return?
 		// TODO
-		return "";
+		return FileUtils.readFileToString(new File(path), "UTF-8");
 	}
 
 }
