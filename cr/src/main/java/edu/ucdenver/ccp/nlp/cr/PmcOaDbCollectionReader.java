@@ -35,6 +35,7 @@ import static java.lang.System.out;
 import java.io.IOException;
 
 import java.util.List;
+import java.util.Collection;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.jcas.JCas;
@@ -46,12 +47,15 @@ import org.apache.uima.collection.CollectionException;
 import org.uimafit.component.JCasCollectionReader_ImplBase;
 import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.ConfigurationParameterFactory;
+import org.uimafit.util.JCasUtil;
 
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderFactory;
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
 import edu.ucdenver.ccp.nlp.doc.XsltConverter;
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
+
+import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
 
 import org.apache.log4j.Logger;
 
@@ -98,6 +102,11 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 
 		// convert annotations
 
+		List<TextAnnotation> ta = CcpXmlAnnotationFactory.convert(jcas, annotations);			
+        //Collection<TextAnnotation> textAnnos = JCasUtil.select(jcas, TextAnnotation.class);
+		//for (TextAnnotation ta2 : textAnnos) {
+			//out.println("aaaaaaa" + ta2);
+		//}
 
 		// set text
 		jcas.setDocumentText(plainText);	

@@ -126,7 +126,7 @@ XXX
           <elementType>edu.ucdenver.ccp.nlp.ts.SlotMention</elementType>
         </featureDescription>
         <featureDescription>
-          <name>ccpTextAnnotation</name>
+          <name>textAnnotation</name>
           <description>Just as TextAnnotations are linked to a ClassMention, it is sometimes useful to be able to follow a ClassMention back to its corresponding TextAnnotation.</description>
           <rangeTypeName>edu.ucdenver.ccp.nlp.ts.TextAnnotation</rangeTypeName>
         </featureDescription>

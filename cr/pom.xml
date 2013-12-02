@@ -62,6 +62,28 @@
             <artifactId>google-collections</artifactId>
             <version>1.0</version>
         </dependency>
+  		<dependency>
+            <groupId>pmc</groupId>
+            <artifactId>dtd3</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>pmc</groupId>
+            <artifactId>dtd2</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+<!--
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+        </dependency>
+-->
 
 	</dependencies>
 

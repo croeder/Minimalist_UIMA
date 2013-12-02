@@ -227,10 +227,10 @@ public class CcpXmlParser {
 	}
 
 	public class Annotation {
-		String type;
-		String name;
-		int start;
-		int end;
+		public String type;
+		public String name;
+		public int start;
+		public int end;
 		public String toString() {
 			return name + ":" + type + ", " + start + ":" + end;
 		}
