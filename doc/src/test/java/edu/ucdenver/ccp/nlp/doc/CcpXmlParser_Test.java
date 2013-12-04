@@ -73,7 +73,6 @@ public class CcpXmlParser_Test {
 		CcpXmlParser parser = new CcpXmlParser();
 		String text = parser.parse(t1, "fictiousDocID");
 		List<CcpXmlParser.Annotation> list = parser.getAnnotations();
-		System.out.println("---\\/-------------");
 		for (CcpXmlParser.Annotation a : list) { 
 			//System.out.println(a); 
 			//System.out.println("\"" + text.substring(a.start, a.end) + "\""); 

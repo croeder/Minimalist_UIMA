@@ -59,58 +59,24 @@ import edu.ucdenver.ccp.nlp.ts.ClassMention;
 import edu.ucdenver.ccp.nlp.ts.SlotMention;
 import edu.ucdenver.ccp.nlp.ts.StringSlotMention;
 
-public class PmcOaDbCollectionReaderTest {
+public class MedlineDbCollectionReaderTest {
 
 
 	@Test
-	public void testCollectionReaderPMC() throws Exception {
+	public void testCollectionReaderMedline() throws Exception {
 		String[] typeSystemDescriptions = { "edu.ucdenver.ccp.nlp.ts.TypeSystem" };
 		TypeSystemDescription tsd 
 			= TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemDescriptions); 
-		CollectionReader cr = CollectionReaderFactory.createCollectionReader(
-			PmcOaDbCollectionReader.class, tsd,
-			DbCollectionReader.PARAM_BATCH_NUMBER, 1,
-			DbCollectionReader.PARAM_COLLECTION_TYPE, DocumentProviderType.PMC.toString());
+		CollectionReader cr =  MedlineDbCollectionReader.createCollectionReader(tsd, 1);
 
 
 		JCasIterable iter = new JCasIterable(cr);
 		assertTrue(iter.hasNext());
 		JCas jcas = iter.next();
-		assertEquals(" Fibrils attached to the nuclear pore prevent egress of SV40 particles from the infected nucleus  SV40 particles can apparently enter the nucleus intact. However, they do not leave the nucleus despite the high concentration present during the productive phase. We found structural evidence that SV40 virus is prevented from approaching the most likely site of exit, the nuclear pore complex. From these images, it is concluded that the fibrils attached to the nuclear pore complex prevent egress of SV40 particles from the infected nucleus. ", jcas.getDocumentText());
+		assertEquals(
+			"In order to throw light on the problems related to the magnitude and the possibility of maintaining pressor response in the case of bilateral carotid occlusion (BCO), acute experiments were carried out on heparinized cats in chloralose-urethane narcosis and spontaneous respiration. The perfusion pressure in a hind leg autoperfused with a roller pump with a constant flow and the arterial blood pressure were recorded electromanometrically. A study was made of the changes taking place under the effect of BCO in the normal animal, in animals in a haemorrhagic state, after pharmacological alpha-adrenergic blockade, haemorrhage after alpha-adrenergic blockade, retransfusion of blood + alpha-adrenergic blocking agent and after local application of 0.01 papaverine. It was established that some of the factors determining the haemodynamic state of the organism, such as: blood volume, arterial pressure, vascular resistance, cardiac output, etc., are of great significance for the realization of the pressor response to BCO, but the haemodynamic state of the animal before the occlusion and the interactions between the abovementioned factors are decisive for the form, magnitude and maintenance of the pressor response in BCO.",
+			jcas.getDocumentText());
 
-
-		int i=0;
-        Collection<TextAnnotation> textAnnos = JCasUtil.select(jcas, TextAnnotation.class);
-		for (TextAnnotation ta : textAnnos) {
-
-			ClassMention cm = ta.getClassMention();
-			if (false) {
-				if (cm.getSlotMentions() != null) {
-					StringSlotMention sm = (StringSlotMention) cm.getSlotMentions(0);
-					out.println("" + i + "xxxxxxxxxxxxxxxxx covered:" + ta.getCoveredText() + ", class:" + cm.getMentionName() + ", slot:" + sm.getMentionName() + ", slot value: " + sm.getSlotValues(0) );
-				}
-				else {
-						out.println("" + i + "xxxxxxxxxxxxxxxxx covered:" + ta.getCoveredText() + ", class:" + cm.getMentionName() );
-				}
-			}
-			assertEquals("Section", cm.getMentionName());
-			StringSlotMention typeSlot = (StringSlotMention) cm.getSlotMentions(0);
-			if (i==0) {
-				//null:TITLE, 0:97
-				assertEquals("TYPE", typeSlot.getMentionName());
-				assertEquals("TITLE", typeSlot.getSlotValues(0));
-				assertEquals(0, ta.getBegin());
-				assertEquals(97, ta.getEnd());
-			}
-			else if (i==1) {
-				//null:PARAGRAPH, 97:541
-				assertEquals("TYPE", typeSlot.getMentionName());
-				assertEquals("PARAGRAPH", typeSlot.getSlotValues(0));
-				assertEquals(97, ta.getBegin());
-				assertEquals(541, ta.getEnd());
-			}
-			i++;
-		}
 	}
 
 }

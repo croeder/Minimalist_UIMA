@@ -37,8 +37,7 @@ import org.junit.Test;
 
 public class XsltConverterTest {
 
-	static final String inputFile = "target/classes/ViewXMLXSLTConverter_AETest.xml";
-	//static final String xsltFile = "/PmcOpenAccess2.xsl";
+	static final String inputFile = "/14607334.xml";
 	static final String xsltFile = "/PmcOpenAccess.xsl";
 
 	@Test

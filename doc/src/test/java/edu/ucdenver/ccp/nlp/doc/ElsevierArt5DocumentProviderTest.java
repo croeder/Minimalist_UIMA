@@ -29,45 +29,48 @@
  */
 package edu.ucdenver.ccp.nlp.doc;
 
-import static java.lang.System.out;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.List;
-import java.util.ArrayList;
 
+import java.io.IOException;
 
-public class StubDocumentProvider implements DocumentProvider {
-
-	public StubDocumentProvider() { }	
-
-	public int getMaxBatchIndex() {
-		return 1000;
+public class ElsevierArt5DocumentProviderTest {
+	
+	DocumentProvider da;
+	
+	@Before
+	public void setup() {
+		da = new ElsevierArt5DocumentProvider();
 	}
 
-	public List<String> getIdRange(int batchNumber) {
-		List<String> strings =  new ArrayList<>();
-		for (int i=batchNumber * 1000; i<batchNumber * 1000 + 1000; i++) {
-			strings.add("" + i);
-		}
-		return strings;	
+	@Ignore
+	@Test 
+	public void testMaxBatchIndex() {
+		int maxIndex = da.getMaxBatchIndex();
+		assertEquals(628, maxIndex);
 	}
 
-	public String getDocumentPath(String pmid) {
-		return pmid;
+	@Ignore
+	@Test 
+	public void testGetIdRange() {
+		List<String> list = da.getIdRange(100);
+		assertEquals("16857050", list.get(0));
+		assertEquals("16907971",list.get(999));
 	}
 
-	public String getDocumentText(String pmid) {
-		return "" + pmid;
+	@Ignore
+	@Test 
+	public void getDocumentText() throws IOException {
+		assertEquals(
+		"",
+		da.getDocumentText("/RAID1/data/fulltext/pmc/files/J_Cell_Biol/J_Cell_Biol_1976_Sep_1_70(3)_714-719.nxml"));
 	}
 
-
-	public static void main(String args[]) {
-        DocumentProvider da = new StubDocumentProvider();
-        List<String> list = da.getIdRange(100);
-        for (String i : list) {
-            out.println("" + i);
-        }
-
-        String path = da.getDocumentPath(list.get(0));
-        out.println(path);
-    }
 }
+

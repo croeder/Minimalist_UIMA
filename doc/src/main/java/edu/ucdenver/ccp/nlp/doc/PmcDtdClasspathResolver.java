@@ -46,7 +46,7 @@ public class PmcDtdClasspathResolver implements EntityResolver {
 		}
 
 
-		logger.info("RESOLVING ENTITY: publicID: \"" + publicId + "\"   systemID: \"" + systemId + "\"") ;
+		logger.debug("RESOLVING ENTITY: publicID: \"" + publicId + "\"   systemID: \"" + systemId + "\"") ;
 
 		InputStream stream = getClass().getResourceAsStream(systemId);
 		if (stream == null) {

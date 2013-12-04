@@ -52,7 +52,6 @@ public class MedlineDocumentProviderTest {
 		int maxIndex = da.getMaxBatchIndex();
 		assertEquals(8316, maxIndex);
 	}
-
 	@Test 
 	public void testGetIdRange() {
 		List<String> list = da.getIdRange(100);

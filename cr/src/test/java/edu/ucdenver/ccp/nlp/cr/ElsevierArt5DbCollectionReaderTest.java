@@ -37,6 +37,7 @@ import static  org.junit.Assert.assertNotNull;
 
 import java.util.Collection;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import org.apache.uima.UIMAException;
@@ -59,24 +60,22 @@ import edu.ucdenver.ccp.nlp.ts.ClassMention;
 import edu.ucdenver.ccp.nlp.ts.SlotMention;
 import edu.ucdenver.ccp.nlp.ts.StringSlotMention;
 
-public class PmcOaDbCollectionReaderTest {
+public class ElsevierArt5DbCollectionReaderTest {
 
 
+	@Ignore
 	@Test
 	public void testCollectionReaderPMC() throws Exception {
 		String[] typeSystemDescriptions = { "edu.ucdenver.ccp.nlp.ts.TypeSystem" };
 		TypeSystemDescription tsd 
 			= TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemDescriptions); 
-		CollectionReader cr = CollectionReaderFactory.createCollectionReader(
-			PmcOaDbCollectionReader.class, tsd,
-			DbCollectionReader.PARAM_BATCH_NUMBER, 1,
-			DbCollectionReader.PARAM_COLLECTION_TYPE, DocumentProviderType.PMC.toString());
-
+		CollectionReader cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, 1);
 
 		JCasIterable iter = new JCasIterable(cr);
 		assertTrue(iter.hasNext());
 		JCas jcas = iter.next();
-		assertEquals(" Fibrils attached to the nuclear pore prevent egress of SV40 particles from the infected nucleus  SV40 particles can apparently enter the nucleus intact. However, they do not leave the nucleus despite the high concentration present during the productive phase. We found structural evidence that SV40 virus is prevented from approaching the most likely site of exit, the nuclear pore complex. From these images, it is concluded that the fibrils attached to the nuclear pore complex prevent egress of SV40 particles from the infected nucleus. ", jcas.getDocumentText());
+		assertEquals(" Fibrils attached to the nuclear pore prevent egress of SV40 particles from the infected nucleus  SV40 particles can apparently enter the nucleus intact. However, they do not leave the nucleus despite the high concentration present during the productive phase. We found structural evidence that SV40 virus is prevented from approaching the most likely site of exit, the nuclear pore complex. From these images, it is concluded that the fibrils attached to the nuclear pore complex prevent egress of SV40 particles from the infected nucleus. ", 
+			jcas.getDocumentText());
 
 
 		int i=0;
@@ -84,28 +83,22 @@ public class PmcOaDbCollectionReaderTest {
 		for (TextAnnotation ta : textAnnos) {
 
 			ClassMention cm = ta.getClassMention();
-			if (false) {
-				if (cm.getSlotMentions() != null) {
-					StringSlotMention sm = (StringSlotMention) cm.getSlotMentions(0);
-					out.println("" + i + "xxxxxxxxxxxxxxxxx covered:" + ta.getCoveredText() + ", class:" + cm.getMentionName() + ", slot:" + sm.getMentionName() + ", slot value: " + sm.getSlotValues(0) );
-				}
-				else {
-						out.println("" + i + "xxxxxxxxxxxxxxxxx covered:" + ta.getCoveredText() + ", class:" + cm.getMentionName() );
-				}
+			if (cm.getSlotMentions() != null) {
+				StringSlotMention sm = (StringSlotMention) cm.getSlotMentions(0);
+				//out.println("xxxxxxxxxxxxxxxxx" + ta.getCoveredText() + ", " + cm.getMentionName() + ", " + sm.getMentionName() + ", " + sm.getSlotValues(0) );
 			}
-			assertEquals("Section", cm.getMentionName());
-			StringSlotMention typeSlot = (StringSlotMention) cm.getSlotMentions(0);
+			else {
+					//out.println("xxxxxxxxxxxxxxxxx" + ta.getCoveredText() + ", " + cm.getMentionName() );
+			}
 			if (i==0) {
 				//null:TITLE, 0:97
-				assertEquals("TYPE", typeSlot.getMentionName());
-				assertEquals("TITLE", typeSlot.getSlotValues(0));
+				assertEquals("TITLE", cm.getMentionName());
 				assertEquals(0, ta.getBegin());
 				assertEquals(97, ta.getEnd());
 			}
 			else if (i==1) {
 				//null:PARAGRAPH, 97:541
-				assertEquals("TYPE", typeSlot.getMentionName());
-				assertEquals("PARAGRAPH", typeSlot.getSlotValues(0));
+				assertEquals("PARAGRAPH", cm.getMentionName());
 				assertEquals(97, ta.getBegin());
 				assertEquals(541, ta.getEnd());
 			}

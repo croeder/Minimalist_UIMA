@@ -43,10 +43,13 @@ import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.collection.CollectionException;
+import org.apache.uima.collection.CollectionReader;
+import org.apache.uima.resource.metadata.TypeSystemDescription;
 
 import org.uimafit.component.JCasCollectionReader_ImplBase;
 import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.ConfigurationParameterFactory;
+import org.uimafit.factory.CollectionReaderFactory;
 import org.uimafit.util.JCasUtil;
 
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderFactory;
@@ -103,10 +106,6 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 		// convert annotations
 
 		List<TextAnnotation> ta = CcpXmlAnnotationFactory.convert(jcas, annotations);			
-        //Collection<TextAnnotation> textAnnos = JCasUtil.select(jcas, TextAnnotation.class);
-		//for (TextAnnotation ta2 : textAnnos) {
-			//out.println("aaaaaaa" + ta2);
-		//}
 
 		// set text
 		jcas.setDocumentText(plainText);	
@@ -119,6 +118,15 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 		srcDocInfo.setDocumentSize(text.length);
 		srcDocInfo.addToIndexes();
 		**/
+	}
+
+	public static CollectionReader createCollectionReader(TypeSystemDescription tsd, int batch) 
+	throws ResourceInitializationException  {
+		CollectionReader cr = CollectionReaderFactory.createCollectionReader(
+            PmcOaDbCollectionReader.class, tsd,
+            DbCollectionReader.PARAM_BATCH_NUMBER, batch,
+            DbCollectionReader.PARAM_COLLECTION_TYPE, DocumentProviderType.PMC.toString());
+		return cr;
 	}
 
 }

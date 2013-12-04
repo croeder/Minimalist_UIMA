@@ -28,6 +28,7 @@
 		<xsl:attribute name="NAME">
 			<xsl:value-of select="./title/text()" /> 
 		</xsl:attribute>
+		<xsl:text> </xsl:text>
 		<xsl:apply-templates select="node()" />
 		<xsl:text> </xsl:text>
 		</xsl:element>

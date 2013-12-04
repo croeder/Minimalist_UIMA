@@ -42,6 +42,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.UimaContext;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
+import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser.Annotation;
@@ -63,6 +64,8 @@ public class CcpXmlAnnotationFactory {
 			List<TextAnnotation> outputAnnotations = new ArrayList<>();
 			for (Annotation a : inputAnnotations) {
 				TextAnnotation ta = new TextAnnotation(jcas, a.start, a.end);
+
+				// Spans
 				Span s = new Span(jcas);
 				s.setSpanStart(a.start);
 				s.setSpanEnd(a.end);
@@ -70,24 +73,42 @@ public class CcpXmlAnnotationFactory {
 				spanArray.set(0, s);
 				ta.setSpans(spanArray);
 
-				// TODO: abstract, factor out
+				//  Annotator
 				Annotator annotator = new Annotator(jcas);
 				annotator.setFirstName("CcpXmlAnnotationFactory");
 				annotator.setLastName("edu.ucdenver.ccp.nlp.cr");
 				annotator.setAffiliation("http://compbio.ucdenver.edu");
 				ta.setAnnotator(annotator);	
 
+				// ClassMention
 				ClassMention cm = new ClassMention(jcas);
-				cm.setMentionName(a.type);
+				cm.setMentionName("Section");
 				cm.setTextAnnotation(ta);
 				ta.setClassMention(cm);
 
+				FSArray slots = new FSArray(jcas, 2);
+				cm.setSlotMentions(slots);
+				{
+					// Type Slot
+					StringSlotMention sm = new StringSlotMention(jcas);	
+					sm.setMentionName("TYPE");
+					StringArray values = new StringArray(jcas, 1);
+					values.set(0, a.type);
+					sm.setSlotValues(values);	
+					cm.setSlotMentions(0,sm);
+				}
+
 				if (a.name != null) {
+					// Name Slot
 					StringSlotMention sm = new StringSlotMention(jcas);	
 					sm.setMentionName("NAME");
-					sm.setSlotValues(0, a.name);
+					StringArray values = new StringArray(jcas, 1);
+					values.set(0, a.name);
+					sm.setSlotValues(values);
+					cm.setSlotMentions(1,sm);
 				}
-	ta.addToIndexes();
+
+				ta.addToIndexes();
 
 			}
 			return outputAnnotations;

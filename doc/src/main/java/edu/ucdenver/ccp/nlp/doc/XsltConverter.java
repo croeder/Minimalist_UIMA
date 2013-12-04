@@ -102,22 +102,21 @@ public class XsltConverter {
 	public static String readFile(String filename) {
 		StringBuffer sb = new StringBuffer();
 		try {
-			java.io.InputStreamReader isr = new java.io.InputStreamReader(
-					new java.io.FileInputStream (filename), "UTF-8");
-
+			InputStream is = XsltConverter.class.getResourceAsStream(filename);
+			java.io.InputStreamReader isr = new java.io.InputStreamReader(is, "UTF-8");
 			java.io.BufferedReader br = new java.io.BufferedReader(isr);
 			
 			while (br.ready()) {	
 				String s = br.readLine();
-				///System.out.println("DEBUG XsltConverter line:" + s);
 				sb.append(s);
 			}
 			return sb.toString();
 		}
 		catch (Exception x) {
-			logger.error("XSTLConverter.readFile failed" + x);
+			logger.error("XSTLConverter.readFile() failed on file:\"" + filename + "\" " + x);
+			x.printStackTrace();
+			throw new RuntimeException(x);
 		}
-		return "";
 	}
 
 	public String convert(String input, String xsltFileName)  {
@@ -233,6 +232,7 @@ public class XsltConverter {
 		catch (Exception x) { 
 			logger.error("XSLTConverter.convert() failed:" + x);
 			x.printStackTrace();
+			throw new RuntimeException(x);
 		}
 
 		try { if (xslStream != null) {xslStream.close();} }

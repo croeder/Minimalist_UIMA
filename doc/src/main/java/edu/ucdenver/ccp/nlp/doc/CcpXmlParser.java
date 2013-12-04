@@ -63,7 +63,7 @@ public class CcpXmlParser {
 	static final String NAME_SLOT_NAME="Name";
 	static final String TITLE_SLOT_NAME="Name";
 	static final String NAME_ATTRIBUTE_NAME="name";
-	static final String TITLE_ATTRIBUTE_NAME="NAME";
+	static final String TITLE_ATTRIBUTE_NAME="name";
 	static final String PARSER_NAME = "CCP XML Parser";
 	
 	private XMLReader parser;
@@ -162,20 +162,18 @@ public class CcpXmlParser {
 						ta.name=atts.getValue(0);
 						if (atts.getValue(0).trim().length() > 0) {
 							documentText.append(" " + atts.getValue(0) + " ");
-							//System.out.println("Adding: \" " + atts.getValue(0) + " \"");
 						}
 					}
+/*
 					if (atts.getValue(TITLE_ATTRIBUTE_NAME) != null) {
 						ta.name=atts.getValue(0);
 						if (atts.getValue(0).trim().length() > 0) {
 							documentText.append(" " + atts.getValue(0) + " ");
-							//System.out.println("Adding: \" " + atts.getValue(0) + " \"");
+System.out.println("title attribute name: \"" + atts.getValue(0) + "\"");
 						}
 					}
+*/
 				}
-				//System.out.println("/attributes?");
-				//System.out.print("pushing: " +ta.getClassMention().getMentionName() + " ");
-				//ta.printAnnotationOnOneLine(System.out);
 				stack.push(ta);
 			}
 		}
@@ -185,26 +183,12 @@ public class CcpXmlParser {
 			if (!stack.isEmpty()) {
 				Annotation ta = stack.peek();
 				if (ta != null) {
-					//String taType = (String) ta.getClassMention().getSlotMentionsByName(TYPE_SLOT_NAME).get(0).getSlotValues().get(0);
 					String taType = ta.type;
 					if (taType.toLowerCase().equals(localName.toLowerCase())) {
 						ta.end=documentText.length();
 						annotations.add(ta);
-						//Annotation wtf = stack.pop();
-						//System.out.print("popping");
-						//wtf.printAnnotationOnOneLine(System.out);
-					}
-					else {
-						//System.out.println("unstacked tag:" + localName);
-						//System.out.println("found " + taType + " instead");
 					}
 				}
-				else {
-					//System.out.println("unknown or null tag: " + localName);
-				}
-			}
-			else {
-				//System.out.println("empty stack: " + localName);
 			}
 		}
 
@@ -213,10 +197,7 @@ public class CcpXmlParser {
 		throws SAXException {
 			String s = new String(ch, start, length);	
 			if (s.trim().length() > 0) {
-				//documentText.append(s.trim() + " ");
-				//System.out.println("ADDING: \"" + s.trim() + " \"");
 				documentText.append(s);
-				//System.out.println("ADDING: \"" + s + "\"");
 			}
 			if (documentText.toString().lastIndexOf("\n") > 60) {
 				documentText.append("\n");

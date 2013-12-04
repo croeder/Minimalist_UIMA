@@ -38,13 +38,11 @@ public class DocumentProviderFactory {
 	public static DocumentProvider getDocumentProvider(DocumentProviderType dpt) {
 		DocumentProvider provider=null;
 		switch (dpt) {
-			case Stub:
-				provider = new StubDocumentProvider();
-				break;
 			case PMC:
 				provider = new PmcDocumentProvider();
 				break;
-			case Elsevier:
+			case ElsevierArt5:
+				provider = new ElsevierArt5DocumentProvider();
 				break;
 			case Medline:
 				provider = new MedlineDocumentProvider();
