@@ -1,4 +1,4 @@
-uima_sample
+ccp_nlp
 ===========
 
 some basic, simple, uima pipelines and analysis engines cribbed from
