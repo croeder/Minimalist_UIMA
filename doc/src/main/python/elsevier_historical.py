@@ -33,10 +33,8 @@ abstractPattern = re.compile("<ce:abstract>")
 sectionPattern = re.compile("<ce:sections>")
 
 
-elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393/14744422/"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393/14744422/v13i1/S147444221370190X/"
+#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"
+elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/historical"
 doiDict = {}
 # hits postgres for pmid ids
 DBNAME="medline"
@@ -150,5 +148,5 @@ def walkFileTree(conn):
 
 ## main ##
 conn = psycopg2.connect(database=DBNAME, host=HOST, user=USER, password=PASSWORD)
-createDoiTable(conn)
+#####createDoiTable(conn)
 walkFileTree(conn)

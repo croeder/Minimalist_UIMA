@@ -1,5 +1,5 @@
 create table medline_batches (
 	id integer,
-	pmid varchar(10),
+	pmid bigint,
 	primary key(pmid) );
 	

@@ -1,5 +1,5 @@
 create table medline_doi (
 	doi varchar(100),
-	pmid varchar(10),
+	pmid bigint,
 	primary key(pmid) );
 	

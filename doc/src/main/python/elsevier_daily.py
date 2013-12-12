@@ -33,10 +33,9 @@ abstractPattern = re.compile("<ce:abstract>")
 sectionPattern = re.compile("<ce:sections>")
 
 
-elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393/14744422/"
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000001393/14744422/v13i1/S147444221370190X/"
+#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"
+#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/historical"
+elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/daily"
 doiDict = {}
 # hits postgres for pmid ids
 DBNAME="medline"
@@ -52,7 +51,7 @@ def createDoiTable(conn):
 	cur.execute("drop table if exists elsevier_records;")
 	# cascaded, not needed
 	# cur.execute("drop sequence elsevier_records_id_seq;");
-	cur.execute("create table elsevier_records ( path_pii varchar(150), doii varchar(150), pii varchar(150), path varchar(150), title varchar(250), authors varchar(250), dtd_version varchar(20), dtd_file varchar(20), abstract_only boolean, has_abstract boolean, id serial, primary key(id));")
+	#cur.execute("create table elsevier_records ( path_pii varchar(150), doii varchar(150), pii varchar(150), path varchar(150), title varchar(250), authors varchar(250), dtd_version varchar(20), dtd_file varchar(20), abstract_only boolean, has_abstract boolean, id serial, primary key(id));")
 	conn.commit()
 	cur.close()
 
@@ -150,5 +149,5 @@ def walkFileTree(conn):
 
 ## main ##
 conn = psycopg2.connect(database=DBNAME, host=HOST, user=USER, password=PASSWORD)
-createDoiTable(conn)
+#####createDoiTable(conn)
 walkFileTree(conn)
