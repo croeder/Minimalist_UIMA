@@ -7,6 +7,8 @@ http://sourceforge.net/projects/bionlp-uima/files/ccp-nlp/v3.1/
 
 Chris Roeder, Nov. 2012
 
+* ts - UIMA type system xml files and generated java
+
 * analysis_engines
 	** AnalysisEngineTest.java
 	** Debug_AE.java
@@ -18,17 +20,20 @@ Chris Roeder, Nov. 2012
 		weren't for the fact you can't do type conversion as easily in Java
 		or that UIMA is in control of what objects get created in the JCas.
 
-* concept_mapper_pipelines
+* lingpipe_analysis_engines - a separate directory for lingpipe analysis engines to isolate the dependency on lingpipe and its license
 
-	** GetStartedQuickAE.java
-		This is a pipeline-less AE with direct JCAS creation and engine
-		running. It's about as simple as you can get.
 
-	** BaseUimaFitPipeline.java
-		This one is the basic RoomNumberAnnotator code from the UIMA tutorial.
-		It adds a pipeline, driven here by uimaFIT.:w
-		RoomNumber.java
-		RoomNumberAnnotator.java
+* doc - an interface to a local install of medline, as well as additions to
+	integrate pmc oa and a local elsevier  collection
+
+* cr - a set of collection readers including DbCollectionReader and derivatives
+	for using the doc directory's database
+
+* util - a home for  utility classes
+	** SpacedProperties - a wrapper on java properties that allows for namespaces in the names
+
+* pipelines
+	** BaseUimaFitPipeline.java - a base class using the UIMA base FileSystemCollectionReader
 
 	** ProteinPipeline.java
 		This is basically a type system modification over the RoomNumberAnnotator.
@@ -46,10 +51,14 @@ Chris Roeder, Nov. 2012
 		It uses xml files to describe the UIMA Analysis Engines.
 		See: https://groups.google.com/forum/?fromgroups#!topic/uimafit-users/BiCdfJrwGBE
 
-* lucene_pipelines
+	** KnowtatorPipeline (in devleopment)
+
  
-* web_service
-	** a web_service iniitally surfacing the concept_mapper pipeline
+* ws - a web_service iniitally surfacing the concept_mapper pipeline
+
+* rdf_document_interface - an earlier version of doc using triple stores
+
+* sesame_interface - a connection factory for rdf_document_interface
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/51326b276ac97a08eefd1f7b010eea0e "githalytics.com")](http://githalytics.com/croeder/uima_sample)
 
