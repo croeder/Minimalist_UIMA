@@ -32,8 +32,71 @@ abstractPattern = re.compile("<ce:abstract>")
 #<ce:sections>
 sectionPattern = re.compile("<ce:sections>")
 
+todo={
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000933",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000935",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000936",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000937",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000938",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000939",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000940",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000941",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000942",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000943",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000944",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000945",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000946",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000947",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000948",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000949",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000950",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000951",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000952",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000953",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000954",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000955",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000956",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000957",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000958",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000959",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000960",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000961",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000962",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000963",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000964",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000965",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000966",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000967",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000968",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000969",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000970",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000971",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000972",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000973",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000974",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000975",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000976",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000977",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000978",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000979",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000980",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000981",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000982",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000983",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000984",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000985",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000986",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000987",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000988",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000989",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000991",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000992",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000993",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000994",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000995",
+"/net/amc-colfax/RAID1/data/fulltext/elsevier/daily/UNC00000000000996"}
 
-#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"
+#elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/untar"",
 #elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/historical"
 elsevier_base = "/net/amc-colfax/RAID1/data/fulltext/elsevier/daily"
 doiDict = {}
@@ -136,16 +199,20 @@ def insertElsevierArticle(attrDict, conn):
 
 def walkFileTree(conn):
 	fileCount=0
-	for root, dirs, files in os.walk(elsevier_base):
-		for filename in files :
-			if (len(filename) > 7):
-				if (filename[-8:] == "main.xml") :
-					fileCount += 1
-					if (fileCount % 1000 == 0):
-						print(root + "/" + filename + " " + str(fileCount))
-					dict = readElsevierArticle(os.path.join(root, filename))
-					#print(dict)
-					insertElsevierArticle(dict, conn)
+	#for root, dirs, files in os.walk(elsevier_base):
+	for base_root in todo:
+		print("BASE_ROOT" + base_root)
+		for root, dirs, files in os.walk(base_root):
+			for filename in files :
+				print("ROOT" + root[:68])
+				if (len(filename) > 7):
+					if (filename[-8:] == "main.xml") :
+						fileCount += 1
+						if (fileCount % 1000 == 0):
+							print(root + "/" + filename + " " + str(fileCount))
+						dict = readElsevierArticle(os.path.join(root, filename))
+						#print(dict)
+						insertElsevierArticle(dict, conn)
 
 ## main ##
 conn = psycopg2.connect(database=DBNAME, host=HOST, user=USER, password=PASSWORD)
