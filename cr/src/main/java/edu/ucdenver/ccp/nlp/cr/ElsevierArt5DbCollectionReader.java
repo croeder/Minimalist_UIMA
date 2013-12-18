@@ -57,6 +57,7 @@ import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
 import edu.ucdenver.ccp.nlp.doc.XsltConverter;
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
+import edu.ucdenver.ccp.nlp.doc.ElsevierArt5DtdClasspathResolver;
 
 import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
 
@@ -72,7 +73,7 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 
 	static Logger logger = Logger.getLogger(ElsevierArt5DbCollectionReader.class);
 
-	static final String xsltFilename = "/ElsevierArt5.xsl";
+	static final String xsltFilename = "/Art502.xsl";
 	
 
 	@Override
@@ -82,17 +83,25 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 		String path = dp.getDocumentPath(idList.get(current));
 
 		String xmlText = dp.getDocumentText(path);
+		String docId = "TODO XXXXXX fix this !!";
 
-		// convert PMC XML to simple CCP XML
-		XsltConverter xslt = new XsltConverter();
-	out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" 
-						+ "path:\"" + path + "\"\n" 
-						+ "xmlText:\"" + xmlText + "\"\n" 
-						+ "xsltFilename:\"" + xsltFilename + "\"");
-		String xmlText2 = xslt.convert(xmlText, xsltFilename);
+
+		// convert Elsevier XML to simple CCP XML
+		ElsevierArt5DtdClasspathResolver resolver = new ElsevierArt5DtdClasspathResolver();
+		XsltConverter xslt = new XsltConverter(resolver);
+		//out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" + "path:\"" + path + "\"\n" + "xmlText:\"" + xmlText + "\"\n" + "xsltFilename:\"" + xsltFilename + "\"");
+		String xmlText2 = "";
+		try {
+			xmlText2 = xslt.convert(xmlText, xsltFilename);
+		} catch (Exception e) {
+			logger.error("ERROR in XSLT Conversion:" + e);
+			logger.error("can't parse this id:\"" + docId + "\"");
+			logger.error("can't parse this xml: -->" + xmlText + "<---");
+			e.printStackTrace();
+			throw new CollectionException(e);
+		}
 
 		// convert CCP XML to plain text
-		String docId = "TODO XXXXXX fix this !!";
 		List<CcpXmlParser.Annotation> annotations = null;
 		String plainText = null;
 		try {
@@ -100,6 +109,8 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 			plainText = parser.parse(xmlText2, docId);
 			annotations = parser.getAnnotations();
 		} catch (SAXException e) {
+			logger.error("can't ccp parse this id:\"" + docId + "\"");
+			logger.error("can't ccp parse this xml: -->" + xmlText2 + "<---");
 			throw new CollectionException(e);
 		}
 
@@ -115,7 +126,7 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 		jcas.setDocumentText(plainText);	
 		current++;
 
-		// set SDI
+		// set SDI **** TODO *****
 		/**
 		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
 		srcDocInfo.setUri(path);

@@ -88,7 +88,7 @@ public class XsltConverter {
 			String input=readFile(xmlFilename);
 			try {
 				String output=me.convert(input,xsltFilename);
-				logger.error(output);
+				logger.debug(output);
 			}
 			catch(Exception x) {
 				logger.error("XsltConverter error with file::\"" + xsltFilename + "\"");
@@ -146,7 +146,6 @@ public class XsltConverter {
 				// provides (with getXMLReader) a reference to the XMLReader.
 
 				// get a source to the input xml
-logger.error("XsltConverter input:" + input);
 				StringReader sr = new StringReader(input);
 				InputSource xmlSource = new InputSource(sr);
 	
@@ -181,7 +180,6 @@ logger.error("XsltConverter input:" + input);
 					}
 					retval = sw.toString();
 					sw.close();
-logger.error("XsltConverter output:" + retval);
 			}
 		}
 		catch (Exception x) { 
