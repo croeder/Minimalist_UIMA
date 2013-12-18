@@ -1,4 +1,4 @@
-create table elsevier_records (
+create table elsevierart5_records (
 	doi varchar(150),
 	pii varchar(150),
 	path varchar(150),

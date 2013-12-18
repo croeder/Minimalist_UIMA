@@ -27,54 +27,39 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package edu.ucdenver.ccp.nlp.doc;
+package edu.ucdenver.ccp.nlp.doc.orm;
 
-import static org.junit.Assert.assertEquals;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Basic;
+import javax.persistence.GeneratedValue;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+@Entity
+@Table(name="elsevierart5_batches")
+public class ElsevierArt5Batch {
 
-import java.util.List;
+	@Basic
+	int doc_id;
+	public int getDocId() { return doc_id; }
+	public void setDocId(int pmid) { this.doc_id = doc_id; }
 
-import java.io.IOException;
+	@Id 
+	int batch_id;
+	public int getId() { return batch_id; }
+	public void setId(int id) { this.batch_id = batch_id; }
 
-public class ElsevierArt5DocumentProviderTest {
-	
-	DocumentProvider da;
-	
-	@Before
-	public void setup() {
-		da = new ElsevierArt5DocumentProvider();
+	public ElsevierArt5Batch() {
+		super();
+		this.doc_id=0;
+		this.batch_id=0;
 	}
 
-	
-	@Test 
-	public void testMaxBatchIndex() {
-		int maxIndex = da.getMaxBatchIndex();
-		//assertEquals(999999, maxIndex);
-	}
-
-	@Test 
-	public void testGetIdRange() {
-		List<String> list = da.getIdRange(100);
-		//assertEquals("100321", list.get(0));
-		//assertEquals("822866",list.get(999));
-	}
-
-	@Test
-	public void testGetDocumentPath() {
-		String path = da.getDocumentPath("1");
-	}
-
-	@Ignore
-	@Test 
-	public void getDocumentText() throws IOException {
-		assertEquals(
-		"",
-		da.getDocumentText("/RAID1/data/fulltext/pmc/files/J_Cell_Biol/J_Cell_Biol_1976_Sep_1_70(3)_714-719.nxml"));
+	public ElsevierArt5Batch(int doc_id, int batch_id) {
+		super();
+		this.doc_id=doc_id;
+		this.batch_id=batch_id;
 	}
 
 }
-

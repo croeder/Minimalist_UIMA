@@ -80,7 +80,7 @@ public class CcpXmlParser_Test {
 			assertEquals(spans[i][1], a.end);
 			i++;
 		}
-		System.out.println("--^^---------------");
+		//System.out.println("--^^---------------");
 		StringBuffer expected = new StringBuffer();
 		for (String s : stringSpans) {
 			expected.append(s);

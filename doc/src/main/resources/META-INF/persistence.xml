@@ -10,6 +10,8 @@
 		<class>edu.ucdenver.ccp.nlp.doc.orm.PmcBatch</class>
 		<class>edu.ucdenver.ccp.nlp.doc.orm.Medline</class>
 		<class>edu.ucdenver.ccp.nlp.doc.orm.MedlineBatch</class>
+		<class>edu.ucdenver.ccp.nlp.doc.orm.ElsevierArt5Record</class>
+		<class>edu.ucdenver.ccp.nlp.doc.orm.ElsevierArt5Batch</class>
 		<!--<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
 		<!--<provider>"http://java.sun.com/xml/ns/persistence":class</provider>-->
 		<!--<provider>http://java.sun.com/xml/ns/persistence</provider>-->

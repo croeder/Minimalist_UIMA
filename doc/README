@@ -4,6 +4,8 @@ http://stackoverflow.com/questions/8162054/hibernate-overriding-hibernate-defaul
 This project implements the data requirements for a collection reader on the large document collections. The medline data comes from NIH and is loaded by a project called medic:https://github.com/fnl/medic
 
 
+*** see INSTALL directions below ***
+
 tables describing batches on each collection are created by scripts in src/main/sql and used with Hibernate
 
 3 data sources:
@@ -118,6 +120,23 @@ tables describing batches on each collection are created by scripts in src/main/
 	and booleans describing the success of regular expressions to
 	find abstracts and the presence of sections.
 
+	PECULIARITIES:
+	Elsevier doc.s aren't indexed by PMID, rather PII. It's in the XML as
+	well as the pathname. DOI is also available. Mapping from pmid to DOI
+	is partially available. My understanding is that trying to match papers
+	to papers without the use of an ID is difficult.
+	
+	Elsevier doc.s get updated without a change in ID(ii). It's only a guess
+	that the most recently received version is the best. AFAICT there is no
+	date that relates to these updates beyond the UNC0*\d* numbers in the 
+	path that increment daily. The day-to-day ramifications are that duplicate
+	pii's exist and the elsevier_records table uses an artificial ID that
+	increments with each insert ( a sequence ). Retrieval queries must 
+	deal with duplicate pii's. The path is available for retreival and
+	could be used for distinguishing the desireable document, possibly when
+	creating batches. TODO: incorporate the local ID into the meta data to
+	pass to UIMA for more careful provenance. TODO: investigate the scope
+	of these edits to assess the impact.
 		
 	SCRIPTS AND PROCS:
 	- create medline_doi
@@ -126,3 +145,8 @@ tables describing batches on each collection are created by scripts in src/main/
 	- create and populate elsevier_records: ccp_nlp/doc/src/man/python/elsevier.py 
 	- update elsevier_records (TODO)
 
+INSTALL
+-----------
+	This stuff isn't purely maven and artifactory driven. There is an install script
+	at src/main/bash/install.sh that does a "mvn install:install" on some jars
+	in src/main/resources that contain dtd information.

@@ -54,11 +54,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.EntityResolver;
 
-//import net.sf.saxon.TransformerFactoryImpl;
-//import net.sf.saxon.trans.XmlCatalogResolver;
-//import net.sf.saxon.Configuration;
-//import net.sf.saxon.Controller;
-//import net.sf.saxon.lib.FeatureKeys;
 import org.apache.xml.resolver.tools.CatalogResolver;
 
 import org.apache.log4j.Logger;
@@ -68,10 +63,19 @@ public class XsltConverter {
 
 	static Logger logger  = Logger.getLogger(XsltConverter.class);
 
+	EntityResolver er;
 
 	// http://codingwithpassion.blogspot.com/2011/03/saxon-xslt-java-example.htmlsax
 	// http://stackoverflow.com/questions/2968190/how-to-select-saxon-transformerfactory-in-java
 	static final String transformerFactoryPropertyName = "javax.xml.transform.TransformerFactory";
+
+	public XsltConverter() {
+		er = new PmcDtdClasspathResolver();
+	}
+
+	public XsltConverter(EntityResolver er) {
+		this.er = er;
+	}
 	
 	public static void main(String args[]) {
 		if (args.length < 2) {
@@ -142,11 +146,11 @@ public class XsltConverter {
 				// provides (with getXMLReader) a reference to the XMLReader.
 
 				// get a source to the input xml
+logger.error("XsltConverter input:" + input);
 				StringReader sr = new StringReader(input);
 				InputSource xmlSource = new InputSource(sr);
 	
 
-				if (true) {
 					// input
 					//SAXSource xmlSaxSource = new SAXSource(xmlSource);
 
@@ -155,7 +159,10 @@ public class XsltConverter {
 					spf.setNamespaceAware(true);
 					SAXParser parser = spf.newSAXParser();
 					XMLReader reader = parser.getXMLReader();
-					EntityResolver er = new PmcDtdClasspathResolver();
+
+					/**********/
+
+
 					reader.setEntityResolver(er);
 					SAXSource xmlSaxSource = new SAXSource(reader,xmlSource);
 					//xmlSaxSource.setXMLReader(reader);
@@ -174,59 +181,7 @@ public class XsltConverter {
 					}
 					retval = sw.toString();
 					sw.close();
-				
-				} else  if (true) {
-					SAXSource xmlSaxSource = new SAXSource(xmlSource);
-					XMLReader reader = xmlSaxSource.getXMLReader();
-
-					EntityResolver er = new PmcDtdClasspathResolver();
-					if (reader == null) {
-						System.out.println(" WTF?     null reader   ");
-					}
-					else {
-						reader.setEntityResolver(er);
-					}
-
-
-
-					// create a SaxSource, no, get it from the parser?
-					//	xmlSaxSource = new SAXSource(reader, xmlSource);
-					// don't create a new SaxSource, rather get it from a URIResolver on .....?
-
-					// get a result for the output
-					StringWriter sw = new StringWriter();
-					Result result = new StreamResult(sw);
-
-					// transform from source to results
-					trans.transform(xmlSaxSource, result);
-					retval = sw.toString();
-					sw.close();
-				} else if (true) {
-					// doesh't work because the Saxparser should be retrived, not created
-					// get an xml reader with entity resolver
-					SAXParserFactory spf = SAXParserFactory.newInstance();
-					SAXParser parser = spf.newSAXParser();
-					XMLReader reader = parser.getXMLReader();
-
-					EntityResolver er = new PmcDtdClasspathResolver();
-					reader.setEntityResolver(er);
-
-					SAXSource xmlSaxSource = new SAXSource(reader, xmlSource);
-
-					StringWriter sw = new StringWriter();
-					Result result = new StreamResult(sw);
-					trans.transform(xmlSaxSource, result);
-					retval = sw.toString();
-					sw.close();
-				} else {
-					// works, but requires a copy of the dtd's etc. No resolver here.
-					SAXSource xmlSaxSource = new SAXSource(xmlSource);
-					StringWriter sw = new StringWriter();
-					Result result = new StreamResult(sw);
-					trans.transform(xmlSaxSource, result);
-					retval = sw.toString();
-					sw.close();
-				}
+logger.error("XsltConverter output:" + retval);
 			}
 		}
 		catch (Exception x) { 
@@ -241,91 +196,5 @@ public class XsltConverter {
 		return retval;
 	
 	}
-
-	//	http://xerces.apache.org/xml-commons/components/resolver/resolver-article.html
-	//http://stackoverflow.com/questions/1091384/prevent-dtd-download-when-using-xslt-i-e-xml-transformer
-
-
-	Transformer createTransformer_xalan(Source xsltSource) 
-	throws TransformerConfigurationException {
-
-	// some distracting crap that creates the transform from the templates instead of directly from the factory
-		URIResolver resolver = new  PmcDtdUriResolver();
-
-/**
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		builder.setEntityResolver(resolver);
-		Templates templates = factory.newTemplates(xsltSource);
-		Transformer trans = templates.newTransformer();
-		trans.setURIResolver(resolver);
-		return trans;
-**/
-		return null;
-
-	}
-	Transformer createTransformer_xalan_uses_transformer_factory(Source xsltSource) 
-	throws TransformerConfigurationException {
-		TransformerFactory transFact = TransformerFactory.newInstance();
-		URIResolver resolver = new  PmcDtdUriResolver();
-		transFact.setURIResolver(resolver); // <---
-		Transformer trans = transFact.newTransformer(xsltSource);
-		trans.setURIResolver(resolver);
-		return trans;
-	}
-	Transformer createTransformer_xalan_not_work(Source xsltSource) 
-	throws TransformerConfigurationException {
-		TransformerFactory transFact = TransformerFactory.newInstance();
-		URIResolver resolver = new  PmcDtdUriResolver();
-		transFact.setURIResolver(resolver); // <---
-		Transformer trans = transFact.newTransformer(xsltSource);
-		return trans;
-	}
-
-	Transformer createTransfomer_saxon() {
-		/*
-			I can use xalan through it's command line interface, but duplicating that through the API is like pulling teeth.
-
-			I wasn't able to get my URIResolver or the catalog resolver to work from java. The command line works with
-			a catalog resolver, but you have to edit the catalogs to set the right path.
-
-			Saxon uses a class to run the command line interface: Transform. It contains a saxon extension of the the
-			apache Transformer called Controller. (the names are totally backwards. The derivation of Transfomer should 
-			becalled TransformerImpl, or SaxonTransformer, not Transform. The command line option interface could be
-			called Controller. But they aren ot.) The Transform makes use of both CommandLineOptions and Configuration
- 			to hold and transfer parameters to the Controller. The nausea is bad enough to make me want to reconsider
-    		xalan before I pursue recreating the pretzel logic of the Controller's private parts in my own code.
-			For posterity then, I'm at the point where I see that CommandLineOptions.setParams(config, controller) takes
-  			the options values and stuffs them into the controller. The role of the config object isn't as clear. I don't
-			think the options play a part deeper down into the Saxon transformer aka Controller.
-
-			This really all started with the superficial elegance of not writing a custom URIResolver class and using the
-     		catalogs that are supplied with the dtd files. The point that you have to edit those files with the installation
-			path should have stopped me there.
-		*/
-		/*
-			TransformerFactory transFact = new net.sf.saxon.TransformerFactoryImpl();
-			Transformer trans = transFact.newTransformer(xsltSource);
-			String catalogFilename = "target/classes/pmc-dtd-2.3/catalog-v2.xml;target/classes/pmc-dtd-3.0/catalog-v3.xml";
-			System.setProperty("xml.catalog.files", catalogFilename);	
-
-			Controller controller = (Controller) trans;
-			controller.setConfigurationProperty(FeatureKeys.URI_RESOLVER_CLASS, "org.apache.xml.resolver.tools.CatalogResolver");
-			controller.setConfigurationProperty(FeatureKeys.SOURCER_PARSER_CLASS, "org.apache.xml.resolver.tools.ResolvingXMLReader");
-			controller.setConfigurationProperty(FeatureKeys.STYLEL_PARSER_CLASS, "org.apache.xml.resolver.tools.ResolvingXMLReader");
-
-			// try to use saxon with standard catalog resolver and a catalog file: not good	
-			//CatalogResolver resolver = new CatalogResolver();
-			// http://www.saxonica.com/documentation/sourcedocs/xml-catalogs.html
-			// http://www.sagehill.net/docbookxsl/UseCatalog.html * relative catalog paths!!
-			// org.apache.xml.resolver.tools.CatalogResolver
-			// org.apache.xml.resolver.tools.ResolvingXMLReader
-			// xml.catalog.files = <catalog file>
-			///crap///System.setProperty("xml.catalog.files", "target/classes/pmc-dtd-2.3/catalog-v2.xml;target/classes/pmc-dtd-3.0/catalog-v3.xml");
-		*/
-	
-		return null;
-	}
-	
 
 }

@@ -5,13 +5,13 @@
 	<groupId>edu.ucdenver.ccp</groupId>
 	<artifactId>nlp_doc</artifactId>
 	<version>1.0-SNAPSHOT</version>
-
+<!--
      <parent>
         <groupId>edu.ucdenver.ccp</groupId>
         <artifactId>nlp</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
+-->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -77,22 +77,44 @@
 			<artifactId>xml-resolver</artifactId>
 			<version>1.2</version>
 		</dependency>
+
 		<dependency>
-			<groupId>pmc</groupId>
-			<artifactId>dtd3</artifactId>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp.doc.pmc.dtd3</artifactId>
 			<version>3.0</version>
-			<scope>system</scope>
-			<!--<systemPath>${basedir}/target/classes/pmc-dtd-3.0.jar</systemPath>-->
-			<systemPath>${basedir}/src/main/resources/pmc-dtd-3.0.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>pmc</groupId>
-			<artifactId>dtd2</artifactId>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp.doc.pmc.dtd2</artifactId>
 			<version>2.3</version>
-			<scope>system</scope>
-			<!--<systemPath>${basedir}/target/classes/pmc-dtd-2.3.jar</systemPath>-->
-			<systemPath>${basedir}/src/main/resources/pmc-dtd-2.3.jar</systemPath>
 		</dependency>
+
+		<dependency>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp.doc.elsevier.dtd502</artifactId>
+			<version>5.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp.doc.elsevier.dtd510</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.ucdenver.ccp</groupId>
+			<artifactId>nlp.doc.elsevier.dtd520</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+
+		<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+        </dependency>
 	</dependencies>
 
 

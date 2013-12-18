@@ -32,7 +32,7 @@ package edu.ucdenver.ccp.nlp.doc;
 
 import static java.lang.System.out;
 
-import edu.ucdenver.ccp.nlp.doc.orm.Pmc;
+import edu.ucdenver.ccp.nlp.doc.orm.ElsevierArt5Record;
 
 import javax.persistence.Persistence;
 import javax.persistence.EntityManagerFactory;
@@ -47,7 +47,11 @@ import com.google.common.collect.Lists;
 import com.google.common.base.Functions;
 import org.apache.commons.io.FileUtils;
 
+import org.apache.log4j.Logger;
+
 public class ElsevierArt5DocumentProvider implements DocumentProvider {
+
+	Logger logger = Logger.getLogger(ElsevierArt5DocumentProvider.class);
 	EntityManager em;
 
 	public ElsevierArt5DocumentProvider() {
@@ -57,39 +61,40 @@ public class ElsevierArt5DocumentProvider implements DocumentProvider {
 	}
 
     public int getMaxBatchIndex() {
-        Query q = em.createQuery("SELECT max(id) FROM  ElsevierArt5tBatch ");
+        Query q = em.createQuery("SELECT max(doc_id) FROM  ElsevierArt5Batch ");
         List<Integer> docIds =  (List<Integer>) q.getResultList();
 
         return docIds.get(0);
     }
 
     public List<String> getIdRange(int batchNumber) {
-        Query q = em.createQuery("SELECT pmid FROM ElsevierArt5atch WHERE id = :id ");
-        q.setParameter("id", batchNumber);
+        Query q = em.createQuery("SELECT doc_id FROM ElsevierArt5Batch WHERE batch_id = :batchId ");
+        q.setParameter("batchId", batchNumber);
         List<Integer> docIds =  (List<Integer>) q.getResultList();
         List<String> strings = Lists.transform(docIds, Functions.toStringFunction());
         return strings;
     }
 
-
-	public String getDocumentPath(String pmid) {
-		Query q = em.createQuery("SELECT x from ElsevierArt5 x  WHERE :pmid = pmid");
-		int pmidInt = Integer.valueOf(pmid);
-		q.setParameter("pmid", pmidInt);
-		Pmc doc =  (Pmc) q.getSingleResult();
-		return doc.getPath();
+	public String getDocumentPath(String docId) {
+		Query q = em.createQuery("SELECT path from ElsevierArt5Record   WHERE id = :docId");
+		int docIdInt = Integer.valueOf(docId);
+		q.setParameter("docId", docIdInt);
+		String path = (String) q.getSingleResult();
+		return path;
 	}
 
 	public String getDocumentText(String path) 
 	throws IOException {
 
 		// TODO: make a property for this, deal with the possibility of different paths needing different prefixes
-		path = "/net/amc-colfax/" + path;
+		///path = "/net/amc-colfax/" + path;
 
 		
 		// wget the path and return?
 		// TODO
-		return FileUtils.readFileToString(new File(path), "UTF-8");
+		String fileString =  FileUtils.readFileToString(new File(path), "UTF-8");
+	logger.error("docProvider PATH is: " + path + "\nFILE IS:\"" + fileString + "\"");
+		return fileString;
 	}
 
 }
