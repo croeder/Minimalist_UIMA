@@ -202,14 +202,13 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 						System.out.println("unknown mention: " + cm.getMentionName());
 						Collection<String> slotNames =  ClassMentionX.getPrimitiveSlotMentionNames(cm);
 						for (String slotName : slotNames) {
-							System.out.print(slotName 
-									//+ UIMA_Util.getFirstSlotValue((StringSlotMention)UIMA_Util.getPrimitiveSlotMentionByName(cm, slotName))
-								);
+							System.out.print("    slot:" + slotName + " value:" +
+								ClassMentionX.getStringSlotMentionValue(cm, slotName) );
 						}
 	
 						slotNames =  ClassMentionX.getComplexSlotMentionNames(cm);
 						for (String slotName : slotNames) {
-							System.out.print(slotName + " "); 
+							System.out.print("    complex slot:" + slotName + " "); 
 						}
 					}
 	
