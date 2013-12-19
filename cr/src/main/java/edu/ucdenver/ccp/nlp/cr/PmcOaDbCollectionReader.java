@@ -46,6 +46,10 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import org.apache.log4j.Logger;
+
 import org.uimafit.component.JCasCollectionReader_ImplBase;
 import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.ConfigurationParameterFactory;
@@ -59,8 +63,8 @@ import edu.ucdenver.ccp.nlp.doc.XsltConverter;
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
 
 import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
+import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 
-import org.apache.log4j.Logger;
 
 import org.xml.sax.SAXException;
 
@@ -79,42 +83,38 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 	public void getNext(JCas jcas) 
 	throws IOException, CollectionException {
 		// get text
-		String path = dp.getDocumentPath(idList.get(current));
+		ImmutablePair<String, String> pair = dp.getDocumentPathAndId(idList.get(current));
 
-		String xmlText = dp.getDocumentText(path);
+		String xmlText = dp.getDocumentText(pair.getLeft());
 
 		// convert PMC XML to simple CCP XML
 		XsltConverter xslt = new XsltConverter();
-		//out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" + "path:\"" + path + "\"\n" + "xmlText:\"" + xmlText + "\"\n" + "xsltFilename:\"" + xsltFilename + "\"");
 		String xmlText2 = xslt.convert(xmlText, xsltFilename);
 
 		// convert CCP XML to plain text
-		String docId = "TODO XXXXXX fix this !!";
 		List<CcpXmlParser.Annotation> annotations = null;
 		String plainText = null;
 		try {
 			CcpXmlParser parser = new CcpXmlParser();
-			plainText = parser.parse(xmlText2, docId);
+			plainText = parser.parse(xmlText2, pair.getRight());
 			annotations = parser.getAnnotations();
 		} catch (SAXException e) {
 			throw new CollectionException(e);
 		}
 
 		// convert annotations
-
 		List<TextAnnotation> ta = CcpXmlAnnotationFactory.convert(jcas, annotations);			
 
 		// set text
 		jcas.setDocumentText(plainText);	
 		current++;
 
-		// set SDI
-		/**
-		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
-		srcDocInfo.setUri(path);
-		srcDocInfo.setDocumentSize(text.length);
-		srcDocInfo.addToIndexes();
-		**/
+		DocumentInformation docInfo = new DocumentInformation(jcas);
+		docInfo.setUri(pair.getLeft());
+		docInfo.setDocumentId(pair.getRight());
+		docInfo.setPmid(pair.getRight());
+		docInfo.setDocumentSize(plainText.length());
+		docInfo.addToIndexes();
 	}
 
 	public static CollectionReader createCollectionReader(TypeSystemDescription tsd, int batch) 

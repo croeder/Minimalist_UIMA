@@ -39,6 +39,9 @@ import java.util.List;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+
 public class PmcDocumentProviderTest {
 	
 	DocumentProvider da;
@@ -59,6 +62,16 @@ public class PmcDocumentProviderTest {
 		List<String> list = da.getIdRange(100);
 		assertEquals("16857050", list.get(0));
 		assertEquals("16907971",list.get(999));
+	}
+
+	@Test
+	public void testGetDocumentPathAndId() {
+		ImmutablePair<String, String> pair = da.getDocumentPathAndId("16857050");
+		String path = pair.getLeft();
+		String id = pair.getRight();
+		System.out.println("------------Pmcxxxxxxx" + path + ", " + id);
+		assertEquals(path, "/RAID1/data/fulltext/pmc/files/Epidemiol_Perspect_Innov/Epidemiol_Perspect_Innov_2006_Jul_20_3_8.nxml");
+		assertEquals(id, "16857050");
 	}
 
 	@Test 

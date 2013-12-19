@@ -40,6 +40,9 @@ import java.util.List;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+
 public class ElsevierArt5DocumentProviderTest {
 	
 	DocumentProvider da;
@@ -64,8 +67,13 @@ public class ElsevierArt5DocumentProviderTest {
 	}
 
 	@Test
-	public void testGetDocumentPath() {
-		String path = da.getDocumentPath("1");
+	public void testGetDocumentPathAndId() {
+		ImmutablePair<String, String> pair = da.getDocumentPathAndId("1");
+		String path = pair.getLeft();
+		String id = pair.getRight();
+		//System.out.println("-------Elsevierxxxxxxx" + path + ", " + id);
+	assertEquals("/net/amc-colfax/RAID1/data/fulltext/elsevier/untar/UNC00000000000709/09699961/v45i2/S0969996111003330/main.xml", path);
+	assertEquals("S0969-9961(11)00333-0", id);
 	}
 
 	@Ignore

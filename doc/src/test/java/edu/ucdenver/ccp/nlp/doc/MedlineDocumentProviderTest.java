@@ -38,6 +38,9 @@ import org.junit.Test;
 import java.util.List;
 import java.io.IOException;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+
 public class MedlineDocumentProviderTest {
 	
 	DocumentProvider da;
@@ -57,6 +60,16 @@ public class MedlineDocumentProviderTest {
 		List<String> list = da.getIdRange(100);
 		assertEquals("208335", list.get(0));
 		assertEquals("210279",list.get(999));
+	}
+
+	@Test
+	public void testGetDocumentPathAndId() {
+		ImmutablePair<String, String> pair = da.getDocumentPathAndId("210279");
+		String path = pair.getLeft();
+		String id = pair.getRight();
+		System.out.println("-------------Medlinexxxxxxx" + path + ", " + id);
+		assertEquals(path, "210279");
+		assertEquals(id, "210279");
 	}
 
 	@Test 

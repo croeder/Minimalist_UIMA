@@ -46,9 +46,13 @@ import java.io.IOException;
 import com.google.common.collect.Lists;
 import com.google.common.base.Functions;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import org.apache.log4j.Logger;
 
+/**
+ * serves up elsevier documents. Ids are Pii, paths are on amc-colfax
+ */
 public class ElsevierArt5DocumentProvider implements DocumentProvider {
 
 	Logger logger = Logger.getLogger(ElsevierArt5DocumentProvider.class);
@@ -75,12 +79,12 @@ public class ElsevierArt5DocumentProvider implements DocumentProvider {
         return strings;
     }
 
-	public String getDocumentPath(String docId) {
-		Query q = em.createQuery("SELECT path from ElsevierArt5Record   WHERE id = :docId");
+	public ImmutablePair<String,String> getDocumentPathAndId(String docId) {
+		Query q = em.createQuery("SELECT rec from ElsevierArt5Record as rec  WHERE id = :docId");
 		int docIdInt = Integer.valueOf(docId);
 		q.setParameter("docId", docIdInt);
-		String path = (String) q.getSingleResult();
-		return path;
+		ElsevierArt5Record record = (ElsevierArt5Record) q.getSingleResult();
+		return  new ImmutablePair<String, String>(record.getPath(), record.getPii());
 	}
 
 	public String getDocumentText(String path) 

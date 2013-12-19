@@ -58,6 +58,8 @@ import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
 import edu.ucdenver.ccp.nlp.doc.XsltConverter;
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
 import edu.ucdenver.ccp.nlp.doc.ElsevierArt5DtdClasspathResolver;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 
 import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
 
@@ -80,22 +82,20 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 	public void getNext(JCas jcas) 
 	throws IOException, CollectionException {
 		// get text
-		String path = dp.getDocumentPath(idList.get(current));
+		ImmutablePair<String,String> pair = dp.getDocumentPathAndId(idList.get(current));
 
-		String xmlText = dp.getDocumentText(path);
-		String docId = "TODO XXXXXX fix this !!";
+		String xmlText = dp.getDocumentText(pair.getLeft());
 
 
 		// convert Elsevier XML to simple CCP XML
 		ElsevierArt5DtdClasspathResolver resolver = new ElsevierArt5DtdClasspathResolver();
 		XsltConverter xslt = new XsltConverter(resolver);
-		//out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" + "path:\"" + path + "\"\n" + "xmlText:\"" + xmlText + "\"\n" + "xsltFilename:\"" + xsltFilename + "\"");
 		String xmlText2 = "";
 		try {
 			xmlText2 = xslt.convert(xmlText, xsltFilename);
 		} catch (Exception e) {
 			logger.error("ERROR in XSLT Conversion:" + e);
-			logger.error("can't parse this id:\"" + docId + "\"");
+			logger.error("can't parse this id:\"" + pair.getRight() + "\"");
 			logger.error("can't parse this xml: -->" + xmlText + "<---");
 			e.printStackTrace();
 			throw new CollectionException(e);
@@ -106,33 +106,32 @@ public class ElsevierArt5DbCollectionReader extends DbCollectionReader {
 		String plainText = null;
 		try {
 			CcpXmlParser parser = new CcpXmlParser();
-			plainText = parser.parse(xmlText2, docId);
+			plainText = parser.parse(xmlText2, pair.getRight());
 			annotations = parser.getAnnotations();
 		} catch (SAXException e) {
-			logger.error("can't ccp parse this id:\"" + docId + "\"");
+			logger.error("can't ccp parse this id:\"" + pair.getRight() + "\"");
 			logger.error("can't ccp parse this xml: -->" + xmlText2 + "<---");
 			throw new CollectionException(e);
 		}
 
-		// convert annotations
-
+		// TODO: convert annotations from xml parser. These are typically sections and italics etc.
 		List<TextAnnotation> ta = CcpXmlAnnotationFactory.convert(jcas, annotations);			
         //Collection<TextAnnotation> textAnnos = JCasUtil.select(jcas, TextAnnotation.class);
 		//for (TextAnnotation ta2 : textAnnos) {
 			//out.println("aaaaaaa" + ta2);
 		//}
 
-		// set text
+		// set text & id
+		DocumentInformation docInfo = new DocumentInformation(jcas);
+		docInfo.setUri(pair.getLeft());
+		docInfo.setDocumentId(pair.getRight());
+		docInfo.setPii(pair.getRight());
+		docInfo.setDocumentSize(plainText.length());
+		docInfo.addToIndexes();
 		jcas.setDocumentText(plainText);	
-		current++;
+		docInfo.addToIndexes();
 
-		// set SDI **** TODO *****
-		/**
-		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
-		srcDocInfo.setUri(path);
-		srcDocInfo.setDocumentSize(text.length);
-		srcDocInfo.addToIndexes();
-		**/
+		current++;
 	}
 
 	public static CollectionReader createCollectionReader(TypeSystemDescription tsd, int batch) 

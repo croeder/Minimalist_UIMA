@@ -42,8 +42,12 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 import com.google.common.base.Functions;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 
-
+/**
+ * serves up medline abstracts. Ids are pmids. Paths are pmids too since
+ * the text is in the database, so there is no file path really.
+ */
 public class MedlineDocumentProvider implements DocumentProvider {
 	EntityManager em;
 
@@ -68,8 +72,8 @@ public class MedlineDocumentProvider implements DocumentProvider {
 		return strings;	
 	}
 
-	public String getDocumentPath(String pmid) {
-		return pmid;
+	public ImmutablePair<String, String> getDocumentPathAndId(String pmid) {
+		return new ImmutablePair<String, String>(pmid, pmid);
 	}
 
 	public String getDocumentText(String pmid) {

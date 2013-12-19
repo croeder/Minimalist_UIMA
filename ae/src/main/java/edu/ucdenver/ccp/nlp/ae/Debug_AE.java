@@ -60,6 +60,7 @@ import org.apache.uima.examples.SourceDocumentInformation;
 
 import edu.ucdenver.ccp.nlp.ts.IdDictTerm;
 import edu.ucdenver.ccp.nlp.ts.Protein;
+import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.descriptor.SofaCapability;
@@ -105,6 +106,10 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 	        Annotation annot = (Annotation) annotIter.next();
 			if (annot instanceof TokenAnnotation) {
 				System.out.println("SEMANTIC token: " + annot.getBegin() + ", " + annot.getEnd() + " \"" + annot.getCoveredText() + "\"");
+			}
+			if (annot instanceof DocumentInformation) {
+				DocumentInformation di = (DocumentInformation) annot;
+				System.out.println("Source doc. \"" + di.getUri() + "\" id:" + di.getDocumentId());
 			}
 			if (annot instanceof SourceDocumentInformation) {
 				SourceDocumentInformation sdi = (SourceDocumentInformation) annot;

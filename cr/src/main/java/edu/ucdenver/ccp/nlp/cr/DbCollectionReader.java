@@ -41,6 +41,8 @@ import org.apache.uima.util.ProgressImpl;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.collection.CollectionException;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
 import org.uimafit.component.JCasCollectionReader_ImplBase;
 import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.ConfigurationParameterFactory;
@@ -48,8 +50,10 @@ import org.uimafit.factory.ConfigurationParameterFactory;
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderFactory;
 import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
+import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 
 import org.apache.log4j.Logger;
+
 
 public class DbCollectionReader extends JCasCollectionReader_ImplBase {
 
@@ -76,38 +80,29 @@ public class DbCollectionReader extends JCasCollectionReader_ImplBase {
 	@Override
 	public void initialize(UimaContext context) 
 	throws ResourceInitializationException {
-		try {
-			DocumentProviderType collectionType = DocumentProviderType.valueOf(collectionTypeString);
-			dp = DocumentProviderFactory.getDocumentProvider(collectionType);
-			if (dp == null) {
-				// TODO: more elegant exception
-				logger.error("WTFW????????????????" + collectionType);
-				throw new ResourceInitializationException(new RuntimeException("null document provider"));
-			}
-			idList = dp.getIdRange(batchNumber);
+		DocumentProviderType collectionType = DocumentProviderType.valueOf(collectionTypeString);
+		dp = DocumentProviderFactory.getDocumentProvider(collectionType);
+		if (dp == null) {
+			String msg = "ERROR no provider in DbCollectionReader.initialize() for collectionType: " + collectionType;
+			logger.error(msg);
+			throw new ResourceInitializationException(new RuntimeException(msg));
 		}
-		catch (Exception e ) {
-			logger.error(e);
-			e.printStackTrace();
-			throw new ResourceInitializationException(e);
-		}
+		idList = dp.getIdRange(batchNumber);
 	}
 
 	@Override
 	public void getNext(JCas jcas) 
 	throws IOException, CollectionException {
-		String path = dp.getDocumentPath(idList.get(current));
-		String text = dp.getDocumentText(path);
-logger.error("PATH is: " + path +  "\nTEXT in DBCR is:" + text);
+		ImmutablePair<String, String> pair = dp.getDocumentPathAndId(idList.get(current));
+		String text = dp.getDocumentText(pair.getLeft());
 		jcas.setDocumentText(text);	
 		current++;
 
-		/*
-		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
-		srcDocInfo.setUri(path);
-		srcDocInfo.setDocumentSize(text.length);
-		srcDocInfo.addToIndexes();
-		*/
+		DocumentInformation docInfo = new DocumentInformation(jcas);
+		docInfo.setUri(pair.getLeft());
+		docInfo.setDocumentId(pair.getRight());
+		docInfo.setDocumentSize(text.length());
+		docInfo.addToIndexes();
 	}
 
 	@Override

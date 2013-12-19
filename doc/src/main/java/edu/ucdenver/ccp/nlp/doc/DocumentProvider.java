@@ -31,11 +31,12 @@ package edu.ucdenver.ccp.nlp.doc;
 
 import java.util.List;
 import java.io.IOException;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 
 public interface DocumentProvider {	
 	int getMaxBatchIndex();
 	List<String> getIdRange(int batchNumber);
-	String getDocumentPath(String id);
+	ImmutablePair<String,String> getDocumentPathAndId(String id);
 	String getDocumentText(String path) throws IOException;
 }
 

@@ -46,7 +46,11 @@ import java.io.IOException;
 import com.google.common.collect.Lists;
 import com.google.common.base.Functions;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 
+/**
+ * serves up pmc paths by pmid. Paths are on RAID1 (amc-colfax)
+ */
 public class PmcDocumentProvider implements DocumentProvider {
 	EntityManager em;
 
@@ -71,13 +75,12 @@ public class PmcDocumentProvider implements DocumentProvider {
         return strings;
     }
 
-
-	public String getDocumentPath(String pmid) {
-		Query q = em.createQuery("SELECT x from Pmc x  WHERE :pmid = pmid");
+	public ImmutablePair<String,String> getDocumentPathAndId(String pmid) {
+		Query q = em.createQuery("SELECT rec from Pmc as rec   WHERE :pmid = pmid");
 		int pmidInt = Integer.valueOf(pmid);
 		q.setParameter("pmid", pmidInt);
-		Pmc doc =  (Pmc) q.getSingleResult();
-		return doc.getPath();
+		Pmc record = (Pmc) q.getSingleResult();
+		return new ImmutablePair<String, String>(record.getPath(), "" + record.getPmid());
 	}
 
 	public String getDocumentText(String path) 

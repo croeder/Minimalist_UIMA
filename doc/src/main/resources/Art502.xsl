@@ -16,6 +16,7 @@
 
 	<xsl:template match="article" priority='0'>
 		<xsl:element name="DOC"> 
+			<xsl:apply-templates select="node()" />
 		</xsl:element>
 	</xsl:template>
 

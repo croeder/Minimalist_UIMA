@@ -46,6 +46,10 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import org.apache.log4j.Logger;
+
 import org.uimafit.component.JCasCollectionReader_ImplBase;
 import org.uimafit.descriptor.ConfigurationParameter;
 import org.uimafit.factory.ConfigurationParameterFactory;
@@ -57,10 +61,8 @@ import edu.ucdenver.ccp.nlp.doc.DocumentProviderType;
 import edu.ucdenver.ccp.nlp.doc.DocumentProvider;
 import edu.ucdenver.ccp.nlp.doc.XsltConverter;
 import edu.ucdenver.ccp.nlp.doc.CcpXmlParser;
-
+import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 import edu.ucdenver.ccp.nlp.ts.TextAnnotation;
-
-import org.apache.log4j.Logger;
 
 import org.xml.sax.SAXException;
 
@@ -76,21 +78,20 @@ public class MedlineDbCollectionReader extends DbCollectionReader {
 	public void getNext(JCas jcas) 
 	throws IOException, CollectionException {
 		// get text
-		String path = dp.getDocumentPath(idList.get(current));
+		ImmutablePair<String, String> pair = dp.getDocumentPathAndId(idList.get(current));
 
-		String plainText = dp.getDocumentText(path);
+		String plainText = dp.getDocumentText(pair.getLeft());
 
 		// set text
 		jcas.setDocumentText(plainText);	
 		current++;
 
-		// set SDI
-		/**
-		SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
-		srcDocInfo.setUri(path);
-		srcDocInfo.setDocumentSize(text.length);
-		srcDocInfo.addToIndexes();
-		**/
+		DocumentInformation docInfo = new DocumentInformation(jcas);
+		docInfo.setUri(pair.getLeft());
+		docInfo.setDocumentId(pair.getRight());
+		docInfo.setPmid(pair.getRight());
+		docInfo.setDocumentSize(plainText.length());
+		docInfo.addToIndexes();
 	}
 
 	public static CollectionReader createCollectionReader(TypeSystemDescription tsd, int batch) 

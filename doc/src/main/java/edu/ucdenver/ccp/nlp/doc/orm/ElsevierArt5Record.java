@@ -98,14 +98,14 @@ public class ElsevierArt5Record {
      * TODO FIX change column name
 	 */
 	@Basic
-	boolean abstractOnly;
-	public boolean getHasSections() { return abstractOnly; }
-	public void setHashSections(boolean hasSections) { this.abstractOnly = hasSections; }
+	boolean abstract_only;
+	public boolean getHasSections() { return abstract_only; }
+	public void setHashSections(boolean hasSections) { this.abstract_only = hasSections; }
 
 	@Basic
-	boolean hasAbstract;
-	public boolean getHasAbstract() { return hasAbstract; }
-	public void setHasAbstract(boolean hasAbstract) { this.hasAbstract = hasAbstract; }
+	boolean has_abstract;
+	public boolean getHasAbstract() { return has_abstract; }
+	public void setHasAbstract(boolean has_abstract) { this.has_abstract = has_abstract; }
 
 	public ElsevierArt5Record() {
 		super();
@@ -118,13 +118,13 @@ public class ElsevierArt5Record {
 		this.authors="";
 		this.dtdVersion="";
 		this.dtdFile="";
-		this.abstractOnly=false;
-		this.hasAbstract=true;
+		this.abstract_only=false;
+		this.has_abstract=true;
 	}
 
 	public ElsevierArt5Record(int id, String pathPii, String pii, String path,
 		String title, String authors, String dtdVersion, String dtdFile, 
-		boolean hasSections, boolean hasAbstract ){
+		boolean hasSections, boolean has_abstract ){
 
 		super();
 
@@ -136,8 +136,8 @@ public class ElsevierArt5Record {
 		this.authors=authors;
 		this.dtdVersion=dtdVersion;
 		this.dtdFile=dtdFile;
-		this.abstractOnly=hasSections;
-		this.hasAbstract=hasAbstract;
+		this.abstract_only=hasSections;
+		this.has_abstract=has_abstract;
 	}
 
 }

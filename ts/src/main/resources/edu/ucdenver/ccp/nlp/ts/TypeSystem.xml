@@ -12,7 +12,7 @@
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
         <featureDescription>
-          <name>annotationID</name>
+          <name>annotationId</name>
           <description>(optional) The annotation ID provides a means for identifying a particular annotation.</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
@@ -23,6 +23,53 @@
         </featureDescription>
       </features>
     </typeDescription>
+	<typeDescription>
+      <name>edu.ucdenver.ccp.nlp.ts.DocumentInformation</name>
+      <description>The DocumentInformation annotation includes document metadata such as the document ID, document collection ID, secondary document IDs, document size, etc.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>documentId</name>
+          <description>The document ID is a String representing a unique identifier for a particular document within a particular document collection.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>documentSize</name>
+          <description>The size of a document is logged as the number of characters it contains.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>classificationType</name>
+          <description>This String provides a means for classifying a particular document.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>encoding</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>uri</name>
+          <description>typically a FILE: NFS path to a local server where the file resides</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>pii</name>
+          <description>(optional) PII document ID</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>doi</name>
+          <description>(optional) DOI document ID</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>pmid</name>
+          <description>(optional) PMID document ID</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
 
     <typeDescription>
       <name>edu.ucdenver.ccp.nlp.ts.TextAnnotation</name>
@@ -30,7 +77,7 @@
       <supertypeName>edu.ucdenver.ccp.nlp.ts.Annotation</supertypeName>
       <features>
         <featureDescription>
-          <name>documentSectionID</name>
+          <name>documentSectionD</name>
           <description>(optional) The document section ID identifies the source document section.
 			See edu.uchsc.ccp.util.nlp.document.DocumentSectionTypes</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
@@ -93,7 +140,7 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>mentionID</name>
+          <name>mentionId</name>
           <description>Q: What is a slot ID for ? </description>
           <rangeTypeName>uima.cas.Long</rangeTypeName>
         </featureDescription>
@@ -180,7 +227,7 @@ XXX
       <supertypeName>uima.cas.TOP</supertypeName>
       <features>
         <featureDescription>
-          <name>annotatorID</name>
+          <name>annotatorId</name>
           <description>Q: address where/how the IDs are managed. What ensures their uniqueness? 
 			What defines the mapping? This Integer should be a unique ID for a particular annotator.</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
@@ -214,7 +261,7 @@ XXX
       <supertypeName>uima.cas.TOP</supertypeName>
       <features>
         <featureDescription>
-          <name>annotationSetID</name>
+          <name>annotationSetId</name>
           <description>An integer uniquely identifying a particular annotation set.</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
