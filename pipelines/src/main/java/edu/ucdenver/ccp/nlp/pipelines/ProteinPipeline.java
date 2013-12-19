@@ -69,6 +69,7 @@ import edu.ucdenver.ccp.nlp.ae.Protein_AE;
 import edu.ucdenver.ccp.nlp.ae.Debug_AE;
 import edu.ucdenver.ccp.nlp.cr.MedlineDbCollectionReader;
 import edu.ucdenver.ccp.nlp.cr.PmcOaDbCollectionReader;
+import edu.ucdenver.ccp.nlp.cr.ElsevierArt5DbCollectionReader;
 
 
 /** 
@@ -79,11 +80,11 @@ public class ProteinPipeline extends BaseUimaFitPipeline  {
 	private static Logger logger = Logger.getLogger(ProteinPipeline.class);
 
 
-	ProteinPipeline(File inputDir) throws ResourceInitializationException {
-		super(inputDir);
+	ProteinPipeline(int batchNum) throws ResourceInitializationException {
 
 		//cr = MedlineDbCollectionReader.createCollectionReader(tsd,1);
-		cr = PmcOaDbCollectionReader.createCollectionReader(tsd,1);
+		//cr = PmcOaDbCollectionReader.createCollectionReader(tsd,1);
+		cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
 
 		aeDescList.add(
  			AnalysisEngineFactory.createPrimitiveDescription(Protein_AE.class));
@@ -95,14 +96,14 @@ public class ProteinPipeline extends BaseUimaFitPipeline  {
 
 		BasicConfigurator.configure();
 		File inputDir = null;
-
+		int batchNum = 1;
 		// get args
 		if (args.length < 1) {
 			usage();
 			System.exit(1);
 		}
 		try {
-			inputDir = new File(args[0]);
+			batchNum = Integer.parseInt(args[0]);	
 		
 		} catch(Exception x) {
 			System.out.println("error:" + x);
@@ -114,8 +115,8 @@ public class ProteinPipeline extends BaseUimaFitPipeline  {
 
 		// main part
 		try {
-			ProteinPipeline pipeline = new ProteinPipeline (inputDir);
-			pipeline.go(inputDir);
+			ProteinPipeline pipeline = new ProteinPipeline (batchNum);
+			pipeline.go();
 		}
 		catch(Exception x) {
 			System.err.println(x);

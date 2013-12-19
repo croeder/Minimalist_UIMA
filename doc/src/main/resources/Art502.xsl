@@ -4,17 +4,19 @@
 	xmlns:ce="http://www.elsevier.com/xml/common/dtd">
 	<xsl:output method="xml" encoding="UTF-8" />
 	
-
 	<xsl:template match="/|@*|node()">
 		<xsl:apply-templates select="node()"/>
 	</xsl:template>
-	
-	<xsl:template match="article" priority='0'>
-		<xsl:text> </xsl:text>
+
+	<xsl:template match="simple-article" priority='0'>
 		<xsl:element name="DOC"> 
 			<xsl:apply-templates select="node()" />
 		</xsl:element>
-		<xsl:text> </xsl:text>
+	</xsl:template>
+
+	<xsl:template match="article" priority='0'>
+		<xsl:element name="DOC"> 
+		</xsl:element>
 	</xsl:template>
 
 	<xsl:template match="ce:table" priority='0'>
@@ -54,7 +56,7 @@
 	</xsl:template>
 
 <!-- body  -->
-	<xsl:template match="ce:body" priority='0'>
+	<xsl:template match="body" priority='0'>
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 
@@ -117,6 +119,10 @@
 
 <!-- head -->	
 	<xsl:template match="head" priority='0'>
+		<xsl:apply-templates select="node()" />
+	</xsl:template>
+
+	<xsl:template match="simple-head" priority='0'>
 		<xsl:apply-templates select="node()" />
 	</xsl:template>
 

@@ -63,9 +63,8 @@ import edu.ucdenver.ccp.nlp.ts.StringSlotMention;
 public class ElsevierArt5DbCollectionReaderTest {
 
 
-	@Ignore
 	@Test
-	public void testCollectionReaderPMC() throws Exception {
+	public void testCollectionReaderElsevierArt5() throws Exception {
 		String[] typeSystemDescriptions = { "edu.ucdenver.ccp.nlp.ts.TypeSystem" };
 		TypeSystemDescription tsd 
 			= TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemDescriptions); 
@@ -74,7 +73,7 @@ public class ElsevierArt5DbCollectionReaderTest {
 		JCasIterable iter = new JCasIterable(cr);
 		assertTrue(iter.hasNext());
 		JCas jcas = iter.next();
-		assertEquals(" Fibrils attached to the nuclear pore prevent egress of SV40 particles from the infected nucleus  SV40 particles can apparently enter the nucleus intact. However, they do not leave the nucleus despite the high concentration present during the productive phase. We found structural evidence that SV40 virus is prevented from approaching the most likely site of exit, the nuclear pore complex. From these images, it is concluded that the fibrils attached to the nuclear pore complex prevent egress of SV40 particles from the infected nucleus. ", 
+		assertEquals("E-Poster abstractCardiac Imaging (E-poster 90-98)",
 			jcas.getDocumentText());
 
 
@@ -92,15 +91,15 @@ public class ElsevierArt5DbCollectionReaderTest {
 			}
 			if (i==0) {
 				//null:TITLE, 0:97
-				assertEquals("TITLE", cm.getMentionName());
-				assertEquals(0, ta.getBegin());
-				assertEquals(97, ta.getEnd());
+				assertEquals("Section", cm.getMentionName());
+				assertEquals(17, ta.getBegin());
+				assertEquals(49, ta.getEnd());
 			}
 			else if (i==1) {
 				//null:PARAGRAPH, 97:541
-				assertEquals("PARAGRAPH", cm.getMentionName());
-				assertEquals(97, ta.getBegin());
-				assertEquals(541, ta.getEnd());
+				assertEquals("Section", cm.getMentionName());
+				assertEquals(49, ta.getBegin());
+				assertEquals(49, ta.getEnd());
 			}
 			i++;
 		}

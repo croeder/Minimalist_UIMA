@@ -93,7 +93,7 @@ public class ElsevierArt5DocumentProvider implements DocumentProvider {
 		// wget the path and return?
 		// TODO
 		String fileString =  FileUtils.readFileToString(new File(path), "UTF-8");
-	logger.error("docProvider PATH is: " + path + "\nFILE IS:\"" + fileString + "\"");
+		//logger.debug("docProvider PATH is: " + path + "\nFILE IS:\"" + fileString + "\"");
 		return fileString;
 	}
 

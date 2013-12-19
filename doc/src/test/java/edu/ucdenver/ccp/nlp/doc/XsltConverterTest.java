@@ -101,6 +101,24 @@ public class XsltConverterTest {
 			output);
 	}
 
+	static final String elsevierSimpleArt5InputFile = "/elsevier502.simple-article.xml";
+	static final String elsevierSimpleArt5XsltFile = "/Art502.xsl";
+
+	@Test
+	public void testSimpleElsevierArt5() {
+		String contents = XsltConverter.readFile(elsevierSimpleArt5InputFile);		
+		ElsevierArt5DtdClasspathResolver resolver = new ElsevierArt5DtdClasspathResolver();
+		XsltConverter converter = new XsltConverter(resolver);
+		String output = converter.convert(contents, elsevierSimpleArt5XsltFile);
+		// TODO add real asserts here
+		assertEquals(	
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?><DOC>			E-Poster abstract		<TITLE>Cardiac Imaging (E-poster 90-98)</TITLE>\n"
+			+ "\n"
+			+ "<PARAGRAPH>																											<FIGURE NAME=\"\"/>\n"
+			+ "</PARAGRAPH>\n</DOC>",
+			output);
+	}
+
 	static final String elsevierArt5InputFile = "/elsevier2.502.short.xml";
 	static final String elsevierArt5XsltFile = "/Art502.xsl";
 
@@ -112,7 +130,7 @@ public class XsltConverterTest {
 		String output = converter.convert(contents, elsevierArt5XsltFile);
 		// TODO add real asserts here
 		assertEquals(	
-			"<?xml version=\"1.0\" encoding=\"UTF-8\"?><FIGURE NAME=\"\">Flow diagram of patients during the follow-up period.</FIGURE>\n"
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?><DOC><FIGURE NAME=\"\">Flow diagram of patients during the follow-up period.</FIGURE>\n"
 + "<FIGURE NAME=\"\">a–c 12-Month retention rates by type of medication (upper panel), and provider setting (middle panel) and length of treatment (lower panel) across weeks of the observation period.</FIGURE>\n"
 + "<FIGURE NAME=\"\">Rates (percentage of patients) of non-retention, death, and abstinence overall and by setting (N=2442).</FIGURE>\n"
 + "<FIGURE NAME=\"\">Concomitant drug use (percentage of patients) by provider setting.</FIGURE>\n"
@@ -128,7 +146,7 @@ public class XsltConverterTest {
 + "<SECTION NAME=\"3.2 Retention rates and time to drop out\">\n"
 + "<PARAGRAPH>Fig. 2a–c show the retention rates from baseline to 1-year follow-up, excluding n=274 patients that terminated the maintenance program because of either abstinence or referral to abstinence programs. Adjusted for differences between groups with regard to prior treatment duration, both medication groups reveal a steady decline of retention over the 52 weeks observation time of about 25%. Fig. 2c reveals that retention during the follow-up period is associated with length of previous retention in the treatment before baseline. Patients who had just started their current maintenance therapy in the 4 weeks prior to baseline, irrespective of type of medication, had the lowest retention rate as compared to patients with &gt;6 month (82%) prior treatment (61%, HR: 2.7; 95% CI: 2.1–4.4), followed by patients with 2–6 months prior treatment (70%, HR: 2.0 95% CI: 1.6–2.4). Fig. 2b reveals better long-term retention in PMC settings as compared to SSC (HR: 1.4, 95% CI: 1.1–1.7) largely due to changes after week 42. Reasons for not retaining patients in therapy were similar in most subgroups examined, except for the methadone group, for which more patients were not retained because of imprisonment (HR: 1.7; 95% CI: 1.3–2.5).<ITALICS>n</ITALICS></PARAGRAPH>\n"
 + "</SECTION>\n"
-+ "	Acknowledgements		This study is part of the collaborative COBRA study (Cost-Benefit and Risk Appraisal of Substitution Treatments, www.cobra-projekt.de), supported by the German Federal Ministry of Research and Technology (BMBF No. 01EB0440-0441/01EB0142) as part of the Addiction Research Network “ASAT” (www.asat-verbund.de). The field work and health economic program components were further supported by an unrestricted educational grant from essex pharma GmbH, Germany. We wish to thank all doctors and staff members of the participating clinics for their continued support and collaboration. Contributors. Hans-Ulrich Wittchen has planned the investigation and written the manuscript. Sabine M. Apelt provided substantial contribution to the writing of the manuscript. Dr. Gölz has participated in the recruitment of study participants and has provided counselling for the conceptualisation of the study questionnaires. Dr. Tretter provided substantial contribution to the writing of the manuscript, the interpretation, and the discussion of the results. Jens Siegert has planned and conducted the statistical analysis. Jürgen Rehm has provided substantial comments on the writing of the manuscript as well as consulting for the statistical analysis and its presentation. Gerhard Bühringer provided substantial contribution to the writing of the manuscript. Prof. Scherbaum was responsible for carrying out the study in one of the participating centers. He provided substantial contribution to the writing of the manuscript. Dr. Schäfer and Profs. Kraus, Gastpar, and Soyka provided supervision of and substantial contribution to the writing of the manuscript.	",
++ "	Acknowledgements		This study is part of the collaborative COBRA study (Cost-Benefit and Risk Appraisal of Substitution Treatments, www.cobra-projekt.de), supported by the German Federal Ministry of Research and Technology (BMBF No. 01EB0440-0441/01EB0142) as part of the Addiction Research Network “ASAT” (www.asat-verbund.de). The field work and health economic program components were further supported by an unrestricted educational grant from essex pharma GmbH, Germany. We wish to thank all doctors and staff members of the participating clinics for their continued support and collaboration. Contributors. Hans-Ulrich Wittchen has planned the investigation and written the manuscript. Sabine M. Apelt provided substantial contribution to the writing of the manuscript. Dr. Gölz has participated in the recruitment of study participants and has provided counselling for the conceptualisation of the study questionnaires. Dr. Tretter provided substantial contribution to the writing of the manuscript, the interpretation, and the discussion of the results. Jens Siegert has planned and conducted the statistical analysis. Jürgen Rehm has provided substantial comments on the writing of the manuscript as well as consulting for the statistical analysis and its presentation. Gerhard Bühringer provided substantial contribution to the writing of the manuscript. Prof. Scherbaum was responsible for carrying out the study in one of the participating centers. He provided substantial contribution to the writing of the manuscript. Dr. Schäfer and Profs. Kraus, Gastpar, and Soyka provided supervision of and substantial contribution to the writing of the manuscript.	</DOC>",
 			output);
 	}
 	

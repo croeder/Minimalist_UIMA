@@ -85,10 +85,7 @@ public class PmcOaDbCollectionReader extends DbCollectionReader {
 
 		// convert PMC XML to simple CCP XML
 		XsltConverter xslt = new XsltConverter();
-	out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" 
-						+ "path:\"" + path + "\"\n" 
-						+ "xmlText:\"" + xmlText + "\"\n" 
-						+ "xsltFilename:\"" + xsltFilename + "\"");
+		//out.println("doc provider class:\"" + dp.getClass().getName() + "\"\n" + "path:\"" + path + "\"\n" + "xmlText:\"" + xmlText + "\"\n" + "xsltFilename:\"" + xsltFilename + "\"");
 		String xmlText2 = xslt.convert(xmlText, xsltFilename);
 
 		// convert CCP XML to plain text

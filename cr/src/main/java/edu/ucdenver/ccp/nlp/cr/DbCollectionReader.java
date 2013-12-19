@@ -82,6 +82,7 @@ public class DbCollectionReader extends JCasCollectionReader_ImplBase {
 			if (dp == null) {
 				// TODO: more elegant exception
 				logger.error("WTFW????????????????" + collectionType);
+				throw new ResourceInitializationException(new RuntimeException("null document provider"));
 			}
 			idList = dp.getIdRange(batchNumber);
 		}
@@ -97,6 +98,7 @@ public class DbCollectionReader extends JCasCollectionReader_ImplBase {
 	throws IOException, CollectionException {
 		String path = dp.getDocumentPath(idList.get(current));
 		String text = dp.getDocumentText(path);
+logger.error("PATH is: " + path +  "\nTEXT in DBCR is:" + text);
 		jcas.setDocumentText(text);	
 		current++;
 

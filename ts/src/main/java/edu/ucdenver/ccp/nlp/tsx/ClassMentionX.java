@@ -134,7 +134,7 @@ public class ClassMentionX {
 		cm.setSlotMentions(newSlots);
 	}
 
-	public String getStringSlotMentionValue(ClassMention cm, String name) {
+	public static String getStringSlotMentionValue(ClassMention cm, String name) {
 		StringSlotMention slot = (StringSlotMention) getSlotMentionByName(cm, name);
 		return slot.getSlotValues(0);
 	}

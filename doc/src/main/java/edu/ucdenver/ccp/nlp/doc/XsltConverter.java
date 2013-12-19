@@ -191,6 +191,11 @@ public class XsltConverter {
 		try { if (xslStream != null) {xslStream.close();} }
 		catch (IOException x) { }
 
+		// UGLY HACK TODO
+		if (retval.indexOf("<doc>") == -1) {
+			retval = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<DOC>" + retval.substring(38) + "</DOC>";
+		}
+
 		return retval;
 	
 	}

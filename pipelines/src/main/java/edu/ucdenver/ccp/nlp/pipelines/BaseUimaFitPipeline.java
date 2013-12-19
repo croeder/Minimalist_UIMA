@@ -81,10 +81,20 @@ public class BaseUimaFitPipeline  {
 
 
 	protected TypeSystemDescription tsd;
-    CollectionReader cr;
-	List<AnalysisEngineDescription> aeDescList;
+    protected CollectionReader cr;
+	protected List<AnalysisEngineDescription> aeDescList;
 
+	/**
+     * provides no collection reader
+     */
+	BaseUimaFitPipeline() throws ResourceInitializationException {
+        tsd = TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemStrs);
+		aeDescList = new ArrayList<AnalysisEngineDescription>();
+	}
 
+	/**
+	 * provides a basic FileSystemCollectionReader
+	 */ 
 	BaseUimaFitPipeline(File inputDir) throws ResourceInitializationException {
         tsd = TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemStrs);
 
@@ -102,7 +112,7 @@ public class BaseUimaFitPipeline  {
     }
 
 
-	public void go(File inputDir)
+	public void go()
 	throws UIMAException, ResourceInitializationException, FileNotFoundException, IOException {
 		SimplePipeline.runPipeline(cr, aeDescList.toArray(new AnalysisEngineDescription[0]));
     }
@@ -138,7 +148,7 @@ public class BaseUimaFitPipeline  {
 		// main part
 		try {
 			BaseUimaFitPipeline pipeline = new BaseUimaFitPipeline (inputDir);
-			pipeline.go(inputDir);
+			pipeline.go();
 		}
 		catch(Exception x) {
 			System.err.println(x);
