@@ -17,7 +17,6 @@
 		<module>doc</module>
 		<module>cr</module>
 		<module>pipelines</module>
-		<module>distribution</module> <!-- built by assembly plugin -->
 	</modules>
 
 	<properties>
