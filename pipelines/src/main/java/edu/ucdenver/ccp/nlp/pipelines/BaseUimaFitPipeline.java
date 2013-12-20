@@ -48,6 +48,7 @@ import org.apache.log4j.Logger;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
 import org.apache.uima.collection.CollectionReader;
@@ -73,23 +74,27 @@ public class BaseUimaFitPipeline  {
 
 	private static Logger logger = Logger.getLogger(BaseUimaFitPipeline.class);
 
-	protected static final String[] typeSystemStrs = {
+	protected static final String[] typeSystemStrs = { // TODO: organize and modularize ts descriptions
 		"org.apache.uima.examples.SourceDocumentInformation",	
 		"edu.ucdenver.ccp.nlp.ts.TypeSystem",
-		"edu.ucdenver.ccp.nlp.ts.ProteinTypeSystem"
+		"edu.ucdenver.ccp.nlp.ts.ProteinTypeSystem",
+		"org.apache.uima.conceptMapper.DictTerm",
+		"edu.ucdenver.ccp.nlp.ts.ConceptMapperSupplementTypeSystem"
 	};
 
 
 	protected TypeSystemDescription tsd;
     protected CollectionReader cr;
-	protected List<AnalysisEngineDescription> aeDescList;
+	//protected List<AnalysisEngineDescription> aeDescList;
+	protected List<ResourceSpecifier> aeDescList;
 
 	/**
      * provides no collection reader
      */
 	BaseUimaFitPipeline() throws ResourceInitializationException {
         tsd = TypeSystemDescriptionFactory.createTypeSystemDescription(typeSystemStrs);
-		aeDescList = new ArrayList<AnalysisEngineDescription>();
+		//aeDescList = new ArrayList<AnalysisEngineDescription>();
+		aeDescList = new ArrayList<ResourceSpecifier>();
 	}
 
 	/**
@@ -108,7 +113,8 @@ public class BaseUimaFitPipeline  {
 			FileSystemCollectionReader.PARAM_LENIENT,	"true"
         );
 
-		aeDescList = new ArrayList<AnalysisEngineDescription>();
+		aeDescList = new ArrayList<ResourceSpecifier>();
+
     }
 
 

@@ -309,7 +309,7 @@
 				<value>
 						<!--org.apache.uima.conceptMapper.DictTerm-->
 					<string>
-						com.croeder.uima_sample.annotation.IdDictTerm
+						edu.ucdenver.ccp.nlp.ts.IdDictTerm
 					</string>
 				</value>
 			</nameValuePair>
@@ -444,7 +444,7 @@
 		<typePriorities>
 			<priorityList>
 				<!-- <type>uima.tt.SentenceAnnotation</type> -->
-				 <type>com.croeder.uima_sample.annotation.SentenceAnnotation</type> 
+				 <type>edu.ucdenver.ccp.nlp.ts.SentenceAnnotation</type> 
 				<type>uima.tt.TokenAnnotation</type>
 			</priorityList>
 		</typePriorities>

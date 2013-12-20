@@ -69,43 +69,63 @@ import org.apache.uima.conceptMapper.support.dictionaryResource.DictionaryResour
 
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.factory.CollectionReaderFactory;
-import org.uimafit.factory.TypeSystemDescriptionFactory;
+import org.uimafit.factory.ExternalResourceFactory;
 import org.uimafit.factory.JCasFactory;
 import org.uimafit.factory.ResourceCreationSpecifierFactory;
+import org.uimafit.factory.TypeSystemDescriptionFactory;
 import org.uimafit.pipeline.JCasIterable;
-import org.uimafit.component.xwriter.CASDumpWriter;
-import org.uimafit.component.xwriter.XWriter;
+
+import opennlp.uima.util.UimaUtil;
+import opennlp.uima.sentdetect.SentenceDetector;
+import opennlp.uima.sentdetect.SentenceModelResourceImpl;
+import opennlp.uima.tokenize.Tokenizer;
+import opennlp.uima.tokenize.TokenizerModelResourceImpl;
 
 import uima.tt.TokenAnnotation;
 
+import edu.ucdenver.ccp.nlp.ts.SentenceAnnotation;
+import edu.ucdenver.ccp.nlp.cr.MedlineDbCollectionReader;
+import edu.ucdenver.ccp.nlp.cr.PmcOaDbCollectionReader;
+import edu.ucdenver.ccp.nlp.cr.ElsevierArt5DbCollectionReader;
 import edu.ucdenver.ccp.nlp.ae.Debug_AE;
 
 import org.xml.sax.SAXException;
 
 
 
-public class ConceptMapperPipeline { //extends Pipeline  {
-/**
+public class ConceptMapperPipeline extends BaseUimaFitPipeline  {
 	private static Logger logger = Logger.getLogger(ConceptMapperPipeline.class);
 
-	ConceptMapperPipeline(File dir) throws UIMAException, IOException {
-		//super(dir, new JCasExtractor());
-**/
-/***
-        // SENTENCE DETECTOR 
-        AnalysisEngineDescription sentenceDetectorDesc
-           = LingPipeSentenceDetector_AE.createAnalysisEngineDescription(tsd);
-		//engines.add(UIMAFramework.produceAnalysisEngine(sentenceDetectorDesc));
-		engineDescs.add(sentenceDetectorDesc);
-***/
-/**
+    final String sentenceModelUrl = "http://opennlp.sourceforge.net/models-1.5/en-sent.bin";
+    final String tokenizerModelUrl = "http://opennlp.sourceforge.net/models-1.5/en-token.bin";
 
-		// TOKENIZER from xml files ** THE PATH MUST BE A FILE SYSTEM PATH **
+	ConceptMapperPipeline(int batchNum) 
+	throws UIMAException, IOException {
+
+        //cr = MedlineDbCollectionReader.createCollectionReader(tsd,1);
+        //cr = PmcOaDbCollectionReader.createCollectionReader(tsd,1);
+        cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
+
+
+        // SENTENCE DETECTOR 
+		AnalysisEngineDescription sentenceDesc = AnalysisEngineFactory.createPrimitiveDescription(
+        	SentenceDetector.class, UimaUtil.SENTENCE_TYPE_PARAMETER, SentenceAnnotation.class.getName());
+        ExternalResourceFactory.createDependencyAndBind(sentenceDesc,
+                UimaUtil.MODEL_PARAMETER, SentenceModelResourceImpl.class,
+                sentenceModelUrl);
+        aeDescList.add(sentenceDesc);
+
+        //AnalysisEngineDescription sentenceDetectorDesc
+        //   = LingPipeSentenceDetector_AE.createAnalysisEngineDescription(tsd);
+		//engineDescs.add(sentenceDetectorDesc);
+
+
+		// TOKENIZER from xml files ** TODO:  THE PATH MUST BE A FILE SYSTEM PATH **
 		Object[] config = new Object[0];
   		ResourceSpecifier tokenizerDesc 
 			= ResourceCreationSpecifierFactory.createResourceCreationSpecifier(
 				"target/classes/descriptors/analysis_engine/primitive/OffsetTokenizer.xml", config);
-		engineDescs.add(tokenizerDesc);
+		aeDescList.add(tokenizerDesc);
 
 
 		// CONCEPT MAPPER from xml files ** ...FILE SYSTEM PATH **
@@ -113,29 +133,30 @@ public class ConceptMapperPipeline { //extends Pipeline  {
   		ResourceSpecifier conceptMapperDesc 
 			= ResourceCreationSpecifierFactory.createResourceCreationSpecifier(
 				"target/classes/descriptors/analysis_engine/primitive/ConceptMapperOffsetTokenizer.xml", config);
-		engineDescs.add(conceptMapperDesc);
+		aeDescList.add(conceptMapperDesc);
 
 
         AnalysisEngineDescription debugDesc = Debug_AE.createAnalysisEngineDescription(tsd);
-        engineDescs.add(debugDesc);
+        aeDescList.add(debugDesc);
 	}
 
-
 	protected static void usage() {
-	 	System.out.println("mvn exec:java -Dinput=<input tree> ");
+	 	System.out.println("mvn exec:java -Dbatch=<batch_num> ");
 	}
 
 
 	public static void main(String[] args) {
+
+		BasicConfigurator.configure();
 
 		if (args.length < 1) {
 			usage();
 			System.exit(1);
 		}
 
-		File inputDir = null;
+		int batchNumber=0;
 		try {
-			inputDir = new File(args[0]);
+			batchNumber = Integer.parseInt(args[0]);
 		} 
 		catch(Exception x) {
 			System.out.println("error:" + x);
@@ -143,24 +164,11 @@ public class ConceptMapperPipeline { //extends Pipeline  {
 			usage();
 			System.exit(2);
 		}
-		try {
-			ConceptMapperPipeline pipeline = new ConceptMapperPipeline(inputDir);
-	
-			BasicConfigurator.configure();
-**/
-/**	
-			System.out.println("going with "
-				+ " inputDir:" + inputDir);	
-			Collection<JCasExtractor.Result> results = pipeline.runPipeline();
 
-			for (JCasExtractor.Result result : results) {
-				System.out.println(result.getName());
-				for (String key : result.getKeys()) {
-					System.out.println("    " + key + ", " + result.get(key));
-				}
-			}
-**/
-/*
+		try {
+			ConceptMapperPipeline pipeline = new ConceptMapperPipeline(batchNumber);
+			//Collection<JCasExtractor.Result> results = pipeline.go();
+			pipeline.go();
 		}
 		catch(Exception x) {
 			System.err.println(x);
@@ -168,5 +176,4 @@ public class ConceptMapperPipeline { //extends Pipeline  {
 			System.exit(3);
 		}
 	}
-*/
 }

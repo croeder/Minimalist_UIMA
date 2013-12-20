@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
-  <name>edu.ucdenver.ccp.nlp.ts.ConceptMapperSupplementTypeSystem</name>
+  <name>edu.ucdenver.ccp.nlp.ts.conceptMapperSupplementTypeSystem</name>
   <description>An additional type for use with ConceptMapper</description>
   <version>3.0</version>
-  <vendor>XXX</vendor>
+  <vendor>UCDenver-CCP</vendor>
   <imports>
-	<import name="org.apache.uima.ConceptMapper.DictTerm"/>
+	<import name="org.apache.uima.conceptMapper.DictTerm"/>
   </imports>
   <types>
     <typeDescription>
+	<description>Annotation for dictionary lookup matches</description>
+	<supertypeName>org.apache.uima.conceptMapper.DictTerm</supertypeName>
       <name>edu.ucdenver.ccp.nlp.ts.IdDictTerm</name>
-      <description>An extension of the ConceptMapper class to additionally hold the ID value.  </description>
-      <supertypeName>org.apache.uima.conceptMapper.DictTerm</supertypeName>
       <features>
         <featureDescription>
           <name>id</name>
