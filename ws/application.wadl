@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 2.1 2013-07-18 18:14:16"/>
+    <grammars/>
+    <resources base="http://localhost:8080/myapp/">
+        <resource path="conceptmapper">
+            <method id="doPost" name="POST">
+                <request>
+                    <representation mediaType="application/x-www-form-urlencoded">
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="text" style="query" type="xs:string"/>
+                    </representation>
+                </request>
+            </method>
+            <method id="doGet" name="GET">
+                <response/>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="application/vnd.sun.wadl+xml"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="text/plain"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="*/*"/>
+                </response>
+            </method>
+            <resource path="conceptmapper/{ontology}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ontology" style="template" type="xs:string"/>
+                <method id="doGet" name="GET">
+                    <response/>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/vnd.sun.wadl+xml"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="file">
+            <resource path="/upload">
+                <method id="uploadFile" name="POST">
+                    <request>
+                        <representation mediaType="multipart/form-data"/>
+                    </request>
+                    <response/>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/vnd.sun.wadl+xml"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="myresource">
+            <method id="getIt" name="GET">
+                <response>
+                    <representation mediaType="text/plain"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="application/vnd.sun.wadl+xml"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="text/plain"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="*/*"/>
+                </response>
+            </method>
+        </resource>
+        <resource path="application.wadl">
+            <method id="getWadl" name="GET">
+                <response>
+                    <representation mediaType="application/vnd.sun.wadl+xml"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="text/plain"/>
+                </response>
+            </method>
+            <method id="apply" name="OPTIONS">
+                <request>
+                    <representation mediaType="*/*"/>
+                </request>
+                <response>
+                    <representation mediaType="*/*"/>
+                </response>
+            </method>
+            <resource path="{path}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="path" style="template" type="xs:string"/>
+                <method id="geExternalGrammar" name="GET">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+                <method id="apply" name="OPTIONS">
+                    <request>
+                        <representation mediaType="*/*"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>

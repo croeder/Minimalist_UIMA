@@ -1,0 +1,3931 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<synonym>
+<token id="MI:0000" canonical="molecular interaction">
+	<variant base="molecular interaction"/>
+	<variant base="mi"/>
+</token>
+<token id="MI:0001" canonical="interaction detection method">
+	<variant base="interaction detection method"/>
+	<variant base="interaction detect"/>
+</token>
+<token id="MI:0002" canonical="participant identification method">
+	<variant base="participant identification method"/>
+	<variant base="participant detection"/>
+	<variant base="participant ident"/>
+</token>
+<token id="MI:0003" canonical="feature detection method">
+	<variant base="feature detection method"/>
+	<variant base="feature detection"/>
+</token>
+<token id="MI:0004" canonical="affinity chromatography technology">
+	<variant base="affinity chromatography technology"/>
+	<variant base="affinity chrom"/>
+	<variant base="Affinity purification"/>
+</token>
+<token id="MI:0005" canonical="alanine scanning">
+	<variant base="alanine scanning"/>
+</token>
+<token id="MI:0006" canonical="anti bait coimmunoprecipitation">
+	<variant base="anti bait coimmunoprecipitation"/>
+	<variant base="anti bait coip"/>
+</token>
+<token id="MI:0007" canonical="anti tag coimmunoprecipitation">
+	<variant base="anti tag coimmunoprecipitation"/>
+	<variant base="anti tag coip"/>
+</token>
+<token id="MI:0008" canonical="array technology">
+	<variant base="array technology"/>
+</token>
+<token id="MI:0009" canonical="bacterial display">
+	<variant base="bacterial display"/>
+</token>
+<token id="MI:0010" canonical="beta galactosidase complementation">
+	<variant base="beta galactosidase complementation"/>
+	<variant base="beta galactosidase"/>
+</token>
+<token id="MI:0011" canonical="beta lactamase complementation">
+	<variant base="beta lactamase complementation"/>
+	<variant base="beta lactamase"/>
+</token>
+<token id="MI:0012" canonical="bioluminescence resonance energy transfer">
+	<variant base="bioluminescence resonance energy transfer"/>
+	<variant base="BRET"/>
+	<variant base="bret"/>
+	<variant base="LRET"/>
+</token>
+<token id="MI:0013" canonical="biophysical">
+	<variant base="biophysical"/>
+</token>
+<token id="MI:0014" canonical="adenylate cyclase complementation">
+	<variant base="adenylate cyclase complementation"/>
+	<variant base="adenylate cyclase"/>
+	<variant base="bacterial two-hybrid"/>
+</token>
+<token id="MI:0016" canonical="circular dichroism">
+	<variant base="circular dichroism"/>
+	<variant base="CD"/>
+	<variant base="cd"/>
+</token>
+<token id="MI:0017" canonical="classical fluorescence spectroscopy">
+	<variant base="classical fluorescence spectroscopy"/>
+	<variant base="fluorescence spectr"/>
+</token>
+<token id="MI:0018" canonical="two hybrid">
+	<variant base="two hybrid"/>
+	<variant base="2 hybrid"/>
+	<variant base="2-hybrid"/>
+	<variant base="2H"/>
+	<variant base="2h"/>
+	<variant base="classical two hybrid"/>
+	<variant base="Gal4 transcription regeneration"/>
+	<variant base="two-hybrid"/>
+	<variant base="yeast two hybrid"/>
+</token>
+<token id="MI:0019" canonical="coimmunoprecipitation">
+	<variant base="coimmunoprecipitation"/>
+	<variant base="co-immunoprecipitation"/>
+	<variant base="Co-IP"/>
+	<variant base="CoIp"/>
+	<variant base="coip"/>
+	<variant base="immunoprecipitation"/>
+</token>
+<token id="MI:0020" canonical="transmission electron microscopy">
+	<variant base="transmission electron microscopy"/>
+	<variant base="tem"/>
+</token>
+<token id="MI:0024" canonical="confirmational text mining">
+	<variant base="confirmational text mining"/>
+	<variant base="conformational tm"/>
+</token>
+<token id="MI:0026" canonical="correlated mutations">
+	<variant base="correlated mutations"/>
+</token>
+<token id="MI:0027" canonical="cosedimentation">
+	<variant base="cosedimentation"/>
+</token>
+<token id="MI:0028" canonical="cosedimentation in solution">
+	<variant base="cosedimentation in solution"/>
+	<variant base="solution sedimentati"/>
+</token>
+<token id="MI:0029" canonical="cosedimentation through density gradient">
+	<variant base="cosedimentation through density gradient"/>
+	<variant base="density sedimentatio"/>
+</token>
+<token id="MI:0030" canonical="cross-linking study">
+	<variant base="cross-linking study"/>
+	<variant base="crosslink"/>
+</token>
+<token id="MI:0031" canonical="protein cross-linking with a bifunctional reagent">
+	<variant base="protein cross-linking with a bifunctional reagent"/>
+	<variant base="Label transfer techniques"/>
+	<variant base="Photoaffinity labelling"/>
+	<variant base="protein crosslink"/>
+</token>
+<token id="MI:0032" canonical="de novo protein sequencing by mass spectrometry">
+	<variant base="de novo protein sequencing by mass spectrometry"/>
+	<variant base="ms protein sequence"/>
+</token>
+<token id="MI:0033" canonical="deletion analysis">
+	<variant base="deletion analysis"/>
+</token>
+<token id="MI:0034" canonical="display technology">
+	<variant base="display technology"/>
+</token>
+<token id="MI:0035" canonical="docking">
+	<variant base="docking"/>
+</token>
+<token id="MI:0036" canonical="domain fusion">
+	<variant base="domain fusion"/>
+	<variant base="Rosetta Stone"/>
+</token>
+<token id="MI:0037" canonical="domain profile pairs">
+	<variant base="domain profile pairs"/>
+</token>
+<token id="MI:0038" canonical="dynamic light scattering">
+	<variant base="dynamic light scattering"/>
+	<variant base="dls"/>
+</token>
+<token id="MI:0039" canonical="edman degradation">
+	<variant base="edman degradation"/>
+</token>
+<token id="MI:0040" canonical="electron microscopy">
+	<variant base="electron microscopy"/>
+	<variant base="Electron cryomicroscopy"/>
+	<variant base="Electron crystallography"/>
+</token>
+<token id="MI:0041" canonical="electron nuclear double resonance">
+	<variant base="electron nuclear double resonance"/>
+	<variant base="ENDOR"/>
+	<variant base="endor"/>
+</token>
+<token id="MI:0042" canonical="electron paramagnetic resonance">
+	<variant base="electron paramagnetic resonance"/>
+	<variant base="EPR"/>
+	<variant base="epr"/>
+	<variant base="ESR"/>
+</token>
+<token id="MI:0043" canonical="electron resonance">
+	<variant base="electron resonance"/>
+</token>
+<token id="MI:0045" canonical="experimental interaction detection">
+	<variant base="experimental interaction detection"/>
+	<variant base="experimental interac"/>
+</token>
+<token id="MI:0046" canonical="experimental knowledge based">
+	<variant base="experimental knowledge based"/>
+	<variant base="experimental info"/>
+</token>
+<token id="MI:0047" canonical="far western blotting">
+	<variant base="far western blotting"/>
+	<variant base="Affinity blotting"/>
+</token>
+<token id="MI:0048" canonical="filamentous phage display">
+	<variant base="filamentous phage display"/>
+	<variant base="filamentous phage"/>
+</token>
+<token id="MI:0049" canonical="filter binding">
+	<variant base="filter binding"/>
+	<variant base="Filter overlay assay"/>
+</token>
+<token id="MI:0051" canonical="fluorescence technology">
+	<variant base="fluorescence technology"/>
+	<variant base="fluorescence"/>
+</token>
+<token id="MI:0052" canonical="fluorescence correlation spectroscopy">
+	<variant base="fluorescence correlation spectroscopy"/>
+	<variant base="FCS"/>
+	<variant base="fcs"/>
+</token>
+<token id="MI:0053" canonical="fluorescence polarization spectroscopy">
+	<variant base="fluorescence polarization spectroscopy"/>
+	<variant base="Fluorescence anisotropy"/>
+	<variant base="FPS"/>
+	<variant base="fps"/>
+</token>
+<token id="MI:0054" canonical="fluorescence-activated cell sorting">
+	<variant base="fluorescence-activated cell sorting"/>
+	<variant base="FACS"/>
+	<variant base="facs"/>
+	<variant base="Flow cytometry"/>
+</token>
+<token id="MI:0055" canonical="fluorescent resonance energy transfer">
+	<variant base="fluorescent resonance energy transfer"/>
+	<variant base="FRET"/>
+	<variant base="fret"/>
+	<variant base="FRET analysis"/>
+	<variant base="RET"/>
+</token>
+<token id="MI:0056" canonical="full identification by sequencing">
+	<variant base="full identification by sequencing"/>
+	<variant base="full dna sequence"/>
+</token>
+<token id="MI:0057" canonical="gene neighbourhood">
+	<variant base="gene neighbourhood"/>
+</token>
+<token id="MI:0058" canonical="genome based prediction">
+	<variant base="genome based prediction"/>
+	<variant base="genome prediction"/>
+</token>
+<token id="MI:0063" canonical="interaction prediction">
+	<variant base="interaction prediction"/>
+	<variant base="in silico methods"/>
+	<variant base="predicted interac"/>
+</token>
+<token id="MI:0064" canonical="interologs mapping">
+	<variant base="interologs mapping"/>
+	<variant base="Homology based interaction prediction"/>
+</token>
+<token id="MI:0065" canonical="isothermal titration calorimetry">
+	<variant base="isothermal titration calorimetry"/>
+	<variant base="ITC"/>
+	<variant base="itc"/>
+</token>
+<token id="MI:0066" canonical="lambda phage display">
+	<variant base="lambda phage display"/>
+	<variant base="lambda phage"/>
+</token>
+<token id="MI:0067" canonical="light scattering">
+	<variant base="light scattering"/>
+</token>
+<token id="MI:0068" canonical="mass detection of residue modification">
+	<variant base="mass detection of residue modification"/>
+	<variant base="modified residue ms"/>
+</token>
+<token id="MI:0069" canonical="mass spectrometry studies of complexes">
+	<variant base="mass spectrometry studies of complexes"/>
+	<variant base="ms of complexes"/>
+</token>
+<token id="MI:0070" canonical="mobility shift">
+	<variant base="mobility shift"/>
+</token>
+<token id="MI:0071" canonical="molecular sieving">
+	<variant base="molecular sieving"/>
+	<variant base="Gel Filtration"/>
+	<variant base="Siezing column"/>
+	<variant base="Size Exclusion Chromatography"/>
+</token>
+<token id="MI:0072" canonical="monoclonal antibody western blot">
+	<variant base="monoclonal antibody western blot"/>
+	<variant base="monoclonal western"/>
+</token>
+<token id="MI:0073" canonical="mrna display">
+	<variant base="mrna display"/>
+</token>
+<token id="MI:0074" canonical="mutation analysis">
+	<variant base="mutation analysis"/>
+</token>
+<token id="MI:0076" canonical="neural network on interface properties">
+	<variant base="neural network on interface properties"/>
+	<variant base="interface predictor"/>
+</token>
+<token id="MI:0077" canonical="nuclear magnetic resonance">
+	<variant base="nuclear magnetic resonance"/>
+	<variant base="NMR"/>
+	<variant base="nmr"/>
+</token>
+<token id="MI:0078" canonical="nucleotide sequence identification">
+	<variant base="nucleotide sequence identification"/>
+	<variant base="nucleotide sequence"/>
+	<variant base="sequence cloning"/>
+</token>
+<token id="MI:0080" canonical="partial dna sequence identification by hybridization">
+	<variant base="partial dna sequence identification by hybridization"/>
+	<variant base="partial dna sequence"/>
+</token>
+<token id="MI:0081" canonical="peptide array">
+	<variant base="peptide array"/>
+</token>
+<token id="MI:0082" canonical="peptide massfingerprinting">
+	<variant base="peptide massfingerprinting"/>
+	<variant base="fingerprinting"/>
+</token>
+<token id="MI:0083" canonical="peptide synthesis">
+	<variant base="peptide synthesis"/>
+</token>
+<token id="MI:0084" canonical="phage display">
+	<variant base="phage display"/>
+</token>
+<token id="MI:0085" canonical="phylogenetic profile">
+	<variant base="phylogenetic profile"/>
+</token>
+<token id="MI:0086" canonical="polyclonal antibody western blot">
+	<variant base="polyclonal antibody western blot"/>
+	<variant base="polyclonal western"/>
+</token>
+<token id="MI:0087" canonical="predictive text mining">
+	<variant base="predictive text mining"/>
+	<variant base="predictive tm"/>
+</token>
+<token id="MI:0088" canonical="primer specific pcr">
+	<variant base="primer specific pcr"/>
+</token>
+<token id="MI:0089" canonical="protein array">
+	<variant base="protein array"/>
+</token>
+<token id="MI:0090" canonical="protein complementation assay">
+	<variant base="protein complementation assay"/>
+	<variant base="complementation"/>
+	<variant base="PCA"/>
+</token>
+<token id="MI:0091" canonical="chromatography technology">
+	<variant base="chromatography technology"/>
+	<variant base="chromatography"/>
+	<variant base="column chromatography"/>
+</token>
+<token id="MI:0092" canonical="protein in situ array">
+	<variant base="protein in situ array"/>
+	<variant base="PISA"/>
+	<variant base="pisa"/>
+</token>
+<token id="MI:0093" canonical="protein sequence identification">
+	<variant base="protein sequence identification"/>
+	<variant base="protein sequence"/>
+</token>
+<token id="MI:0094" canonical="protein staining">
+	<variant base="protein staining"/>
+</token>
+<token id="MI:0095" canonical="proteinchip(r) on a surface-enhanced laser desorption/ionization">
+	<variant base="proteinchip(r) on a surface-enhanced laser desorption/ionization"/>
+	<variant base="seldi chip"/>
+	<variant base="SELDI ProteinChip"/>
+</token>
+<token id="MI:0096" canonical="pull down">
+	<variant base="pull down"/>
+</token>
+<token id="MI:0097" canonical="reverse ras recruitment system">
+	<variant base="reverse ras recruitment system"/>
+	<variant base="reverse RRS"/>
+	<variant base="reverse rrs"/>
+</token>
+<token id="MI:0098" canonical="ribosome display">
+	<variant base="ribosome display"/>
+</token>
+<token id="MI:0099" canonical="scintillation proximity assay">
+	<variant base="scintillation proximity assay"/>
+	<variant base="RIA Radio Immuno Assay"/>
+	<variant base="SPA"/>
+	<variant base="spa"/>
+</token>
+<token id="MI:0100" canonical="sequence based phylogenetic profile">
+	<variant base="sequence based phylogenetic profile"/>
+	<variant base="sequence phylogeny"/>
+</token>
+<token id="MI:0101" canonical="sequence based prediction">
+	<variant base="sequence based prediction"/>
+	<variant base="predict from sequenc"/>
+</token>
+<token id="MI:0102" canonical="sequence tag identification">
+	<variant base="sequence tag identification"/>
+	<variant base="sequence tag"/>
+</token>
+<token id="MI:0103" canonical="southern blot">
+	<variant base="southern blot"/>
+</token>
+<token id="MI:0104" canonical="static light scattering">
+	<variant base="static light scattering"/>
+	<variant base="sls"/>
+</token>
+<token id="MI:0105" canonical="structure based prediction">
+	<variant base="structure based prediction"/>
+	<variant base="predict from struct"/>
+</token>
+<token id="MI:0106" canonical="surface patches">
+	<variant base="surface patches"/>
+</token>
+<token id="MI:0107" canonical="surface plasmon resonance">
+	<variant base="surface plasmon resonance"/>
+	<variant base="BIAcore(r)"/>
+	<variant base="Optical biosensor"/>
+	<variant base="spr"/>
+</token>
+<token id="MI:0108" canonical="t7 phage display">
+	<variant base="t7 phage display"/>
+	<variant base="t7 phage"/>
+</token>
+<token id="MI:0110" canonical="text mining">
+	<variant base="text mining"/>
+</token>
+<token id="MI:0111" canonical="dihydrofolate reductase reconstruction">
+	<variant base="dihydrofolate reductase reconstruction"/>
+	<variant base="dhfr reconstruction"/>
+</token>
+<token id="MI:0112" canonical="ubiquitin reconstruction">
+	<variant base="ubiquitin reconstruction"/>
+	<variant base="ub reconstruction"/>
+</token>
+<token id="MI:0113" canonical="western blot">
+	<variant base="western blot"/>
+	<variant base="Immuno blot"/>
+</token>
+<token id="MI:0114" canonical="x-ray crystallography">
+	<variant base="x-ray crystallography"/>
+	<variant base="X-ray"/>
+	<variant base="x-ray diffraction"/>
+</token>
+<token id="MI:0115" canonical="yeast display">
+	<variant base="yeast display"/>
+</token>
+<token id="MI:0116" canonical="feature type">
+	<variant base="feature type"/>
+</token>
+<token id="MI:0117" canonical="binding site">
+	<variant base="binding site"/>
+</token>
+<token id="MI:0118" canonical="mutation">
+	<variant base="mutation"/>
+</token>
+<token id="MI:0119" canonical="mutation decreasing interaction">
+	<variant base="mutation decreasing interaction"/>
+	<variant base="hotspot"/>
+	<variant base="mutation decreasing"/>
+</token>
+<token id="MI:0120" canonical="post translation modification">
+	<variant base="post translation modification"/>
+	<variant base="ptm"/>
+</token>
+<token id="MI:0121" canonical="acetylated residue">
+	<variant base="acetylated residue"/>
+</token>
+<token id="MI:0122" canonical="n-acetyl-alanine">
+	<variant base="n-acetyl-alanine"/>
+	<variant base="(S)-2-(acetylamino)propanoic acid"/>
+	<variant base="[A:ac]"/>
+	<variant base="AAC"/>
+	<variant base="acetylalanine"/>
+	<variant base="acetylalanine"/>
+	<variant base="N-acetyl-L-alanine"/>
+</token>
+<token id="MI:0123" canonical="n2-acetyl-arginine">
+	<variant base="n2-acetyl-arginine"/>
+	<variant base="[R:ac]"/>
+	<variant base="acetylarginine"/>
+	<variant base="acetylarginine"/>
+	<variant base="alpha-acetylamino-delta-guanidinovaleric acid"/>
+	<variant base="N2-acetyl-L-arginine"/>
+	<variant base="RAC"/>
+</token>
+<token id="MI:0124" canonical="n-acetyl-asparagine">
+	<variant base="n-acetyl-asparagine"/>
+	<variant base="[N:ac]"/>
+	<variant base="acetylasparagine"/>
+	<variant base="N-acetyl-L-asparagine"/>
+	<variant base="NAC"/>
+</token>
+<token id="MI:0125" canonical="n-acetyl-aspartic acid">
+	<variant base="n-acetyl-aspartic acid"/>
+	<variant base="(S)-2-(acetylamino)butanedioic acid"/>
+	<variant base="[D:ac]"/>
+	<variant base="acetylaspartate"/>
+	<variant base="acetylaspartic acid"/>
+	<variant base="DAC"/>
+	<variant base="N-acetyl-L-aspartic acid"/>
+</token>
+<token id="MI:0126" canonical="n-acetyl-cysteine">
+	<variant base="n-acetyl-cysteine"/>
+	<variant base="(R)-2-acetylamino-3-sulfanylpropanoic acid"/>
+	<variant base="2-acetylamino-3-mercaptopropanoic acid"/>
+	<variant base="[C:ac]"/>
+	<variant base="acetylcysteine"/>
+	<variant base="CAC"/>
+	<variant base="N-acetyl-L-cysteine"/>
+	<variant base="N-acetylcysteine"/>
+</token>
+<token id="MI:0127" canonical="n-acetyl-glutamine">
+	<variant base="n-acetyl-glutamine"/>
+	<variant base="(S)-2-acetylamino-5-pentanediamic acid"/>
+	<variant base="[Q:ac]"/>
+	<variant base="acetylglutamine"/>
+	<variant base="acetylglutamine"/>
+	<variant base="N-acetyl-L-glutamine"/>
+	<variant base="QAC"/>
+</token>
+<token id="MI:0128" canonical="n-acetyl-glutamic acid">
+	<variant base="n-acetyl-glutamic acid"/>
+	<variant base="(S)-2-(acetylamino)pentanedioic acid"/>
+	<variant base="[E:ac]"/>
+	<variant base="acetylglutamate"/>
+	<variant base="acetylglutamic acid"/>
+	<variant base="EAC"/>
+	<variant base="N-acetyl-L-glutamic acid"/>
+</token>
+<token id="MI:0129" canonical="n-acetylglycine">
+	<variant base="n-acetylglycine"/>
+	<variant base="2-(acetylamino)ethanoic acid"/>
+	<variant base="[G:ac]"/>
+	<variant base="aceturic acid"/>
+	<variant base="acetylglycine"/>
+	<variant base="GAC"/>
+	<variant base="N-acetylglycine"/>
+</token>
+<token id="MI:0130" canonical="n-acetyl-histidine">
+	<variant base="n-acetyl-histidine"/>
+	<variant base="[H:ac]"/>
+	<variant base="acetylhistidine"/>
+	<variant base="HAC"/>
+	<variant base="N-acetyl-L-histidine"/>
+</token>
+<token id="MI:0131" canonical="n-acetyl-isoleucine">
+	<variant base="n-acetyl-isoleucine"/>
+	<variant base="(2S,3S)-2-acetylamino-3-methylpentanoic acid"/>
+	<variant base="[I:ac]"/>
+	<variant base="acetylisoleucine"/>
+	<variant base="acetylisoleucine"/>
+	<variant base="IAC"/>
+	<variant base="N-acetyl-L-isoleucine"/>
+</token>
+<token id="MI:0132" canonical="n-acetyl-leucine">
+	<variant base="n-acetyl-leucine"/>
+	<variant base="[L:ac]"/>
+	<variant base="acetylleucine"/>
+	<variant base="LAC"/>
+	<variant base="N-acetyl-L-leucine"/>
+</token>
+<token id="MI:0133" canonical="n2-acetyl-lysine">
+	<variant base="n2-acetyl-lysine"/>
+	<variant base="(S)-2-acetylamino-6-aminohexanoic acid"/>
+	<variant base="[K:ac]"/>
+	<variant base="KAC"/>
+	<variant base="N2-acetyl-L-lysine"/>
+	<variant base="N2-acetyllysine"/>
+	<variant base="n2-acetyllysine"/>
+</token>
+<token id="MI:0134" canonical="n6-acetyl-lysine">
+	<variant base="n6-acetyl-lysine"/>
+	<variant base="(S)-2-amino-6-(acetylamino)hexanoic acid"/>
+	<variant base="[K:N6ac]"/>
+	<variant base="epsilon-acetyllysine"/>
+	<variant base="KA6"/>
+	<variant base="N(zeta)-acetyllysine"/>
+	<variant base="N6-acetyl-L-lysine"/>
+	<variant base="n6-acetyllysine"/>
+</token>
+<token id="MI:0135" canonical="n-acetyl-methionine">
+	<variant base="n-acetyl-methionine"/>
+	<variant base="(S)-2-acetylamino-4-(methylsulfanyl)butanoic acid"/>
+	<variant base="2-acetylamino-4-(methylthio)butanoic acid"/>
+	<variant base="[M:ac]"/>
+	<variant base="acetylmethionine"/>
+	<variant base="acetylmethionine"/>
+	<variant base="MAC"/>
+	<variant base="methionamine"/>
+	<variant base="N-acetyl-L-methionine"/>
+</token>
+<token id="MI:0136" canonical="n-acetyl-phenylalanine">
+	<variant base="n-acetyl-phenylalanine"/>
+	<variant base="[F:ac]"/>
+	<variant base="acetylphenylalanine"/>
+	<variant base="FAC"/>
+	<variant base="N-acetyl-L-phenylalanine"/>
+</token>
+<token id="MI:0137" canonical="n-acetyl-proline">
+	<variant base="n-acetyl-proline"/>
+	<variant base="(2S)-1-acetyl-2-pyrrolidinecarboxylic acid"/>
+	<variant base="[P:ac]"/>
+	<variant base="acetylproline"/>
+	<variant base="acetylproline"/>
+	<variant base="N-acetyl-L-proline"/>
+	<variant base="PAC"/>
+</token>
+<token id="MI:0138" canonical="n-acetyl-serine">
+	<variant base="n-acetyl-serine"/>
+	<variant base="(S)-2-acetylamino-3-hydroxypropanoic acid"/>
+	<variant base="[S:ac]"/>
+	<variant base="acetylserine"/>
+	<variant base="N-acetyl-L-serine"/>
+	<variant base="N-acetylserine"/>
+	<variant base="SAC"/>
+</token>
+<token id="MI:0139" canonical="n-acetyl-threonine">
+	<variant base="n-acetyl-threonine"/>
+	<variant base="(2S,3R)-2-acetylamino-3-hydroxybutanoic acid"/>
+	<variant base="[T:ac]"/>
+	<variant base="acetylthreonine"/>
+	<variant base="N-acetyl-L-threonine"/>
+	<variant base="N-acetylthreonine"/>
+	<variant base="TAC"/>
+</token>
+<token id="MI:0140" canonical="n-acetyl-tryptophan">
+	<variant base="n-acetyl-tryptophan"/>
+	<variant base="[W:ac]"/>
+	<variant base="acetyltryptophan"/>
+	<variant base="N-acetyl-L-tryptophan"/>
+	<variant base="WAC"/>
+</token>
+<token id="MI:0141" canonical="n-acetyl-tyrosine">
+	<variant base="n-acetyl-tyrosine"/>
+	<variant base="(S)-2-acetylamino-3-(4-hydoxyphenyl)propanoic acid"/>
+	<variant base="[Y:ac]"/>
+	<variant base="acetyltyrosine"/>
+	<variant base="N-acetyl-L-tyrosine"/>
+	<variant base="N-acetyltyrosine"/>
+	<variant base="YAC"/>
+</token>
+<token id="MI:0142" canonical="n-acetyl-valine">
+	<variant base="n-acetyl-valine"/>
+	<variant base="(S)-2-acetylamino-3-methylbutanoic acid"/>
+	<variant base="[V:ac]"/>
+	<variant base="acetylvaline"/>
+	<variant base="N-acetyl-L-valine"/>
+	<variant base="N-acetylvaline"/>
+	<variant base="VAC"/>
+</token>
+<token id="MI:0143" canonical="amidated residue">
+	<variant base="amidated residue"/>
+</token>
+<token id="MI:0144" canonical="alanine amide">
+	<variant base="alanine amide"/>
+	<variant base="(S)-2-aminopropanamide"/>
+	<variant base="[A:am]"/>
+	<variant base="AAM"/>
+	<variant base="alaninamide"/>
+	<variant base="alanineamide"/>
+	<variant base="L-alanine amide"/>
+</token>
+<token id="MI:0145" canonical="arginine amide">
+	<variant base="arginine amide"/>
+	<variant base="(S)-2-amino-5-guanidinopentanamide"/>
+	<variant base="[R:am]"/>
+	<variant base="argininamide"/>
+	<variant base="arginineamide"/>
+	<variant base="L-arginine amide"/>
+	<variant base="RAM"/>
+</token>
+<token id="MI:0146" canonical="formylated residue">
+	<variant base="formylated residue"/>
+</token>
+<token id="MI:0147" canonical="n-formyl-methionine">
+	<variant base="n-formyl-methionine"/>
+	<variant base="(S)-2-formylamino-4-(methylsulfanyl)butanoic acid"/>
+	<variant base="2-formylamino-4-(methylthio)butanoic acid"/>
+	<variant base="[M:form]"/>
+	<variant base="formylmethionine"/>
+	<variant base="MFM"/>
+	<variant base="N-formyl-L-methionine"/>
+</token>
+<token id="MI:0148" canonical="hydroxylated residue">
+	<variant base="hydroxylated residue"/>
+</token>
+<token id="MI:0149" canonical="4-hydroxy-proline">
+	<variant base="4-hydroxy-proline"/>
+	<variant base="4-hydroxy-L-proline"/>
+	<variant base="4hydroxyproline"/>
+	<variant base="[P:hy_g]"/>
+	<variant base="HYP"/>
+</token>
+<token id="MI:0150" canonical="lipid modification">
+	<variant base="lipid modification"/>
+</token>
+<token id="MI:0151" canonical="s-farnesyl-cysteine">
+	<variant base="s-farnesyl-cysteine"/>
+	<variant base="(R,E,E)-2-amino-3-(3,7,11-trimethyl-2,6,10-dodecatrienylsulfanyl)propanoic acid"/>
+	<variant base="2-amino-3-(3,7,11-trimethyl-2,6,10-dodecatrienylthio)propanoic acid"/>
+	<variant base="[C:farn]"/>
+	<variant base="CFN"/>
+	<variant base="farnesylcysteine"/>
+	<variant base="S-farnesyl-L-cysteine"/>
+</token>
+<token id="MI:0152" canonical="s-geranylgeranyl-cysteine">
+	<variant base="s-geranylgeranyl-cysteine"/>
+	<variant base="(R,E,E,E)-2-amino-3-(3,7,11,15-tetramethyl-2,6,10,14-hexadecatetraenylsulfanyl)propanoic acid"/>
+	<variant base="2-amino-3-(3,7,11,15-tetramethyl-2,6,10,14-hexadecatetraenylthio)propanoic acid"/>
+	<variant base="[C:ger]"/>
+	<variant base="CGR"/>
+	<variant base="geranylgeranylcys"/>
+	<variant base="S-geranylgeranyl-L-cysteine"/>
+</token>
+<token id="MI:0153" canonical="n-palmitoyl-cysteine">
+	<variant base="n-palmitoyl-cysteine"/>
+	<variant base="(R)-2-hexadecanoylamino-3-sulfanylpropanoic acid"/>
+	<variant base="2-hexadecanoylamino-3-mercaptopropanoic acid"/>
+	<variant base="[C:palm_n]"/>
+	<variant base="CPN"/>
+	<variant base="N-(1-oxahexadecyl)-L-cysteine"/>
+	<variant base="N-palmitoyl-L-cysteine"/>
+	<variant base="n-palmitoylcysteine"/>
+</token>
+<token id="MI:0154" canonical="s-palmitoyl-cysteine">
+	<variant base="s-palmitoyl-cysteine"/>
+	<variant base="(R)-2-amino-3-(hexadecanoylsulfanyl)propanoic acid"/>
+	<variant base="2-amino-3-(hexadecanoylthio)propanoic acid"/>
+	<variant base="[C:palm_s]"/>
+	<variant base="CPS"/>
+	<variant base="cysteine hexadecanoate thioester"/>
+	<variant base="cysteine palmitate thioester"/>
+	<variant base="S-palmitoyl-L-cysteine"/>
+	<variant base="s-palmitoylcysteine"/>
+</token>
+<token id="MI:0155" canonical="n-myristoyl-glycine">
+	<variant base="n-myristoyl-glycine"/>
+	<variant base="[G:myr]"/>
+	<variant base="GMY"/>
+	<variant base="myristoylglycine"/>
+	<variant base="N-myristoyl-glycine"/>
+</token>
+<token id="MI:0156" canonical="n6-myristoyl-lysine">
+	<variant base="n6-myristoyl-lysine"/>
+	<variant base="(S)-2-amino-6-(tetradecanoylamino)hexanoic acid"/>
+	<variant base="[K:myr]"/>
+	<variant base="epsilon-myristoyllysine"/>
+	<variant base="KMY"/>
+	<variant base="myristoyllysine"/>
+	<variant base="N(zeta)-myristoyllysine"/>
+	<variant base="N6-(1-oxotetradecyl)-L-lysine"/>
+	<variant base="N6-myristoyl-L-lysine"/>
+</token>
+<token id="MI:0157" canonical="methylated residue">
+	<variant base="methylated residue"/>
+</token>
+<token id="MI:0158" canonical="n-methyl-alanine">
+	<variant base="n-methyl-alanine"/>
+	<variant base="(S)-2-methylaminopropanoic acid"/>
+	<variant base="[A:meth_n]"/>
+	<variant base="AMT"/>
+	<variant base="methylalanine"/>
+	<variant base="N-methyl-L-alanine"/>
+	<variant base="N-methylalanine"/>
+</token>
+<token id="MI:0159" canonical="n,n,n-trimethyl-alanine">
+	<variant base="n,n,n-trimethyl-alanine"/>
+	<variant base="(S)-1-carboxy-N,N,N-trimethylethanaminium"/>
+	<variant base="(S)-2-(trimethylammonio)propanoic acid"/>
+	<variant base="[A:meth_n3]"/>
+	<variant base="AM3"/>
+	<variant base="N,N,N-trimethyl-L-alanine"/>
+	<variant base="trimethylalanine"/>
+</token>
+<token id="MI:0160" canonical="omega-n,omega-n-dimethyl-arginine">
+	<variant base="omega-n,omega-n-dimethyl-arginine"/>
+	<variant base="(S)-2-amino-5-[((dimethylamino)iminomethyl)amino]pentanoic acid"/>
+	<variant base="[R:meth_n7]"/>
+	<variant base="asymmetric dimethylarginine"/>
+	<variant base="dimethylarginine"/>
+	<variant base="NG,NG-dimethylarginine"/>
+	<variant base="omega-N,omega-N-dimethyl-L-arginine"/>
+	<variant base="RM2"/>
+</token>
+<token id="MI:0161" canonical="beta-methylthioaspartic acid">
+	<variant base="beta-methylthioaspartic acid"/>
+	<variant base="(2R,3Xi)-2-amino-3-methylsulfanylbutanedioic acid"/>
+	<variant base="3-carboxy-S-methyl-cysteine"/>
+	<variant base="3-methylthio-aspartic acid"/>
+	<variant base="[D:meth_b]"/>
+	<variant base="beta-methylthio-aspartic acid"/>
+	<variant base="DM2"/>
+	<variant base="L-beta-methylthioaspartic acid"/>
+	<variant base="methylthioaspartate"/>
+</token>
+<token id="MI:0162" canonical="n5-methyl-glutamine">
+	<variant base="n5-methyl-glutamine"/>
+	<variant base="(S)-2-amino-N5-methylpentanediamic acid"/>
+	<variant base="[Q:meth_n5]"/>
+	<variant base="gamma-methylglutamine"/>
+	<variant base="methylglutamine"/>
+	<variant base="N(delta)-methylglutamine"/>
+	<variant base="N-methylglutamine"/>
+	<variant base="N5-methyl-L-glutamine"/>
+	<variant base="QM5"/>
+</token>
+<token id="MI:0163" canonical="glutamic acid 5-methyl ester">
+	<variant base="glutamic acid 5-methyl ester"/>
+	<variant base="(S)-2-aminopentanedioic acid 5-methyl ester"/>
+	<variant base="5-methyl-L-glutamate"/>
+	<variant base="[E:meth_o5]"/>
+	<variant base="EM5"/>
+	<variant base="glutamatemethylester"/>
+	<variant base="glutamic acid gamma-methyl ester"/>
+	<variant base="L-glutamic acid 5-methyl ester"/>
+</token>
+<token id="MI:0164" canonical="3&apos;-methyl-histidine">
+	<variant base="3&apos;-methyl-histidine"/>
+	<variant base="(S)-2-amino-3-(3-methyl-3H-imidazol-4-yl)propanoic acid"/>
+	<variant base="1-methylhistidine [misnomer]"/>
+	<variant base="3&apos;-methyl-L-histidine"/>
+	<variant base="[H:meth_n4]"/>
+	<variant base="methylhistidine"/>
+	<variant base="MHS"/>
+	<variant base="N(delta)-methylhistidine"/>
+	<variant base="pi-methylhistidine"/>
+	<variant base="pros-methylhistidine"/>
+</token>
+<token id="MI:0165" canonical="n6-methyl-lysine">
+	<variant base="n6-methyl-lysine"/>
+	<variant base="(S)-2-amino-6-methylaminohexanoic acid"/>
+	<variant base="[K:meth_1]"/>
+	<variant base="epsilon-methyllysine"/>
+	<variant base="methyllysine"/>
+	<variant base="MLZ"/>
+	<variant base="N(zeta)-methyllysine"/>
+	<variant base="N6-methyl-L-lysine"/>
+</token>
+<token id="MI:0166" canonical="n6,n6-dimethyl-lysine">
+	<variant base="n6,n6-dimethyl-lysine"/>
+	<variant base="(S)-2-amino-6-dimethylaminohexanoic acid"/>
+	<variant base="[K:meth_2]"/>
+	<variant base="dimethyllysine"/>
+	<variant base="epsilon-dimethyllysine"/>
+	<variant base="lysine derivative Lys(y)"/>
+	<variant base="MLY"/>
+	<variant base="N(zeta)-dimethyllysine"/>
+	<variant base="N6,N6-dimethyl-L-lysine"/>
+</token>
+<token id="MI:0167" canonical="n6,n6,n6-trimethyl-lysine">
+	<variant base="n6,n6,n6-trimethyl-lysine"/>
+	<variant base="(S)-2-amino-6-(trimethylammonio)hexanoic acid"/>
+	<variant base="(S)-5-amino-5-carboxy-N,N,N-trimethylpentanaminium"/>
+	<variant base="[K:meth_3]"/>
+	<variant base="epsilon-trimethyllysine"/>
+	<variant base="M3L"/>
+	<variant base="N(zeta)-trimethyllysine"/>
+	<variant base="N6,N6,N6-trimethyl-L-lysine"/>
+	<variant base="trimethyllysine"/>
+</token>
+<token id="MI:0168" canonical="n-methyl-methionine">
+	<variant base="n-methyl-methionine"/>
+	<variant base="(S)-2-methylamino-4-(methylsulfanyl)butanoic acid"/>
+	<variant base="2-methylamino-4-(methylthio)butanoic acid"/>
+	<variant base="[M:meth]"/>
+	<variant base="methylmethionine"/>
+	<variant base="MMT"/>
+	<variant base="N-methyl-L-methionine"/>
+	<variant base="N-methylmethionine"/>
+</token>
+<token id="MI:0169" canonical="n-methyl-phenylalanine">
+	<variant base="n-methyl-phenylalanine"/>
+	<variant base="(S)-2-methylamino-3-phenylpropanoic acid"/>
+	<variant base="[F:meth]"/>
+	<variant base="FMT"/>
+	<variant base="methylphenylalanine"/>
+	<variant base="N-methyl-L-phenylalanine"/>
+	<variant base="N-methylphenylalanine"/>
+</token>
+<token id="MI:0170" canonical="phosphorylated residue">
+	<variant base="phosphorylated residue"/>
+	<variant base="phosphorylated"/>
+</token>
+<token id="MI:0171" canonical="omega-n-phospho-arginine">
+	<variant base="omega-n-phospho-arginine"/>
+	<variant base="(S)-2-amino-5-[imino(phosphonoamino)methyl]aminopentanoic acid"/>
+	<variant base="[R:po]"/>
+	<variant base="alpha-amino-delta-phosphonoguanidinovaleric acid"/>
+	<variant base="N5-[imino(phosphonoamino)methyl]-L-ornithine"/>
+	<variant base="omega-N-phospho-L-arginine"/>
+	<variant base="phosphoarginine"/>
+	<variant base="RPO"/>
+</token>
+<token id="MI:0172" canonical="aspartic 4-phosphoric anhydride">
+	<variant base="aspartic 4-phosphoric anhydride"/>
+	<variant base="(S)-2-aminobutanedioic 4-phosphoric anhydride"/>
+	<variant base="[D:po]"/>
+	<variant base="beta-aspartyl phosphate"/>
+	<variant base="DPO"/>
+	<variant base="L-aspartic 4-phosphoric anhydride"/>
+	<variant base="phosphoaspartic acid"/>
+	<variant base="phosphoaspartic acid"/>
+</token>
+<token id="MI:0173" canonical="s-phospho-cysteine">
+	<variant base="s-phospho-cysteine"/>
+	<variant base="(R)-2-amino-3-(phosphonosulfanyl)propanoic acid"/>
+	<variant base="[C:po]"/>
+	<variant base="CPO"/>
+	<variant base="cysteine phosphate thioester"/>
+	<variant base="phosphocysteine"/>
+	<variant base="S-phospho-L-cysteine"/>
+	<variant base="S-phosphonocysteine"/>
+	<variant base="S3-phosphocysteine"/>
+</token>
+<token id="MI:0174" canonical="1&apos;-phospho-histidine">
+	<variant base="1&apos;-phospho-histidine"/>
+	<variant base="(S)-2-amino-3-(1-phosphono-1H-imidazol-4-yl)propanoic acid"/>
+	<variant base="1&apos;-phospho-L-histidine"/>
+	<variant base="1-phosphohistidine"/>
+	<variant base="[H:po_e]"/>
+	<variant base="histidine-3-phosphate [misnomer]"/>
+	<variant base="histidine-N(epsilon)-phosphate"/>
+	<variant base="histidine-N1&apos;-phosphate"/>
+	<variant base="HPE"/>
+	<variant base="tau-phosphohistidine"/>
+	<variant base="tele-phosphohistidine"/>
+</token>
+<token id="MI:0175" canonical="3&apos;-phospho-histidine">
+	<variant base="3&apos;-phospho-histidine"/>
+	<variant base="(S)-2-amino-3-(3-phosphono-3H-imidazol-4-yl)propanoic acid"/>
+	<variant base="3-phosphohistidine"/>
+	<variant base="[H:po_d]"/>
+	<variant base="histidine-1-phosphate [misnomer]"/>
+	<variant base="histidine-N(delta)-phosphate"/>
+	<variant base="histidine-N3&apos;-phosphate"/>
+	<variant base="HPD"/>
+	<variant base="pi-phosphohistidine"/>
+	<variant base="pros-phosphohistidine"/>
+</token>
+<token id="MI:0176" canonical="o-phospho-serine">
+	<variant base="o-phospho-serine"/>
+	<variant base="(S)-2-amino-3-(phosphonooxy)propanoic acid"/>
+	<variant base="2-amino-3-hydroxypropanoic acid 3-phosphate"/>
+	<variant base="2-amino-3-hydroxypropanoic acid 3-phosphate;O-phosphonoserine;O3-phosphoserine"/>
+	<variant base="[S:po]"/>
+	<variant base="O-phospho-L-serine"/>
+	<variant base="O-phosphonoserine"/>
+	<variant base="O3-phosphoserine"/>
+	<variant base="phosphoserine"/>
+	<variant base="serine phosphate ester"/>
+	<variant base="SPO"/>
+</token>
+<token id="MI:0177" canonical="o-phospho-threonine">
+	<variant base="o-phospho-threonine"/>
+	<variant base="(2S,3R)-2-amino-3-phosphonooxybutanoic acid"/>
+	<variant base="2-amino-3-hydroxybutanoic acid 3-phosphate"/>
+	<variant base="[T:po]"/>
+	<variant base="O-phospho-L-threonine"/>
+	<variant base="O3-phosphothreonine"/>
+	<variant base="phosphothreonine"/>
+	<variant base="threonine phosphate ester"/>
+	<variant base="TPO"/>
+</token>
+<token id="MI:0178" canonical="o4&apos;-phospho-tyrosine">
+	<variant base="o4&apos;-phospho-tyrosine"/>
+	<variant base="(S)-2-amino-3-(4-phosphonooxyphenyl)propanoic acid"/>
+	<variant base="2-amino-3-(4-hydroxyphenyl)propanoic acid 4&apos;-phosphate"/>
+	<variant base="[Y:po]"/>
+	<variant base="O4&apos;-phospho-L-tyrosine"/>
+	<variant base="O4-phosphotyrosine"/>
+	<variant base="phosphotyrosine"/>
+	<variant base="tyrosine phosphate"/>
+	<variant base="YPO"/>
+</token>
+<token id="MI:0179" canonical="other modification">
+	<variant base="other modification"/>
+</token>
+<token id="MI:0180" canonical="selenocysteine">
+	<variant base="selenocysteine"/>
+	<variant base="3-selenylalanine"/>
+	<variant base="[C:sel]"/>
+	<variant base="CSE"/>
+	<variant base="L-selenocysteine"/>
+	<variant base="selenium cysteine"/>
+</token>
+<token id="MI:0181" canonical="selenomethionine">
+	<variant base="selenomethionine"/>
+	<variant base="[M:sel]"/>
+	<variant base="L-selenomethionine"/>
+	<variant base="MSE"/>
+</token>
+<token id="MI:0182" canonical="3-oxoalanine">
+	<variant base="3-oxoalanine"/>
+	<variant base="(S)-2-amino-3-oxopropanoic acid"/>
+	<variant base="2-amino-3-oxopropionic acid"/>
+	<variant base="[S:oxal]"/>
+	<variant base="L-3-oxoalanine"/>
+	<variant base="L-alpha-formylglycine"/>
+	<variant base="L-amino-malonic acid semialdehyde"/>
+	<variant base="L-aminomalonaldehydic acid"/>
+	<variant base="L-serinesemialdehyde [misnomer]"/>
+	<variant base="oxoalanine"/>
+	<variant base="SOX"/>
+</token>
+<token id="MI:0183" canonical="2-pyrrolidone-5-carboxylic acid">
+	<variant base="2-pyrrolidone-5-carboxylic acid"/>
+	<variant base="(S)-5-oxo-2-pyrrolidinecarboxylic acid"/>
+	<variant base="2-oxopyrrolidine-5-carboxylic acid"/>
+	<variant base="5-oxoproline"/>
+	<variant base="5-oxopyrrolidine-2-carboxylic acid"/>
+	<variant base="[E:pyro]"/>
+	<variant base="pyroglutamic acid"/>
+	<variant base="pyroglutamic acid"/>
+</token>
+<token id="MI:0184" canonical="glutamyl 5-glycerylphosphorylethanolamine">
+	<variant base="glutamyl 5-glycerylphosphorylethanolamine"/>
+	<variant base="(S)-2-amino-5-[2-([([2,3-dihydroxypropyl]oxy)(hydroxy)phosphoryl]oxy)ethyl]amino-5-oxopentanoic acid"/>
+	<variant base="[E:gpe]"/>
+	<variant base="EGE"/>
+	<variant base="glycerylpo4etohamine"/>
+	<variant base="L-glutamyl 5-glycerophosphoethanolamine"/>
+	<variant base="L-glutamyl 5-glycerophosphorylethanolamine"/>
+	<variant base="L-glutamyl 5-glycerylphosphorylethanolamine"/>
+</token>
+<token id="MI:0185" canonical="2&apos;-[3-carboxamido-3-(trimethylammonio)propyl]-histidine">
+	<variant base="2&apos;-[3-carboxamido-3-(trimethylammonio)propyl]-histidine"/>
+	<variant base="2&apos;-[3-carboxamido-3-(trimethylammonio)propyl]-L-histidine"/>
+	<variant base="2-[(Xi)-3-carboxamido-3-(trimethylammonio)propyl]-4-((S)-2-amino-2-carboxyethyl)-1H-imidazole"/>
+	<variant base="2-[3-carboxamido-3-(trimethylammonio)propyl]histidine"/>
+	<variant base="2-amino-3-[[2-(3-amino-3-carbamoyl-prop-1-enyl)-1,1,3-trimethyl-2,3-dihydroimidazol-5-yl]]propanoic acid"/>
+	<variant base="2-amino-4-[[5-(2-amino-2-carboxylato-ethyl)-1,1,3-trimethyl-2,3-dihydroimidazol-2-yl]]but-3-enamide"/>
+	<variant base="[H:diph]"/>
+	<variant base="alpha-(aminocarbonyl)-4-(2-amino-2-carboxyethyl)-N,N,N-trimethyl-1H-imidazole-2-propanaminium"/>
+	<variant base="diphthamide"/>
+	<variant base="diphthamide"/>
+	<variant base="HDP"/>
+</token>
+<token id="MI:0186" canonical="n6-biotinyl-lysine">
+	<variant base="n6-biotinyl-lysine"/>
+	<variant base="(3aS-(3aalpha,4beta,6aalpha))-N6-(5-(hexahydro-2-oxo-1H-thieno(3,4-d)imidazol-4-yl)-1-oxopentyl)-L-lysine"/>
+	<variant base="(S)-2-amino-6-[5-((3aS,4S,6aR)-hexahydro-2-oxo-1H-thieno[3,4-d]imidazol-4-yl)-1-oxopentyl]aminohexanoic acid"/>
+	<variant base="[K:biotin]"/>
+	<variant base="biocytin"/>
+	<variant base="biotinyllysine"/>
+	<variant base="epsilon-N-biotinyllysine"/>
+	<variant base="KBT"/>
+	<variant base="N6-[5-((3aS,4S,6aR)-hexahydro-2-oxo-1H-thieno[3,4-d]imidazol-4-yl)-1-oxopentyl]-L-lysine"/>
+	<variant base="N6-biotinyl-L-lysine"/>
+	<variant base="N6-biotinyllysine"/>
+</token>
+<token id="MI:0187" canonical="n6-(4-amino-2-hydroxybutyl)-lysine">
+	<variant base="n6-(4-amino-2-hydroxybutyl)-lysine"/>
+	<variant base="(S,R)-2-amino-6-(4-amino-2-hydroxybutylamino)hexanoic acid"/>
+	<variant base="[K:hypu]"/>
+	<variant base="hypusine"/>
+	<variant base="hypusine"/>
+	<variant base="KHY"/>
+	<variant base="N6-(4-amino-2-hydroxybutyl)-L-lysine"/>
+</token>
+<token id="MI:0188" canonical="n6-retinal-lysine">
+	<variant base="n6-retinal-lysine"/>
+	<variant base="(S)-2-amino-6-[(2E,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)-2,4,6,8-nonatetraenylidene]aminohexanoic acid"/>
+	<variant base="[K:retin]"/>
+	<variant base="KRT"/>
+	<variant base="N6-retinal-L-lysine"/>
+	<variant base="N6-retinyl-lysine"/>
+	<variant base="N6-retinylidene-L-lysine"/>
+	<variant base="retinallysine"/>
+</token>
+<token id="MI:0189" canonical="ubiquitinated lysine">
+	<variant base="ubiquitinated lysine"/>
+	<variant base="[K:ub]"/>
+	<variant base="KUB"/>
+	<variant base="N6-glycyl-L-lysine"/>
+	<variant base="N6-glycyllysine"/>
+</token>
+<token id="MI:0190" canonical="interaction type">
+	<variant base="interaction type"/>
+</token>
+<token id="MI:0192" canonical="acetylation reaction">
+	<variant base="acetylation reaction"/>
+	<variant base="acetylation"/>
+</token>
+<token id="MI:0193" canonical="amidation reaction">
+	<variant base="amidation reaction"/>
+	<variant base="amidation"/>
+</token>
+<token id="MI:0194" canonical="cleavage reaction">
+	<variant base="cleavage reaction"/>
+	<variant base="cleavage"/>
+</token>
+<token id="MI:0195" canonical="covalent binding">
+	<variant base="covalent binding"/>
+</token>
+<token id="MI:0197" canonical="deacetylation reaction">
+	<variant base="deacetylation reaction"/>
+	<variant base="deacetylation"/>
+</token>
+<token id="MI:0198" canonical="defarnesylation reaction">
+	<variant base="defarnesylation reaction"/>
+	<variant base="defarnesylation"/>
+</token>
+<token id="MI:0199" canonical="deformylation reaction">
+	<variant base="deformylation reaction"/>
+	<variant base="deformylation"/>
+</token>
+<token id="MI:0200" canonical="degeranylation reaction">
+	<variant base="degeranylation reaction"/>
+	<variant base="degeranylation"/>
+</token>
+<token id="MI:0201" canonical="demyristoylation reaction">
+	<variant base="demyristoylation reaction"/>
+	<variant base="demyristoylation"/>
+</token>
+<token id="MI:0202" canonical="depalmitoylation reaction">
+	<variant base="depalmitoylation reaction"/>
+	<variant base="depalmitoylation"/>
+</token>
+<token id="MI:0203" canonical="dephosphorylation reaction">
+	<variant base="dephosphorylation reaction"/>
+	<variant base="dephosphorylation"/>
+</token>
+<token id="MI:0204" canonical="deubiquitination reaction">
+	<variant base="deubiquitination reaction"/>
+	<variant base="deubiquitination"/>
+</token>
+<token id="MI:0206" canonical="farnesylation reaction">
+	<variant base="farnesylation reaction"/>
+	<variant base="farnesylation"/>
+</token>
+<token id="MI:0207" canonical="formylation reaction">
+	<variant base="formylation reaction"/>
+	<variant base="formylation"/>
+</token>
+<token id="MI:0208" canonical="genetic interaction">
+	<variant base="genetic interaction"/>
+</token>
+<token id="MI:0209" canonical="geranylgeranylation reaction">
+	<variant base="geranylgeranylation reaction"/>
+	<variant base="geranylgeranylation"/>
+</token>
+<token id="MI:0210" canonical="hydroxylation reaction">
+	<variant base="hydroxylation reaction"/>
+	<variant base="hydroxylation"/>
+</token>
+<token id="MI:0211" canonical="lipid addition">
+	<variant base="lipid addition"/>
+</token>
+<token id="MI:0212" canonical="lipid cleavage">
+	<variant base="lipid cleavage"/>
+</token>
+<token id="MI:0213" canonical="methylation reaction">
+	<variant base="methylation reaction"/>
+	<variant base="methylation"/>
+</token>
+<token id="MI:0214" canonical="myristoylation reaction">
+	<variant base="myristoylation reaction"/>
+	<variant base="myristoylation"/>
+</token>
+<token id="MI:0216" canonical="palmitoylation reaction">
+	<variant base="palmitoylation reaction"/>
+	<variant base="palmitoylation"/>
+</token>
+<token id="MI:0217" canonical="phosphorylation reaction">
+	<variant base="phosphorylation reaction"/>
+	<variant base="phosphorylation"/>
+</token>
+<token id="MI:0220" canonical="ubiquitination reaction">
+	<variant base="ubiquitination reaction"/>
+	<variant base="ubiquitination"/>
+</token>
+<token id="MI:0221" canonical="expression level">
+	<variant base="expression level"/>
+</token>
+<token id="MI:0222" canonical="physiological level">
+	<variant base="physiological level"/>
+	<variant base="endogenous"/>
+	<variant base="endogenous level"/>
+</token>
+<token id="MI:0223" canonical="under expressed level">
+	<variant base="under expressed level"/>
+	<variant base="under-expressed"/>
+</token>
+<token id="MI:0225" canonical="chromatin immunoprecipitation array">
+	<variant base="chromatin immunoprecipitation array"/>
+	<variant base="chip-chip"/>
+</token>
+<token id="MI:0226" canonical="ion exchange chromatography">
+	<variant base="ion exchange chromatography"/>
+	<variant base="IEC"/>
+	<variant base="ion exchange chrom"/>
+</token>
+<token id="MI:0227" canonical="reverse phase chromatography">
+	<variant base="reverse phase chromatography"/>
+	<variant base="reverse phase chrom"/>
+</token>
+<token id="MI:0228" canonical="cytoplasmic complementation assay">
+	<variant base="cytoplasmic complementation assay"/>
+	<variant base="cytoplasmic compl"/>
+</token>
+<token id="MI:0229" canonical="green fluorescence protein complementation assay">
+	<variant base="green fluorescence protein complementation assay"/>
+	<variant base="gfp complementation"/>
+</token>
+<token id="MI:0230" canonical="membrane bound complementation assay">
+	<variant base="membrane bound complementation assay"/>
+	<variant base="membrane compl"/>
+</token>
+<token id="MI:0231" canonical="mammalian protein protein interaction trap">
+	<variant base="mammalian protein protein interaction trap"/>
+	<variant base="mappit"/>
+</token>
+<token id="MI:0232" canonical="transcriptional complementation assay">
+	<variant base="transcriptional complementation assay"/>
+	<variant base="transcription compl"/>
+</token>
+<token id="MI:0233" canonical="protein dna complex">
+	<variant base="protein dna complex"/>
+</token>
+<token id="MI:0234" canonical="131i radiolabel">
+	<variant base="131i radiolabel"/>
+	<variant base="131I"/>
+	<variant base="I131"/>
+</token>
+<token id="MI:0235" canonical="14c radiolabel">
+	<variant base="14c radiolabel"/>
+	<variant base="14C"/>
+	<variant base="C14"/>
+</token>
+<token id="MI:0236" canonical="32p radiolabel">
+	<variant base="32p radiolabel"/>
+	<variant base="32P"/>
+	<variant base="P32"/>
+</token>
+<token id="MI:0237" canonical="33p radiolabel">
+	<variant base="33p radiolabel"/>
+	<variant base="33P"/>
+	<variant base="P33"/>
+</token>
+<token id="MI:0238" canonical="3h radiolabel">
+	<variant base="3h radiolabel"/>
+	<variant base="3H"/>
+	<variant base="H3"/>
+	<variant base="tritium"/>
+</token>
+<token id="MI:0239" canonical="biotin tag">
+	<variant base="biotin tag"/>
+</token>
+<token id="MI:0240" canonical="fusion protein">
+	<variant base="fusion protein"/>
+</token>
+<token id="MI:0241" canonical="horseradish peroxidase tag">
+	<variant base="horseradish peroxidase tag"/>
+	<variant base="hrp tag"/>
+</token>
+<token id="MI:0242" canonical="gene ontology definition reference">
+	<variant base="gene ontology definition reference"/>
+	<variant base="go-definition-ref"/>
+</token>
+<token id="MI:0243" canonical="isoform parent sequence reference">
+	<variant base="isoform parent sequence reference"/>
+	<variant base="isoform-parent"/>
+</token>
+<token id="MI:0244" canonical="reactome complex">
+	<variant base="reactome complex"/>
+</token>
+<token id="MI:0245" canonical="reactome protein">
+	<variant base="reactome protein"/>
+</token>
+<token id="MI:0246" canonical="cabri">
+	<variant base="cabri"/>
+</token>
+<token id="MI:0247" canonical="newt">
+	<variant base="newt"/>
+</token>
+<token id="MI:0248" canonical="resid">
+	<variant base="resid"/>
+</token>
+<token id="MI:0249" canonical="huge">
+	<variant base="huge"/>
+</token>
+<token id="MI:0250" canonical="gene">
+	<variant base="gene"/>
+</token>
+<token id="MI:0251" canonical="gene product">
+	<variant base="gene product"/>
+</token>
+<token id="MI:0252" canonical="biological feature">
+	<variant base="biological feature"/>
+</token>
+<token id="MI:0253" canonical="isotope label">
+	<variant base="isotope label"/>
+</token>
+<token id="MI:0254" canonical="genetic interference">
+	<variant base="genetic interference"/>
+</token>
+<token id="MI:0255" canonical="post transcriptional interference">
+	<variant base="post transcriptional interference"/>
+	<variant base="expression interfer"/>
+</token>
+<token id="MI:0256" canonical="rna interference">
+	<variant base="rna interference"/>
+	<variant base="rnai"/>
+</token>
+<token id="MI:0257" canonical="antisense rna">
+	<variant base="antisense rna"/>
+</token>
+<token id="MI:0276" canonical="blue native page">
+	<variant base="blue native page"/>
+	<variant base="bn-page"/>
+</token>
+<token id="MI:0300" canonical="alias type">
+	<variant base="alias type"/>
+	<variant base="CvAliasType"/>
+</token>
+<token id="MI:0301" canonical="gene name">
+	<variant base="gene name"/>
+	<variant base="gene"/>
+</token>
+<token id="MI:0302" canonical="gene name synonym">
+	<variant base="gene name synonym"/>
+</token>
+<token id="MI:0303" canonical="gene ontology synonym">
+	<variant base="gene ontology synonym"/>
+	<variant base="go synonym"/>
+</token>
+<token id="MI:0304" canonical="isoform synonym">
+	<variant base="isoform synonym"/>
+</token>
+<token id="MI:0305" canonical="ordered locus name">
+	<variant base="ordered locus name"/>
+	<variant base="CDS number"/>
+	<variant base="locus name"/>
+	<variant base="ONL"/>
+	<variant base="Ordered locus name"/>
+	<variant base="ORF number"/>
+	<variant base="systematic gene number"/>
+</token>
+<token id="MI:0306" canonical="open reading frame name">
+	<variant base="open reading frame name"/>
+	<variant base="orf name"/>
+</token>
+<token id="MI:0307" canonical="delivery method">
+	<variant base="delivery method"/>
+</token>
+<token id="MI:0308" canonical="electroporation">
+	<variant base="electroporation"/>
+</token>
+<token id="MI:0310" canonical="infection">
+	<variant base="infection"/>
+</token>
+<token id="MI:0311" canonical="microinjection">
+	<variant base="microinjection"/>
+	<variant base="micro-injection"/>
+</token>
+<token id="MI:0312" canonical="nucleic acid transfection">
+	<variant base="nucleic acid transfection"/>
+	<variant base="nucl transfection"/>
+</token>
+<token id="MI:0313" canonical="interactor type">
+	<variant base="interactor type"/>
+	<variant base="participant type"/>
+</token>
+<token id="MI:0314" canonical="complex">
+	<variant base="complex"/>
+</token>
+<token id="MI:0315" canonical="protein complex">
+	<variant base="protein complex"/>
+</token>
+<token id="MI:0316" canonical="ribonucleoprotein complex">
+	<variant base="ribonucleoprotein complex"/>
+	<variant base="protein rna complex"/>
+	<variant base="ribonucleoprot compl"/>
+</token>
+<token id="MI:0317" canonical="interaction">
+	<variant base="interaction"/>
+</token>
+<token id="MI:0318" canonical="nucleic acid">
+	<variant base="nucleic acid"/>
+</token>
+<token id="MI:0319" canonical="deoxyribonucleic acid">
+	<variant base="deoxyribonucleic acid"/>
+	<variant base="deoxyribonucleic acid"/>
+	<variant base="DNA"/>
+	<variant base="dna"/>
+</token>
+<token id="MI:0320" canonical="ribonucleic acid">
+	<variant base="ribonucleic acid"/>
+	<variant base="RNA"/>
+	<variant base="rna"/>
+</token>
+<token id="MI:0321" canonical="catalytic rna">
+	<variant base="catalytic rna"/>
+	<variant base="catalytic ribonucleic acid"/>
+	<variant base="catalytic RNA"/>
+	<variant base="crna"/>
+</token>
+<token id="MI:0322" canonical="guide rna">
+	<variant base="guide rna"/>
+	<variant base="grna"/>
+	<variant base="guide RNA"/>
+</token>
+<token id="MI:0323" canonical="heterogeneous nuclear rna">
+	<variant base="heterogeneous nuclear rna"/>
+	<variant base="heterogeneous nuclear ribonucleic acid"/>
+	<variant base="heterogeneous nuclear RNA"/>
+	<variant base="hnrna"/>
+</token>
+<token id="MI:0324" canonical="messenger rna">
+	<variant base="messenger rna"/>
+	<variant base="mRNA"/>
+	<variant base="mrna"/>
+</token>
+<token id="MI:0325" canonical="transfer rna">
+	<variant base="transfer rna"/>
+	<variant base="transfer ribonucleic acid"/>
+	<variant base="transfer RNA"/>
+	<variant base="tRNA"/>
+	<variant base="trna"/>
+</token>
+<token id="MI:0326" canonical="protein">
+	<variant base="protein"/>
+</token>
+<token id="MI:0327" canonical="peptide">
+	<variant base="peptide"/>
+	<variant base="oligopeptide"/>
+	<variant base="polypeptide"/>
+</token>
+<token id="MI:0328" canonical="small molecule">
+	<variant base="small molecule"/>
+</token>
+<token id="MI:0329" canonical="unknown participant">
+	<variant base="unknown participant"/>
+</token>
+<token id="MI:0330" canonical="molecular source">
+	<variant base="molecular source"/>
+</token>
+<token id="MI:0331" canonical="engineered">
+	<variant base="engineered"/>
+</token>
+<token id="MI:0332" canonical="naturally occurring">
+	<variant base="naturally occurring"/>
+	<variant base="endogenous"/>
+</token>
+<token id="MI:0333" canonical="feature range status">
+	<variant base="feature range status"/>
+	<variant base="CvFuzzyType"/>
+	<variant base="endStatus"/>
+	<variant base="startStatus"/>
+</token>
+<token id="MI:0334" canonical="c-terminal position">
+	<variant base="c-terminal position"/>
+	<variant base="c-term"/>
+	<variant base="c-terminal"/>
+	<variant base="c-terminus"/>
+	<variant base="carboxy-terminus"/>
+</token>
+<token id="MI:0335" canonical="certain sequence position">
+	<variant base="certain sequence position"/>
+	<variant base="certain"/>
+</token>
+<token id="MI:0336" canonical="greater-than">
+	<variant base="greater-than"/>
+</token>
+<token id="MI:0337" canonical="less-than">
+	<variant base="less-than"/>
+</token>
+<token id="MI:0338" canonical="range">
+	<variant base="range"/>
+</token>
+<token id="MI:0339" canonical="undetermined sequence position">
+	<variant base="undetermined sequence position"/>
+	<variant base="undetermined"/>
+</token>
+<token id="MI:0340" canonical="n-terminal position">
+	<variant base="n-terminal position"/>
+	<variant base="amino-terminus"/>
+	<variant base="n-term"/>
+	<variant base="n-terminal "/>
+	<variant base="n-terminus"/>
+</token>
+<token id="MI:0341" canonical="ragged n-terminus">
+	<variant base="ragged n-terminus"/>
+</token>
+<token id="MI:0342" canonical="sample process">
+	<variant base="sample process"/>
+</token>
+<token id="MI:0343" canonical="cdna library">
+	<variant base="cdna library"/>
+</token>
+<token id="MI:0344" canonical="cell lysate">
+	<variant base="cell lysate"/>
+</token>
+<token id="MI:0345" canonical="author assigned name">
+	<variant base="author assigned name"/>
+</token>
+<token id="MI:0346" canonical="experimental preparation">
+	<variant base="experimental preparation"/>
+	<variant base="experimental prep"/>
+</token>
+<token id="MI:0348" canonical="fixed cell">
+	<variant base="fixed cell"/>
+</token>
+<token id="MI:0349" canonical="living cell">
+	<variant base="living cell"/>
+</token>
+<token id="MI:0350" canonical="purified">
+	<variant base="purified"/>
+</token>
+<token id="MI:0351" canonical="homogeneous">
+	<variant base="homogeneous"/>
+	<variant base="pure"/>
+</token>
+<token id="MI:0352" canonical="partially purified">
+	<variant base="partially purified"/>
+</token>
+<token id="MI:0353" canonical="cross-reference type">
+	<variant base="cross-reference type"/>
+	<variant base="CvXrefQualifier"/>
+	<variant base="refType"/>
+	<variant base="xref type"/>
+</token>
+<token id="MI:0354" canonical="gene ontology term for cellular component">
+	<variant base="gene ontology term for cellular component"/>
+	<variant base="component"/>
+	<variant base="go component term"/>
+</token>
+<token id="MI:0355" canonical="gene ontology term for cellular function">
+	<variant base="gene ontology term for cellular function"/>
+	<variant base="function"/>
+	<variant base="go function term"/>
+</token>
+<token id="MI:0356" canonical="identical object">
+	<variant base="identical object"/>
+	<variant base="identity"/>
+</token>
+<token id="MI:0357" canonical="method reference">
+	<variant base="method reference"/>
+</token>
+<token id="MI:0358" canonical="primary-reference">
+	<variant base="primary-reference"/>
+</token>
+<token id="MI:0359" canonical="gene ontology term for cellular process">
+	<variant base="gene ontology term for cellular process"/>
+	<variant base="go process term"/>
+	<variant base="process"/>
+</token>
+<token id="MI:0360" canonical="secondary accession number">
+	<variant base="secondary accession number"/>
+	<variant base="secondary-ac"/>
+</token>
+<token id="MI:0361" canonical="see-also">
+	<variant base="see-also"/>
+</token>
+<token id="MI:0362" canonical="inference">
+	<variant base="inference"/>
+	<variant base="modeled"/>
+	<variant base="modelled"/>
+</token>
+<token id="MI:0363" canonical="inferred by author">
+	<variant base="inferred by author"/>
+	<variant base="modeled by author"/>
+	<variant base="modelled by author"/>
+</token>
+<token id="MI:0364" canonical="inferred by curator">
+	<variant base="inferred by curator"/>
+	<variant base="modeled by curator"/>
+	<variant base="modelled by curator"/>
+</token>
+<token id="MI:0365" canonical="enzyme tag">
+	<variant base="enzyme tag"/>
+</token>
+<token id="MI:0366" canonical="alkaline phosphatase tag">
+	<variant base="alkaline phosphatase tag"/>
+	<variant base="alk phosphatase tag"/>
+</token>
+<token id="MI:0367" canonical="green fluorescent protein tag">
+	<variant base="green fluorescent protein tag"/>
+	<variant base="GFP"/>
+	<variant base="gfp tag"/>
+	<variant base="green fluorescent protein"/>
+</token>
+<token id="MI:0368" canonical="yellow fluorescent protein tag">
+	<variant base="yellow fluorescent protein tag"/>
+	<variant base="yellow fluorescent protein"/>
+	<variant base="YFP"/>
+	<variant base="yfp tag"/>
+</token>
+<token id="MI:0369" canonical="lex-a dimerization assay">
+	<variant base="lex-a dimerization assay"/>
+	<variant base="gallex"/>
+	<variant base="gallex"/>
+</token>
+<token id="MI:0370" canonical="tox-r dimerization assay">
+	<variant base="tox-r dimerization assay"/>
+	<variant base="toxcat"/>
+	<variant base="toxcat"/>
+</token>
+<token id="MI:0371" canonical="35s radiolabel">
+	<variant base="35s radiolabel"/>
+	<variant base="35S"/>
+	<variant base="S35"/>
+	<variant base="s35 radiolabelled"/>
+</token>
+<token id="MI:0372" canonical="subcellular preparation">
+	<variant base="subcellular preparation"/>
+	<variant base="subcellular prep"/>
+</token>
+<token id="MI:0373" canonical="dye label">
+	<variant base="dye label"/>
+	<variant base="dye labelled"/>
+</token>
+<token id="MI:0374" canonical="cyanine label">
+	<variant base="cyanine label"/>
+</token>
+<token id="MI:0375" canonical="cy3 label">
+	<variant base="cy3 label"/>
+</token>
+<token id="MI:0376" canonical="cy5 label">
+	<variant base="cy5 label"/>
+</token>
+<token id="MI:0377" canonical="fluorescein isothiocyanate label">
+	<variant base="fluorescein isothiocyanate label"/>
+	<variant base="FITC labelled"/>
+	<variant base="fitc labelled"/>
+	<variant base="fluorescein isothiocyanate labbeled"/>
+</token>
+<token id="MI:0378" canonical="rare isotope label">
+	<variant base="rare isotope label"/>
+	<variant base="rare isotope label"/>
+</token>
+<token id="MI:0379" canonical="13c label">
+	<variant base="13c label"/>
+	<variant base="13C"/>
+	<variant base="C13"/>
+</token>
+<token id="MI:0380" canonical="15n label">
+	<variant base="15n label"/>
+	<variant base="15N"/>
+	<variant base="N15"/>
+</token>
+<token id="MI:0381" canonical="2h label">
+	<variant base="2h label"/>
+	<variant base="2H2"/>
+	<variant base="D2"/>
+	<variant base="deuterium"/>
+</token>
+<token id="MI:0382" canonical="mutation increasing interaction">
+	<variant base="mutation increasing interaction"/>
+	<variant base="mutation increasing"/>
+</token>
+<token id="MI:0383" canonical="biopolymer">
+	<variant base="biopolymer"/>
+</token>
+<token id="MI:0384" canonical="alexa label">
+	<variant base="alexa label"/>
+</token>
+<token id="MI:0385" canonical="alexa 350 label">
+	<variant base="alexa 350 label"/>
+</token>
+<token id="MI:0386" canonical="alexa 430 label">
+	<variant base="alexa 430 label"/>
+</token>
+<token id="MI:0387" canonical="alexa 488 label">
+	<variant base="alexa 488 label"/>
+</token>
+<token id="MI:0388" canonical="alexa 532 label">
+	<variant base="alexa 532 label"/>
+</token>
+<token id="MI:0389" canonical="alexa 546 label">
+	<variant base="alexa 546 label"/>
+</token>
+<token id="MI:0390" canonical="alexa 568 label">
+	<variant base="alexa 568 label"/>
+</token>
+<token id="MI:0391" canonical="alexa 594 label">
+	<variant base="alexa 594 label"/>
+</token>
+<token id="MI:0396" canonical="predetermined participant">
+	<variant base="predetermined participant"/>
+	<variant base="predetermined"/>
+</token>
+<token id="MI:0397" canonical="two hybrid array">
+	<variant base="two hybrid array"/>
+</token>
+<token id="MI:0398" canonical="two hybrid pooling approach">
+	<variant base="two hybrid pooling approach"/>
+	<variant base="two hybrid pooling"/>
+</token>
+<token id="MI:0399" canonical="two hybrid fragment pooling approach">
+	<variant base="two hybrid fragment pooling approach"/>
+	<variant base="2h fragment pooling"/>
+</token>
+<token id="MI:0400" canonical="affinity technology">
+	<variant base="affinity technology"/>
+	<variant base="affinity techniques"/>
+</token>
+<token id="MI:0401" canonical="biochemical">
+	<variant base="biochemical"/>
+</token>
+<token id="MI:0402" canonical="chromatin immunoprecipitation assay">
+	<variant base="chromatin immunoprecipitation assay"/>
+	<variant base="ch-ip"/>
+</token>
+<token id="MI:0403" canonical="colocalization">
+	<variant base="colocalization"/>
+</token>
+<token id="MI:0404" canonical="comigration in non denaturing gel electrophoresis">
+	<variant base="comigration in non denaturing gel electrophoresis"/>
+	<variant base="comig non denat gel"/>
+</token>
+<token id="MI:0405" canonical="competition binding">
+	<variant base="competition binding"/>
+</token>
+<token id="MI:0406" canonical="deacetylase assay">
+	<variant base="deacetylase assay"/>
+</token>
+<token id="MI:0407" canonical="direct interaction">
+	<variant base="direct interaction"/>
+</token>
+<token id="MI:0408" canonical="disulfide bond">
+	<variant base="disulfide bond"/>
+</token>
+<token id="MI:0410" canonical="electron tomography">
+	<variant base="electron tomography"/>
+	<variant base="sem"/>
+</token>
+<token id="MI:0411" canonical="enzyme linked immunosorbent assay">
+	<variant base="enzyme linked immunosorbent assay"/>
+	<variant base="ELISA"/>
+	<variant base="elisa"/>
+</token>
+<token id="MI:0412" canonical="electrophoretic mobility supershift assay">
+	<variant base="electrophoretic mobility supershift assay"/>
+	<variant base="emsa supershift"/>
+</token>
+<token id="MI:0413" canonical="electrophoretic mobility shift assay">
+	<variant base="electrophoretic mobility shift assay"/>
+	<variant base="band shift"/>
+	<variant base="emsa"/>
+	<variant base="Gel retardation assay"/>
+</token>
+<token id="MI:0414" canonical="enzymatic reaction">
+	<variant base="enzymatic reaction"/>
+	<variant base="Biochemical reaction"/>
+</token>
+<token id="MI:0415" canonical="enzymatic study">
+	<variant base="enzymatic study"/>
+</token>
+<token id="MI:0416" canonical="fluorescence microscopy">
+	<variant base="fluorescence microscopy"/>
+	<variant base="fluorescence imaging"/>
+</token>
+<token id="MI:0417" canonical="footprinting">
+	<variant base="footprinting"/>
+</token>
+<token id="MI:0419" canonical="gtpase assay">
+	<variant base="gtpase assay"/>
+	<variant base="gtp hydrolisis"/>
+	<variant base="GTPase"/>
+</token>
+<token id="MI:0420" canonical="kinase homogeneous time resolved fluorescence">
+	<variant base="kinase homogeneous time resolved fluorescence"/>
+	<variant base="homogeneous time-resolved fluorescence"/>
+	<variant base="kinase HTRF"/>
+	<variant base="kinase htrf"/>
+</token>
+<token id="MI:0421" canonical="identification by antibody">
+	<variant base="identification by antibody"/>
+	<variant base="antibody detection"/>
+</token>
+<token id="MI:0422" canonical="immunostaining">
+	<variant base="immunostaining"/>
+</token>
+<token id="MI:0423" canonical="in-gel kinase assay">
+	<variant base="in-gel kinase assay"/>
+	<variant base="in gel kinase assay"/>
+</token>
+<token id="MI:0424" canonical="protein kinase assay">
+	<variant base="protein kinase assay"/>
+</token>
+<token id="MI:0425" canonical="kinase scintillation proximity assay">
+	<variant base="kinase scintillation proximity assay"/>
+	<variant base="kinase spa"/>
+</token>
+<token id="MI:0426" canonical="light microscopy">
+	<variant base="light microscopy"/>
+</token>
+<token id="MI:0427" canonical="mass spectrometry">
+	<variant base="mass spectrometry"/>
+</token>
+<token id="MI:0428" canonical="imaging technique">
+	<variant base="imaging technique"/>
+	<variant base="microscopy"/>
+</token>
+<token id="MI:0429" canonical="necessary binding site">
+	<variant base="necessary binding site"/>
+	<variant base="required to bind"/>
+</token>
+<token id="MI:0430" canonical="nucleic acid uv cross-linking assay">
+	<variant base="nucleic acid uv cross-linking assay"/>
+	<variant base="nucl ac uv crosslink"/>
+</token>
+<token id="MI:0432" canonical="one hybrid">
+	<variant base="one hybrid"/>
+	<variant base="one-hybrid"/>
+	<variant base="yeast one hybrid"/>
+	<variant base="yeast one-hybrid"/>
+</token>
+<token id="MI:0433" canonical="partial identification of protein sequence">
+	<variant base="partial identification of protein sequence"/>
+	<variant base="partial id prot seq"/>
+</token>
+<token id="MI:0434" canonical="phosphatase assay">
+	<variant base="phosphatase assay"/>
+</token>
+<token id="MI:0435" canonical="protease assay">
+	<variant base="protease assay"/>
+</token>
+<token id="MI:0436" canonical="protein footprinting">
+	<variant base="protein footprinting"/>
+</token>
+<token id="MI:0437" canonical="protein tri hybrid">
+	<variant base="protein tri hybrid"/>
+	<variant base="bridge assay"/>
+	<variant base="trihybrid"/>
+</token>
+<token id="MI:0438" canonical="rna tri hybrid">
+	<variant base="rna tri hybrid"/>
+	<variant base="Three hybrid system"/>
+</token>
+<token id="MI:0439" canonical="random spore analysis">
+	<variant base="random spore analysis"/>
+	<variant base="random-spore analysis"/>
+	<variant base="RSA"/>
+	<variant base="rsa"/>
+	<variant base="spore germination"/>
+</token>
+<token id="MI:0440" canonical="saturation binding">
+	<variant base="saturation binding"/>
+</token>
+<token id="MI:0441" canonical="synthetic genetic analysis">
+	<variant base="synthetic genetic analysis"/>
+	<variant base="SGA"/>
+	<variant base="sga"/>
+</token>
+<token id="MI:0442" canonical="sufficient binding site">
+	<variant base="sufficient binding site"/>
+	<variant base="sufficient to bind"/>
+</token>
+<token id="MI:0444" canonical="database citation">
+	<variant base="database citation"/>
+</token>
+<token id="MI:0445" canonical="literature database">
+	<variant base="literature database"/>
+	<variant base="experiment xref"/>
+</token>
+<token id="MI:0446" canonical="pubmed">
+	<variant base="pubmed"/>
+</token>
+<token id="MI:0447" canonical="feature database">
+	<variant base="feature database"/>
+	<variant base="feature xref"/>
+</token>
+<token id="MI:0448" canonical="gene ontology">
+	<variant base="gene ontology"/>
+	<variant base="go"/>
+</token>
+<token id="MI:0449" canonical="interpro">
+	<variant base="interpro"/>
+	<variant base="InterPro"/>
+</token>
+<token id="MI:0450" canonical="cdd">
+	<variant base="cdd"/>
+	<variant base="CDD"/>
+</token>
+<token id="MI:0451" canonical="pfam">
+	<variant base="pfam"/>
+	<variant base="Pfam"/>
+</token>
+<token id="MI:0452" canonical="pirsf">
+	<variant base="pirsf"/>
+	<variant base="PIRSF"/>
+</token>
+<token id="MI:0453" canonical="prints">
+	<variant base="prints"/>
+	<variant base="PRINTS"/>
+</token>
+<token id="MI:0454" canonical="prodom">
+	<variant base="prodom"/>
+	<variant base="ProDom"/>
+</token>
+<token id="MI:0455" canonical="prosite">
+	<variant base="prosite"/>
+	<variant base="Prosite"/>
+</token>
+<token id="MI:0456" canonical="scop superfamily">
+	<variant base="scop superfamily"/>
+	<variant base="SCOP superfamily"/>
+</token>
+<token id="MI:0457" canonical="smart">
+	<variant base="smart"/>
+	<variant base="SMART"/>
+</token>
+<token id="MI:0458" canonical="tigrfams">
+	<variant base="tigrfams"/>
+	<variant base="TIGRFAMs"/>
+</token>
+<token id="MI:0459" canonical="mmdb">
+	<variant base="mmdb"/>
+	<variant base="MMDB"/>
+</token>
+<token id="MI:0460" canonical="rcsb pdb">
+	<variant base="rcsb pdb"/>
+	<variant base="PDB"/>
+</token>
+<token id="MI:0461" canonical="interaction database">
+	<variant base="interaction database"/>
+	<variant base="interaction xref"/>
+</token>
+<token id="MI:0462" canonical="bind">
+	<variant base="bind"/>
+	<variant base="BIND"/>
+</token>
+<token id="MI:0463" canonical="grid">
+	<variant base="grid"/>
+	<variant base="GRID"/>
+</token>
+<token id="MI:0464" canonical="cygd">
+	<variant base="cygd"/>
+	<variant base="CYGD"/>
+	<variant base="CYGD (MIPS)"/>
+	<variant base="MIPS"/>
+	<variant base="MPact"/>
+</token>
+<token id="MI:0465" canonical="dip">
+	<variant base="dip"/>
+	<variant base="DIP"/>
+</token>
+<token id="MI:0466" canonical="ecocyc">
+	<variant base="ecocyc"/>
+	<variant base="EcoCyc"/>
+</token>
+<token id="MI:0467" canonical="reactome">
+	<variant base="reactome"/>
+	<variant base="Genome Knowledge Base"/>
+	<variant base="GKB"/>
+	<variant base="Reactome"/>
+</token>
+<token id="MI:0468" canonical="hprd">
+	<variant base="hprd"/>
+	<variant base="HPRD"/>
+</token>
+<token id="MI:0469" canonical="intact">
+	<variant base="intact"/>
+	<variant base="IntAct"/>
+</token>
+<token id="MI:0470" canonical="kegg">
+	<variant base="kegg"/>
+	<variant base="KEGG"/>
+</token>
+<token id="MI:0471" canonical="mint">
+	<variant base="mint"/>
+	<variant base="MINT"/>
+</token>
+<token id="MI:0472" canonical="msd pdb">
+	<variant base="msd pdb"/>
+	<variant base="e-MSD"/>
+	<variant base="PQS"/>
+</token>
+<token id="MI:0473" canonical="participant database">
+	<variant base="participant database"/>
+	<variant base="participant xref"/>
+</token>
+<token id="MI:0474" canonical="chebi">
+	<variant base="chebi"/>
+	<variant base="ChEBI"/>
+</token>
+<token id="MI:0475" canonical="ddbj/embl/genbank">
+	<variant base="ddbj/embl/genbank"/>
+	<variant base="DDBJ"/>
+	<variant base="DDBJ/EMBL/GenBank"/>
+	<variant base="EMBL"/>
+	<variant base="GenBank"/>
+</token>
+<token id="MI:0476" canonical="ensembl">
+	<variant base="ensembl"/>
+	<variant base="Ensembl"/>
+</token>
+<token id="MI:0477" canonical="entrez gene/locuslink">
+	<variant base="entrez gene/locuslink"/>
+	<variant base="Entrez gene/locuslink"/>
+	<variant base="entrezgene/locuslink"/>
+</token>
+<token id="MI:0478" canonical="flybase">
+	<variant base="flybase"/>
+	<variant base="FlyBase"/>
+</token>
+<token id="MI:0479" canonical="mgd/mgi">
+	<variant base="mgd/mgi"/>
+	<variant base="MGD/MGI"/>
+</token>
+<token id="MI:0480" canonical="omim">
+	<variant base="omim"/>
+	<variant base="OMIM"/>
+</token>
+<token id="MI:0481" canonical="refseq">
+	<variant base="refseq"/>
+	<variant base="Refseq"/>
+</token>
+<token id="MI:0482" canonical="rfam">
+	<variant base="rfam"/>
+	<variant base="rfam"/>
+</token>
+<token id="MI:0483" canonical="rgd">
+	<variant base="rgd"/>
+	<variant base="RGD"/>
+</token>
+<token id="MI:0484" canonical="sgd">
+	<variant base="sgd"/>
+	<variant base="SGD"/>
+</token>
+<token id="MI:0485" canonical="uniparc">
+	<variant base="uniparc"/>
+	<variant base="UniParc"/>
+</token>
+<token id="MI:0486" canonical="uniprot knowledge base">
+	<variant base="uniprot knowledge base"/>
+	<variant base="UniProt"/>
+	<variant base="uniprotkb"/>
+</token>
+<token id="MI:0487" canonical="wormbase">
+	<variant base="wormbase"/>
+	<variant base="WormBase"/>
+</token>
+<token id="MI:0488" canonical="psi-mi">
+	<variant base="psi-mi"/>
+	<variant base="PSI-MI"/>
+</token>
+<token id="MI:0489" canonical="source database">
+	<variant base="source database"/>
+</token>
+<token id="MI:0495" canonical="experimental role">
+	<variant base="experimental role"/>
+</token>
+<token id="MI:0496" canonical="bait">
+	<variant base="bait"/>
+</token>
+<token id="MI:0497" canonical="neutral component">
+	<variant base="neutral component"/>
+</token>
+<token id="MI:0498" canonical="prey">
+	<variant base="prey"/>
+</token>
+<token id="MI:0499" canonical="unspecified role">
+	<variant base="unspecified role"/>
+</token>
+<token id="MI:0500" canonical="biological role">
+	<variant base="biological role"/>
+</token>
+<token id="MI:0501" canonical="enzyme">
+	<variant base="enzyme"/>
+</token>
+<token id="MI:0502" canonical="enzyme target">
+	<variant base="enzyme target"/>
+	<variant base="substrate"/>
+</token>
+<token id="MI:0503" canonical="self">
+	<variant base="self"/>
+</token>
+<token id="MI:0505" canonical="experimental feature">
+	<variant base="experimental feature"/>
+</token>
+<token id="MI:0506" canonical="over expressed level">
+	<variant base="over expressed level"/>
+	<variant base="over-expressed"/>
+</token>
+<token id="MI:0507" canonical="tag">
+	<variant base="tag"/>
+</token>
+<token id="MI:0508" canonical="deacetylase radiometric assay">
+	<variant base="deacetylase radiometric assay"/>
+	<variant base="radiolabeled acetate"/>
+</token>
+<token id="MI:0509" canonical="phosphatase homogeneous time resolved fluorescence">
+	<variant base="phosphatase homogeneous time resolved fluorescence"/>
+	<variant base="homogeneous time-resolved fluorescence"/>
+	<variant base="phosphatase HTRF"/>
+	<variant base="phosphatase htrf"/>
+</token>
+<token id="MI:0510" canonical="homogeneous time resolved fluorescence">
+	<variant base="homogeneous time resolved fluorescence"/>
+	<variant base="homogeneous time-resolved fluorescence"/>
+	<variant base="htrf"/>
+</token>
+<token id="MI:0511" canonical="protease homogeneous time resolved fluorescence">
+	<variant base="protease homogeneous time resolved fluorescence"/>
+	<variant base="Protease HTRF"/>
+	<variant base="protease htrf"/>
+</token>
+<token id="MI:0512" canonical="zymography">
+	<variant base="zymography"/>
+</token>
+<token id="MI:0513" canonical="collagen film assay">
+	<variant base="collagen film assay"/>
+</token>
+<token id="MI:0514" canonical="in gel phosphatase assay">
+	<variant base="in gel phosphatase assay"/>
+	<variant base="in gel phosphatase"/>
+</token>
+<token id="MI:0515" canonical="methyltransferase assay">
+	<variant base="methyltransferase assay"/>
+	<variant base="methyltransferase as"/>
+</token>
+<token id="MI:0516" canonical="methyltransferase radiometric assay">
+	<variant base="methyltransferase radiometric assay"/>
+	<variant base="radiolabeled methyl"/>
+</token>
+<token id="MI:0517" canonical="radiolabel">
+	<variant base="radiolabel"/>
+	<variant base="radiolabeled"/>
+	<variant base="radiolabelled"/>
+</token>
+<token id="MI:0518" canonical="flag tag">
+	<variant base="flag tag"/>
+	<variant base="DYKDDDDKV epitope tag"/>
+	<variant base="FLAG"/>
+	<variant base="FLAG-tagged"/>
+</token>
+<token id="MI:0519" canonical="glutathione s tranferase tag">
+	<variant base="glutathione s tranferase tag"/>
+	<variant base="glutathione S-tranferase tag"/>
+	<variant base="gst tag"/>
+</token>
+<token id="MI:0520" canonical="ha tag">
+	<variant base="ha tag"/>
+	<variant base="YPYDVPDYA epitope tag"/>
+</token>
+<token id="MI:0521" canonical="his tag">
+	<variant base="his tag"/>
+	<variant base="6-His-tag"/>
+	<variant base="Hexa-His-tag"/>
+	<variant base="Histidine-tag"/>
+</token>
+<token id="MI:0522" canonical="myc tag">
+	<variant base="myc tag"/>
+	<variant base="EUKLISEED epitope tag"/>
+</token>
+<token id="MI:0523" canonical="t7 tag">
+	<variant base="t7 tag"/>
+	<variant base="MASMTGGQQMG epitope tag"/>
+</token>
+<token id="MI:0524" canonical="calmodulin binding peptide plus protein a tag">
+	<variant base="calmodulin binding peptide plus protein a tag"/>
+	<variant base="CBP-ProtA tagged"/>
+	<variant base="tap tagged"/>
+</token>
+<token id="MI:0525" canonical="v5 tag">
+	<variant base="v5 tag"/>
+	<variant base="GKPIPNPLLGLDST epitope tag"/>
+</token>
+<token id="MI:0526" canonical="n-acetyl-lysine">
+	<variant base="n-acetyl-lysine"/>
+	<variant base="acetyllysine"/>
+</token>
+<token id="MI:0527" canonical="adp ribosylated residue">
+	<variant base="adp ribosylated residue"/>
+	<variant base="adp-ribosylated"/>
+</token>
+<token id="MI:0528" canonical="omega-n-(adp-ribosyl)-arginine">
+	<variant base="omega-n-(adp-ribosyl)-arginine"/>
+	<variant base="(S)-2-amino-5-([imino([adenosine 5&apos;-(trihydrogen diphosphate) 5&apos;-&gt;5&apos;-ester with alpha-D-ribofuranosyl]amino)methyl]amino)pentanoic acid"/>
+	<variant base="adp-ribosylarginine"/>
+	<variant base="N(omega)-[alpha-D-ribofuranoside 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)]-L-arginine"/>
+	<variant base="N(omega)-alpha-D-ribofuranosyl-L-arginine 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)"/>
+	<variant base="omega-N-(ADP-ribosyl)-L-arginine"/>
+</token>
+<token id="MI:0529" canonical="s-(adp-ribosyl)-cysteine">
+	<variant base="s-(adp-ribosyl)-cysteine"/>
+	<variant base="(R)-2-amino-3-([adenosine 5&apos;-(trihydrogen diphosphate) 5&apos;-&gt;5&apos;-ester with alpha-D-ribofuranosyl]sulfanyl)propanoic acid"/>
+	<variant base="adp-ribosylcysteine"/>
+	<variant base="S-(ADP-ribosyl)-L-cysteine"/>
+	<variant base="S-alpha-D-ribofuranosyl-L-cysteine 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)"/>
+	<variant base="S-L-cysteine alpha-D-ribofuranoside 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)"/>
+</token>
+<token id="MI:0530" canonical="glutamyl-5-poly(adp-ribose)">
+	<variant base="glutamyl-5-poly(adp-ribose)"/>
+	<variant base="(S)-2-amino-5-poly[2&apos;-adenosine 5&apos;-(trihydrogen diphosphate) 5&apos;-&gt;5&apos;-ester with 1alpha-D-ribofuranosyl]oxy-5-oxopentanoic acid"/>
+	<variant base="adp-ribosylglutamate"/>
+	<variant base="L-glutamyl-5-poly(ADP-ribose)"/>
+	<variant base="L-isoglutamyl-poly(ADP-ribose)"/>
+</token>
+<token id="MI:0531" canonical="o-(adp-ribosyl)-serine">
+	<variant base="o-(adp-ribosyl)-serine"/>
+	<variant base="(S)-2-amino-3-([adenosine 5&apos;-(trihydrogen diphosphate) 5&apos;-&gt;5&apos;-ester with alpha-D-ribofuranosyl]oxy)-propanoic acid Formula"/>
+	<variant base="adp-ribosylserine"/>
+	<variant base="O-(ADP-ribosyl)-L-serine"/>
+	<variant base="O3-(ADP-ribosyl)-L-serine"/>
+	<variant base="O3-[alpha-D-ribofuranoside 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)]-L-serine"/>
+	<variant base="O3-alpha-D-ribofuranosyl-L-serine 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)"/>
+</token>
+<token id="MI:0532" canonical="n4-(adp-ribosyl)-asparagine">
+	<variant base="n4-(adp-ribosyl)-asparagine"/>
+	<variant base="(S)-2-amino-4-([adenosine 5&apos;-(trihydrogen diphosphate) 5&apos;-&gt;5&apos;-ester with alpha-D-ribofuranosyl]amino)-4-oxobutanoic acid"/>
+	<variant base="adpribosylasparagine"/>
+	<variant base="N4-(ADP-ribosyl)-L-asparagine"/>
+	<variant base="N4-[alpha-D-ribofuranoside 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)]-L-asparagine"/>
+	<variant base="N4-alpha-D-ribofuranosyl-L-asparagine 5&apos;-&gt;5&apos;-ester with adenosine 5&apos;-(trihydrogen diphosphate)"/>
+</token>
+<token id="MI:0533" canonical="glycosylated residue">
+	<variant base="glycosylated residue"/>
+</token>
+<token id="MI:0534" canonical="glycosyl-cysteine">
+	<variant base="glycosyl-cysteine"/>
+	<variant base="S-glycosyl-L-cysteine"/>
+</token>
+<token id="MI:0535" canonical="glycosyl-serine">
+	<variant base="glycosyl-serine"/>
+	<variant base="O-glycosyl-L-serine"/>
+	<variant base="O3-glycosyl-L-serine"/>
+</token>
+<token id="MI:0536" canonical="glycosyl-threonine">
+	<variant base="glycosyl-threonine"/>
+	<variant base="O-glycosyl-L-threonine"/>
+	<variant base="O3-glycosyl-L-threonine"/>
+</token>
+<token id="MI:0537" canonical="omega-n-glycosyl-arginine">
+	<variant base="omega-n-glycosyl-arginine"/>
+	<variant base="glycosylarginine"/>
+	<variant base="omega-N-glycosyl-L-arginine"/>
+</token>
+<token id="MI:0538" canonical="n4-glycosyl-asparagine">
+	<variant base="n4-glycosyl-asparagine"/>
+	<variant base="glycosylasparagine"/>
+	<variant base="N4-glycosyl-L-asparagine"/>
+</token>
+<token id="MI:0539" canonical="gpi anchor residue">
+	<variant base="gpi anchor residue"/>
+</token>
+<token id="MI:0540" canonical="gpi-anchor amidated alanine">
+	<variant base="gpi-anchor amidated alanine"/>
+	<variant base="gpi-alanine"/>
+	<variant base="N-alanyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0541" canonical="gpi-anchor amidated asparagine">
+	<variant base="gpi-anchor amidated asparagine"/>
+	<variant base="gpi-asparagine"/>
+	<variant base="N-asparaginyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0542" canonical="gpi-anchor amidated aspartate">
+	<variant base="gpi-anchor amidated aspartate"/>
+	<variant base="gpi-aspartate"/>
+	<variant base="N-aspartyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0543" canonical="gpi-anchor amidated cysteine">
+	<variant base="gpi-anchor amidated cysteine"/>
+	<variant base="gpi-cysteine"/>
+	<variant base="N-cysteinyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0544" canonical="gpi-anchor amidated glycine">
+	<variant base="gpi-anchor amidated glycine"/>
+	<variant base="gpi-glycine"/>
+	<variant base="N-glycyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0545" canonical="gpi-anchor amidated serine">
+	<variant base="gpi-anchor amidated serine"/>
+	<variant base="gpi-serine"/>
+	<variant base="N-seryl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0546" canonical="gpi-anchor amidated threonine">
+	<variant base="gpi-anchor amidated threonine"/>
+	<variant base="gpi-threonine"/>
+	<variant base="N-threonyl-glycosylphosphatidylinositolethanolamine"/>
+</token>
+<token id="MI:0547" canonical="s-prenyl-cysteine">
+	<variant base="s-prenyl-cysteine"/>
+	<variant base="prenylcysteine"/>
+</token>
+<token id="MI:0548" canonical="methylated-lysine">
+	<variant base="methylated-lysine"/>
+	<variant base="methylatedlysine"/>
+</token>
+<token id="MI:0549" canonical="alkylated cysteine">
+	<variant base="alkylated cysteine"/>
+</token>
+<token id="MI:0550" canonical="gamma-carboxyglutamic acid">
+	<variant base="gamma-carboxyglutamic acid"/>
+	<variant base="(S)-3-amino-1,1,3-propanetricarboxylic acid"/>
+	<variant base="1-carboxyglutamic acid [misnomer]"/>
+	<variant base="4-carboxyglutamic acid"/>
+	<variant base="carboxyglutamic acid"/>
+	<variant base="L-gamma-carboxyglutamic acid"/>
+</token>
+<token id="MI:0551" canonical="nitro-tyrosine">
+	<variant base="nitro-tyrosine"/>
+	<variant base="nitrated tyrosine"/>
+</token>
+<token id="MI:0552" canonical="s-nitrosyl-cysteine">
+	<variant base="s-nitrosyl-cysteine"/>
+	<variant base="(R)-2-amino-3-nitrososulfanyl-propanoic acid"/>
+	<variant base="L-cysteine nitrite ester"/>
+	<variant base="nitrosylcysteine"/>
+	<variant base="S-nitrosocysteine"/>
+	<variant base="S-nitrosyl-L-cysteine"/>
+</token>
+<token id="MI:0553" canonical="o4&apos;-sulfo-tyrosine">
+	<variant base="o4&apos;-sulfo-tyrosine"/>
+	<variant base="(S)-2-amino-3-(4-sulfooxyphenyl)propanoic acid"/>
+	<variant base="2-amino-3-(4-hydroxyphenyl)propanoic acid 4&apos;-sulfate"/>
+	<variant base="O4&apos;-sulfo-L-tyrosine"/>
+	<variant base="O4-sulfotyrosine"/>
+	<variant base="sulfotyrosine"/>
+	<variant base="tyrosine sulfate"/>
+</token>
+<token id="MI:0554" canonical="sumoylated lysine">
+	<variant base="sumoylated lysine"/>
+	<variant base="(S)-2-amino-6-[(aminoacetyl)amino]hexanoic acid"/>
+	<variant base="N6-glycyl-L-lysine"/>
+	<variant base="N6-glycyllysine"/>
+</token>
+<token id="MI:0555" canonical="phospho-histidine">
+	<variant base="phospho-histidine"/>
+	<variant base="phosphoshistidine"/>
+</token>
+<token id="MI:0556" canonical="transglutamination reaction">
+	<variant base="transglutamination reaction"/>
+	<variant base="transglutamination"/>
+</token>
+<token id="MI:0557" canonical="adp ribosylation reaction">
+	<variant base="adp ribosylation reaction"/>
+	<variant base="adp ribosylation"/>
+</token>
+<token id="MI:0558" canonical="deglycosylation reaction">
+	<variant base="deglycosylation reaction"/>
+	<variant base="deglycosylation"/>
+</token>
+<token id="MI:0559" canonical="glycosylation reaction">
+	<variant base="glycosylation reaction"/>
+	<variant base="glycosylation"/>
+</token>
+<token id="MI:0560" canonical="myristoylated residue">
+	<variant base="myristoylated residue"/>
+	<variant base="myristoylated aa"/>
+</token>
+<token id="MI:0561" canonical="palmitoylated residue">
+	<variant base="palmitoylated residue"/>
+	<variant base="palmitoylated aa"/>
+</token>
+<token id="MI:0562" canonical="methylated alanine">
+	<variant base="methylated alanine"/>
+</token>
+<token id="MI:0563" canonical="methylated arginine">
+	<variant base="methylated arginine"/>
+</token>
+<token id="MI:0564" canonical="omega-n-methyl-arginine">
+	<variant base="omega-n-methyl-arginine"/>
+	<variant base="(S)-2-amino-5-[(imino(methylamino)methyl)amino]pentanoic acid"/>
+	<variant base="methylarginine"/>
+	<variant base="NG-methylarginine;"/>
+	<variant base="omega-N-methyl-L-arginine"/>
+</token>
+<token id="MI:0565" canonical="neddylated lysine">
+	<variant base="neddylated lysine"/>
+</token>
+<token id="MI:0566" canonical="sumoylation reaction">
+	<variant base="sumoylation reaction"/>
+	<variant base="sumoylation"/>
+</token>
+<token id="MI:0567" canonical="neddylation reaction">
+	<variant base="neddylation reaction"/>
+	<variant base="neddylation"/>
+</token>
+<token id="MI:0568" canonical="desumoylation reaction">
+	<variant base="desumoylation reaction"/>
+	<variant base="desumoylation"/>
+</token>
+<token id="MI:0569" canonical="deneddylation reaction">
+	<variant base="deneddylation reaction"/>
+	<variant base="deneddylation"/>
+</token>
+<token id="MI:0570" canonical="protein cleavage">
+	<variant base="protein cleavage"/>
+</token>
+<token id="MI:0571" canonical="mrna cleavage">
+	<variant base="mrna cleavage"/>
+</token>
+<token id="MI:0572" canonical="dna cleavage">
+	<variant base="dna cleavage"/>
+</token>
+<token id="MI:0573" canonical="mutation disrupting interaction">
+	<variant base="mutation disrupting interaction"/>
+	<variant base="mutation disrupting"/>
+</token>
+<token id="MI:0574" canonical="digital object identifier">
+	<variant base="digital object identifier"/>
+	<variant base="doi"/>
+</token>
+<token id="MI:0575" canonical="alliance for cellular signaling">
+	<variant base="alliance for cellular signaling"/>
+	<variant base="AfCS"/>
+	<variant base="afcs"/>
+</token>
+<token id="MI:0576" canonical="structural proximity">
+	<variant base="structural proximity"/>
+</token>
+<token id="MI:0577" canonical="feature prediction from structure">
+	<variant base="feature prediction from structure"/>
+	<variant base="feature struct pred"/>
+</token>
+<token id="MI:0578" canonical="maltose binding protein tag">
+	<variant base="maltose binding protein tag"/>
+	<variant base="maltose binding protein tag"/>
+	<variant base="mbp tag"/>
+</token>
+<token id="MI:0579" canonical="electron donor">
+	<variant base="electron donor"/>
+</token>
+<token id="MI:0580" canonical="electron acceptor">
+	<variant base="electron acceptor"/>
+</token>
+<token id="MI:0581" canonical="suppressor gene">
+	<variant base="suppressor gene"/>
+</token>
+<token id="MI:0582" canonical="suppressed gene">
+	<variant base="suppressed gene"/>
+</token>
+<token id="MI:0583" canonical="fluorescence donor">
+	<variant base="fluorescence donor"/>
+</token>
+<token id="MI:0584" canonical="fluorescence acceptor">
+	<variant base="fluorescence acceptor"/>
+	<variant base="fluorescence accept"/>
+</token>
+<token id="MI:0585" canonical="intenz">
+	<variant base="intenz"/>
+</token>
+<token id="MI:0586" canonical="inhibitor">
+	<variant base="inhibitor"/>
+</token>
+<token id="MI:0588" canonical="3 hybrid method">
+	<variant base="3 hybrid method"/>
+</token>
+<token id="MI:0589" canonical="in vitro translated protein">
+	<variant base="in vitro translated protein"/>
+	<variant base="in vitro translated"/>
+</token>
+<token id="MI:0590" canonical="attribute name">
+	<variant base="attribute name"/>
+	<variant base="CvTopic"/>
+</token>
+<token id="MI:0591" canonical="experiment description">
+	<variant base="experiment description"/>
+	<variant base="experiment descripti"/>
+</token>
+<token id="MI:0592" canonical="ipfam">
+	<variant base="ipfam"/>
+</token>
+<token id="MI:0593" canonical="translocation">
+	<variant base="translocation"/>
+</token>
+<token id="MI:0594" canonical="translocation start">
+	<variant base="translocation start"/>
+</token>
+<token id="MI:0595" canonical="translocation end">
+	<variant base="translocation end"/>
+</token>
+<token id="MI:0596" canonical="experimental form description">
+	<variant base="experimental form description"/>
+	<variant base="experimental form de"/>
+</token>
+<token id="MI:0597" canonical="feature description">
+	<variant base="feature description"/>
+</token>
+<token id="MI:0598" canonical="feature constrain">
+	<variant base="feature constrain"/>
+</token>
+<token id="MI:0599" canonical="figure legend">
+	<variant base="figure legend"/>
+</token>
+<token id="MI:0601" canonical="sequence ontology">
+	<variant base="sequence ontology"/>
+	<variant base="so"/>
+</token>
+<token id="MI:0602" canonical="chemical footprinting">
+	<variant base="chemical footprinting"/>
+	<variant base="chemical footprint"/>
+</token>
+<token id="MI:0603" canonical="dimethylsulphate footprinting">
+	<variant base="dimethylsulphate footprinting"/>
+	<variant base="dms footprinting"/>
+</token>
+<token id="MI:0604" canonical="potassium permanganate footprinting">
+	<variant base="potassium permanganate footprinting"/>
+	<variant base="k-mn-04 footprinting"/>
+</token>
+<token id="MI:0605" canonical="enzymatic footprinting">
+	<variant base="enzymatic footprinting"/>
+	<variant base="enzymatic footprint"/>
+</token>
+<token id="MI:0606" canonical="DNase I footprinting">
+	<variant base="DNase I footprinting"/>
+	<variant base="dnase 1 footprinting"/>
+</token>
+<token id="MI:0607" canonical="small nuclear rna">
+	<variant base="small nuclear rna"/>
+	<variant base="snRNA"/>
+	<variant base="snrna"/>
+</token>
+<token id="MI:0608" canonical="ribosomal rna">
+	<variant base="ribosomal rna"/>
+	<variant base="rRNA"/>
+	<variant base="rrna"/>
+</token>
+<token id="MI:0609" canonical="small nucleolar rna">
+	<variant base="small nucleolar rna"/>
+	<variant base="snoRNA"/>
+	<variant base="snorna"/>
+</token>
+<token id="MI:0610" canonical="small interfering rna">
+	<variant base="small interfering rna"/>
+	<variant base="dicer RNA"/>
+	<variant base="micro RNA"/>
+	<variant base="siRNA"/>
+	<variant base="sirna"/>
+</token>
+<token id="MI:0611" canonical="signal recognition particle rna">
+	<variant base="signal recognition particle rna"/>
+	<variant base="srpRNA"/>
+	<variant base="srprna"/>
+</token>
+<token id="MI:0612" canonical="comment">
+	<variant base="comment"/>
+</token>
+<token id="MI:0613" canonical="function">
+	<variant base="function"/>
+</token>
+<token id="MI:0614" canonical="url">
+	<variant base="url"/>
+</token>
+<token id="MI:0615" canonical="search-url">
+	<variant base="search-url"/>
+</token>
+<token id="MI:0616" canonical="example">
+	<variant base="example"/>
+</token>
+<token id="MI:0617" canonical="disease">
+	<variant base="disease"/>
+</token>
+<token id="MI:0618" canonical="caution">
+	<variant base="caution"/>
+</token>
+<token id="MI:0619" canonical="pathway">
+	<variant base="pathway"/>
+</token>
+<token id="MI:0620" canonical="search-url-ascii">
+	<variant base="search-url-ascii"/>
+</token>
+<token id="MI:0621" canonical="author-confidence">
+	<variant base="author-confidence"/>
+</token>
+<token id="MI:0622" canonical="confidence-mapping">
+	<variant base="confidence-mapping"/>
+</token>
+<token id="MI:0623" canonical="inhibition">
+	<variant base="inhibition"/>
+</token>
+<token id="MI:0624" canonical="stimulation">
+	<variant base="stimulation"/>
+</token>
+<token id="MI:0625" canonical="agonist">
+	<variant base="agonist"/>
+</token>
+<token id="MI:0626" canonical="antagonist">
+	<variant base="antagonist"/>
+</token>
+<token id="MI:0627" canonical="experiment modification">
+	<variant base="experiment modification"/>
+	<variant base="exp-modification"/>
+</token>
+<token id="MI:0628" canonical="validation regular expression">
+	<variant base="validation regular expression"/>
+	<variant base="id-validation-regexp"/>
+</token>
+<token id="MI:0629" canonical="complex-properties">
+	<variant base="complex-properties"/>
+</token>
+<token id="MI:0630" canonical="3d-structure">
+	<variant base="3d-structure"/>
+</token>
+<token id="MI:0631" canonical="3d-r-factors">
+	<variant base="3d-r-factors"/>
+</token>
+<token id="MI:0632" canonical="3d-resolution">
+	<variant base="3d-resolution"/>
+</token>
+<token id="MI:0633" canonical="data-processing">
+	<variant base="data-processing"/>
+</token>
+<token id="MI:0634" canonical="contact-email">
+	<variant base="contact-email"/>
+</token>
+<token id="MI:0635" canonical="contact-comment">
+	<variant base="contact-comment"/>
+</token>
+<token id="MI:0636" canonical="author-list">
+	<variant base="author-list"/>
+</token>
+<token id="MI:0637" canonical="isoform-comment">
+	<variant base="isoform-comment"/>
+</token>
+<token id="MI:0638" canonical="prerequisite-ptm">
+	<variant base="prerequisite-ptm"/>
+</token>
+<token id="MI:0639" canonical="resulting-ptm">
+	<variant base="resulting-ptm"/>
+</token>
+<token id="MI:0640" canonical="parameter type">
+	<variant base="parameter type"/>
+</token>
+<token id="MI:0641" canonical="ic50">
+	<variant base="ic50"/>
+	<variant base="IC50"/>
+</token>
+<token id="MI:0642" canonical="ec50">
+	<variant base="ec50"/>
+	<variant base="EC50"/>
+</token>
+<token id="MI:0643" canonical="ki">
+	<variant base="ki"/>
+	<variant base="Ki"/>
+</token>
+<token id="MI:0644" canonical="km">
+	<variant base="km"/>
+	<variant base="Km"/>
+</token>
+<token id="MI:0645" canonical="kcat">
+	<variant base="kcat"/>
+	<variant base="turnover number"/>
+</token>
+<token id="MI:0646" canonical="Kd">
+	<variant base="Kd"/>
+	<variant base="Kd"/>
+</token>
+<token id="MI:0647" canonical="parameter unit">
+	<variant base="parameter unit"/>
+</token>
+<token id="MI:0648" canonical="molar">
+	<variant base="molar"/>
+</token>
+<token id="MI:0649" canonical="second">
+	<variant base="second"/>
+	<variant base="sec"/>
+</token>
+<token id="MI:0655" canonical="lambda repressor two hybrid">
+	<variant base="lambda repressor two hybrid"/>
+	<variant base="BacterioMatch"/>
+	<variant base="lambda two hybrid"/>
+</token>
+<token id="MI:0656" canonical="identified peptide">
+	<variant base="identified peptide"/>
+</token>
+<token id="MI:0657" canonical="systematic evolution of ligands by exponential enrichment">
+	<variant base="systematic evolution of ligands by exponential enrichment"/>
+	<variant base="in vitro evolution of nucleic acids"/>
+	<variant base="selex"/>
+</token>
+<token id="MI:0658" canonical="multidimensional protein identification technology">
+	<variant base="multidimensional protein identification technology"/>
+	<variant base="mudpit"/>
+</token>
+<token id="MI:0659" canonical="experimental feature detection">
+	<variant base="experimental feature detection"/>
+	<variant base="exp feature detect"/>
+</token>
+<token id="MI:0660" canonical="feature prediction">
+	<variant base="feature prediction"/>
+</token>
+<token id="MI:0661" canonical="experimental participant identification">
+	<variant base="experimental participant identification"/>
+	<variant base="experimental particp"/>
+</token>
+<token id="MI:0662" canonical="imex-primary">
+	<variant base="imex-primary"/>
+</token>
+<token id="MI:0663" canonical="confocal microscopy">
+	<variant base="confocal microscopy"/>
+</token>
+<token id="MI:0664" canonical="interaction attribute name">
+	<variant base="interaction attribute name"/>
+	<variant base="interaction att name"/>
+</token>
+<token id="MI:0665" canonical="experiment attibute name">
+	<variant base="experiment attibute name"/>
+	<variant base="experiment att name"/>
+</token>
+<token id="MI:0666" canonical="participant attribute name">
+	<variant base="participant attribute name"/>
+	<variant base="participant att name"/>
+</token>
+<token id="MI:0667" canonical="controlled vocabulary attribute name">
+	<variant base="controlled vocabulary attribute name"/>
+	<variant base="cv att name"/>
+</token>
+<token id="MI:0668" canonical="feature attribute name">
+	<variant base="feature attribute name"/>
+	<variant base="feature att name"/>
+</token>
+<token id="MI:0669" canonical="organism attribute name">
+	<variant base="organism attribute name"/>
+	<variant base="organism att name"/>
+</token>
+<token id="MI:0670" canonical="imex">
+	<variant base="imex"/>
+	<variant base="IMEx"/>
+</token>
+<token id="MI:0671" canonical="antibodies">
+	<variant base="antibodies"/>
+</token>
+<token id="MI:0672" canonical="library-used">
+	<variant base="library-used"/>
+</token>
+<token id="MI:0673" canonical="complex-synonym">
+	<variant base="complex-synonym"/>
+</token>
+<token id="MI:0674" canonical="peptide parent sequence reference">
+	<variant base="peptide parent sequence reference"/>
+	<variant base="peptide-parent"/>
+</token>
+<token id="MI:0675" canonical="international protein index">
+	<variant base="international protein index"/>
+	<variant base="ipi"/>
+</token>
+<token id="MI:0676" canonical="tandem affinity purification">
+	<variant base="tandem affinity purification"/>
+	<variant base="TAP"/>
+	<variant base="tap"/>
+</token>
+<token id="MI:0677" canonical="tandem tag">
+	<variant base="tandem tag"/>
+</token>
+<token id="MI:0678" canonical="antibody array">
+	<variant base="antibody array"/>
+	<variant base="antigen capture assay"/>
+	<variant base="sandwich immunoassay"/>
+</token>
+<token id="MI:0679" canonical="poly adenine">
+	<variant base="poly adenine"/>
+	<variant base="poly A"/>
+	<variant base="poly a"/>
+</token>
+<token id="MI:0680" canonical="single stranded deoxyribonucleic acid">
+	<variant base="single stranded deoxyribonucleic acid"/>
+	<variant base="ss DNA"/>
+	<variant base="ss dna"/>
+</token>
+<token id="MI:0681" canonical="double stranded deoxyribonucleic acid">
+	<variant base="double stranded deoxyribonucleic acid"/>
+	<variant base="ds DNA"/>
+	<variant base="ds dna"/>
+</token>
+<token id="MI:0682" canonical="cofactor">
+	<variant base="cofactor"/>
+	<variant base="coenzyme"/>
+</token>
+<token id="MI:0683" canonical="sequence database">
+	<variant base="sequence database"/>
+</token>
+<token id="MI:0684" canonical="ancillary">
+	<variant base="ancillary"/>
+</token>
+<token id="MI:0685" canonical="source reference">
+	<variant base="source reference"/>
+</token>
+<token id="MI:0686" canonical="unspecified method">
+	<variant base="unspecified method"/>
+</token>
+<token id="MI:0687" canonical="fluorescent protein tag">
+	<variant base="fluorescent protein tag"/>
+	<variant base="fluorescent prot tag"/>
+</token>
+<token id="MI:0688" canonical="dna binding domain tag">
+	<variant base="dna binding domain tag"/>
+	<variant base="dna binding domain"/>
+</token>
+<token id="MI:0689" canonical="activation domain tag">
+	<variant base="activation domain tag"/>
+	<variant base="activation domain"/>
+</token>
+<token id="MI:0690" canonical="gal4 activation domain">
+	<variant base="gal4 activation domain"/>
+	<variant base="gal4 ad"/>
+</token>
+<token id="MI:0691" canonical="vp16 activation domain">
+	<variant base="vp16 activation domain"/>
+	<variant base="vp16 ad"/>
+</token>
+<token id="MI:0692" canonical="b42 activation domain">
+	<variant base="b42 activation domain"/>
+	<variant base="b42 ad"/>
+</token>
+<token id="MI:0693" canonical="gal4 dna binding domain">
+	<variant base="gal4 dna binding domain"/>
+	<variant base="gal4 dna bd"/>
+</token>
+<token id="MI:0694" canonical="lexa dna binding domain">
+	<variant base="lexa dna binding domain"/>
+	<variant base="lexa dna bd"/>
+</token>
+<token id="MI:0695" canonical="sandwich immunoassay">
+	<variant base="sandwich immunoassay"/>
+</token>
+<token id="MI:0696" canonical="polymerase assay">
+	<variant base="polymerase assay"/>
+	<variant base="nucleotidyltransferase assay"/>
+</token>
+<token id="MI:0697" canonical="dna directed dna polymerase assay">
+	<variant base="dna directed dna polymerase assay"/>
+	<variant base="dna dna pol assay"/>
+</token>
+<token id="MI:0698" canonical="dna directed rna polymerase assay">
+	<variant base="dna directed rna polymerase assay"/>
+	<variant base="dna rna pol assay"/>
+</token>
+<token id="MI:0699" canonical="rna directed dna polymerase assay">
+	<variant base="rna directed dna polymerase assay"/>
+	<variant base="rna dna pol assay"/>
+</token>
+<token id="MI:0700" canonical="rna directed rna polymerase assay">
+	<variant base="rna directed rna polymerase assay"/>
+	<variant base="rna rna pol assay"/>
+</token>
+<token id="MI:0701" canonical="dna strand elongation">
+	<variant base="dna strand elongation"/>
+	<variant base="DNA replication elongation "/>
+	<variant base="elongation"/>
+</token>
+<token id="MI:0702" canonical="panther">
+	<variant base="panther"/>
+	<variant base="PANTHER"/>
+</token>
+<token id="MI:0703" canonical="gene3d">
+	<variant base="gene3d"/>
+	<variant base="Gene3D"/>
+</token>
+<token id="MI:0704" canonical="nucleic acid delivery">
+	<variant base="nucleic acid delivery"/>
+	<variant base="nucl delivery"/>
+</token>
+<token id="MI:0705" canonical="anti tag western blot">
+	<variant base="anti tag western blot"/>
+	<variant base="anti tag western"/>
+</token>
+<token id="MI:0706" canonical="nucleic acid transformation">
+	<variant base="nucleic acid transformation"/>
+	<variant base="nucl transformation"/>
+</token>
+<token id="MI:0707" canonical="anti tag immunostaining">
+	<variant base="anti tag immunostaining"/>
+	<variant base="anti tag immunost"/>
+</token>
+<token id="MI:0708" canonical="monoclonal antibody immunostaining">
+	<variant base="monoclonal antibody immunostaining"/>
+	<variant base="monoclonal immunost"/>
+</token>
+<token id="MI:0709" canonical="polyclonal antibody immunostaining">
+	<variant base="polyclonal antibody immunostaining"/>
+	<variant base="polyclonal immunost"/>
+</token>
+<token id="MI:0710" canonical="nucleic acid transformation by treatment with divalent cation">
+	<variant base="nucleic acid transformation by treatment with divalent cation"/>
+	<variant base="n transformat cation"/>
+</token>
+<token id="MI:0711" canonical="nucleic acid electroporation">
+	<variant base="nucleic acid electroporation"/>
+	<variant base="nucl electroporation"/>
+</token>
+<token id="MI:0712" canonical="nucleic acid microinjection">
+	<variant base="nucleic acid microinjection"/>
+	<variant base="nucl microinjection"/>
+</token>
+<token id="MI:0713" canonical="nucleic acid passive uptake">
+	<variant base="nucleic acid passive uptake"/>
+	<variant base="nucl passive uptake"/>
+</token>
+<token id="MI:0714" canonical="nucleic acid transduction">
+	<variant base="nucleic acid transduction"/>
+	<variant base="nucl transduction"/>
+</token>
+<token id="MI:0715" canonical="nucleic acid conjugation">
+	<variant base="nucleic acid conjugation"/>
+	<variant base="nucl conjugation"/>
+</token>
+<token id="MI:0716" canonical="passive uptake">
+	<variant base="passive uptake"/>
+</token>
+<token id="MI:0717" canonical="nucleic acid transfection with liposome">
+	<variant base="nucleic acid transfection with liposome"/>
+	<variant base="nucl lipotransfect"/>
+</token>
+<token id="MI:0718" canonical="nucleic acid transfection by treatment">
+	<variant base="nucleic acid transfection by treatment"/>
+	<variant base="n transfection treat"/>
+</token>
+<token id="MI:0719" canonical="calcium phosphate nucleic acid transfection">
+	<variant base="calcium phosphate nucleic acid transfection"/>
+	<variant base="ca po nuc transfect"/>
+</token>
+<token id="MI:0720" canonical="nucleic acid delivery by infection">
+	<variant base="nucleic acid delivery by infection"/>
+	<variant base="nucl infection"/>
+</token>
+<token id="MI:0721" canonical="protein delivery">
+	<variant base="protein delivery"/>
+</token>
+<token id="MI:0722" canonical="protein electroporation">
+	<variant base="protein electroporation"/>
+	<variant base="prot electroporation"/>
+</token>
+<token id="MI:0723" canonical="protein microinjection">
+	<variant base="protein microinjection"/>
+	<variant base="prot microinjection"/>
+</token>
+<token id="MI:0724" canonical="protein delivery by cationic lipid treatment">
+	<variant base="protein delivery by cationic lipid treatment"/>
+	<variant base="prot cationic lipid"/>
+</token>
+<token id="MI:0725" canonical="protein delivery by infection">
+	<variant base="protein delivery by infection"/>
+	<variant base="prot infection"/>
+</token>
+<token id="MI:0726" canonical="reverse two hybrid">
+	<variant base="reverse two hybrid"/>
+</token>
+<token id="MI:0727" canonical="lexa b52 complementation">
+	<variant base="lexa b52 complementation"/>
+	<variant base="lexa b52 complement"/>
+	<variant base="LexA B52 transcription complementation"/>
+</token>
+<token id="MI:0728" canonical="gal4 vp16 complementation">
+	<variant base="gal4 vp16 complementation"/>
+	<variant base="gal4 vp16 complement"/>
+	<variant base="karyoplasmic interaction ion strategy"/>
+	<variant base="KISS"/>
+	<variant base="mammalian two hybrid"/>
+</token>
+<token id="MI:0729" canonical="luminescence based mammalian interactome mapping">
+	<variant base="luminescence based mammalian interactome mapping"/>
+	<variant base="lumier"/>
+</token>
+<token id="MI:0730" canonical="pubchem">
+	<variant base="pubchem"/>
+	<variant base="PubChem"/>
+</token>
+<token id="MI:0731" canonical="3d repertoire">
+	<variant base="3d repertoire"/>
+	<variant base="3D Repertoire"/>
+</token>
+<token id="MI:0732" canonical="red fluorescent protein tag">
+	<variant base="red fluorescent protein tag"/>
+	<variant base="red fluorescent protein"/>
+	<variant base="RFP"/>
+	<variant base="rfp tag"/>
+</token>
+<token id="MI:0733" canonical="cyan fluorescent protein tag">
+	<variant base="cyan fluorescent protein tag"/>
+	<variant base="CFP"/>
+	<variant base="cfp tag"/>
+	<variant base="cyan fluorescent protein"/>
+</token>
+<token id="MI:0734" canonical="enhanced green fluorescent protein tag">
+	<variant base="enhanced green fluorescent protein tag"/>
+	<variant base="EGFP"/>
+	<variant base="egfp tag"/>
+	<variant base="enhanced green fluorescent protein"/>
+</token>
+<token id="MI:0735" canonical="transactivating tag">
+	<variant base="transactivating tag"/>
+	<variant base="Tat tag"/>
+	<variant base="tat tag"/>
+</token>
+<token id="MI:0736" canonical="protein passive uptake">
+	<variant base="protein passive uptake"/>
+	<variant base="prot passive uptake"/>
+</token>
+<token id="MI:0737" canonical="peptide sequence database">
+	<variant base="peptide sequence database"/>
+	<variant base="pep seq db"/>
+</token>
+<token id="MI:0738" canonical="pride">
+	<variant base="pride"/>
+</token>
+<token id="MI:0739" canonical="penetrating tag">
+	<variant base="penetrating tag"/>
+</token>
+<token id="MI:0740" canonical="cell penetrating peptide tag">
+	<variant base="cell penetrating peptide tag"/>
+	<variant base="cell penetrating pep"/>
+	<variant base="cell-penetrating peptides"/>
+	<variant base="CPPs"/>
+	<variant base="membrane translocating sequences"/>
+	<variant base="MTS"/>
+	<variant base="protein transduction domains"/>
+	<variant base="PTDs"/>
+	<variant base="Trojan peptides"/>
+</token>
+<token id="MI:0741" canonical="peptide atlas">
+	<variant base="peptide atlas"/>
+	<variant base="PeptideAtlas"/>
+</token>
+<token id="MI:0742" canonical="gpm">
+	<variant base="gpm"/>
+	<variant base="Global Proteome Machine"/>
+</token>
+<token id="MI:0787" canonical="genetic experimental form">
+	<variant base="genetic experimental form"/>
+	<variant base="genetic exp form"/>
+</token>
+<token id="MI:0788" canonical="knock out">
+	<variant base="knock out"/>
+	<variant base="knock-out"/>
+</token>
+<token id="MI:0789" canonical="knock down">
+	<variant base="knock down"/>
+	<variant base="knock-down"/>
+</token>
+<token id="MI:0790" canonical="hypermorph">
+	<variant base="hypermorph"/>
+</token>
+<token id="MI:0791" canonical="hypomorph">
+	<variant base="hypomorph"/>
+</token>
+<token id="MI:0792" canonical="antimorph">
+	<variant base="antimorph"/>
+</token>
+<token id="MI:0793" canonical="amorph">
+	<variant base="amorph"/>
+</token>
+<token id="MI:0794" canonical="synthetic genetic interaction defined by inequality">
+	<variant base="synthetic genetic interaction defined by inequality"/>
+	<variant base="synthetic"/>
+	<variant base="synthetic genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0795" canonical="asynthetic genetic interaction defined by inequality">
+	<variant base="asynthetic genetic interaction defined by inequality"/>
+	<variant base="asynthetic"/>
+	<variant base="asynthetic genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0796" canonical="suppressive genetic interaction defined by inequality">
+	<variant base="suppressive genetic interaction defined by inequality"/>
+	<variant base="suppression"/>
+	<variant base="suppressive genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0797" canonical="epistatic genetic interaction defined by inequality">
+	<variant base="epistatic genetic interaction defined by inequality"/>
+	<variant base="epistatic"/>
+	<variant base="epistatic genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0798" canonical="conditional genetic interaction defined by inequality">
+	<variant base="conditional genetic interaction defined by inequality"/>
+	<variant base="conditional"/>
+	<variant base="conditional genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0799" canonical="additive genetic interaction defined by inequality">
+	<variant base="additive genetic interaction defined by inequality"/>
+	<variant base="additive"/>
+	<variant base="additive genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0800" canonical="single nonmonotonic genetic interaction defined by inequality">
+	<variant base="single nonmonotonic genetic interaction defined by inequality"/>
+	<variant base="single nonmonotonic"/>
+	<variant base="single nonmonotonic genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0801" canonical="double nonmonotonic genetic interaction defined by inequality">
+	<variant base="double nonmonotonic genetic interaction defined by inequality"/>
+	<variant base="double nonmonotonic"/>
+	<variant base="double nonmonotonic genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0803" canonical="expression level alteration">
+	<variant base="expression level alteration"/>
+	<variant base="expression modif"/>
+</token>
+<token id="MI:0804" canonical="mutated gene">
+	<variant base="mutated gene"/>
+</token>
+<token id="MI:0805" canonical="wwpdb">
+	<variant base="wwpdb"/>
+	<variant base="wwPDB"/>
+</token>
+<token id="MI:0806" canonical="pdbj">
+	<variant base="pdbj"/>
+	<variant base="PDBj"/>
+</token>
+<token id="MI:0807" canonical="comigration in gel electrophoresis">
+	<variant base="comigration in gel electrophoresis"/>
+	<variant base="comigration in gel"/>
+</token>
+<token id="MI:0808" canonical="comigration in sds page">
+	<variant base="comigration in sds page"/>
+	<variant base="comigration in sds"/>
+</token>
+<token id="MI:0809" canonical="bimolecular fluorescence complementation">
+	<variant base="bimolecular fluorescence complementation"/>
+	<variant base="bifc"/>
+</token>
+<token id="MI:0810" canonical="substitution analysis">
+	<variant base="substitution analysis"/>
+	<variant base="substitut analysis"/>
+</token>
+<token id="MI:0811" canonical="insertion analysis">
+	<variant base="insertion analysis"/>
+</token>
+<token id="MI:0812" canonical="calmodulin binding protein tag">
+	<variant base="calmodulin binding protein tag"/>
+	<variant base="cam  tag"/>
+</token>
+<token id="MI:0813" canonical="proximity enzyme linked immunosorbent assay">
+	<variant base="proximity enzyme linked immunosorbent assay"/>
+	<variant base="p elisa"/>
+	<variant base="pELISA"/>
+</token>
+<token id="MI:0814" canonical="protease accessibility laddering">
+	<variant base="protease accessibility laddering"/>
+	<variant base="pal"/>
+	<variant base="protease access"/>
+</token>
+<token id="MI:0815" canonical="confirmation by molecular weight">
+	<variant base="confirmation by molecular weight"/>
+	<variant base="weight identificat"/>
+</token>
+<token id="MI:0816" canonical="molecular weight estimation by staining">
+	<variant base="molecular weight estimation by staining"/>
+	<variant base="weight by staining"/>
+</token>
+<token id="MI:0817" canonical="molecular weight estimation by silver staining">
+	<variant base="molecular weight estimation by silver staining"/>
+	<variant base="weight silver stain"/>
+</token>
+<token id="MI:0818" canonical="molecular weight estimation by coomasie staining">
+	<variant base="molecular weight estimation by coomasie staining"/>
+	<variant base="weight by comassie"/>
+</token>
+<token id="MI:0819" canonical="molecular weight estimation by bromide staining">
+	<variant base="molecular weight estimation by bromide staining"/>
+	<variant base="weight by bromide"/>
+</token>
+<token id="MI:0820" canonical="molecular weight estimation by sybr staining">
+	<variant base="molecular weight estimation by sybr staining"/>
+	<variant base="safe DNA gel stain"/>
+	<variant base="weight by sybr"/>
+</token>
+<token id="MI:0821" canonical="molecular weight estimation by autoradiography">
+	<variant base="molecular weight estimation by autoradiography"/>
+	<variant base="weight autoradiogra"/>
+</token>
+<token id="MI:0822" canonical="molecular weight estimation by hoechst staining">
+	<variant base="molecular weight estimation by hoechst staining"/>
+	<variant base="weight by hoechst"/>
+</token>
+<token id="MI:0823" canonical="predetermined feature">
+	<variant base="predetermined feature"/>
+	<variant base="predetermined featur"/>
+</token>
+<token id="MI:0824" canonical="x-ray powder diffraction">
+	<variant base="x-ray powder diffraction"/>
+	<variant base="X-ray"/>
+	<variant base="x-ray powder diffrac"/>
+</token>
+<token id="MI:0825" canonical="x-ray fiber diffraction">
+	<variant base="x-ray fiber diffraction"/>
+	<variant base="X-ray"/>
+	<variant base="x-ray fiber diffrac"/>
+</token>
+<token id="MI:0826" canonical="x ray scattering">
+	<variant base="x ray scattering"/>
+	<variant base="saxs"/>
+</token>
+<token id="MI:0827" canonical="x-ray tomography">
+	<variant base="x-ray tomography"/>
+</token>
+<token id="MI:0828" canonical="polyprotein fragment">
+	<variant base="polyprotein fragment"/>
+	<variant base="polyprotein frag"/>
+</token>
+<token id="MI:0829" canonical="multiple parent reference">
+	<variant base="multiple parent reference"/>
+	<variant base="multiple parent"/>
+</token>
+<token id="MI:0830" canonical="tissue list">
+	<variant base="tissue list"/>
+</token>
+<token id="MI:0831" canonical="cell ontology">
+	<variant base="cell ontology"/>
+</token>
+<token id="MI:0832" canonical="half cystine">
+	<variant base="half cystine"/>
+	<variant base="Half of a disulfide bridge"/>
+</token>
+<token id="MI:0833" canonical="autoradiography">
+	<variant base="autoradiography"/>
+</token>
+<token id="MI:0834" canonical="ka">
+	<variant base="ka"/>
+	<variant base="kon"/>
+</token>
+<token id="MI:0835" canonical="kd">
+	<variant base="kd"/>
+	<variant base="koff"/>
+</token>
+<token id="MI:0836" canonical="temperature of interaction">
+	<variant base="temperature of interaction"/>
+	<variant base="T interaction"/>
+	<variant base="temp interaction"/>
+	<variant base="Tint"/>
+</token>
+<token id="MI:0837" canonical="pH of interaction">
+	<variant base="pH of interaction"/>
+	<variant base="pHint"/>
+</token>
+<token id="MI:0838" canonical="kelvin">
+	<variant base="kelvin"/>
+</token>
+<token id="MI:0839" canonical="mole per second">
+	<variant base="mole per second"/>
+	<variant base="M-1s-1"/>
+</token>
+<token id="MI:0840" canonical="stimulator">
+	<variant base="stimulator"/>
+</token>
+<token id="MI:0841" canonical="phosphotransfer assay">
+	<variant base="phosphotransfer assay"/>
+	<variant base="phosphotransfer assa"/>
+</token>
+<token id="MI:0842" canonical="phospho donor">
+	<variant base="phospho donor"/>
+</token>
+<token id="MI:0843" canonical="phospho acceptor">
+	<variant base="phospho acceptor"/>
+</token>
+<token id="MI:0844" canonical="phosphotransfer reaction">
+	<variant base="phosphotransfer reaction"/>
+	<variant base="phosphotransfer"/>
+</token>
+<token id="MI:0845" canonical="spin label">
+	<variant base="spin label"/>
+</token>
+<token id="MI:0846" canonical="r1 spin label">
+	<variant base="r1 spin label"/>
+</token>
+<token id="MI:0847" canonical="dansyl tag">
+	<variant base="dansyl tag"/>
+	<variant base="5-dimethylaminonaphthalene-1-sulfonyl tag"/>
+	<variant base="dansyl label"/>
+</token>
+<token id="MI:0848" canonical="125i radiolabel">
+	<variant base="125i radiolabel"/>
+	<variant base="125I"/>
+	<variant base="I125"/>
+</token>
+<token id="MI:0849" canonical="ncbi taxonomy">
+	<variant base="ncbi taxonomy"/>
+</token>
+<token id="MI:0850" canonical="encode">
+	<variant base="encode"/>
+	<variant base="ENCODE"/>
+	<variant base="Encyclopedia Of DNA Elements"/>
+</token>
+<token id="MI:0851" canonical="protein genbank identifier">
+	<variant base="protein genbank identifier"/>
+	<variant base="GenBank Protein GI"/>
+	<variant base="genbank protein gi"/>
+	<variant base="genbank_protein_gi"/>
+</token>
+<token id="MI:0852" canonical="nucleotide genbank identifier">
+	<variant base="nucleotide genbank identifier"/>
+	<variant base="genbank nucleotide"/>
+	<variant base="GenBank Nucleotide"/>
+	<variant base="genbank_nucl_gi"/>
+</token>
+<token id="MI:0853" canonical="dna overhang">
+	<variant base="dna overhang"/>
+	<variant base="cohessive ends"/>
+	<variant base="sticky ends"/>
+</token>
+<token id="MI:0854" canonical="3 prime overhang">
+	<variant base="3 prime overhang"/>
+	<variant base="3 prime sticky end"/>
+</token>
+<token id="MI:0855" canonical="5 prime overhang">
+	<variant base="5 prime overhang"/>
+	<variant base="5 prime sticky end"/>
+</token>
+<token id="MI:0856" canonical="fluorophore">
+	<variant base="fluorophore"/>
+</token>
+<token id="MI:0857" canonical="fluorescent dye label">
+	<variant base="fluorescent dye label"/>
+	<variant base="fluorescent dye"/>
+</token>
+<token id="MI:0858" canonical="immunodepleted coimmunoprecipitation">
+	<variant base="immunodepleted coimmunoprecipitation"/>
+	<variant base="immunodepleted coip"/>
+	<variant base="immunodepletion"/>
+</token>
+<token id="MI:0859" canonical="intermolecular force">
+	<variant base="intermolecular force"/>
+	<variant base="force measurement"/>
+	<variant base="molecular force measurement"/>
+	<variant base="optical tweezer"/>
+	<variant base="single molecule force measurement"/>
+	<variant base="surface adhesion force measurement"/>
+</token>
+<token id="MI:0860" canonical="genbank indentifier">
+	<variant base="genbank indentifier"/>
+</token>
+<token id="MI:0861" canonical="protein a tag">
+	<variant base="protein a tag"/>
+	<variant base="protein A"/>
+</token>
+<token id="MI:0862" canonical="zz tag">
+	<variant base="zz tag"/>
+	<variant base="ZZ tag"/>
+</token>
+<token id="MI:0863" canonical="thiol reactive lanthanide label">
+	<variant base="thiol reactive lanthanide label"/>
+	<variant base="Tb3+-DTPA-cs124-EMCH"/>
+	<variant base="thiol lanthanide"/>
+</token>
+<token id="MI:0864" canonical="brenda">
+	<variant base="brenda"/>
+</token>
+<token id="MI:0865" canonical="fluorescence acceptor donor pair">
+	<variant base="fluorescence acceptor donor pair"/>
+	<variant base="fret pair"/>
+</token>
+<token id="MI:0866" canonical="tag visualisation">
+	<variant base="tag visualisation"/>
+</token>
+<token id="MI:0867" canonical="tag visualisation by fluorescence">
+	<variant base="tag visualisation by fluorescence"/>
+	<variant base="tag fluorescence"/>
+</token>
+<token id="MI:0868" canonical="author identifier">
+	<variant base="author identifier"/>
+</token>
+<token id="MI:0869" canonical="originally assigned identifier">
+	<variant base="originally assigned identifier"/>
+	<variant base="original identifier"/>
+</token>
+<token id="MI:0870" canonical="demethylase assay">
+	<variant base="demethylase assay"/>
+</token>
+<token id="MI:0871" canonical="demethylation reaction">
+	<variant base="demethylation reaction"/>
+	<variant base="demethylation"/>
+</token>
+<token id="MI:0872" canonical="atomic force microscopy">
+	<variant base="atomic force microscopy"/>
+	<variant base="AFM"/>
+	<variant base="atomic force microsc"/>
+</token>
+<token id="MI:0873" canonical="curation request">
+	<variant base="curation request"/>
+</token>
+<token id="MI:0875" canonical="dataset">
+	<variant base="dataset"/>
+</token>
+<token id="MI:0878" canonical="author submitted">
+	<variant base="author submitted"/>
+</token>
+<token id="MI:0879" canonical="nucleoside triphosphatase assay">
+	<variant base="nucleoside triphosphatase assay"/>
+	<variant base="triphosphatase ass"/>
+</token>
+<token id="MI:0880" canonical="atpase assay">
+	<variant base="atpase assay"/>
+</token>
+<token id="MI:0881" canonical="nucleoside triphosphatase reaction">
+	<variant base="nucleoside triphosphatase reaction"/>
+	<variant base="triphosphatase react"/>
+</token>
+<token id="MI:0882" canonical="atpase reaction">
+	<variant base="atpase reaction"/>
+</token>
+<token id="MI:0883" canonical="gtpase reaction">
+	<variant base="gtpase reaction"/>
+</token>
+<token id="MI:0884" canonical="vsv tag">
+	<variant base="vsv tag"/>
+	<variant base="vesicular stomatitis virus tag"/>
+</token>
+<token id="MI:0885" canonical="journal">
+	<variant base="journal"/>
+</token>
+<token id="MI:0886" canonical="publication year">
+	<variant base="publication year"/>
+</token>
+<token id="MI:0887" canonical="histone acetylation assay">
+	<variant base="histone acetylation assay"/>
+	<variant base="HAt"/>
+	<variant base="hat"/>
+</token>
+<token id="MI:0888" canonical="small angle neutron scattering">
+	<variant base="small angle neutron scattering"/>
+	<variant base="SANS"/>
+	<variant base="sans"/>
+</token>
+<token id="MI:0889" canonical="acetylation assay">
+	<variant base="acetylation assay"/>
+</token>
+<token id="MI:0890" canonical="qdot">
+	<variant base="qdot"/>
+</token>
+<token id="MI:0891" canonical="neutron fiber diffraction">
+	<variant base="neutron fiber diffraction"/>
+	<variant base="neutron fiber diff"/>
+</token>
+<token id="MI:0892" canonical="solid phase assay">
+	<variant base="solid phase assay"/>
+</token>
+<token id="MI:0893" canonical="neutron diffraction">
+	<variant base="neutron diffraction"/>
+</token>
+<token id="MI:0894" canonical="electron diffraction">
+	<variant base="electron diffraction"/>
+</token>
+<token id="MI:0895" canonical="protein kinase A complementation">
+	<variant base="protein kinase A complementation"/>
+	<variant base="pka complementation"/>
+</token>
+<token id="MI:0896" canonical="renilla luciferase protein tag">
+	<variant base="renilla luciferase protein tag"/>
+	<variant base="renilla lucirefase"/>
+</token>
+<token id="MI:0897" canonical="protein modification ontology">
+	<variant base="protein modification ontology"/>
+	<variant base="psi-mod"/>
+</token>
+<token id="MI:0898" canonical="putative self">
+	<variant base="putative self"/>
+</token>
+<token id="MI:0899" canonical="p3 filamentous phage display">
+	<variant base="p3 filamentous phage display"/>
+	<variant base="low valency display"/>
+	<variant base="p3 filamentous phage"/>
+</token>
+<token id="MI:0900" canonical="p8 filamentous phage display">
+	<variant base="p8 filamentous phage display"/>
+	<variant base="high valency display"/>
+	<variant base="p8 filamentous phage"/>
+</token>
+<token id="MI:0901" canonical="isotope label footprinting">
+	<variant base="isotope label footprinting"/>
+	<variant base="isotope footprinting"/>
+</token>
+<token id="MI:0902" canonical="rna cleavage">
+	<variant base="rna cleavage"/>
+</token>
+<token id="MI:0903" canonical="mpidb">
+	<variant base="mpidb"/>
+	<variant base="MPDIB"/>
+</token>
+<token id="MI:0904" canonical="polysaccharide">
+	<variant base="polysaccharide"/>
+</token>
+<token id="MI:0905" canonical="amplified luminescent proximity homogeneous assay">
+	<variant base="amplified luminescent proximity homogeneous assay"/>
+	<variant base="alfa-screen"/>
+	<variant base="AlphaScreen"/>
+</token>
+<token id="MI:0906" canonical="au1 tag">
+	<variant base="au1 tag"/>
+	<variant base="DTYRYI epitope tag"/>
+</token>
+<token id="MI:0907" canonical="conformational status">
+	<variant base="conformational status"/>
+	<variant base="conformation"/>
+</token>
+<token id="MI:0908" canonical="denatured">
+	<variant base="denatured"/>
+</token>
+<token id="MI:0909" canonical="native">
+	<variant base="native"/>
+</token>
+<token id="MI:0910" canonical="nucleic acid cleavage">
+	<variant base="nucleic acid cleavage"/>
+	<variant base="ncl acid cleavage"/>
+</token>
+<token id="MI:0911" canonical="cross linker">
+	<variant base="cross linker"/>
+	<variant base="crosslinker"/>
+</token>
+<token id="MI:0912" canonical="spdp cross linker">
+	<variant base="spdp cross linker"/>
+	<variant base="N -Succinimidyl 3-(2-pyridyldithio)-propionate"/>
+</token>
+<token id="MI:0913" canonical="lc-spdp cross linker">
+	<variant base="lc-spdp cross linker"/>
+	<variant base="Succinimidyl 6-(3-[2-pyridyldithio]-propionamido)hexanoate"/>
+</token>
+<token id="MI:0914" canonical="association">
+	<variant base="association"/>
+</token>
+<token id="MI:0915" canonical="physical association">
+	<variant base="physical association"/>
+</token>
+<token id="MI:0916" canonical="lexa vp16 complementation">
+	<variant base="lexa vp16 complementation"/>
+	<variant base="lexa vp16 complement"/>
+	<variant base="LexA VP16 transcription complementation"/>
+</token>
+<token id="MI:0917" canonical="matrixdb">
+	<variant base="matrixdb"/>
+</token>
+<token id="MI:0918" canonical="donor">
+	<variant base="donor"/>
+</token>
+<token id="MI:0919" canonical="acceptor">
+	<variant base="acceptor"/>
+</token>
+<token id="MI:0920" canonical="ribonuclease assay">
+	<variant base="ribonuclease assay"/>
+</token>
+<token id="MI:0921" canonical="surface plasmon resonance array">
+	<variant base="surface plasmon resonance array"/>
+	<variant base="Biacore Flexchip(r)"/>
+	<variant base="spr array"/>
+	<variant base="SPRi-Plex "/>
+	<variant base="SPRImager"/>
+</token>
+<token id="MI:0922" canonical="imex evidence">
+	<variant base="imex evidence"/>
+</token>
+<token id="MI:0923" canonical="irefindex">
+	<variant base="irefindex"/>
+	<variant base="iRefIndex"/>
+</token>
+<token id="MI:0924" canonical="camjedb">
+	<variant base="camjedb"/>
+</token>
+<token id="MI:0925" canonical="observed ptm">
+	<variant base="observed ptm"/>
+</token>
+<token id="MI:0926" canonical="fiash label">
+	<variant base="fiash label"/>
+	<variant base="4&apos;,5&apos;-bis(1,3,2-dithioarsolan-2-yl)fluorescein "/>
+	<variant base="FIAsH label"/>
+</token>
+<token id="MI:0927" canonical="iaedans label">
+	<variant base="iaedans label"/>
+	<variant base="(5((((2-iodoacetyl)amino)ethyl)amino)-naphthalene-1-sulfonic acid) "/>
+	<variant base="1,5-IAEDANS"/>
+	<variant base="IAEDANS"/>
+</token>
+<token id="MI:0928" canonical="filter trap assay">
+	<variant base="filter trap assay"/>
+	<variant base="Filter retention assay"/>
+</token>
+<token id="MI:0929" canonical="nothern blot">
+	<variant base="nothern blot"/>
+	<variant base="northen"/>
+</token>
+<token id="MI:0930" canonical="epistatic genetic interaction">
+	<variant base="epistatic genetic interaction"/>
+	<variant base="epistatis"/>
+</token>
+<token id="MI:0931" canonical="genetic interaction defined by inequality">
+	<variant base="genetic interaction defined by inequality"/>
+	<variant base="genetic inequality"/>
+</token>
+<token id="MI:0932" canonical="noninteractive genetic interaction defined by inequality">
+	<variant base="noninteractive genetic interaction defined by inequality"/>
+	<variant base="noninteractive"/>
+	<variant base="noninteractive genetic interaction (sensu inequality)"/>
+</token>
+<token id="MI:0933" canonical="negative genetic interaction">
+	<variant base="negative genetic interaction"/>
+	<variant base="negative gen int"/>
+</token>
+<token id="MI:0934" canonical="neutral genetic interaction">
+	<variant base="neutral genetic interaction"/>
+	<variant base="neutral gent int"/>
+</token>
+<token id="MI:0935" canonical="positive genetic interaction">
+	<variant base="positive genetic interaction"/>
+	<variant base="positive gent int"/>
+</token>
+<token id="MI:2002" canonical="drugbank">
+	<variant base="drugbank"/>
+</token>
+<token id="MI:2003" canonical="commercial name">
+	<variant base="commercial name"/>
+	<variant base="generic name"/>
+</token>
+<token id="MI:2004" canonical="drug brand name">
+	<variant base="drug brand name"/>
+</token>
+<token id="MI:2005" canonical="drug mixture brand name">
+	<variant base="drug mixture brand name"/>
+	<variant base="mix brand name"/>
+</token>
+<token id="MI:2006" canonical="biotech product preparation">
+	<variant base="biotech product preparation"/>
+	<variant base="biotech prep"/>
+</token>
+<token id="MI:2007" canonical="iupac name">
+	<variant base="iupac name"/>
+</token>
+<token id="MI:2008" canonical="chemical formula">
+	<variant base="chemical formula"/>
+</token>
+<token id="MI:2009" canonical="chemical structure">
+	<variant base="chemical structure"/>
+</token>
+<token id="MI:2010" canonical="inchi id">
+	<variant base="inchi id"/>
+</token>
+<token id="MI:2011" canonical="cas registry number">
+	<variant base="cas registry number"/>
+</token>
+<token id="MI:2012" canonical="kegg compound">
+	<variant base="kegg compound"/>
+	<variant base="KEGG Compound ID"/>
+</token>
+<token id="MI:2015" canonical="pharmgkb">
+	<variant base="pharmgkb"/>
+</token>
+<token id="MI:2016" canonical="bind smid">
+	<variant base="bind smid"/>
+</token>
+<token id="MI:2017" canonical="heterogen">
+	<variant base="heterogen"/>
+	<variant base="het"/>
+</token>
+<token id="MI:2020" canonical="canadian drug identification number">
+	<variant base="canadian drug identification number"/>
+	<variant base="din"/>
+</token>
+<token id="MI:2021" canonical="rxlist link">
+	<variant base="rxlist link"/>
+</token>
+<token id="MI:2023" canonical="material safety data sheet">
+	<variant base="material safety data sheet"/>
+	<variant base="msds"/>
+	<variant base="MSDS Material Safety Sheet"/>
+</token>
+<token id="MI:2024" canonical="patent number">
+	<variant base="patent number"/>
+</token>
+<token id="MI:2025" canonical="molecular weight">
+	<variant base="molecular weight"/>
+</token>
+<token id="MI:2026" canonical="melting point">
+	<variant base="melting point"/>
+</token>
+<token id="MI:2027" canonical="water solubility">
+	<variant base="water solubility"/>
+	<variant base="logSw"/>
+</token>
+<token id="MI:2029" canonical="logp">
+	<variant base="logp"/>
+</token>
+<token id="MI:2030" canonical="isoelectric point">
+	<variant base="isoelectric point"/>
+</token>
+<token id="MI:2033" canonical="hydrophobicity">
+	<variant base="hydrophobicity"/>
+</token>
+<token id="MI:2036" canonical="boiling point">
+	<variant base="boiling point"/>
+</token>
+<token id="MI:2039" canonical="smiles string">
+	<variant base="smiles string"/>
+</token>
+<token id="MI:2040" canonical="drug type">
+	<variant base="drug type"/>
+</token>
+<token id="MI:2041" canonical="drug category">
+	<variant base="drug category"/>
+</token>
+<token id="MI:2042" canonical="disease indication">
+	<variant base="disease indication"/>
+</token>
+<token id="MI:2043" canonical="pharmacology">
+	<variant base="pharmacology"/>
+</token>
+<token id="MI:2044" canonical="mechanism of action">
+	<variant base="mechanism of action"/>
+</token>
+<token id="MI:2045" canonical="drug absorption">
+	<variant base="drug absorption"/>
+</token>
+<token id="MI:2046" canonical="lethal dose 50">
+	<variant base="lethal dose 50"/>
+	<variant base="ld50"/>
+	<variant base="lethal dose 50 %"/>
+</token>
+<token id="MI:2047" canonical="percentage of plasma protein binding">
+	<variant base="percentage of plasma protein binding"/>
+	<variant base="plasma prot binding"/>
+	<variant base="protein binding %"/>
+</token>
+<token id="MI:2048" canonical="drug biotransformation">
+	<variant base="drug biotransformation"/>
+	<variant base="drug metabolism"/>
+</token>
+<token id="MI:2049" canonical="elimination half life">
+	<variant base="elimination half life"/>
+	<variant base="distribution halflife"/>
+	<variant base="elimin half life"/>
+	<variant base="t1/2"/>
+</token>
+<token id="MI:2050" canonical="dosage form">
+	<variant base="dosage form"/>
+</token>
+<token id="MI:2051" canonical="patient information">
+	<variant base="patient information"/>
+</token>
+<token id="MI:2053" canonical="contraindications">
+	<variant base="contraindications"/>
+</token>
+<token id="MI:2054" canonical="bioactive entity reference">
+	<variant base="bioactive entity reference"/>
+	<variant base="bioactive entity ref"/>
+</token>
+<token id="MI:2055" canonical="chemical stability">
+	<variant base="chemical stability"/>
+	<variant base="thermodynamic stability"/>
+</token>
+<token id="MI:2064" canonical="solubility">
+	<variant base="solubility"/>
+	<variant base="dt theoretical pi"/>
+</token>
+<token id="MI:2084" canonical="organisms affected">
+	<variant base="organisms affected"/>
+</token>
+<token id="MI:2086" canonical="physicochemical attribute name">
+	<variant base="physicochemical attribute name"/>
+	<variant base="physicochemical att"/>
+</token>
+<token id="MI:2089" canonical="bioactive entity attribute name">
+	<variant base="bioactive entity attribute name"/>
+	<variant base="bioactive entity att"/>
+</token>
+<token id="MI:2091" canonical="structure representation attribute name">
+	<variant base="structure representation attribute name"/>
+	<variant base="struc representation"/>
+</token>
+<token id="MI:2097" canonical="anti-convulsant">
+	<variant base="anti-convulsant"/>
+</token>
+<token id="MI:2098" canonical="anti-bacterial">
+	<variant base="anti-bacterial"/>
+</token>
+<token id="MI:2099" canonical="fda approved drug">
+	<variant base="fda approved drug"/>
+</token>
+<token id="MI:2100" canonical="experimental drug">
+	<variant base="experimental drug"/>
+</token>
+<token id="MI:2101" canonical="biotech drug">
+	<variant base="biotech drug"/>
+</token>
+<token id="MI:2102" canonical="nutraceutical drug">
+	<variant base="nutraceutical drug"/>
+</token>
+<token id="MI:2105" canonical="pka">
+	<variant base="pka"/>
+</token>
+<token id="MI:2106" canonical="degree of ionisation ph 7.4">
+	<variant base="degree of ionisation ph 7.4"/>
+	<variant base="ionisation ph 7.4"/>
+</token>
+<token id="MI:2107" canonical="logd">
+	<variant base="logd"/>
+</token>
+<token id="MI:2108" canonical="solubility ph 7.4">
+	<variant base="solubility ph 7.4"/>
+</token>
+<token id="MI:2109" canonical="solubility in dmso">
+	<variant base="solubility in dmso"/>
+</token>
+<token id="MI:2111" canonical="diffusion coefficient">
+	<variant base="diffusion coefficient"/>
+	<variant base="diffusion coeff"/>
+</token>
+<token id="MI:2112" canonical="chemical stability at pH 2">
+	<variant base="chemical stability at pH 2"/>
+	<variant base="chem stab ph 2"/>
+</token>
+<token id="MI:2113" canonical="dissolution profile">
+	<variant base="dissolution profile"/>
+</token>
+<token id="MI:2115" canonical="pharmacokinetics attribute name">
+	<variant base="pharmacokinetics attribute name"/>
+</token>
+<token id="MI:2116" canonical="cell permeability">
+	<variant base="cell permeability"/>
+</token>
+<token id="MI:2118" canonical="volume of distribution">
+	<variant base="volume of distribution"/>
+	<variant base="distribution volume"/>
+	<variant base="vd"/>
+	<variant base="vol of distribution"/>
+</token>
+<token id="MI:2120" canonical="tissue distribution">
+	<variant base="tissue distribution"/>
+</token>
+<token id="MI:2121" canonical="transporter binding">
+	<variant base="transporter binding"/>
+</token>
+<token id="MI:2122" canonical="clearance">
+	<variant base="clearance"/>
+</token>
+<token id="MI:2123" canonical="renal clearance">
+	<variant base="renal clearance"/>
+</token>
+<token id="MI:2124" canonical="total clearance">
+	<variant base="total clearance"/>
+	<variant base="cl"/>
+	<variant base="clearance"/>
+</token>
+<token id="MI:2125" canonical="maximum absorbable dose">
+	<variant base="maximum absorbable dose"/>
+	<variant base="mad"/>
+</token>
+<token id="MI:2126" canonical="paracellular absorption">
+	<variant base="paracellular absorption"/>
+	<variant base="paracellular absorp"/>
+</token>
+<token id="MI:2127" canonical="tmax/cmax">
+	<variant base="tmax/cmax"/>
+</token>
+<token id="MI:2128" canonical="ABCB1 transporter substrate">
+	<variant base="ABCB1 transporter substrate"/>
+	<variant base="abcb1 substrate"/>
+	<variant base="pgp(mdr1) substrate "/>
+</token>
+<token id="MI:2129" canonical="bile transporter substrate">
+	<variant base="bile transporter substrate"/>
+	<variant base="bile trans substrate"/>
+</token>
+<token id="MI:2130" canonical="cyp-450 inhibition">
+	<variant base="cyp-450 inhibition"/>
+	<variant base="cyp-450 inhibition"/>
+	<variant base="Cytochrome P450 inhibition"/>
+</token>
+<token id="MI:2131" canonical="metabolite identification">
+	<variant base="metabolite identification"/>
+	<variant base="metabolite identific"/>
+</token>
+<token id="MI:2132" canonical="gsh adducts">
+	<variant base="gsh adducts"/>
+</token>
+<token id="MI:2133" canonical="neutralization by glucuronidation or sulfatation">
+	<variant base="neutralization by glucuronidation or sulfatation"/>
+	<variant base="neutraliz gluc/sulf"/>
+</token>
+<token id="MI:2135" canonical="toxicity attribute name">
+	<variant base="toxicity attribute name"/>
+</token>
+<token id="MI:2136" canonical="herg binding">
+	<variant base="herg binding"/>
+</token>
+<token id="MI:2137" canonical="genotoxicity">
+	<variant base="genotoxicity"/>
+</token>
+<token id="MI:2138" canonical="mutagenicity">
+	<variant base="mutagenicity"/>
+</token>
+<token id="MI:2139" canonical="carcinogenicity">
+	<variant base="carcinogenicity"/>
+	<variant base="cancerogenicity"/>
+</token>
+<token id="MI:2140" canonical="chromosome damage">
+	<variant base="chromosome damage"/>
+</token>
+<token id="MI:2141" canonical="hepatotoxicity">
+	<variant base="hepatotoxicity"/>
+</token>
+<token id="MI:2142" canonical="phospholipidosis">
+	<variant base="phospholipidosis"/>
+</token>
+<token id="MI:2145" canonical="solubility ph 6.5">
+	<variant base="solubility ph 6.5"/>
+</token>
+<token id="MI:2146" canonical="solubility ph 2.0">
+	<variant base="solubility ph 2.0"/>
+	<variant base="solubility ph2.0"/>
+</token>
+<token id="MI:2147" canonical="chemical stability at pH 7.4">
+	<variant base="chemical stability at pH 7.4"/>
+	<variant base="chem stab ph 7.4"/>
+</token>
+<token id="MI:2148" canonical="investigational drug">
+	<variant base="investigational drug"/>
+</token>
+<token id="MI:2149" canonical="withdrawn drug">
+	<variant base="withdrawn drug"/>
+</token>
+<token id="MI:2150" canonical="illicit drug">
+	<variant base="illicit drug"/>
+</token>
+<token id="MI:2151" canonical="other drug interaction">
+	<variant base="other drug interaction"/>
+	<variant base="drug interaction"/>
+</token>
+<token id="MI:2152" canonical="food interaction">
+	<variant base="food interaction"/>
+</token>
+<token id="MI:2153" canonical="pdr health">
+	<variant base="pdr health"/>
+	<variant base="PDRhealth"/>
+</token>
+<token id="MI:2154" canonical="wikipedia">
+	<variant base="wikipedia"/>
+</token>
+<token id="MI:2155" canonical="average molecular weight">
+	<variant base="average molecular weight"/>
+	<variant base="avrg mol weight"/>
+</token>
+<token id="MI:2156" canonical="monoisotopic molecular weight">
+	<variant base="monoisotopic molecular weight"/>
+	<variant base="monoisotopic mol wgt"/>
+</token>
+<token id="MI:2157" canonical="experimental water solubility">
+	<variant base="experimental water solubility"/>
+	<variant base="exp h2o solubilty"/>
+	<variant base="experimental h2o solubility"/>
+</token>
+<token id="MI:2158" canonical="predicted water solubility">
+	<variant base="predicted water solubility"/>
+	<variant base="predicted h2o solub"/>
+	<variant base="predicted h2o solubility"/>
+</token>
+<token id="MI:2160" canonical="logs">
+	<variant base="logs"/>
+	<variant base="logS"/>
+</token>
+<token id="MI:2161" canonical="experimental logs">
+	<variant base="experimental logs"/>
+	<variant base="experimental logS"/>
+</token>
+<token id="MI:2162" canonical="experimental CaCO2 permeability">
+	<variant base="experimental CaCO2 permeability"/>
+	<variant base="caco2 permeability"/>
+</token>
+<token id="MI:2163" canonical="by homology">
+	<variant base="by homology"/>
+</token>
+</synonym>

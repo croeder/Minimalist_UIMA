@@ -1,0 +1,2 @@
+I want a uima collection reader that gives me access to either of medline abstracts, pmc oa full text documents or elsevier documents. I want to be able to process them in 1000-document batches and I'd like to avoid having to copy files to remote clusters if possible.
+
