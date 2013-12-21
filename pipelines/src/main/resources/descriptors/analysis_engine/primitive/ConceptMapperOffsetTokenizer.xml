@@ -284,7 +284,7 @@
 				<name>AttributeList</name>
 				<value>
 					<array>
-						<string>canonical</string>
+						<string>dictCanon</string>
 						<string>id</string>
 					</array>
 				</value>
@@ -307,7 +307,6 @@
 			<nameValuePair>
 				<name>ResultingAnnotationName</name>
 				<value>
-						<!--org.apache.uima.conceptMapper.DictTerm-->
 					<string>
 						edu.ucdenver.ccp.nlp.ts.IdDictTerm
 					</string>

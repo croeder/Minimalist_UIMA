@@ -35,6 +35,7 @@ import java.util.ArrayList;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.CASException;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.cas.StringArray;
 
@@ -175,5 +176,48 @@ public class ClassMentionX {
 
 		return null;
     }
+
+	public static void addSlotValue(ClassMention classMention, String slotMentionName, String slotValue)
+            throws CASException {
+        JCas jcas = classMention.getCAS().getJCas();
+        SlotMention slotMention = ClassMentionX.getSlotMentionByName(classMention, slotMentionName);
+        if (slotMention != null) {
+            if (slotMention instanceof StringSlotMention) {
+                StringSlotMention ccpSSM = (StringSlotMention) slotMention;
+                StringArray slotValues = ccpSSM.getSlotValues();
+                slotValues = SlotMentionX.addToStringArray(slotValues, slotValue, jcas);
+                ccpSSM.setSlotValues(slotValues);
+            } else {
+                throw new CASException(new RuntimeException("Cannot store a String in a " + slotMention.getClass().getName()));
+            }
+        } else {
+            StringSlotMention ccpSSM = new StringSlotMention(jcas);
+            ccpSSM.setMentionName(slotMentionName);
+            addSlotMention(classMention, ccpSSM);
+            StringArray slotValues = new StringArray(jcas, 1);
+            slotValues.set(0, slotValue);
+            ccpSSM.setSlotValues(slotValues);
+        }
+
+    }
+
+    private static void addSlotMention(ClassMention ccpClassMention, SlotMention ccpSlotMention)
+            throws CASException {
+        FSArray slotMentions = ccpClassMention.getSlotMentions();
+        if (slotMentions == null) {
+            slotMentions = new FSArray(ccpClassMention.getCAS().getJCas(), 1);
+            slotMentions.set(0, ccpSlotMention);
+        } else {
+            FeatureStructure[] featureStructures = slotMentions.toArray();
+            int index = 0;
+            slotMentions = new FSArray(ccpClassMention.getCAS().getJCas(), featureStructures.length + 1);
+            for (FeatureStructure fs : featureStructures) {
+                slotMentions.set(index++, fs);
+            }
+            slotMentions.set(index, ccpSlotMention);
+        }
+        ccpClassMention.setSlotMentions(slotMentions);
+    }
+
 
 }

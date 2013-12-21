@@ -42,6 +42,16 @@
             <artifactId>uimafit</artifactId>
             <version>1.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>edu.ucdenver.ccp</groupId>
+            <artifactId>opendmap-debug</artifactId>
+            <version>opendmap-debug</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.ucdenver.ccp</groupId>
+            <artifactId>protege</artifactId>
+            <version>opendmap</version>
+        </dependency>
 		<dependency>
             <groupId>org.cleartk</groupId>
             <artifactId>cleartk-release</artifactId>
