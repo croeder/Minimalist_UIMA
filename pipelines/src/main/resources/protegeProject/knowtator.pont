@@ -1,0 +1,532 @@
+; Sun Dec 18 21:15:19 CST 2005
+; 
+;+ (version "3.1.1")
+;+ (build "Build 216")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot knowtator_mentioned_in
+		(type INSTANCE)
+;+		(allowed-classes)
+;+		(cardinality 0 1)
+;+		(inverse-slot knowtator_slot_mention)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_G
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotated_mention
+		(type INSTANCE)
+;+		(allowed-classes knowtator+mention)
+;+		(cardinality 0 1)
+;+		(inverse-slot knowtator_mention_annotation)
+		(create-accessor read-write))
+	(multislot knowtator_slot_mention
+		(type INSTANCE)
+;+		(allowed-classes knowtator+slot+mention)
+;+		(inverse-slot knowtator_mentioned_in)
+		(create-accessor read-write))
+	(multislot knowtator_annotation_relationship
+		(type INSTANCE)
+;+		(allowed-classes)
+		(create-accessor read-write))
+	(multislot knowtator_annotator_team_members
+		(type INSTANCE)
+;+		(allowed-classes knowtator+human+annotator)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text_source
+		(type INSTANCE)
+;+		(allowed-classes knowtator+text+source)
+;+		(cardinality 0 1)
+;+		(inverse-slot knowtator_text_source_annotation)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator_lastname
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_tsc_implementation
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_annotation_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator)
+		(create-accessor read-write))
+	(single-slot knowtator_set_description
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_mention_slot
+		(type INSTANCE)
+;+		(allowed-classes %3ASTANDARD-SLOT)
+;+		(cardinality 1 1)
+;+		(subslot-of knowtator_mention_instance)
+		(create-accessor read-write))
+	(single-slot knowtator_mention_class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 1 1)
+;+		(subslot-of knowtator_mention_instance)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_B
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_mention_instance
+		(type INSTANCE)
+;+		(allowed-classes %3ATHING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_set
+		(type INSTANCE)
+;+		(allowed-classes knowtator+set)
+;+		(inverse-slot knowtator_set_annotation)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_individual_filter
+;+		(comment "This slot stores the filter that is used to provide the annotations created by individuals.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+filter)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_set_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+;+		(inverse-slot knowtator_set)
+		(create-accessor read-write))
+	(single-slot knowtator_consensus_filter
+;+		(comment "This slot captures the filter that is used to provide the annotations corresponding to the consensus set annotations.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+consensus+filter)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_filter_type
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator_affiliation
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_selected_filters
+		(type INSTANCE)
+;+		(allowed-classes knowtator+filter)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_mention_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+;+		(inverse-slot knowtator_annotated_mention)
+		(create-accessor read-write))
+	(multislot knowtator_mention_slot_value
+;+		(type ANY)
+		(create-accessor read-write))
+	(multislot knowtator_text_source_annotation
+;+		(comment "Should have been named annotation_text_source_annotation.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+;+		(inverse-slot knowtator_annotation_text_source)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_creation_date
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_R
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text_file_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color
+		(type INSTANCE)
+;+		(allowed-classes knowtator+display+color)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_alternate_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+;+		(inverse-slot knowtator_alternate_annotation)
+		(create-accessor read-write))
+	(single-slot knowtator_color_class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_comment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator_firstname
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_set_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotator_team_name
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_filter_set
+		(type INSTANCE)
+;+		(allowed-classes knowtator+set)
+		(create-accessor read-write))
+	(single-slot knowtator_filter_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_annotation_span
+		(type STRING)
+		(create-accessor read-write))
+	(multislot knowtator_filter_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator)
+		(create-accessor read-write))
+	(single-slot knowtator_team_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator+team)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_alternate
+;+		(comment "This slot allows us to keep track of multiple annotations that are equally valid.  This gives us a mechanism to say that there are multiple \"correct\" answers in the gold standard.")
+		(type SYMBOL)
+;+		(allowed-parents knowtator+annotation)
+;+		(cardinality 0 1)
+;+		(inverse-slot knowtator_annotation_alternate)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_display_color
+		(type INSTANCE)
+;+		(allowed-classes knowtator+display+color)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text_file_span
+		(type INSTANCE)
+;+		(allowed-classes)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+support+class
+	(is-a USER)
+	(role concrete))
+
+(defclass knowtator+annotation "This class models an annotation.  Terms in the target ontology of the annotation scheme should be subclasses of annotation."
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_annotation_creation_date
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_display_color
+		(type INSTANCE)
+;+		(allowed-classes knowtator+display+color)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotated_mention
+		(type INSTANCE)
+;+		(allowed-classes knowtator+mention)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_comment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_set
+		(type INSTANCE)
+;+		(allowed-classes knowtator+set)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text_source
+		(type INSTANCE)
+;+		(allowed-classes knowtator+text+source)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_alternate_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+		(create-accessor read-write))
+	(multislot knowtator_annotation_span
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_text
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+mention
+	(is-a knowtator+support+class)
+	(role concrete)
+	(multislot knowtator_mention_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+		(create-accessor read-write)))
+
+(defclass knowtator+class+mention
+	(is-a knowtator+mention)
+	(role concrete)
+	(single-slot knowtator_mention_class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_slot_mention
+		(type INSTANCE)
+;+		(allowed-classes knowtator+slot+mention)
+		(create-accessor read-write)))
+
+(defclass knowtator+instance+mention
+	(is-a knowtator+mention)
+	(role concrete)
+	(multislot knowtator_slot_mention
+		(type INSTANCE)
+;+		(allowed-classes knowtator+slot+mention)
+		(create-accessor read-write))
+	(single-slot knowtator_mention_instance
+		(type INSTANCE)
+;+		(allowed-classes %3ATHING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+slot+mention
+	(is-a knowtator+mention)
+	(role concrete)
+	(single-slot knowtator_mentioned_in
+		(type INSTANCE)
+;+		(allowed-classes)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_mention_slot
+		(type INSTANCE)
+;+		(allowed-classes %3ASTANDARD-SLOT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_mention_slot_value
+;+		(type ANY)
+		(create-accessor read-write)))
+
+(defclass knowtator+complex+slot+mention
+	(is-a knowtator+slot+mention)
+	(role concrete)
+	(multislot knowtator_mention_slot_value
+		(type INSTANCE)
+;+		(allowed-classes knowtator+class+mention knowtator+instance+mention)
+		(create-accessor read-write)))
+
+(defclass knowtator+string+slot+mention
+	(is-a knowtator+slot+mention)
+	(role concrete)
+	(multislot knowtator_mention_slot_value
+		(type STRING)
+		(create-accessor read-write)))
+
+(defclass knowtator+integer+slot+mention
+	(is-a knowtator+slot+mention)
+	(role concrete)
+	(multislot knowtator_mention_slot_value
+		(type INTEGER)
+		(create-accessor read-write)))
+
+(defclass knowtator+float+slot+mention
+	(is-a knowtator+slot+mention)
+	(role concrete)
+	(multislot knowtator_mention_slot_value
+		(type FLOAT)
+		(create-accessor read-write)))
+
+(defclass knowtator+boolean+slot+mention
+	(is-a knowtator+slot+mention)
+	(role concrete)
+	(multislot knowtator_mention_slot_value
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(create-accessor read-write)))
+
+(defclass knowtator+text+source "A text source provides a \"pointer\" to some source of text.  The text itself is not actually stored in Protege.  The actual text associated with a text source instance is found based on two pieces of information, the name and type of the text source instance.  Each subclass of text source should correspond to a an extension of TextSource.java and TextSourceCollection.java.  These implementations are in charge of finding the texts based on the two aforementioned pieces of information."
+	(is-a knowtator+support+class)
+	(role concrete)
+	(multislot knowtator_text_source_annotation
+;+		(comment "Should have been named annotation_text_source_annotation.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_comment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+annotator
+	(is-a knowtator+support+class)
+	(role concrete))
+
+(defclass knowtator+human+annotator
+	(is-a knowtator+annotator)
+	(role concrete)
+	(single-slot knowtator_annotation_annotator_firstname
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator_lastname
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_annotation_annotator_affiliation
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+annotator+team
+	(is-a knowtator+annotator)
+	(role concrete)
+	(single-slot knowtator_annotator_team_name
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot knowtator_annotator_team_members
+		(type INSTANCE)
+;+		(allowed-classes knowtator+human+annotator)
+		(create-accessor read-write)))
+
+(defclass knowtator+display+color
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_display_color_G
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_R
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_display_color_B
+		(type INTEGER)
+		(range 0 255)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+set
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_set_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_set_description
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_set_annotation
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotation)
+		(create-accessor read-write)))
+
+(defclass knowtator+consensus+set
+	(is-a knowtator+set)
+	(role concrete)
+	(single-slot knowtator_team_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator+team)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_individual_filter
+;+		(comment "This slot stores the filter that is used to provide the annotations created by individuals.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+filter)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot knowtator_consensus_filter
+;+		(comment "This slot captures the filter that is used to provide the annotations corresponding to the consensus set annotations.")
+		(type INSTANCE)
+;+		(allowed-classes knowtator+consensus+filter)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+filter "This class is used to filter the annotations that are viewed in the Knowtator tab.  For example, you might want to see only the annotations created by a single annotator and hide all others.  If one of the three slots contains no values, then that slot will be ignored.  Think of the three slots as being logically ANDed and the values in a given slot as being logically ORed.  This allows one to create a filter that basically says:\n(annotator1 OR annotator2) AND (annotationSet1 OR annotationSet2)"
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_filter_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_filter_set
+		(type INSTANCE)
+;+		(allowed-classes knowtator+set)
+		(create-accessor read-write))
+	(multislot knowtator_filter_type
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+		(create-accessor read-write))
+	(multislot knowtator_filter_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator)
+		(create-accessor read-write)))
+
+(defclass knowtator+consensus+filter
+	(is-a knowtator+filter)
+	(role concrete)
+	(multislot knowtator_filter_set
+		(type INSTANCE)
+;+		(allowed-classes knowtator+set)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot knowtator_filter_annotator
+		(type INSTANCE)
+;+		(allowed-classes knowtator+annotator)
+		(cardinality 3 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass knowtator+color+assignment
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_display_color
+		(type INSTANCE)
+;+		(allowed-classes knowtator+display+color)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot knowtator_color_class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+text+source+collection+implementations
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot knowtator_tsc_implementation
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass knowtator+selected+filters
+	(is-a knowtator+support+class)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot knowtator_selected_filters
+		(type INSTANCE)
+;+		(allowed-classes knowtator+filter)
+		(create-accessor read-write)))

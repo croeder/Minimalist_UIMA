@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+	<RetainCase>false</RetainCase>
+	<ProtegeProject name="tissue-specific-proteins">
+		<ProjectFile>protegeProject/generif.pprj</ProjectFile>
+		<PatternFile>geneCell.patterns</PatternFile>
+	</ProtegeProject>
+</configuration>

@@ -1,0 +1,45 @@
+<configuration>
+	
+<!-- These tell DMAP which mentions to pull out of the CAS -->
+<!-- They also tell DMAP how those mentions should map into DMAP Protege frames -->
+<!--  Slot mappings are not yet implemented.  All slots are brought over with no name changes -->
+	
+	<input-annotation mention="normalized_gene" frame="c-protein" />
+    <input-annotation mention="cell_type" frame="c-cell-type" />
+	
+	
+<!-- These tell DMAP how to map back from internal references to CAS annotations -->
+<!-- Slot mappings are implemented, telling DMAP how to map from reference slots to CAS slot mentions -->
+<!-- If a slot is labeled as 'root', DMAP will know that multiple references with different root -->
+<!--  fillers are different concepts and should pulled out separately.  References with the same -->
+<!--  root are treated as the same and only the highest scoring one is returned -->
+<!-- If a slot is labeled as 'exclude' that slot will not be added to the mention in the CAS -->
+	
+
+    <output-annotation frame="c-expression" mention="expression">
+		<slot name="expressed" mention="protein" />
+		<slot name="protein-list" mention="protein-list" />
+		<slot name="expressed_in" mention="location" />
+	</output-annotation>
+<!--
+	<output-annotation frame="g-proteinlist" mention="protein-list">
+        <slot name="listed-protein" mention="member protein" />
+    </output-annotation>
+    
+    <output-annotation frame="g-celllist" mention="cell-list">
+        <slot name="listed-cell" mention="member cell" />
+    </output-annotation>
+    
+	<output-annotation frame="c-protein"  mention="protein">
+        <slot name="id" mention="id" />
+        <slot name="species" mention="species" />
+        <slot name="score" mention="score" />
+        <slot name="text" mention="text" />
+    </output-annotation>
+  
+	<output-annotation frame="c-cell-type" mention="cell">
+        <slot name="id" mention="id" />
+    </output-annotation>
+-->
+	
+</configuration>

@@ -162,10 +162,10 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 					}
 				
 	
-					// TOKEN  ****** NEVER GONNA HAPPEN*************** check for TokenAnnotation, but that won't happen in many pipelines unless the right tokenizer is used
-					if (DEBUG && cm != null && cm.getMentionName().equals("token")) {
+					// TOKEN   ??? un-"normalized"??? WTF from CM tokenizer?
+					if (cm != null && cm.getMentionName().equals("token")) {
 						IntegerSlotMention numberSlot = (IntegerSlotMention) ClassMentionX.getSlotMentionByName(cm,"tokenNumber");
-						System.out.println("token:" + ta.getCoveredText() + " number: " + numberSlot.getSlotValues(0));
+						System.out.println("class mention token:" + ta.getCoveredText() + " number: " + numberSlot.getSlotValues(0));
 					}	
 	
 	
@@ -207,8 +207,8 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 						System.out.println("unknown mention: " + cm.getMentionName());
 						Collection<String> slotNames =  ClassMentionX.getPrimitiveSlotMentionNames(cm);
 						for (String slotName : slotNames) {
-							System.out.print("    slot:" + slotName + " value:" +
-								ClassMentionX.getStringSlotMentionValue(cm, slotName) );
+							System.out.print("    slot:" + slotName);
+							////// + " value:" + ClassMentionX.getStringSlotMentionValue(cm, slotName) );
 						}
 	
 						slotNames =  ClassMentionX.getComplexSlotMentionNames(cm);

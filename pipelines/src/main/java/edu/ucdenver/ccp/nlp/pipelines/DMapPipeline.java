@@ -121,10 +121,8 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
                 UimaUtil.MODEL_PARAMETER, SentenceModelResourceImpl.class,
                 sentenceModelUrl);
         aeDescList.add(sentenceDesc);
-
         //AnalysisEngineDescription sentenceDetectorDesc
         //   = LingPipeSentenceDetector_AE.createAnalysisEngineDescription(tsd);
-		//engineDescs.add(sentenceDetectorDesc);
 
 
 		// TOKENIZER from xml files ** TODO:  THE PATH MUST BE A FILE SYSTEM PATH **
@@ -137,9 +135,16 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
 
 		// CONCEPT MAPPER from xml files ** ...FILE SYSTEM PATH **
 		// The dictionary is specified, in this case, in the xml file.
+  		ResourceSpecifier conceptMapperDesc2 
+			= ResourceCreationSpecifierFactory.createResourceCreationSpecifier(
+				"target/classes/descriptors/analysis_engine/primitive/ConceptMapperOffsetTokenizer-PR.xml", config);
+		aeDescList.add(conceptMapperDesc2);
+
+		// CONCEPT MAPPER from xml files ** ...FILE SYSTEM PATH **
+		// The dictionary is specified, in this case, in the xml file.
   		ResourceSpecifier conceptMapperDesc 
 			= ResourceCreationSpecifierFactory.createResourceCreationSpecifier(
-				"target/classes/descriptors/analysis_engine/primitive/ConceptMapperOffsetTokenizer.xml", config);
+				"target/classes/descriptors/analysis_engine/primitive/ConceptMapperOffsetTokenizer-CL.xml", config);
 		aeDescList.add(conceptMapperDesc);
 
 
@@ -149,14 +154,20 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
         aeDescList.add(converterDesc);
 
 
-        ////////// bioMedNer - NEEDS SOURCE VIEW NAME
+        ////////// GeneTUKit AKA  bioMedNer - NEEDS SOURCE VIEW NAME
        // System.out.println("-- NER --");
        // AnalysisEngineDescription gtiDesc = GeneTUKit_AE.createAnalysisEngineDescription(tsd);
        // engineDescs.add(gtiDesc);
 
         // MENTION NAME MAPPER: CL:00000011 --> "cell_type", slot ID with value "CL:000000011"
-        AnalysisEngineDescription mapperDesc = MapNameToIDSlot_AE.createAnalysisEngineDescription(tsd, "cell_type", "CL:[0-9]+");
-        aeDescList.add(mapperDesc);
+		// maps output of concept mapper (class mention named CL:00000xxx) to 
+		// something for dmap: class mention named "cell_type" with a slot named ID with value CL:0000xxx
+        AnalysisEngineDescription clMapperDesc = MapNameToIDSlot_AE.createAnalysisEngineDescription(tsd, "cell_type", "CL:[0-9]+");
+        aeDescList.add(clMapperDesc);
+
+        // MENTION NAME MAPPER: PR:00000011 --> "normalized_gene"
+        AnalysisEngineDescription prMapperDesc = MapNameToIDSlot_AE.createAnalysisEngineDescription(tsd, "normalized_gene", "PR:[0-9]+");
+        aeDescList.add(prMapperDesc);
 
         // DMAP
         String contextFileName = "target/classes/tissue_specific_proteins_context.xml";
@@ -164,13 +175,13 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
         AnalysisEngineDescription dmapDesc = OpenDMAP_AE.createAnalysisEngineDescription(tsd, true, true,
             contextFileName, configFileName, sentenceSpanName, false, true);
         aeDescList.add(dmapDesc);
-
+/***
         // CLASS MENTION FILTER
         AnalysisEngineDescription tokenRemovalDesc
             = ClassMentionRemovalFilter_AE.createAnalysisEngineDescription(
                 tsd, new String[] { "token", "sentence" });
         aeDescList.add(tokenRemovalDesc);
-
+**/
         AnalysisEngineDescription debugDesc = Debug_AE.createAnalysisEngineDescription(tsd);
         aeDescList.add(debugDesc);
 	}
@@ -181,7 +192,6 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
 
 
 	public static void main(String[] args) {
-
 		BasicConfigurator.configure();
 
 		if (args.length < 1) {
@@ -201,7 +211,7 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
 		}
 
 		try {
-			ConceptMapperPipeline pipeline = new ConceptMapperPipeline(batchNumber);
+			DMapPipeline pipeline = new DMapPipeline(batchNumber);
 			//Collection<JCasExtractor.Result> results = pipeline.go();
 			pipeline.go();
 		}

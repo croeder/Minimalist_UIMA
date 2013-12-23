@@ -66,14 +66,16 @@ public class MapNameToIDSlot_AE extends JCasAnnotator_ImplBase {
 		try {
 			FSIterator ccptaIterator = jcas.getAnnotationIndex(TextAnnotation.type).iterator();
 			while (ccptaIterator.hasNext()) {
-					TextAnnotation ccpta = (TextAnnotation) ccptaIterator.next();
-				String ccptaMentionName = ccpta.getClassMention().getMentionName();
-				if (ccptaMentionName != null) {
-					Matcher m = mentionTypeInPattern.matcher(ccptaMentionName);
-					if ( m.matches() ) {
-						ClassMention cm = ccpta.getClassMention();
-						cm.setMentionName(mentionTypeOut);
-						ClassMentionX.addSlotValue(cm, "ID", ccptaMentionName);
+				TextAnnotation ccpta = (TextAnnotation) ccptaIterator.next();
+				if (ccpta.getClassMention() != null) {
+					String ccptaMentionName = ccpta.getClassMention().getMentionName();
+					if (ccptaMentionName != null) {
+						Matcher m = mentionTypeInPattern.matcher(ccptaMentionName);
+						if ( m.matches() ) {
+							ClassMention cm = ccpta.getClassMention();
+							cm.setMentionName(mentionTypeOut);
+							ClassMentionX.addSlotValue(cm, "ID", ccptaMentionName);
+						}
 					}
 				}
 			}

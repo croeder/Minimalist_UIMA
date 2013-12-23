@@ -1,0 +1,84 @@
+
+// ***** CLASS DEFS *************************************************
+
+{w-prep} := of, in, into, at, by, among, on, during, throughout;
+{w-is} := is, are, was, were, has been, can be, be;
+{w-det} := the, a, an, both, many, this, these;
+
+// conjunction handling 
+{g-proteinlist} := [listed-protein] and {w-det}? [listed-protein];
+{g-proteinlist} := ({w-det}? [listed-protein]","?)+ and {w-det}? [listed-protein];
+{g-proteinlist} := [listed-protein]"/"[listed-protein];
+
+{g-celllist} := [listed-cell] and {w-prep}? {w-det}? [listed-cell];
+{g-celllist} := ({w-det}? [listed-cell]","?)+ and {w-det}? [listed-cell];
+
+
+// ******************************************************************
+// ***** ALL PATTERNS ***********************************************
+// ******************************************************************
+
+// *********************************************
+// ***** nominalization patterns ***************
+// *********************************************
+{c-expression} := expression {w-prep}? {w-det}? [expressed] {w-prep}? {w-det}? [expressed_in];
+{c-expression} := expression {g-np} {w-prep}? {w-det}? [expressed] {w-prep}? {w-det}? [expressed_in];
+{c-expression} := expression {w-prep}? {w-det}? [expressed_in] {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] expression {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed] expression {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed] expression {g-np} {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed_in] {w-prep}? {w-det}? [expressed] expression;
+{c-expression} := [expressed] {w-prep}? {w-det}? [expressed_in] expression;
+
+
+// **********************************************
+// ***** verbal patterns ************************
+// **********************************************
+
+// ***********************************
+// ****** active *********************
+{c-expression} := [expressed_in] {g-adv}? (express|expresses|expressed) {g-adv}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {g-adv}? (express|expresses|expressed) {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {w-det}? {g-np}? (express|expresse|expressed) {g-adv}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {w-det}? {g-np}? (express|expresse|expressed) {g-adj}? {w-det}? {g-np} {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed] {g-adv}? (express|expresses|expressed) {g-adv}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed] {g-adv}? (express|expresses|expressed) {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := (expressed|expresses|express) [expressed] {w-prep}? {w-det}? [expressed_in];
+{c-expression} := (expressed|expresses|express) [expressed] {g-adv}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed_in] {w-prep} {g-np} (express|expressed|expresses) {g-adv}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {w-prep} {g-np} (express|expressed|expresses) {g-adj}? {g-np}? {w-prep}? {w-det}? [expressed];
+
+// ***********************************
+// ****** passive ********************
+{c-expression} := [expressed] {w-is} {g-adv}? expressed {g-adv}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed] {w-is} {g-adv}? expressed {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed_in];
+
+// ***********************************
+// ****** gerund *********************
+{c-expression} := [expressed_in] {g-adv}? expressing {g-adv}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {g-adv}? expressing {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed] {g-adv}? expressing {g-adv}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed] {g-adv}? expressing {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := expressing {w-det}? [expressed] {w-prep} {w-det}? [expressed_in];
+
+// ***********************************
+// ***** past part. patterns *********
+{c-expression} := [expressed_in] that (express|expresses|expressed) {g-adv}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] that (express|expresses|expressed) {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {w-prep} {w-det}? {g-np} that (express|expresses|expressed) {g-adv}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed_in] {w-prep} {w-det}? {g-np} that (express|expresses|expressed) {g-adj}? {w=det}? {g-np}? {w-prep}? {w-det}? [expressed];
+{c-expression} := [expressed] that expressed {g-adv}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed] that expressed {g-adj}? {w-det}? {g-np}? {w-prep}? {w-det}? [expressed_in];
+{c-expression} := [expressed]"," (when|that) expressed {w-prep} {w-det}? [expressed_in];
+{c-expression} := [expressed]"," (when|that) expressed {g-adv}? {w-prep} {w-det}? [expressed_in];
+{c-expression} := [expressed]"," expressed {g-adv}? {w-prep}? {w-det}? [expressed_in];
+
+
+
+
+
+
+
+
+
+

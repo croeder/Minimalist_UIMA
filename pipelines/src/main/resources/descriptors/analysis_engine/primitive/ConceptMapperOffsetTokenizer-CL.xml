@@ -494,13 +494,14 @@
 	<resourceManagerConfiguration>
 		<externalResources>
 			<externalResource>
-				<name>DictionaryFileName</name>
+				<name>DictionaryFileName-CL</name>
 				<description>
 					A file containing the dictionary. Modify this URL to
 					use a different dictionary.
 				</description>
 				<fileResourceSpecifier>
-					<fileUrl>file:target/classes/dictionaries/cmDict-BTO.xml</fileUrl>
+					<fileUrl>file:target/classes/dictionaries/cmDict-CL.xml</fileUrl>
+					<!-- <fileUrl>file:dict/testDict.xml</fileUrl> -->
 				</fileResourceSpecifier>
 				<implementationName>
 					org.apache.uima.conceptMapper.support.dictionaryResource.DictionaryResource_impl
@@ -510,9 +511,8 @@
 		<externalResourceBindings>
 			<externalResourceBinding>
 				<key>DictionaryFile</key>
-				<resourceName>DictionaryFileName</resourceName>
+				<resourceName>DictionaryFileName-CL</resourceName>
 			</externalResourceBinding>
 		</externalResourceBindings>
 	</resourceManagerConfiguration>
-
 </taeDescription>

@@ -1,0 +1,592 @@
+; Tue Jun 25 11:24:53 MDT 2013
+; 
+;+ (version "3.3.1")
+;+ (build "Build 430")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot listed-protein
+		(type SYMBOL)
+;+		(allowed-parents c-molecule)
+		(cardinality 2 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot expressed
+		(type INSTANCE)
+;+		(allowed-classes c-molecule g-proteinlist)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot protein
+		(type INSTANCE)
+;+		(allowed-classes c-protein)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot generif_Slot_10001
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source
+		(type INSTANCE)
+;+		(allowed-classes c-cell-part)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot NP-protein
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot listed_protein2
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot generif_Slot_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cell
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interaction-pattern
+		(type INSTANCE)
+;+		(allowed-classes c-interact)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot destination
+		(type INSTANCE)
+;+		(allowed-classes c-cell-part)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot patient
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot action
+		(type SYMBOL)
+;+		(allowed-parents c-action)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot listed_protein1
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot agent
+		(type SYMBOL)
+;+		(allowed-parents c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interactor1
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot NP-cell
+		(type INSTANCE)
+;+		(allowed-classes c-cell-line c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot expressed_in
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type c-cell-part c-cell-line g-celllist)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot synonym
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot generif_Slot_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot listed-cell
+		(type SYMBOL)
+;+		(allowed-parents c-cell-type c-cell-line c-cell-part)
+		(cardinality 2 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot gene_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot object
+		(type INSTANCE)
+;+		(allowed-classes c-object)
+		(create-accessor read-write))
+	(single-slot interactor2
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot text
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot species_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot generif_Slot_10002
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot score
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot generif_Slot_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-object
+	(is-a USER)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-molecule
+	(is-a c-object)
+	(role concrete))
+
+(defclass c-protein
+	(is-a c-molecule)
+	(role concrete)
+	(single-slot gene_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot text
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot species_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot score
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-protein-receptor
+	(is-a c-molecule)
+	(role concrete)
+	(single-slot protein
+		(type INSTANCE)
+;+		(allowed-classes c-protein)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-rna
+	(is-a c-molecule)
+	(role concrete))
+
+(defclass c-dna
+	(is-a c-molecule)
+	(role concrete))
+
+(defclass c-cell-type
+	(is-a c-object)
+	(role concrete)
+	(single-slot id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-cell-part
+	(is-a c-object)
+	(role concrete))
+
+(defclass c-cell-line
+	(is-a c-object)
+	(role concrete))
+
+(defclass c-expressed
+	(is-a c-object)
+	(role concrete))
+
+(defclass c-expressed_in
+	(is-a USER c-object)
+	(role concrete))
+
+(defclass w-dictionary
+	(is-a USER)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass w-is
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-verb1
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-verb2
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-verb
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-noun
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-noun2
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-noun-phys
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-preposition
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-gen-verb
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-interact-gen-noun
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-negation
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-dimer
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass c-protcomplex
+	(is-a w-dictionary)
+	(role concrete)
+	(multislot listed-protein
+		(type SYMBOL)
+;+		(allowed-parents c-molecule)
+		(cardinality 2 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass w-verb-withneg
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass c-dimer
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-prep
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass w-det
+	(is-a w-dictionary)
+	(role concrete))
+
+(defclass c-bioprocess
+	(is-a USER)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-transport
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot destination
+		(type INSTANCE)
+;+		(allowed-classes c-cell-part)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot patient
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot action
+		(type SYMBOL)
+;+		(allowed-parents c-action)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source
+		(type INSTANCE)
+;+		(allowed-classes c-cell-part)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-transport-two-way
+	(is-a c-transport)
+	(role concrete))
+
+(defclass c-activate
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot patient
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-grow
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot cell
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-anchor
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot patient
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-interact
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot interactor2
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interactor1
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-interact-neg
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot interactor2
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interactor1
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-expression
+	(is-a c-bioprocess)
+	(role concrete)
+	(single-slot expressed
+		(type INSTANCE)
+;+		(allowed-classes c-molecule g-proteinlist)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot NP-protein
+		(type INSTANCE)
+;+		(allowed-classes c-molecule)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot NP-cell
+		(type INSTANCE)
+;+		(allowed-classes c-cell-line c-cell-type)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot expressed_in
+		(type INSTANCE)
+;+		(allowed-classes c-cell-type c-cell-part c-cell-line g-celllist)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-grammar
+	(is-a USER)
+	(role concrete))
+
+(defclass g-nounphrase
+	(is-a g-grammar)
+	(role concrete)
+	(multislot object
+		(type INSTANCE)
+;+		(allowed-classes c-object)
+		(create-accessor read-write))
+	(single-slot synonym
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-np-conjunct
+	(is-a g-nounphrase)
+	(role concrete))
+
+(defclass g-np-disjunct
+	(is-a g-nounphrase)
+	(role concrete))
+
+(defclass g-pp
+	(is-a g-grammar)
+	(role concrete)
+	(multislot object
+		(type INSTANCE)
+;+		(allowed-classes c-object)
+		(create-accessor read-write)))
+
+(defclass g-pp-patient
+	(is-a g-pp)
+	(role concrete))
+
+(defclass g-pp-source
+	(is-a g-pp)
+	(role concrete))
+
+(defclass g-pp-destination
+	(is-a g-pp)
+	(role concrete))
+
+(defclass g-pp-agent
+	(is-a g-pp)
+	(role concrete))
+
+(defclass g-pp-location
+	(is-a g-pp)
+	(role concrete))
+
+(defclass g-adj
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot generif_Slot_10002
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-det
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-conj
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-proteinPhrase
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-celltypePhrase
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-proteinlist
+	(is-a g-grammar)
+	(role concrete)
+	(multislot listed-protein
+		(type SYMBOL)
+;+		(allowed-parents c-molecule)
+		(cardinality 2 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass g-celllist
+	(is-a g-grammar)
+	(role concrete)
+	(multislot listed-cell
+		(type SYMBOL)
+;+		(allowed-parents c-cell-type c-cell-line c-cell-part)
+		(cardinality 2 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass g-adv
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass g-np
+	(is-a g-grammar)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-action
+	(is-a USER)
+	(role concrete)
+	(single-slot generif_Slot_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass c-action-active
+	(is-a c-action)
+	(role concrete))
+
+(defclass c-action-transport
+	(is-a c-action-active)
+	(role concrete))
+
+(defclass c-action-transport-two-way
+	(is-a c-action-transport)
+	(role concrete))
+
+(defclass c-interact-active
+	(is-a c-action-active)
+	(role concrete))
+
+(defclass c-action-passive
+	(is-a c-action)
+	(role concrete))
+
+(defclass c-action-transport-passive
+	(is-a c-action-passive)
+	(role concrete))
+
+(defclass c-action-transport-two-way-passive
+	(is-a c-action-transport-passive)
+	(role concrete))
+
+(defclass c-interact-passive
+	(is-a c-action-passive)
+	(role concrete))

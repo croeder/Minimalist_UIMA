@@ -108,8 +108,8 @@ public class KnowtatorPipeline extends BaseUimaFitPipeline  {
 
 		// main part
 		try {
-			KnowtatorPipeline pipeline = new KnowtatorPipeline (inputDir);
-			pipeline.go(inputDir);
+			//KnowtatorPipeline pipeline = new KnowtatorPipeline (inputDir);
+			//pipeline.go(inputDir);
 		}
 		catch(Exception x) {
 			System.err.println(x);

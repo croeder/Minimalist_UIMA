@@ -94,7 +94,7 @@ public class DMAPJcasTokenizer extends DMAPTokenizer {
 				// if this doesn't cast, something is really wrong. I'll take the runtime exception.
 				TextAnnotation jcasToken = (TextAnnotation) iterator.next();
 				ClassMention cm = jcasToken.getClassMention();
-				if (cm.getMentionName().equals("token")) {
+				if (cm != null && cm.getMentionName().equals("token")) {
 					
 					DMAPToken token = DMAPToken.newToken(parser, 
 						jcasToken.getCoveredText().toLowerCase(),
@@ -230,11 +230,13 @@ public class DMAPJcasTokenizer extends DMAPTokenizer {
 	 */
 	private DMAPToken buildDMAPToken(Parser parser, TextAnnotation jcasToken, AnnotationMap annotationMap) {
 		ClassMention mention = jcasToken.getClassMention();
-		String type = mention.getMentionName();
-		if (annotationMap.isInputMentionOfInterest(type)) {
-			Vector<Object> slots = getMentionSlotValues(parser, mention, annotationMap);
-			return DMAPToken.newToken(parser, annotationMap.getInputMentionReferenceType(type), 
-				slots, jcasToken.getBegin(), jcasToken.getEnd(), jcasToken);
+		if (mention != null) {
+			String type = mention.getMentionName();
+			if (annotationMap.isInputMentionOfInterest(type)) {
+				Vector<Object> slots = getMentionSlotValues(parser, mention, annotationMap);
+				return DMAPToken.newToken(parser, annotationMap.getInputMentionReferenceType(type), 
+					slots, jcasToken.getBegin(), jcasToken.getEnd(), jcasToken);
+			}
 		}
 		return null;
 	}	

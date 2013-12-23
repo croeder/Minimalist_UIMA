@@ -1,0 +1,148 @@
+; Tue Jun 25 11:24:53 MDT 2013
+; 
+;+ (version "3.3.1")
+;+ (build "Build 430")
+
+([generif_Instance_1] of  %3APAL-CONSTRAINT
+)
+
+([i-b-cell] of  c-cell-type
+)
+
+([i-bclxl] of  c-protein
+)
+
+([i-c2c12-cell] of  c-cell-type
+)
+
+([i-calmodulin] of  c-protein
+)
+
+([i-car] of  c-protein
+)
+
+([i-cdk2-cyclin-a] of  c-protein
+)
+
+([i-cdk2-cyclin-e] of  c-protein
+)
+
+([i-clathrin] of  c-protein
+)
+
+([i-coligin] of  c-protein
+)
+
+([i-crel] of  c-protein
+)
+
+([i-crm1] of  c-protein
+)
+
+([i-cytochrome-c] of  c-protein
+)
+
+([i-daxx] of  c-protein
+)
+
+([i-deaf1] of  c-protein
+)
+
+([i-dnup214] of  c-protein
+)
+
+([i-dnup88] of  c-protein
+)
+
+([i-exportin5] of  c-protein
+)
+
+([i-gs15] of  c-protein
+)
+
+([i-gs28] of  c-protein
+)
+
+([i-hela-cell] of  c-cell-type
+)
+
+([i-hif-1alpha] of  c-protein
+)
+
+([i-imp1] of  c-protein
+)
+
+([i-jaz] of  c-protein
+)
+
+([i-kdel] of  c-protein
+)
+
+([i-lim-kinase] of  c-protein
+)
+
+([i-limitin] of  c-protein
+)
+
+([i-mcl1] of  c-protein
+)
+
+([i-mkl1] of  c-protein
+)
+
+([i-mnk] of  c-protein
+)
+
+([i-mt1-mmp] of  c-protein
+)
+
+([i-nes] of  c-protein
+)
+
+([i-nrf-2alpha] of  c-protein
+)
+
+([i-nrf-2beta] of  c-protein
+)
+
+([i-nuclear-export] of  c-transport
+)
+
+([i-nuclear-import] of  c-transport
+)
+
+([i-p57kip2] of  c-protein
+)
+
+([i-pag608] of  c-protein
+)
+
+([i-pkcdelta] of  c-protein
+)
+
+([i-pxr] of  c-protein
+)
+
+([i-rela] of  c-protein
+)
+
+([i-src] of  c-protein
+)
+
+([i-syntaxin4] of  c-protein
+)
+
+([i-syntaxin5] of  c-protein
+)
+
+([i-tfii-i] of  c-protein
+)
+
+([i-tyk2] of  c-protein
+)
+
+([i-ykt6] of  c-protein
+)
+
+([i-yy1-factor] of  c-protein
+)
