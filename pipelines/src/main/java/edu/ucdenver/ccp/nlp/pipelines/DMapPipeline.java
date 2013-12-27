@@ -88,6 +88,7 @@ import edu.ucdenver.ccp.nlp.cr.MedlineDbCollectionReader;
 import edu.ucdenver.ccp.nlp.cr.PmcOaDbCollectionReader;
 import edu.ucdenver.ccp.nlp.cr.ElsevierArt5DbCollectionReader;
 import edu.ucdenver.ccp.nlp.ae.Debug_AE;
+import edu.ucdenver.ccp.nlp.ae.DbInsert_AE;
 import edu.ucdenver.ccp.nlp.ae.opendmap.OpenDMAP_AE;
 import edu.ucdenver.ccp.nlp.ae.ConceptMapper2CCPTypeSystemConverter_AE;
 import edu.ucdenver.ccp.nlp.ae.ClassMentionRemovalFilter_AE;
@@ -106,13 +107,24 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
 
     String sentenceSpanName = "edu.ucdenver.ccp.nlp.ts.Sentence";
 
-	DMapPipeline(int batchNum) 
+
+	static enum CollectionsEnum  { MEDLINE, PMC, ELSEVIER };
+
+
+	DMapPipeline(int batchNum, CollectionsEnum coll) 
 	throws UIMAException, IOException {
 
-        //cr = MedlineDbCollectionReader.createCollectionReader(tsd,1);
-        //cr = PmcOaDbCollectionReader.createCollectionReader(tsd,1);
-        cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
-
+		switch (coll) {
+		case MEDLINE:
+        	cr = MedlineDbCollectionReader.createCollectionReader(tsd, batchNum);
+			break;
+		case PMC:
+        	cr = PmcOaDbCollectionReader.createCollectionReader(tsd, batchNum);
+			break;
+		case ELSEVIER:
+        	cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
+			break;
+		}
 
         // SENTENCE DETECTOR 
 		AnalysisEngineDescription sentenceDesc = AnalysisEngineFactory.createPrimitiveDescription(
@@ -175,43 +187,57 @@ public class DMapPipeline extends BaseUimaFitPipeline  {
         AnalysisEngineDescription dmapDesc = OpenDMAP_AE.createAnalysisEngineDescription(tsd, true, true,
             contextFileName, configFileName, sentenceSpanName, false, true);
         aeDescList.add(dmapDesc);
-/***
+
         // CLASS MENTION FILTER
         AnalysisEngineDescription tokenRemovalDesc
             = ClassMentionRemovalFilter_AE.createAnalysisEngineDescription(
                 tsd, new String[] { "token", "sentence" });
         aeDescList.add(tokenRemovalDesc);
-**/
-        AnalysisEngineDescription debugDesc = Debug_AE.createAnalysisEngineDescription(tsd);
+
+        //AnalysisEngineDescription debugDesc = Debug_AE.createAnalysisEngineDescription(tsd);
+        AnalysisEngineDescription debugDesc = DbInsert_AE.createAnalysisEngineDescription(tsd);
         aeDescList.add(debugDesc);
 	}
 
 	protected static void usage() {
-	 	System.out.println("mvn exec:java -Dbatch=<batch_num> ");
+	 	System.out.println("mvn exec:java -Dbatch=<batch_num> <collection>");
+	 	System.out.println("collection: PMC, MEDLINE, ELSEVIER");
 	}
 
 
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 
-		if (args.length < 1) {
+		if (args.length < 2) {
+			System.out.println("error: not enough args. \"" + args[0] + "\" \"" + args[1] + "\"");
 			usage();
 			System.exit(1);
 		}
+	
 
 		int batchNumber=0;
+		CollectionsEnum coll=CollectionsEnum.PMC;
+
 		try {
 			batchNumber = Integer.parseInt(args[0]);
-		} 
-		catch(Exception x) {
-			System.out.println("error:" + x);
+		} catch(Exception x) {
+			System.out.println("error: bad batch number. \"" + args[0] + "\"" + x);
+			x.printStackTrace();
+			usage();
+			System.exit(2);
+		}
+		try {
+			coll=CollectionsEnum.valueOf(args[1]);
+		} catch(Exception x) {
+			System.out.println("error: bad collection name:\"" + args[1] +  "\" " + x);
 			x.printStackTrace();
 			usage();
 			System.exit(2);
 		}
 
 		try {
-			DMapPipeline pipeline = new DMapPipeline(batchNumber);
+			System.out.println("RUNNING BATCH:" + batchNumber + " on collection " + coll);
+			DMapPipeline pipeline = new DMapPipeline(batchNumber, coll);
 			//Collection<JCasExtractor.Result> results = pipeline.go();
 			pipeline.go();
 		}

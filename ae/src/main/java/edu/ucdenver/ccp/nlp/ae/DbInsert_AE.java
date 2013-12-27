@@ -62,6 +62,10 @@ import edu.ucdenver.ccp.nlp.ts.IdDictTerm;
 import edu.ucdenver.ccp.nlp.ts.Protein;
 import edu.ucdenver.ccp.nlp.ts.DocumentInformation;
 
+import edu.ucdenver.ccp.nlp.backend.orm.PrimitiveResult;
+import edu.ucdenver.ccp.nlp.backend.orm.CompoundResult;
+import edu.ucdenver.ccp.nlp.backend.ResultProvider;
+
 import org.uimafit.factory.AnalysisEngineFactory;
 import org.uimafit.descriptor.SofaCapability;
 
@@ -79,7 +83,7 @@ import edu.ucdenver.ccp.nlp.ts.ComplexSlotMention;
 
 
 @SofaCapability
-public class Debug_AE extends JCasAnnotator_ImplBase {
+public class DbInsert_AE extends JCasAnnotator_ImplBase {
     private final boolean DEBUG = false;
 	private String[] classMentionNames = {
 						"hates", "loves", "cell_type", "normalized_gene",
@@ -89,140 +93,94 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 	};
 	private Set<String> classMentionNameSet = new TreeSet<String>();
 
+	ResultProvider provider = null;
+
 
     @Override
 	public void initialize(UimaContext context) throws ResourceInitializationException {
 		super.initialize(context);
+		provider = new ResultProvider();
 		classMentionNameSet.addAll(Arrays.asList(classMentionNames));
     }
 
 
     @Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
-
+		String docId="<na>";
+	
         FSIterator<Annotation> annotIter = jcas.getJFSIndexRepository().getAnnotationIndex().iterator();
         while (annotIter.hasNext()) {
 
 	        Annotation annot = (Annotation) annotIter.next();
-			if (DEBUG && annot instanceof TokenAnnotation) {
-				System.out.println("SEMANTIC token: " + annot.getBegin() + ", " + annot.getEnd() + " \"" + annot.getCoveredText() + "\"");
-			}
 			if (annot instanceof DocumentInformation) {
 				DocumentInformation di = (DocumentInformation) annot;
-				System.out.println("Source doc. \"" + di.getUri() + "\" id:" + di.getDocumentId());
+				//System.out.println("XXXYY Doc. Info. \"" + di.getUri() + "\" id:" + di.getDocumentId());
+				docId  = di.getUri();
 			}
-			if (annot instanceof SourceDocumentInformation) {
+			else if (annot instanceof SourceDocumentInformation) {
 				SourceDocumentInformation sdi = (SourceDocumentInformation) annot;
-				System.out.println("Source doc. \"" + sdi.getUri() + "\"");
+				//System.out.println("XXXYY Source Doc. Info. \"" + sdi.getUri() );
+				docId  = sdi.getUri();
 			}
-			if (DEBUG && annot instanceof IdDictTerm) {
-				IdDictTerm dt = (IdDictTerm) annot;
-				System.out.println("SEMANTIC dictTerm (ConceptMapper):\"" 
-					+ " canon:" + dt.getDictCanon() + "\"" 
-					+ " (" + annot.getBegin() + ", " + annot.getEnd() + ")"
-					+ " covered:  \"" + annot.getCoveredText() + "\""
-					+ " matched: \"" + dt.getMatchedText() + "\"" 
-					+ " id: \"" + dt.getId() + "\"");
-			}
-			else if (annot instanceof Protein) {
-				Protein proteinAnnot = (Protein) annot;
-				System.out.println("PROTEIN annotation:" + proteinAnnot.getPrefix() + ", " + proteinAnnot.getSuffix());
-			}
+			//else if (annot instanceof SentenceAnnotation) {
+			//	System.out.println("SEMANTIC sentence: \"" + annot.getCoveredText() + "\"");
+			//}
 			else if (annot instanceof TextAnnotation) {
 	
 	        	TextAnnotation textAnnot = (TextAnnotation) annot;
+				ClassMention cm = textAnnot.getClassMention();
 	
-				if (textAnnot instanceof TextAnnotation) {
-					Annotator annotator = textAnnot.getAnnotator();
-					if ( DEBUG && annotator != null) {
-						System.out.println("Annotator:"
-						+ " First Name: " + annotator.getFirstName()
-						+ " Last Name: " + annotator.getLastName()
-						+ " Affiliation: " + annotator.getAffiliation());
-					}
-					else {
-						if (DEBUG)  { System.out.println(" NO ANNOTATOR " ); }
-					}
-				}
+				// TOKEN   ??? un-"normalized"??? WTF from CM tokenizer?
+				//if (cm != null && cm.getMentionName().equals("token")) {
+				//	IntegerSlotMention numberSlot = (IntegerSlotMention) ClassMentionX.getSlotMentionByName(cm,"tokenNumber");
+				//	System.out.println("class mention token:" + textAnnot.getCoveredText() + " number: " + numberSlot.getSlotValues(0));
+				//}	
 	
-				// SENTENCE
-				if (DEBUG && textAnnot instanceof SentenceAnnotation) {
-					System.out.println("SEMANTIC sentence: \"" + textAnnot.getCoveredText() + "\"");
-				}
-				else if (annot instanceof TextAnnotation) {
-					TextAnnotation ta =  (TextAnnotation) annot;
-					ClassMention cm = ta.getClassMention();
-					if (cm == null) {
-						try {
-							System.out.println("NULL ClassMention for TA class:" + ta.getClass().getName() + " with covered=" + ta.getCoveredText());
-						}
-						catch (Exception x)  {
-							System.out.println("This TA is really hosed");
-						}
-					}
-				
-	
-					// TOKEN   ??? un-"normalized"??? WTF from CM tokenizer?
-					if (DEBUG && cm != null && cm.getMentionName().equals("token")) {
-						IntegerSlotMention numberSlot = (IntegerSlotMention) ClassMentionX.getSlotMentionByName(cm,"tokenNumber");
-						System.out.println("class mention token:" + ta.getCoveredText() + " number: " + numberSlot.getSlotValues(0));
-					}	
-	
-	
-					// ** SEMANTIC slots, DMAP stuff **
-					else if (cm != null && classMentionNameSet.contains(cm.getMentionName().toLowerCase())) {
-						System.out.println("SEMANTIC: name:\"" + cm.getMentionName() + "\" covered: \"" +  ta.getCoveredText() + "\"" );
-	
-						Collection<String> slotNames;
-						slotNames =  ClassMentionX.getComplexSlotMentionNames(cm);
-						if (slotNames != null ) {
-							for (String slotName : slotNames) {
-								System.out.println("  complex slot name:" + slotName);
-								ComplexSlotMention complexSlot = ClassMentionX.getComplexSlotMentionByName(cm, slotName);
+				// ** SEMANTIC slots, DMAP stuff **
+				if (cm != null && cm.getMentionName().equals("expression")) {
+					PrimitiveResult cellResult = null;
+					PrimitiveResult geneResult = null;
+					PrimitiveResult agentResult = new PrimitiveResult("xx", "express trigger", 0,0,0, "", "");
 
-								ClassMention referent = (ClassMention) complexSlot.getClassMentions(0);
-								System.out.print("  Complex Slot:" + slotName + " refers to " + referent.getMentionName());
+					try {
+						ComplexSlotMention cellSlot = ClassMentionX.getComplexSlotMentionByName(cm, "location");
+						if (cellSlot != null) {
+							ClassMention cellReferent = (ClassMention) cellSlot.getClassMentions(0);
+							TextAnnotation cellTA = cellReferent.getTextAnnotation();
+							StringSlotMention cellIdSlot =(StringSlotMention) ClassMentionX.getSlotMentionByName(cellReferent, "ID");
+							cellResult = new PrimitiveResult("CL", cellIdSlot.getSlotValues().get(0), cellTA.getBegin(),cellTA.getEnd(),0, docId,"");
+							//System.out.println("XXXYY cell" + cellIdSlot.getSlotValues().get(0));
 
-								//PrimitiveSlotMention pSlot =(PrimitiveSlotMention) ClassMentionX.getSlotMentionByName(referent, slotName);
-								PrimitiveSlotMention pSlot =(PrimitiveSlotMention) ClassMentionX.getSlotMentionByName(referent, "ID");
+							//String ontologyName, String ontologyId, int spanStart, int spanEnd, int sentenceNum, String docId, String idType) 
+						}
+						else { System.out.println(" XXXYY bogus cell_type" + cm.getMentionName()); }
+					}
+					catch (Exception x) {
+						System.out.println(" XXXYY bogus cell_type" + x);
+						x.printStackTrace();
+					}
 
-								if (pSlot != null && pSlot instanceof StringSlotMention ) {
-									System.out.println(" has value: " + ((StringSlotMention) pSlot).getSlotValues().get(0) );						
-								}
-								else { System.out.println(" no value "); }
-								
-							}
+					try {
+						ComplexSlotMention geneSlot = ClassMentionX.getComplexSlotMentionByName(cm, "protein");
+						if (geneSlot != null) {
+							ClassMention geneReferent = (ClassMention) geneSlot.getClassMentions(0);
+							TextAnnotation geneTA = geneReferent.getTextAnnotation();
+							StringSlotMention geneIdSlot = (StringSlotMention) ClassMentionX.getSlotMentionByName(geneReferent, "ID");
+							geneResult = new PrimitiveResult("PR", geneIdSlot.getSlotValues().get(0), geneTA.getBegin(),geneTA.getEnd(),0, docId,"");
+							//System.out.println("XXXYY gene" + geneIdSlot.getSlotValues().get(0));
 						}
-	
-						Collection<String> primitiveSlotNames =  ClassMentionX.getPrimitiveSlotMentionNames(cm);
-						if (primitiveSlotNames != null && primitiveSlotNames.size() > 0) {
-							for (String slotName : primitiveSlotNames) {
-								System.out.print("  primitive slot:" + slotName + " "); 
-								PrimitiveSlotMention pSlot = ClassMentionX.getPrimitiveSlotMentionByName(cm, slotName);
-								if (pSlot instanceof StringSlotMention) {
-									System.out.println("  has value: " + ((StringSlotMention) pSlot).getSlotValues().get(0) );						
-								}
-								else { System.out.println(""); }
-							}
-						}
+						else { System.out.println(" XXXYY bogus cell_type" + cm.getMentionName()); }
 					}
-	
-	
-					// OTHER
-					else if ( DEBUG && cm != null) { //DEBUG) {
-						System.out.println("unknown mention: " + cm.getMentionName());
-						Collection<String> slotNames =  ClassMentionX.getPrimitiveSlotMentionNames(cm);
-						for (String slotName : slotNames) {
-							System.out.print("    slot:" + slotName);
-							////// + " value:" + ClassMentionX.getStringSlotMentionValue(cm, slotName) );
-						}
-	
-						slotNames =  ClassMentionX.getComplexSlotMentionNames(cm);
-						for (String slotName : slotNames) {
-							System.out.print("    complex slot:" + slotName + " "); 
-						}
+					catch (Exception x) {
+						System.out.println("XXXYY bogus normalized gene" + x);
+						x.printStackTrace();
 					}
-	
+
+					// agent, theme, location
+					if (cellResult != null && geneResult != null) {
+						CompoundResult expressionResult = new CompoundResult(agentResult, geneResult, cellResult);
+						provider.insertCompoundResult(expressionResult);
+					}
 				}
 			}
 		}
@@ -238,16 +196,15 @@ public class Debug_AE extends JCasAnnotator_ImplBase {
 	public static AnalysisEngine createAnalysisEngine(TypeSystemDescription tsd)
 	throws ResourceInitializationException {
 		return AnalysisEngineFactory.createPrimitive(
-				Debug_AE.class, tsd
+				DbInsert_AE.class, tsd
 		);
 	}
 	public static AnalysisEngineDescription createAnalysisEngineDescription(TypeSystemDescription tsd)
 	throws ResourceInitializationException {
 		return AnalysisEngineFactory.createPrimitiveDescription(
-				Debug_AE.class, tsd
+				DbInsert_AE.class, tsd
 		);
 	}
-	
 	
 
 }

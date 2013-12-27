@@ -89,9 +89,12 @@ public class ClassMentionRemovalFilter_AE extends JCasAnnotator_ImplBase {
 			if (possibleAnnot instanceof TextAnnotation) {
 				TextAnnotation ta = (TextAnnotation) possibleAnnot;
 				ClassMention cm = ta.getClassMention();
-				String classMentionType = cm.getMentionName().toLowerCase();
-				if (classMentionTypesToRemove.contains(classMentionType)) {
-					annotationsToRemove.add(ta);
+				if (cm != null) {
+					// Sentencesi
+					String classMentionType = cm.getMentionName().toLowerCase();
+					if (classMentionTypesToRemove.contains(classMentionType)) {
+						annotationsToRemove.add(ta);
+					}
 				}
 			} else {
 				logger.warn("TextAnnotation expected but instead got " + possibleAnnot.getClass().getName());
