@@ -29,29 +29,68 @@ Extending the classes was considered, but would require down casting.
 Directly modifying the classes was also considered, but steps away
 from easy type system modification and regeneration.
 
+
+unfinished with apologies
 Chris Roeder, 2013
+
+
+ccp_nlp submodules:
 
 * ts - UIMA type system xml files and generated java
 
-* analysis_engines
+* ae 
 	** AnalysisEngineTest.java
 	** Debug_AE.java
 	** LingPipeSentenceDetector_AE.java
 	** LingPipeSentenceDetectorAeTest.java
-	** ClassMentionX.java
-		An extension of the generated ClassMention class with a static function
+	** ClassMentionX.java, SlotMentionX.java
+		Extensions of the generated ClassMention and SlotMention  classes with static functions
 		that might have been a member of ClassMention or ClassMentionX if it
 		weren't for the fact you can't do type conversion as easily in Java
 		or that UIMA is in control of what objects get created in the JCas.
+	** ClassMentionRemovalFilter_AE.java
+	** ConceptMapper2CCPTypeSystemConverter_AE.java
+	** DbInsert_AE.java - for use with backend
+	** Knowtator_AE.java (incomplete)
+	** MapNameToIDSlot_AE.java
+	** opendmap/OpenDMAP_AE.java
+	** Protein_AE.java (simple toy example)
 
 * lingpipe_analysis_engines - a separate directory for lingpipe analysis engines to isolate the dependency on lingpipe and its license
 
-
 * doc - an interface to a local install of medline, as well as additions to
 	integrate pmc oa and a local elsevier  collection
+	** Code to do a 2-stage parse of fulltext provided in XML. The first stage
+	   applies an XSL stylesheet to convert between the source's (complex) XML
+       to a more simple XML style.  The second stage parses that and creates
+	   various annotations for zoning and italics.
+		*** XsltConverter.java
+		*** CcpXmlParser.java
+		*** ElsevierArt5DtdClasspathResolver.java
+		*** PmcDtdClasspathResolver.java
+		*** PmcDtdUriResolver.java
+	** Code to access the database and provide service for UIMA collection readers
+		*** DbConnect.java
+		*** DocumentProvider.java
+		*** DocumentProviderFactory.java
+		*** ElsevierArt5DocumentProvider.java
+		*** MedlineDocumentProvider.java
+		*** PmcDocumentProvider.java
+	** ORM (JPA) code as well...
+
+* backend - an interface to tables in the same database as doc, above, but
+	focussed on storing the results of a pipeline run
 
 * cr - a set of collection readers including DbCollectionReader and derivatives
 	for using the doc directory's database
+	** CcpXmlAnnotationFactory.java - a class for bridging from simple data from the doc module
+		to uima annotations
+	** DbCollectionReader.java - a base class for collection readers driven by a database to
+		reference either abstracts in the database, such as the Medline CR, or to reference 
+  		full-text paths such as the Pmc and Elsevier implementations.
+	** ElsevierArt5DbCollectionReader.java
+	** MedlineDbCollectionReader.java
+	** PmcOaDbCollectionReader.java
 
 * util - a home for  utility classes
 	** SpacedProperties - a wrapper on java properties that allows for namespaces in the names
@@ -66,26 +105,34 @@ Chris Roeder, 2013
 		Protein.java
 		ProteinAnnotator.java
 
-	** ParameterExamplePipeline.java (TBD)
-		We need a subtle modification to show parameters uimaFIT-style.
-
 	** ConceptMapperPipeline.java 
 		This set includes work from a number of people showing how to create a ConceptMapper
 		Dictionary from an OBO file, then run CM in a pipeline to create RDF output.
 		It uses xml files to describe the UIMA Analysis Engines.
 		See: https://groups.google.com/forum/?fromgroups#!topic/uimafit-users/BiCdfJrwGBE
+        
+		Running ConceptMapper from a uimaFIT universe hasn't been cracked here yet. This code
+        falls back on XML descriptor files and modifying the resulting in-memory descriptor
+	    instead of creating the in-memory descriptor directly from factory calls and 
+        no xml files. Adapting concept-mapper is awkward because, as far as I'm aware, at the
+        time of this writing, to have an analysis engine use uiamFIT parameters requires
+        that it inherit from a uimaFIT version of JCasAnnotator_ImplBase instead of the 
+        UIMA version. Future work would involve finding direct access to the initialization
+        code there and calling it from the init method of a class that derives from ConceptMapper.
+        This avoids modifying ConceptMapper source, though that would certainly work too.
 
 	** KnowtatorPipeline (in devleopment)
+        Past knowtator work at the CCP uses the protege API to access the pins/pont/pprj files.
+        Work has begun on code to read exported XML files. While this avoids the Protege API
+        code, it also avoids older CCP code that interfaces with it.
 
+	** DMapPipeline.java
+
+	** OpenNlpPipeline.java
  
-* ws - a web_service iniitally surfacing the concept_mapper pipeline
+* ws - (work in progress)a web_service iniitally surfacing the concept_mapper pipeline
 
-* rdf_document_interface - an earlier version of doc using triple stores
+* rdf_document_interface - an earlier version of doc using triple stores (abandoned)
 
-* sesame_interface - a connection factory for rdf_document_interface
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/51326b276ac97a08eefd1f7b010eea0e "githalytics.com")](http://githalytics.com/croeder/uima_sample)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/croeder/uima_sample/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+* sesame_interface - a connection factory for rdf_document_interface (unused, perhaps useful elswhere)
 

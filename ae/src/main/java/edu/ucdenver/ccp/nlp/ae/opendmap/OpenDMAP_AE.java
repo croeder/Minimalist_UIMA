@@ -262,7 +262,7 @@ public class OpenDMAP_AE extends OpenDmapAnnotator {
 				// Extract matches after each parse
 				extractMatches(parser, jcas, annotationsToAdd, mentionsToAdd);
 			} else {
-				System.out.println("OpenDMAP_AE.process - using spanAnnotationType");
+				//System.out.println("OpenDMAP_AE.process - using spanAnnotationType");
 				// Get the input tokens from the JCas
 				try {
 					DMAPJcasTokenizer tokenizer = new DMAPJcasTokenizer(parser, jcas, annotationMap, debug);
@@ -403,7 +403,7 @@ public class OpenDMAP_AE extends OpenDmapAnnotator {
 				seen.add(ref);
 			} 
 			else if (false) {
-				System.out.println("IGNORING: [" + ref.getCharacterStart() + ".."+ ref.getCharacterEnd() +"] "+ ref.getText());
+				//System.out.println("IGNORING: [" + ref.getCharacterStart() + ".."+ ref.getCharacterEnd() +"] "+ ref.getText());
 				if (debug) {
 					logger.debug("SKIPPING Creating annotation for ref: " + ref.getReferenceString());
 				}

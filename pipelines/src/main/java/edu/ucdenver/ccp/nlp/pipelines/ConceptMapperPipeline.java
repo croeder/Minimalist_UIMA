@@ -102,9 +102,9 @@ public class ConceptMapperPipeline extends BaseUimaFitPipeline  {
 	ConceptMapperPipeline(int batchNum) 
 	throws UIMAException, IOException {
 
-        //cr = MedlineDbCollectionReader.createCollectionReader(tsd,1);
+        cr = MedlineDbCollectionReader.createCollectionReader(tsd,1);
         //cr = PmcOaDbCollectionReader.createCollectionReader(tsd,1);
-        cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
+        //cr = ElsevierArt5DbCollectionReader.createCollectionReader(tsd, batchNum);
 
 
         // SENTENCE DETECTOR 
