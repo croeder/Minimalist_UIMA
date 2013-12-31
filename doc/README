@@ -39,6 +39,10 @@ tables describing batches on each collection are created by scripts in src/main/
 	Tables relating to the Elsevier collection are in the elsevier schema.
 	The database is called medline.
 
+	see src/main/resources/META-INF/persistence.xml for connetion data.
+	IIRC you can set either particular users and passwords from within
+	postgres, or to "trust" an entire machine. RTFM.
+
 1. Medline
 	Medline is a database of paper citations and abstracts available from
 	NIH. You get the abstracts from this database after the files are
