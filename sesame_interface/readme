@@ -1,0 +1,2 @@
+The src/main/resources/connection.properties are for AllegroGraph (AG) triple store connections.
+They are read with the SpacedProperties class in the util module. This allows for multiple sets of values like dev, test, prod, enki, etc.
