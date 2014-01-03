@@ -3,34 +3,62 @@ http://stackoverflow.com/questions/8162054/hibernate-overriding-hibernate-defaul
 
 This project implements the data requirements for a collection reader on the large document collections. The medline data comes from NIH and is loaded by a project called medic:https://github.com/fnl/medic
 
+This readme's scope has creeped out to include a description of local infrastructure to support code here.
 
 *** see INSTALL directions below ***
 
 tables describing batches on each collection are created by scripts in src/main/sql and used with Hibernate
 
-3 data sources:
---------------
-- medline
-- pubmed central open access (pmcoa)
-- elsevier
 
--1. Code
+0. Infrastructure
+
+	- Hudson and Cron for scheduling jobs
+		- cron is a unix command that maintains a schedule of
+		  commands for each user. Things are scheduled under
+		  either the hudson or hadoop users on the server machines.
+
+		- hudson is a java-based web application that is primarily
+		  used for scheduling software builds either on a schedule
+		  or triggered by commits to subversion. It's also used to
+          shedule periodic jobs that download and process files.
+
+TODO - Misc scheduled jobs that download files and updates
+		- pmc
+		- medline
+		- elsevier
+
+	- Postgres for storing metadata
+	    - This code requires a PostgreSQL installation and user.
+		  Update the doc/src/main/resources/META-INF/persistence.xml
+		  file with it's location, username and password.
+
+	- Subversion and Git for source control
+
+	- Artifactory as local maven cache and local repository for jars 
+	  not formally  a part of the Maven universe.
+	
+
+1. Code
 	
 	Florian Leitner's Medic code for creating and updating a local 
 	medline: https://github.com/fnl/medic
+	That is, this code loads postgres with the medline database from NIH.
 
-	UIMA Collection Readers to pull from an embelished medic installation:
-	github group: https://github.com/organizations/UCDenver-ccp/ccp_nlp/doc
+	UIMA Collection Readers to pull from an embelished medic/medline installation:
+	github group: https://github.com/organizations/UCDenver-ccp/ccp_nlp/do
+	The embellishments involve tables that list locally available files, their
+	ids and locations. Described below.
 
 	UIMA analysis engines to convert the XML formats from Elsevier and PMC
 	to a local one, and then convert that to plain text are available in
 	the same repo.
+TODO
 
 	Local subversion code is available at:
 	SVNROOT=http://compbio.ucdenver.edu/svn/ (external or internal)
 	SVNROOT=https://amc-bakeoff.ucdenver.edu/svn/ (internal)
 
-0. PostgreSQL
+2. PostgreSQL
 	This collection of scripts for keeping track of our files is based on
  	a local RDBMS installation of Medline. As of this writing it is hosted
 	on ....123.80 my desktop iMac, but is planned to be migrated to amc-bakeoff.
@@ -43,7 +71,12 @@ tables describing batches on each collection are created by scripts in src/main/
 	IIRC you can set either particular users and passwords from within
 	postgres, or to "trust" an entire machine. RTFM.
 
-1. Medline
+TODO - the tables are:
+
+
+3.  3 data sources:
+
+3.1 Medline
 	Medline is a database of paper citations and abstracts available from
 	NIH. You get the abstracts from this database after the files are
 	loaded into it. These abstracts and related documents from PMC OA
@@ -69,12 +102,12 @@ tables describing batches on each collection are created by scripts in src/main/
 	TODO: amc-bakeoff's storage is really on ....123.77:/RAID3
 	  there's no need for amc-bakeoff/data in the path.
 
-2. PMC OA
+3.2  PMC OA
 	PMC OA is a few tarfiles of fulltext articles available from NIH
 	at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc.
 
 	FILES:
-	There is a job on amc-colfax under the hadoop user to download the
+	There is a cron job on amc-colfax under the hadoop user to download the
 	bulk download weekly:/home/hadoop/bin/download_pmc_oa.sh. The files
 	go to: /RAID1/data/fulltext/pmc/files/<journal>
 
@@ -89,10 +122,9 @@ tables describing batches on each collection are created by scripts in src/main/
 	- create_pmc_batches.sql
 	- update_pmc_batches.sql (TODO)
 
-	TODO: actually move that githup repo.
-	TODO: update the tables as file updates come in
+TODO: update the tables as file updates come in
 
-3. Elsevier
+3.3 Elsevier
 	We have an arrangement with Elsevier for a large collection of journal
 	articles.  Updates are downloaded daily by a java job on Hudson:
 	http://amc-bob.ucdenver.pvt:8081/hudson/
@@ -149,8 +181,7 @@ tables describing batches on each collection are created by scripts in src/main/
 	- create and populate elsevier_records: ccp_nlp/doc/src/man/python/elsevier.py 
 	- update elsevier_records (TODO)
 
-INSTALL
------------
+4. Install
 	This stuff isn't purely maven and artifactory driven. There is an install script
 	at src/main/bash/install.sh that does a "mvn install:install" on some jars
 	in src/main/resources that contain dtd information.

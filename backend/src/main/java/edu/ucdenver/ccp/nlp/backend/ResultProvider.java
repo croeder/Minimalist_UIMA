@@ -54,7 +54,6 @@ public class ResultProvider {
 	EntityManager em;
 
 	public ResultProvider() {
-System.out.println("XXXX new result provider");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(
 			"edu.ucdenver.ccp.nlp.backend");
 		em = emf.createEntityManager();
