@@ -1,0 +1,101 @@
+
+
+The DMAP pipeline in ccp_nlp would be a bit confusing if you expected all it's 
+analysis engines to use annotation classes from the same type system. In fact 
+it uses annotation classes from more than one type system.
+
+The pipeline consists of the following AE's, reading and creating the 
+respective annotations
+
+- opennlp uima sentence detector   
+    reads: text
+    inserts: edu.ucdenver.ccp.nlp.ts.SentenceAnnotation
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: sentence detectors are used enought that they are the default 
+        first analysis engine. In this case, OpenDMAP requires the annotations 
+        it inserts.
+
+- offset tokenizer
+    reads: text
+    inserts: uima.tt.TokenAnnotation
+    xml Type System file: pipelines/src/main/resources/org/apache/uima/ConceptMapper/support/tokenizer/TokenAnnotation.xml
+    discussion: Tokenizers are tradittionaly #2. Here the tokens are used 
+        by concept mapper.
+
+- concept mapper, CL
+    reads: text, uima.tt.TokenAnnotation
+    inserts: edu.ucdenver.ccp.nlp.ts.IdDictTerm
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: this instance of concept mapper reads a dictionary created from 
+        the Cell Type Ontology by code in the ae sub project: dict_util/OboToDictionary. 
+        The IdDictTerm annotation class is an extension of the DictTerm class 
+		shipped with ConceptMapper. It adds a slot for the Ontology ID of the 
+		identified term.  Both classes have a space for the canonical form of 
+		the term. Of course, the term as mentioned in the text is in the Annotation 
+		base class as covered text.  
+	advanced discussion: Note here that concept mapper can insert this data into any 
+		uima annotation class given the class and feature (attribute) names. We must 
+		resort to a type system converter because the TextAnnotation - ClassMention 
+		scheme is a bit too complicated for what can be done with concept mapper 
+		directly (more below).
+
+- concept mapper, PR
+    reads: text, uima.tt.TokenAnnotation
+    inserts: edu.ucdenver.ccp.nlp.ts.IdDictTerm
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: in some versions of this pipeline this instance of concept mapper is 
+		run from a dictionary from PRO, also created from an obo. Others use an 
+		entrez-gene dictionary created by dict_util/GeneInfoToDictionary.
+
+- concept mapper type system converter *destructive*
+    reads: edu.ucdenver.ccp.nlp.ts.IdDictTerm
+    inserts:TextAnnotations with ClassMentions CL:000001111, or PR:0000001234
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: As above, concept mapper is quite adaptable to different type classes. 
+		In the CCP type system however, the semantic information, these ontology ids 
+		are stored in a second class, the class mention, not attributes of the 
+		annotation class.  This requires some code rather than just configuration, 
+		so we have this extra engine. If you're curious, this code typically reads 
+		the input, creates and inserts the output and then *removes* the input. 
+		It's destructive.
+ 
+- mention name mapper: MapNameToIDSlot_AE *destructive*
+    reads:  edu.ucdenver.ccp.nlp.ts.TextAnnotation with ClassMentions 
+			named  CL:000001111
+    inserts: ClassMentions named "cell_type" with slot "ID"  value "CL:000001111"
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: the converter above puts the ontology id directly into the 
+		class mention name for unkown historical reasons. There's probably 
+		some other code somewhere that uses the data that way. OpenDMAP 
+		needs the ids in a slot underneath the class, so we adjust for that 
+		here. The class mention object is renamed, so you lose the original state.
+
+- mention name mapper, again
+    reads:  edu.ucdenver.ccp.nlp.ts.TextAnnotation with ClassMentions 
+		named  PR:000001111
+    inserts: ClassMentions named "normalized_gene" with a slot named "ID" 
+		with value "PR:000001111"
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+
+- OpenDMAP
+    reads: text, sentence annotations, text annotations with class mentions 
+		named "cell_type" or  "normalized_gene" (see the context file, 
+			src/main/resources/tissue_specific_proteins_context.xml)
+    inserts: TextAnnotations with ClassMention named "expression" that has slots:
+            expressed with value <protein>
+            expressed-in with value <cell>
+    xml Type System file: ts/src/main/resources/edu/ucdenver/ccp/nlp/ts/TypeSystem.xml
+    discussion: clearly, with a different concept mapper type system converter 
+		the name mapper could be avoided. Some naming differences could also be 
+		dealt with by changing the open dmap context file.
+
+- class mention filter *destructive*
+    removes: tokens and sentences
+    discussion: just removing clutter from output or comparisons
+
+- DbInsert_AE   
+    reads: expression class mentions and writes them to the database in a 
+		join of primitive_result and compound_result tables.
+
+
+
