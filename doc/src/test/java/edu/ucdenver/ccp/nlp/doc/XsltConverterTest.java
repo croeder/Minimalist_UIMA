@@ -104,6 +104,7 @@ public class XsltConverterTest {
 	static final String elsevierSimpleArt5InputFile = "/elsevier502.simple-article.xml";
 	static final String elsevierSimpleArt5XsltFile = "/Art502.xsl";
 
+	@Ignore
 	@Test
 	public void testSimpleElsevierArt5() {
 		String contents = XsltConverter.readFile(elsevierSimpleArt5InputFile);		
