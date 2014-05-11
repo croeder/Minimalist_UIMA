@@ -1,4 +1,6 @@
-A minimalistic UIMA support library in the uimaFIT style of CCP. This project
+A minimalistic UIMA support library in the uimaFIT style of CCP. 
+http://bionlp-uima.sourceforge.net/
+This project
 includes some basic, simple, uima pipelines and analysis engines cribbed from
 both UIMA and uimaFIT tutorials, as well as past CCP UIMA work. 
 
