@@ -41,73 +41,73 @@ ccp_nlp submodules:
 * ts - UIMA type system xml files and generated java
 
 * ae 
-	** AnalysisEngineTest.java
-	** Debug_AE.java
-	** LingPipeSentenceDetector_AE.java
-	** LingPipeSentenceDetectorAeTest.java
-	** ClassMentionX.java, SlotMentionX.java
+	* AnalysisEngineTest.java
+	* Debug_AE.java
+	* LingPipeSentenceDetector_AE.java
+	* LingPipeSentenceDetectorAeTest.java
+	* ClassMentionX.java, SlotMentionX.java
 		Extensions of the generated ClassMention and SlotMention  classes with static functions
 		that might have been a member of ClassMention or ClassMentionX if it
 		weren't for the fact you can't do type conversion as easily in Java
 		or that UIMA is in control of what objects get created in the JCas.
-	** ClassMentionRemovalFilter_AE.java
-	** ConceptMapper2CCPTypeSystemConverter_AE.java
-	** DbInsert_AE.java - for use with backend
-	** Knowtator_AE.java (incomplete)
-	** MapNameToIDSlot_AE.java
-	** opendmap/OpenDMAP_AE.java
-	** Protein_AE.java (simple toy example)
+	* ClassMentionRemovalFilter_AE.java
+	* ConceptMapper2CCPTypeSystemConverter_AE.java
+	* DbInsert_AE.java - for use with backend
+	* Knowtator_AE.java (incomplete)
+	* MapNameToIDSlot_AE.java
+	* opendmap/OpenDMAP_AE.java
+	* Protein_AE.java (simple toy example)
 
 * lingpipe_analysis_engines - a separate directory for lingpipe analysis engines to isolate the dependency on lingpipe and its license
 
 * doc - an interface to a local install of medline, as well as additions to
 	integrate pmc oa and a local elsevier  collection
-	** Code to do a 2-stage parse of fulltext provided in XML. The first stage
+	* Code to do a 2-stage parse of fulltext provided in XML. The first stage
 	   applies an XSL stylesheet to convert between the source's (complex) XML
        to a more simple XML style.  The second stage parses that and creates
 	   various annotations for zoning and italics.
-		*** XsltConverter.java
-		*** CcpXmlParser.java
-		*** ElsevierArt5DtdClasspathResolver.java
-		*** PmcDtdClasspathResolver.java
-		*** PmcDtdUriResolver.java
-	** Code to access the database and provide service for UIMA collection readers
-		*** DbConnect.java
-		*** DocumentProvider.java
-		*** DocumentProviderFactory.java
-		*** ElsevierArt5DocumentProvider.java
-		*** MedlineDocumentProvider.java
-		*** PmcDocumentProvider.java
-	** ORM (JPA) code as well...
+		* XsltConverter.java
+		* CcpXmlParser.java
+		* ElsevierArt5DtdClasspathResolver.java
+		* PmcDtdClasspathResolver.java
+		* PmcDtdUriResolver.java
+	* Code to access the database and provide service for UIMA collection readers
+		* DbConnect.java
+		* DocumentProvider.java
+		* DocumentProviderFactory.java
+		* ElsevierArt5DocumentProvider.java
+		* MedlineDocumentProvider.java
+		* PmcDocumentProvider.java
+	* ORM (JPA) code as well...
 
 * backend - an interface to tables in the same database as doc, above, but
 	focussed on storing the results of a pipeline run
 
 * cr - a set of collection readers including DbCollectionReader and derivatives
 	for using the doc directory's database
-	** CcpXmlAnnotationFactory.java - a class for bridging from simple data from the doc module
+	* CcpXmlAnnotationFactory.java - a class for bridging from simple data from the doc module
 		to uima annotations
-	** DbCollectionReader.java - a base class for collection readers driven by a database to
+	* DbCollectionReader.java - a base class for collection readers driven by a database to
 		reference either abstracts in the database, such as the Medline CR, or to reference 
   		full-text paths such as the Pmc and Elsevier implementations.
-	** ElsevierArt5DbCollectionReader.java
-	** MedlineDbCollectionReader.java
-	** PmcOaDbCollectionReader.java
+	* ElsevierArt5DbCollectionReader.java
+	* MedlineDbCollectionReader.java
+	* PmcOaDbCollectionReader.java
 
 * util - a home for  utility classes
-	** SpacedProperties - a wrapper on java properties that allows for namespaces in the names
+	* SpacedProperties - a wrapper on java properties that allows for namespaces in the names
 
 * pipelines
-	** BaseUimaFitPipeline.java - a base class using the UIMA base FileSystemCollectionReader
+	* BaseUimaFitPipeline.java - a base class using the UIMA base FileSystemCollectionReader
 
-	** ProteinPipeline.java
+	* ProteinPipeline.java
 		This is basically a type system modification over the RoomNumberAnnotator.
 		The maven pom includes steps to generate and include for compilation the type system classes.
 		It adds usage of the CASDumpWriter from uimafit.
 		Protein.java
 		ProteinAnnotator.java
 
-	** ConceptMapperPipeline.java 
+	* ConceptMapperPipeline.java 
 		This set includes work from a number of people showing how to create a ConceptMapper
 		Dictionary from an OBO file, then run CM in a pipeline to create RDF output.
 		It uses xml files to describe the UIMA Analysis Engines.
@@ -123,14 +123,14 @@ ccp_nlp submodules:
         code there and calling it from the init method of a class that derives from ConceptMapper.
         This avoids modifying ConceptMapper source, though that would certainly work too.
 
-	** KnowtatorPipeline (in devleopment)
+	* KnowtatorPipeline (in devleopment)
         Past knowtator work at the CCP uses the protege API to access the pins/pont/pprj files.
         Work has begun on code to read exported XML files. While this avoids the Protege API
         code, it also avoids older CCP code that interfaces with it.
 
-	** DMapPipeline.java
+	* DMapPipeline.java
 
-	** OpenNlpPipeline.java
+	* OpenNlpPipeline.java
  
 * ws - (work in progress)a web_service iniitally surfacing the concept_mapper pipeline
 
